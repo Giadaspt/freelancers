@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Freelancers @yield('name')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,10 +21,56 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <span>
+                        <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ url('/') }}">
+                            Torna al sito
+                        </a>
+                    </span>
+                    @auth
+                        {{-- qui ci vanno il menu con i link con le rotte delle varie pagine dell'admin --}}
+                    @endauth
+                </div> 
+                <div class="d-flex">
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link {{ (Route::currentRouteName() === 'login') ? 'active' : '' }}" href="{{ route('login') }}"> Login </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link {{ (Route::currentRouteName() === 'register') ? 'active' : '' }}" 
+                            href="{{ route('register') }}"> Register </a>
+                        </li>
+                        
+                    @endguest
+
+                    @auth
+                        <a class="nav-link"  href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                        Logout
+                        </a>
+                    
+                        <a class="nav-link {{ (Route::currentRouteName() === 'home') ? 'active' : '' }}" 
+                        href="{{ route('home') }}"> 
+                            Dashboard 
+                        </a>
+                    
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    @endauth
+                </div>
+            </div>
+        </nav>
+
+
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Torna al sito') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -51,7 +97,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ $user->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -70,7 +116,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         <main class="py-4">
             @yield('content')
