@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -64,4 +65,22 @@ class User extends Authenticatable
     public function sponsorships(){
         return $this->belongsToMany('App\Sponsorship');
     }
+
+    public static function generateSlug($name){
+
+        $slug = Str::slug($name);
+        $slug_base = $slug;
+    
+        $name_presente = User::where('slug', $slug)->first();
+    
+        $c = 1;
+        while($name_presente){
+          $slug = $slug_base . '-' . $c;
+          $c++;
+          $name_presente = User::where('slug', $slug)->first();
+        }
+    
+        return $slug;
+    }
+
 }
