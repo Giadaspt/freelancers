@@ -3,7 +3,21 @@
 @section('content')
 
   <div class="container">
-    <h1>questa è la pagina messaggi</h1>
+
+    @if ($messageExists)
+      @foreach ($messages as $message )
+
+            <p>{{ $message->name_sender }}
+              <span>{{ $message->created_at }}</span>
+            </p>
+            <p>{{ $message->email_sender }}</p>
+            <p>{{ $message->text }}</p>
+      
+      @endforeach
+      @else
+      <p>Non ci sono messaggi</p>
+    @endif
+
   </div>
   
 @endsection
