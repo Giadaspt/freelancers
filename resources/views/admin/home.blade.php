@@ -7,7 +7,7 @@
             <aside>
                 <a href="{{ route('admin.users.show', $user) }}">Vedi profilo</a>
                 <a href="{{ route('admin.users.edit', $user) }}">Modifica profilo</a>
-                <a href="">Messaggi</a>
+                <a href="{{ route('admin.message') }}">Messaggi</a>
             </aside>
         </div>
 
