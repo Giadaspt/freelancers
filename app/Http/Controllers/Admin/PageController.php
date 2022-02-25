@@ -10,8 +10,8 @@ class PageController extends Controller
 {
     public function messages(){
 
-        $message = Message::all();
+        $messages = Message::all();
 
-        return view('admin.users.messages', compact('message'));
+        return view('admin.users.messages', compact('messages'));
     }
 }
