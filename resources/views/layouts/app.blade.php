@@ -56,7 +56,7 @@
                         Logout
                         </a>
                     
-                        <a class="nav-link {{ (Route::currentRouteName() === 'home') ? 'active' : '' }}" 
+                        <a class="nav-link {{ (Route::currentRouteName() === 'admin.home') ? 'active' : '' }}" 
                         href="{{ route('home') }}"> 
                             Dashboard 
                         </a>
