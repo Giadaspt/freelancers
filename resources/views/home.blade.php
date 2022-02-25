@@ -6,7 +6,7 @@
         <div class="col">
             <aside>
                 <a href="{{ route('admin.users.show', $user) }}">Vedi profilo</a>
-                <a href="">Modifica profilo</a>
+                <a href="{{ route('admin.users.edit', $user) }}">Modifica profilo</a>
                 <a href="">Messaggi</a>
             </aside>
         </div>

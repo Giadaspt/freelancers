@@ -75,9 +75,16 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-
+        $request->validate($this->makeValidation(), $this->makeValidationMessage());
         
         $data = $request->all();
+
+        $data['slug'] = User::generateSlug($data['name']);
+
+        $user->update($data);
+
+
+        return redirect()->route('admin.users.show', $user);
     }
 
     /**
@@ -89,5 +96,33 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function makeValidation(){
+        return [
+            "name" => "required|max:50|min:2",
+            "lastname" => "required|max:50|min:2",
+            "address" => "required|max:250|min:2",
+            "city" => "required|max:150|min:2",
+            "description_job" => "min:2",
+        ];
+    }
+
+    private function makeValidationMessage(){
+        return [
+            "name.required" =>"Il nome è obbligatorio",
+            "name.max" =>"Il nome può avere massimo :max caratteri",
+            "name.min" =>"Il nome deve avere minimo :min caratteri",
+            "lastname.required" =>"Il cognome è obbligatorio",
+            "lastname.max" =>"Il cognome può avere massimo :max caratteri",
+            "lastname.min" =>"Il cognome deve avere minimo :min caratteri",
+            "address.required" =>"L'indirizzo è obbligatorio",
+            "address.max" => "L'indirizzo può contenere :max caratteri",
+            "address.min" => "L'indirizzo deve contenere :min caratteri",
+            "city.required" =>"La città è obbligatoria",
+            "city.max" => "La città può contenere :max caratteri",
+            "city.min" => "La città deve contenere :min caratteri",
+            "description_job" => "La descrizione deve contenere :min caratteri"
+        ];
     }
 }
