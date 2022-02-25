@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\User;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -46,7 +48,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('admin.users.show', compact('user'));
     }
 
     /**
@@ -57,7 +61,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -67,9 +73,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+
+        
+        $data = $request->all();
     }
 
     /**
