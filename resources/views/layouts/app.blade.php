@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Freelancers @yield('name')</title>
+    <title>Freelancers @yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -30,7 +30,11 @@
                         </a>
                     </span>
                     @auth
-                        {{-- qui ci vanno il menu con i link con le rotte delle varie pagine dell'admin --}}
+                        {{-- <ul>
+                            <li>
+                                <a class="{{ Route::currentRouteName() === 'admin.users.edit' }}" href="{{ route('admin.users.edit') }}"></a>
+                            </li>
+                        </ul> --}}
                     @endauth
                 </div> 
                 <div class="d-flex">
