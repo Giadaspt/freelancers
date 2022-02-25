@@ -95,7 +95,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        $user->delete();
+
+        return redirect()->route('login')->with('deleted', "L'utente $user->name $user->lastname è stato eliminato");
     }
 
     private function makeValidation(){

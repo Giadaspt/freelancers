@@ -2,6 +2,7 @@
 
 @section('content')
 
+
   <div class="container">
       <form method="POST" action="{{ route('admin.users.update', $user) }}">
         @csrf
@@ -104,7 +105,17 @@
         <button type="submit" class="btn btn-primary">
           Salva
         </button>
-    </form>
+
+      </form>
+      <form onsubmit="return confirm('Confermi di voler eliminare il tuo account?')" 
+      action="{{ route('admin.users.destroy', $user) }}" method="POST">
+      @csrf
+      @method('DELETE')
+      
+        <button type="submit" class="btn btn-danger">
+          Elimina Profilo
+        </button>
+      </form>
   </div>
   
 @endsection
