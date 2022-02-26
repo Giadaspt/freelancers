@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Feedback extends Model
+class Review extends Model
 {
     public function users(){
         return $this->belongsTo('App\User');

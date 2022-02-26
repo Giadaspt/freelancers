@@ -53,7 +53,7 @@
                         </a>
                     
                         <a class="nav-link {{ (Route::currentRouteName() === 'admin.home') ? 'active' : '' }}" 
-                        href="{{ route('home') }}"> 
+                        href="{{ route('admin.home') }}"> 
                             Dashboard 
                         </a>
                     

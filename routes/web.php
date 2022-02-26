@@ -19,16 +19,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
- Route::get('/home', 'Admin\HomeController@index')->name('home');
+
+// Route::get('/home', 'Admin\HomeController@index')->name('home');
 
 
 Route::middleware('auth')
-    ->namespace('Admin')
-    ->name('admin.')
-    ->prefix('admin')
-    ->group( function(){
+->namespace('Admin')
+->prefix('admin')
+->name('admin.')
+->group( function(){
+
+        Route::get('/home', 'HomeController@index')->name('home');
 
         Route::resource('/users', 'UserController');
 
         Route::get('/messages', 'PageController@messages')->name('message');
+        
+        Route::get('/reviews', 'ReviewController@reviews')->name('reviews');
     });
