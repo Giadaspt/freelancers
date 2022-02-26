@@ -30,11 +30,7 @@
                         </a>
                     </span>
                     @auth
-                        {{-- <ul>
-                            <li>
-                                <a class="{{ Route::currentRouteName() === 'admin.users.edit' }}" href="{{ route('admin.users.edit') }}"></a>
-                            </li>
-                        </ul> --}}
+
                     @endauth
                 </div> 
                 <div class="d-flex">
