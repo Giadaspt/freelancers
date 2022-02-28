@@ -8,6 +8,7 @@ use App\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -85,10 +86,19 @@ class UserController extends Controller
         
         $data = $request->all();
 
+        if(array_key_exists('image', $data)){
+            $data['image'] =  $request->file('image')->getClientOriginalName();
+
+            $image_path = Storage::put('uploads', $data['image']);
+            $data['cover'] = $image_path;
+        }
+
+        $new_user = new User();
+        $new_user->fill($data);
+
         $data['slug'] = User::generateSlug($data['name']);
 
         $user->update($data);
-
 
         return redirect()->route('admin.users.show', $user);
     }
@@ -114,7 +124,8 @@ class UserController extends Controller
             "lastname" => "required|max:50|min:2",
             "address" => "required|max:250|min:2",
             "city" => "required|max:150|min:2",
-            "description_job" => "min:2",
+            "description_job" => "nullable|min:2",
+            "image" => "nullable|mimes:jpg,png,jpeg,svg|max:32000",
         ];
     }
 
@@ -132,7 +143,10 @@ class UserController extends Controller
             "city.required" =>"La città è obbligatoria",
             "city.max" => "La città può contenere :max caratteri",
             "city.min" => "La città deve contenere :min caratteri",
-            "description_job" => "La descrizione deve contenere :min caratteri"
+            "description_job.min" => "La descrizione deve contenere :min caratteri",
+   
+            "image.mimes" => "L'immagine deve essere un file di tipo:jpg ,png, jpeg, svg",
+            "image.max" => "L'immagine è troppo grande",
         ];
     }
 }
