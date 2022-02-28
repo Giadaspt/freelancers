@@ -53,7 +53,18 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('admin.users.show', compact('user'));
+        $categories = Category::all();
+
+        // $categories = Category::join('category_user', 'user_id', '=', 'category_id')
+        // ->select('category_id')
+        // ->get();
+
+        // $categories = Category::select('category_id')->where('user_id', $user->category)->get();
+        // $categories = ['ciao', 'yea', 'ok'];
+
+        $skills = Skill::all();
+
+        return view('admin.users.show', compact('user', 'categories', 'skills'));
     }
 
     /**
@@ -69,7 +80,7 @@ class UserController extends Controller
         $categories = Category::all();
 
         $skills = Skill::all();
-
+        
         return view('admin.users.edit', compact('user','categories', 'skills' ));
     }
 
@@ -89,8 +100,9 @@ class UserController extends Controller
         if(array_key_exists('image', $data)){
             $data['image'] =  $request->file('image')->getClientOriginalName();
 
-            $image_path = Storage::put('uploads', $data['image']);
-            $data['cover'] = $image_path;
+            // $image_path = Storage::put('uploads', $data['image']);
+            $image_path = Storage::putFile('img', $request->file('image'));;
+            $data['image'] = $image_path;
         }
 
         $new_user = new User();
@@ -99,6 +111,19 @@ class UserController extends Controller
         $data['slug'] = User::generateSlug($data['name']);
 
         $user->update($data);
+
+        if(array_key_exists('categories', $data)){
+            $user->categories()->sync($data['categories']);
+        } else {
+            $user->categories()->detach();
+        }
+        // dd($user->categories());
+
+        if(array_key_exists('skills', $data)){
+            $user->skills()->sync($data['skills']);
+        } else {
+            $user->skills()->detach();
+        }
 
         return redirect()->route('admin.users.show', $user);
     }

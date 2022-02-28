@@ -131,14 +131,14 @@
             </div>
         </div>
 
-        <div class="form-check form-switch row">
+        <div class="form-check form-switch row mt-3">
             @foreach ($categories as $category)
                 <button type="button" 
                 class="btn btn-outline-primary  active"
                 @if (!$errors->any() && $user->categories->contains($category->id) )
-                active
+                    active
                 @elseif ($errors->any() && in_array($category->id, old('categories', [])))
-                active
+                    active
                 @endif
 
                 data-toggle="button" 
@@ -146,16 +146,13 @@
                 autocomplete="off"
                 value="{{ $category->id}}"
                 id="category{{ $loop->iteration }}"
-                name="categories[]"
-              >
+                name="categories[]">
                     {{ $category->name}}
                 </button>
-
-                
             @endforeach
         </div>
 
-        <div class="form-group row">
+        <div class="form-group row mt-4">
             @foreach ($skills as $skill)
             <input type="checkbox" 
             value="{{ $skill->id}}"
