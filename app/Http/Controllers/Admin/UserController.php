@@ -90,7 +90,7 @@ class UserController extends Controller
             $data['image'] =  $request->file('image')->getClientOriginalName();
 
             $image_path = Storage::put('uploads', $data['image']);
-            $data['cover'] = $image_path;
+            $data['image'] = $image_path;
         }
 
         $new_user = new User();
