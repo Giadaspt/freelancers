@@ -100,8 +100,10 @@ class UserController extends Controller
         if(array_key_exists('image', $data)){
             $data['image'] =  $request->file('image')->getClientOriginalName();
 
+
             // $image_path = Storage::put('uploads', $data['image']);
             $image_path = Storage::putFile('img', $request->file('image'));;
+
             $data['image'] = $image_path;
         }
 
