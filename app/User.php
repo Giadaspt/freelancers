@@ -53,8 +53,8 @@ class User extends Authenticatable
     public function categories(){
         return $this->belongsToMany('App\Category');
     }
-    public function feedbacks(){
-        return $this->hasMany('App\Feedback');
+    public function reviews(){
+        return $this->hasMany('App\Review');
     }
     public function messages(){
         return $this->hasMany('App\Message');

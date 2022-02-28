@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
+use App\Skill;
 use App\User;
 
 use App\Http\Controllers\Controller;
@@ -63,7 +65,11 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('admin.users.edit', compact('user'));
+        $categories = Category::all();
+
+        $skills = Skill::all();
+
+        return view('admin.users.edit', compact('user','categories', 'skills' ));
     }
 
     /**
