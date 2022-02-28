@@ -27,8 +27,8 @@ class User extends Authenticatable
         'email', 
         'password',
         'slug', 
-        // 'category_id',
-        // 'skill_id',
+        'category_id',
+        'skill_id',
         // 'sponsorship_id'
     ];
 
