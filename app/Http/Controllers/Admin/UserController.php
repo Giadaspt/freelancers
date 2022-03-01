@@ -55,13 +55,6 @@ class UserController extends Controller
 
         $categories = Category::all();
 
-        // $categories = Category::join('category_user', 'user_id', '=', 'category_id')
-        // ->select('category_id')
-        // ->get();
-
-        //$categories = Category::select('category_id')->where('user_id', $user->category_id)->get();
-        // $categories = ['ciao', 'yea', 'ok'];
-
         $skills = Skill::all();
 
         return view('admin.users.show', compact('user', 'categories', 'skills'));
@@ -98,9 +91,14 @@ class UserController extends Controller
         $data = $request->all();
 
         if(array_key_exists('image', $data)){
+            
+            if($user->image){
+                Storage::delete($user->image);
+            }
+
             $data['image'] =  $request->file('image')->getClientOriginalName();
 
-            $image_path = Storage::putFile('img', $request->file('image'));;
+            $image_path = Storage::putFile('img', $request->file('image'));
 
             $data['image'] = $image_path;
         }

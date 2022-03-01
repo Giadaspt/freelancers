@@ -28,7 +28,7 @@
                 class="form-control @error('email') is-invalid @enderror" 
                 name="email" 
                 value="{{ old('email', $user->email) }}" 
-                required autocomplete="email">
+                >
 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -63,8 +63,7 @@
                 <input id="name" 
                 type="text" class="form-control @error('name') is-invalid @enderror" 
                 name="name" 
-                value="{{ old('name', $user->name) }}" 
-                required autocomplete="name" autofocus>
+                value="{{ old('name', $user->name) }}" >
 
                 @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -82,8 +81,7 @@
                 type="text" 
                 class="form-control @error('lastname') is-invalid @enderror" 
                 name="lastname" 
-                value="{{ old('lastname', $user->lastname) }}" 
-                required autocomplete="lastname" autofocus>
+                value="{{ old('lastname', $user->lastname) }}" >
 
                 @error('lastname')
                     <span class="invalid-feedback" role="alert">
@@ -101,8 +99,7 @@
                 type="text" 
                 class="form-control @error('address') is-invalid @enderror" 
                 name="address" 
-                value="{{ old('address', $user->address) }}" 
-                required autocomplete="address" autofocus>
+                value="{{ old('address', $user->address) }}" >
 
                 @error('address')
                     <span class="invalid-feedback" role="alert">
@@ -120,8 +117,7 @@
                 type="text" 
                 class="form-control @error('city') is-invalid @enderror" 
                 name="city" 
-                value="{{ old('city', $user->city) }}" 
-                required autocomplete="city" autofocus>
+                value="{{ old('city', $user->city) }}" >
 
                 @error('city')
                     <span class="invalid-feedback" role="alert">
@@ -140,7 +136,7 @@
                 class="form-control @error('description_job') is-invalid @enderror" 
                 name="description_job" 
                 value="" 
-                required autocomplete="description_job" autofocus>{{ old('description_job', $user->description_job) }}</textarea>
+                >{{ old('description_job', $user->description_job) }}</textarea>
 
                 @error('description_job')
                     <span class="invalid-feedback" role="alert">

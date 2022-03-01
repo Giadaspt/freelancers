@@ -27,8 +27,10 @@ class CreateSponsorshipUserTable extends Migration
                 ->on('sponsorships')
                 ->onDelete('cascade');
             
-            $table->date('start_date');
+         
+            $table->timestamps();
             $table->date('end_date');
+
         });
     }
 

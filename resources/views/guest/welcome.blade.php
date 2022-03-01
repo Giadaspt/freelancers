@@ -69,8 +69,8 @@
                 <div class="top-right links">
                     @auth
                         <a
-                        class="{{ Route::currentRouteName() === 'admin.home' }}"
-                         href="{{ route('admin.home') }}">Il mio account</a>
+                        class="{{ Route::currentRouteName() === 'admin.index' }}"
+                         href="{{ route('admin.index') }}">Il mio account</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

@@ -25,7 +25,7 @@
             <div class="container d-flex justify-content-between">
                 <div class="d-flex align-items-center">
                     <span>
-                        <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ url('/') }}">
+                        <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ route('home') }}">
                             Torna al sito
                         </a>
                     </span>
@@ -52,8 +52,8 @@
                         Logout
                         </a>
                     
-                        <a class="nav-link {{ (Route::currentRouteName() === 'admin.home') ? 'active' : '' }}" 
-                        href="{{ route('admin.home') }}"> 
+                        <a class="nav-link {{ (Route::currentRouteName() === 'admin.index') ? 'active' : '' }}" 
+                        href="{{ route('admin.index') }}"> 
                             Dashboard 
                         </a>
                     
