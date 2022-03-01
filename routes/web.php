@@ -38,4 +38,6 @@ Route::middleware('auth')
 
         Route::resource('/sponsorships', 'SponsorController');
 
+        Route::get('/payment', 'PaymentController@pay');
+
     });
