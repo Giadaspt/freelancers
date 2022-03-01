@@ -24,15 +24,15 @@
       <h3>{{ $user->city }}</h3>
       <p>{{ $user->description_job }}</p>
 
-     
-      @forelse ($categories as $category)
+      @forelse ($user->categories as $category)
           <h3 class="badge bg-warning text-white">
             {{ $category->name }}
           </h3>
       @empty
         - 
       @endforelse
-      {{-- @dd($categories) --}}
+
+       {{-- @dd($categories)  --}}
 
       @forelse ($user->skills as $skill)
           <h3 class="badge bg-success text-white">
@@ -41,6 +41,7 @@
       @empty
         - 
       @endforelse
+      {{-- @dd($skills)  --}}
     </section>
 
 

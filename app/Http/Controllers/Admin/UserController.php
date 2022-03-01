@@ -59,7 +59,7 @@ class UserController extends Controller
         // ->select('category_id')
         // ->get();
 
-        // $categories = Category::select('category_id')->where('user_id', $user->category)->get();
+        //$categories = Category::select('category_id')->where('user_id', $user->category_id)->get();
         // $categories = ['ciao', 'yea', 'ok'];
 
         $skills = Skill::all();

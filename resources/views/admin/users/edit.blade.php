@@ -150,10 +150,10 @@
             </div>
         </div>
 
-        <div class="form-check form-switch row mt-3">
+        {{-- <div class="form-group row mt-3">
             @foreach ($categories as $category)
-                <button type="button" 
-                class="btn btn-outline-primary  active"
+                <input type="button" 
+                class="btn btn-outline-primary active"
                 @if (!$errors->any() && $user->categories->contains($category->id) )
                     active
                 @elseif ($errors->any() && in_array($category->id, old('categories', [])))
@@ -167,8 +167,24 @@
                 id="category{{ $loop->iteration }}"
                 name="categories[]">
                     {{ $category->name}}
-                </button>
             @endforeach
+        </div> --}}
+
+        
+        <div class="form-group row mt-4">
+            @foreach ($categories as $category)
+            <input type="checkbox" 
+            value="{{ $category->id}}"
+            name="categories[]"
+            id="category{{ $loop->iteration }}"
+   
+            @if (!$errors->any() && $user->categories->contains($category->id) )
+              checked
+            @elseif ($errors->any() && in_array($category->id, old('categories', [])))
+              checked
+            @endif>
+            <label class="mr-3" for="tag{{ $loop->iteration }}">{{$category->name}}</label>
+           @endforeach
         </div>
 
         <div class="form-group row mt-4">
