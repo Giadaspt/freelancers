@@ -22,6 +22,7 @@
       <h3>{{ $user->email }}</h3>
       <h3>{{ $user->address }}</h3>
       <h3>{{ $user->city }}</h3>
+      <p>{{ $user->description_job }}</p>
 
      
       @forelse ($categories as $category)
