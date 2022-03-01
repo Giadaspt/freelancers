@@ -15,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('guest.welcome');
-});
+})->name('home');
 
 Auth::routes();
-
 
 // Route::get('/home', 'Admin\HomeController@index')->name('home');
 
@@ -29,11 +28,14 @@ Route::middleware('auth')
 ->name('admin.')
 ->group( function(){
 
-        Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('/', 'HomeController@index')->name('index');
 
         Route::resource('/users', 'UserController');
 
         Route::get('/messages', 'PageController@messages')->name('message');
         
         Route::get('/reviews', 'ReviewController@reviews')->name('reviews');
+
+        Route::resource('/sponsorships', 'SponsorController');
+
     });

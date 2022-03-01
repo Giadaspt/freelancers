@@ -9,6 +9,7 @@
                 <a href="{{ route('admin.users.edit', $user) }}">Modifica profilo</a>
                 <a href="{{ route('admin.message') }}">Messaggi</a>
                 <a href="{{ route('admin.reviews') }}">Recensioni</a>
+                <a href="{{ route('admin.sponsorships.index') }}">Sposorizzati</a>
             </aside>
         </div>
 
