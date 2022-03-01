@@ -19,7 +19,7 @@
 
         @foreach ($sponsors as $sponsor)
           
-            <div class="card d-flex" style="width: 18rem;">
+            <a href="{{ route('admin.sponsorships.show', $sponsor) }}" class="card d-flex" style="width: 18rem;">
               <div class="card-body">
       
                 <h5 class="card-title">{{$sponsor->name}}</h5>
@@ -34,12 +34,12 @@
                   {{$sponsor->duration}}
                 </h5>
                 
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="{{$sponsor->id}}">
+                {{-- <input class="form-check-input" type="radio" name="flexRadioDefault" id="{{$sponsor->id}}"> --}}
               </div>
-            </div>
-            <button class="btn btn-info">
+            </a>
+            {{-- <button class="btn btn-info">
               <a href="{{ route('admin.sponsorships.show', $sponsor) }}" id="{{$sponsor->id}}" class="card-link">Acquista</a>
-          </button>
+          </button> --}}
             @endforeach
             
             
