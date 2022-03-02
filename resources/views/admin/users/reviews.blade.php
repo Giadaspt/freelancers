@@ -4,6 +4,11 @@
 
 <div class="container">
   <div class="main-section">
+    @if (session('deleted'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('deleted') }}
+    </div>
+ @endif
 
     <div class="title-review my-3 d-flex justify-content-between align-items-center">
      
@@ -24,15 +29,15 @@
              <p class="">{{ $review->author_name }} </p>
              <div class="right-title-box-review d-flex justify-content-between">
                <p>{{ $review->created_at }}</p>
-               <span><i class="fas fa-trash-alt"></i> </span>    
-               {{-- <i>
-                  <form onsubmit="return confirm('Confermi eliminazione del messaggio?')" 
-                      action= "{{ route('admin.players.destroy', $player) }}" method="POST">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="btn btn-danger"> DELETE</button> 
-                  </form>
-               </i>       --}}
+               {{-- <span><i class="fas fa-trash-alt"></i> </span>     --}}
+
+               <form onsubmit="return confirm('Confermi eliminazione della recensione di {{ $review->author_name }} ?')" 
+                  action= "{{ route('admin.deleteReviews', $review) }}" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit"><i class="fas fa-trash-alt"></i> </button>  
+              </form>
+                   
              </div>
            
            </div>

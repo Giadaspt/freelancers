@@ -3,7 +3,13 @@
 @section('content')
 
   <div class="container">
+    
    <div class="main-section">
+     @if (session('deleted'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('deleted') }}
+        </div>
+     @endif
 
      <div class="title-message my-3 d-flex justify-content-between align-items-center">
       
@@ -24,7 +30,18 @@
               <p class="">{{ $message->name_sender }} </p>
               <div class="right-title-box-message d-flex justify-content-between">
                 <p>{{ $message->created_at }}</p>
-                <span><i class="fas fa-trash-alt"></i> </span>          
+                {{-- <span><i class="fas fa-trash-alt"></i> </span>     --}}
+                
+         
+                  <form onsubmit="return confirm('Confermi eliminazione del messaggio di {{ $message->name_sender }} ?')" 
+                      action= "{{ route('admin.deleteMessage', $message) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                     <button type="submit"><i class="fas fa-trash-alt"></i> </button>  
+                  </form>
+         
+                
+
               </div>
             
             </div>

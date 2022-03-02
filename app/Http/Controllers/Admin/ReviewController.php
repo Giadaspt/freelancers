@@ -26,4 +26,15 @@ class ReviewController extends Controller
 
         return view('admin.users.reviews', compact('reviews', 'user_id', 'reviewExists'));
     }
+
+    public function deleterReview($id)
+    {
+        $review = Review::find($id);
+
+        $review->delete();
+
+        return redirect()->route('admin.reviews')->with('deleted', "Recensione eliminata");
+    }
+
+
 }

@@ -16,12 +16,17 @@
 
 .right-title-box-review{
   height: 30px;
+     button{
+        background-color: transparent;
+        border: none;
+      }
   
   p{
     padding-right: 30px;
   }
-  span i{
+   i{
       cursor: pointer;
+      color:white;
   }
   
 }

@@ -10037,11 +10037,16 @@ h3 {
 .right-title-box-message {
   height: 30px;
 }
+.right-title-box-message button {
+  background-color: transparent;
+  border: none;
+}
 .right-title-box-message p {
   padding-right: 30px;
 }
-.right-title-box-message span i {
+.right-title-box-message .fas {
   cursor: pointer;
+  color: white;
 }
 
 .box-message {
@@ -10087,11 +10092,16 @@ h3 {
 .right-title-box-review {
   height: 30px;
 }
+.right-title-box-review button {
+  background-color: transparent;
+  border: none;
+}
 .right-title-box-review p {
   padding-right: 30px;
 }
-.right-title-box-review span i {
+.right-title-box-review i {
   cursor: pointer;
+  color: white;
 }
 
 .box-review {

@@ -41,4 +41,14 @@ class PageController extends Controller
     //     }
     // }
 
+
+    public function deleteMessage($id)
+    {
+        $message = Message::find($id);
+
+        $message->delete();
+
+        return redirect()->route('admin.message')->with('deleted', "Messaggio eliminato");
+    }
+
 }

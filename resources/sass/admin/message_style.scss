@@ -19,12 +19,17 @@
 
 .right-title-box-message{
   height: 30px;
+     button{
+       background-color: transparent;
+       border: none;
+     }
   
   p{
     padding-right: 30px;
   }
-  span i{
+  .fas{
       cursor: pointer;
+      color: white;
   }
   
 }
