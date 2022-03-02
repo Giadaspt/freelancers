@@ -10022,5 +10022,8 @@ h3 {
 .btn-freelance {
   color: white !important;
   background-color: #1A3854 !important;
-  border-radius: 10px !important;
+  border-radius: 20px !important;
+}
+.btn-freelance:hover {
+  background-color: #3772a8d0 !important;
 }
