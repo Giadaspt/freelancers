@@ -11,6 +11,8 @@
     </ul>
     </div>
     @endif
+    
+    <h1 class="text-prova"> Modifica profilo </h1>
 
 
   <div class="container">
@@ -201,7 +203,7 @@
 
        
 
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-freelance">
           Salva
         </button>
 
@@ -211,7 +213,7 @@
       @csrf
       @method('DELETE')
       
-        <button type="submit" class="btn btn-danger">
+        <button type="submit" class="btn btn-freelance">
           Elimina Profilo
         </button>
       </form>

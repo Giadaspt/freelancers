@@ -37,8 +37,8 @@
     
     <input id="nonce" name="payment_method_nonce" type="hidden"/>
     <div class="d-flex flex-column">
-        <a class="bnb align-self-center my-2" href="{{route('admin.sponsorships.index')}}">Annulla transazione</a>
-        <button class="bnb align-self-center" type="submit">Conferma acquisto</button>
+        <a class=" align-self-center my-2" href="{{route('admin.sponsorships.index')}}">Annulla transazione</a>
+        <button class="btn_freelance align-self-center" type="submit">Conferma acquisto</button>
     </div>
   </form>
 
