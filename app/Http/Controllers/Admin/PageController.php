@@ -19,6 +19,9 @@ class PageController extends Controller
         $user_id = Auth::user()->id;
 
         $messages = Message::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(3);
+        $user = Auth::user();
+
+
 
         if(count($messages) <= 0){
             $messageExists = false;
@@ -30,9 +33,8 @@ class PageController extends Controller
         //     $messageExists = false
         // });
 
-        return view('admin.users.messages', compact('messages', 'user_id', 'messageExists'));
+        return view('admin.users.messages', compact('messages', 'user_id', 'messageExists', 'user'));
     }
-
     // public function messageExists(){
     //     $user_message = count($user_id == $message->user_id);
 
