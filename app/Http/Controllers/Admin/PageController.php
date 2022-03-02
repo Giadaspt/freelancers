@@ -18,10 +18,10 @@ class PageController extends Controller
 
         $user_id = Auth::user()->id;
 
+        $messages = Message::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
         $user = Auth::user();
 
 
-        $messages = Message::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
 
         if(count($messages) <= 0){
             $messageExists = false;
