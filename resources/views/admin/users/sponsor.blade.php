@@ -19,7 +19,7 @@
 
         @foreach ($sponsors as $sponsor)
           
-            <a href="{{ route('admin.sponsorships.show', $sponsor) }}" class="card d-flex" style="width: 18rem;">
+            <a href="{{ route('admin.sponsorships.show', $sponsor) }}" class="card sponsor-card d-flex" style="width: 18rem;">
               <div class="card-body color-font ">
       
                 <h3 class="card-title font-weight-bold ">{{$sponsor->name}}</h3>

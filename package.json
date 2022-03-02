@@ -24,7 +24,6 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "braintree": "^3.10.0",
-        "font-awesome": "^4.7.0"
+        "braintree": "^3.10.0"
     }
 }

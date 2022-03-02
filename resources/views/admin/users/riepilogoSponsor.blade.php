@@ -66,7 +66,7 @@
         });
       </script>
     </div>
-    <button class="btn btn-freelance d-flex justify-content-end mr-2 mt-5">
+    <button class="btn btn-freelance  mr-2 mt-5">
       <a class="text-white" href=" {{ URL::previous() }} "> Indietro </a>
     </button>
   </div>
