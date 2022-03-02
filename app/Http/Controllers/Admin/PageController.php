@@ -18,7 +18,7 @@ class PageController extends Controller
 
         $user_id = Auth::user()->id;
 
-        $messages = Message::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
+        $messages = Message::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(3);
 
         if(count($messages) <= 0){
             $messageExists = false;
@@ -40,5 +40,15 @@ class PageController extends Controller
 
     //     }
     // }
+
+
+    public function deleteMessage($id)
+    {
+        $message = Message::find($id);
+
+        $message->delete();
+
+        return redirect()->route('admin.message')->with('deleted', "Messaggio eliminato");
+    }
 
 }
