@@ -40,4 +40,9 @@ Route::middleware('auth')
 
         Route::get('/payment', 'PaymentController@pay');
 
+        Route::delete('/users/messages/{id}', 'PageController@deleteMessage')->name('deleteMessage');
+
+        Route::delete('/users/reviews/{id}', 'ReviewController@deleterReview')->name('deleteReviews');
+
+
     });

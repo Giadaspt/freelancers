@@ -1,0 +1,67 @@
+.main-section{
+  height: calc(100vh - 200px);
+  width: 100%;
+  // background-color: aqua;
+}
+
+.title-message i{
+    color: $secondaryColor;
+    font-size: 22px; 
+    padding-left: 10px;
+      
+}
+
+.title-message h1{
+  color: $secondaryColor;
+}
+
+
+
+.right-title-box-message{
+  height: 30px;
+     button{
+       background-color: transparent;
+       border: none;
+     }
+  
+  p{
+    padding-right: 30px;
+  }
+  .fas{
+      cursor: pointer;
+      color: white;
+  }
+  
+}
+
+.box-message{
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 5px 10px 18px #888888;
+  overflow: hidden;
+  min-height: 200px;
+  margin-bottom: 20px;
+     .box-title-message{
+       height: 30px;
+       line-height: 30px;
+       width: 100%;
+       background-color: $secondaryColor;
+       color: white;
+       padding: 0 5px 0 5px;
+     }
+
+     .box-body-message{
+       padding: 20px;
+
+     }
+}
+
+.page-item.active .page-link{
+  background-color: $secondaryColor !important;
+  border-color: $secondaryColor !important;
+}
+
+
+
+
+
