@@ -23,7 +23,8 @@ class SponsorController extends Controller
         $sponsors = $request->all();
 
         $sponsorExists = true;
-
+      
+        $user = Auth::user();
         $user_id = Auth::user()->id;
 
         $sponsors = Sponsorship::all();
@@ -32,7 +33,7 @@ class SponsorController extends Controller
             $sponsorExists = false;
         }
 
-        return view('admin.users.sponsor', compact('sponsors', 'user_id', 'sponsorExists'));
+        return view('admin.users.sponsor', compact('sponsors', 'user_id', 'sponsorExists','user'));
     }
 
     /**
@@ -65,8 +66,9 @@ class SponsorController extends Controller
     public function show($id)
     {
         $sponsor = Sponsorship::find($id);
-
-        return view('admin.users.riepilogoSponsor', compact('sponsor'));
+        
+        $user = Auth::user();
+        return view('admin.users.riepilogoSponsor', compact('sponsor', 'user'));
     }
 
     /**

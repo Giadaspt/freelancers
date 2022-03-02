@@ -3,34 +3,106 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col">
-            <aside>
-                <a href="{{ route('admin.users.show', $user) }}">Vedi profilo</a>
-                <a href="{{ route('admin.users.edit', $user) }}">Modifica profilo</a>
-                <a href="{{ route('admin.message') }}">Messaggi</a>
-                <a href="{{ route('admin.reviews') }}">Recensioni</a>
-                <a href="{{ route('admin.sponsorships.index') }}">Sposorizzati</a>
-            </aside>
-        </div>
-
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Il mio profilo') }}</div>
-
-                <div class="card-body">
+        <div class="col-md-10">
+            <div class="card-dash container mb-5">
+                
+                <div ><h4>ACCOUNT</h4></div>
+                <div class="d-flex ">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <div class="container">
-                        <h1>Ciao {{ $user->name }}</h1>
-
-                      
+                    @if ($user->image)
+                        
+                    <div>
+                        <img width="200" height="200" src="{{ asset('storage/' . $user->image) }}" alt="{{$user->name}}" style="border-radius: 50%" >
+                        
+                    </div>
+                    @else
+                        <img width="200"  src="{{ asset('storage/img/istockphoto-1223671392-612x612.jpg')}}" alt="immagine" style="border-radius: 50%">
+                    @endif
+                    <div class="">
+                        <h1>{{ $user->name }} {{ $user->lastname }}</h1>
+                        <ul>
+                            <li>{{$user->email}}</li>
+                            <li>{{$user->city}}</li>
+                            <li>{{$user->address}}</li>
+                        </ul>                    
                     </div>
                 </div>
+                
+            </div>
+        </div>
+        <div class="container d-flex justify-content-between mb-5">
+            <div class="card text-center" style="width: 30%">
+                <div class="card-body">
+                  <a href="{{ route('admin.users.show', $user) }}">vedi profilo</a>
+                  <i class="fa-regular fa-user" style="font-size: 25px"></i>
+                </div>
+            </div>
+            <div class="card text-center" style="width: 30%">
+                <div class="card-body">
+                  <a href="{{ route('admin.users.edit', $user) }}">modifica profilo</a>
 
+                </div>
+            </div>
+            <div class="card text-center" style="width: 30%">
+                <div class="card-body">
+                  <a href="{{ route('admin.sponsorships.index') }}">sponsorizza profilo</a>
+                  <i class="fa-regular fa-rocket-launch" style="font-size: 25px"></i>
+                </div>
+            </div>
+        </div>
+        <div class="container d-flex justify-content-between mb-5">
+            <div class="card" style="width: 45%">
+                @if ($lastMessage)
+                <div class="card-body">
+                  <h5 class="card-title">{{$lastMessage->name_sender}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{$lastMessage->email_sender}}</h6>
+                  <p class="card-text">{{$lastMessage->text}}</p>
+                  <a href="{{ route('admin.message') }}" class="card-link">Vedi tutti i messaggi <span class="badge badge-pill bg-primary align-text-bottom text-white px-2 py-1">{{$allMessages}}</span></a>
+                  
+                </div>
+                    
+                @endif
+            </div>
+            <div class="card" style="width: 45%">
+                @if ($lastReview)
+                    
+                <div class="card-body">
+                  <h5 class="card-title">{{$lastReview->author_name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{$lastReview->vote}}</h6>
+                  <p class="card-text">{{$lastReview->text}}</p>
+                  <a href="{{ route('admin.reviews') }}" class="card-link">Vedi tutte le recensioni <span class="badge badge-pill bg-primary align-text-bottom text-white px-2 py-1">{{$allReviews}}</span></a>                
+                </div>
+                @endif
+            </div>           
+        </div>
+        <div class="container d-flex justify-content-between">
+            <div class="card " style="width: 20%; min-width: 200px; min-height: 200px">
+                <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
+                    <h5>MEDIA RECENSIONI:</h5>
+                    <h2><a href="#" class="card-link">{{$avgReviews}}</a></h2>
+                </div>
+            </div>
+            <div class="card " style="width: 20%; min-width: 200px; min-height: 200px">
+                <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
+                    <h5>MESSAGGI RICEVUTI:</h5>
+                    <h2><a href="#" class="card-link">{{$allMessages}}</a></h2>
+                </div>
+            </div>
+            <div class="card " style="width: 20%; min-width: 200px; min-height: 200px">
+                <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
+                    <h5>PROMOZIONI ACQUISTATE:</h5>
+                    <h2><a href="#" class="card-link">Another link</a></h2>
+                </div>
+            </div>
+            <div class="card " style="width: 20%; min-width: 200px; min-height: 200px">
+                <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
+                    <h5>TOTALE SPONSOR:</h5>
+                    <h2><a href="#" class="card-link">Another link</a></h2>
+                </div>
             </div>
         </div>
     </div>
