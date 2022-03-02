@@ -17,7 +17,7 @@ class ReviewController extends Controller
 
         $user_id = Auth::user()->id;
 
-        $reviews = Review::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
+        $reviews = Review::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(3);
 
         if(count($reviews) <= 0){
             $reviewExists = false;
