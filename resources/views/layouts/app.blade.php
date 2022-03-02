@@ -15,15 +15,20 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style_admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style_guest.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar bg-dark shadow-sm">
-            <div class="container d-flex justify-content-between">
-                <div class="d-flex align-items-center">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <div class="d-flex">
+                    <a class="nav-link">LOGO</a>
                     <span>
                         <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ route('home') }}">
                             Torna al sito
@@ -46,18 +51,33 @@
                     @endguest
 
                     @auth
-                        <a class="nav-link"  href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                        Logout
-                        </a>
-                    
                         <a class="nav-link {{ (Route::currentRouteName() === 'admin.index') ? 'active' : '' }}" 
                         href="{{ route('admin.index') }}"> 
                             Dashboard 
                         </a>
-                    
 
+                        <a class="nav-link">Statistiche</a>
+
+                        <div class="dropdown show" >
+                            
+                            <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                         
+                                @if ($user->image)
+                                    <img width="30" height="30" src="{{ asset('storage/' . $user->image) }}" alt="{{$user->name}}" style="border-radius: 50%" >
+                                @else
+                                    <img width="30"  src="{{ asset('storage/img/istockphoto-1223671392-612x612.jpg')}}" alt="immagine" style="border-radius: 50%">
+                                @endif                         
+                                {{Auth::user()->email}}
+                            </a>
+                          
+                            <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                              
+                              <a class="nav-link dropdown-item"  href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                Logout
+                                </a> </a>
+                            </div>
+                          </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>

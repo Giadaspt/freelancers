@@ -49913,10 +49913,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/sass/admin/style_admin.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/admin/style_admin.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/guest/style_guest.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/guest/style_guest.scss ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49925,14 +49936,15 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/admin/style_admin.scss ./resources/sass/guest/style_guest.scss ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\sass\admin\style_admin.scss */"./resources/sass/admin/style_admin.scss");
+module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\sass\guest\style_guest.scss */"./resources/sass/guest/style_guest.scss");
 
 
 /***/ })

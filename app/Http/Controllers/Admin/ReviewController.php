@@ -16,6 +16,7 @@ class ReviewController extends Controller
         $reviewExists = true;
 
         $user_id = Auth::user()->id;
+        $user = Auth::user();
 
         $reviews = Review::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
 
@@ -24,6 +25,6 @@ class ReviewController extends Controller
         }
 
 
-        return view('admin.users.reviews', compact('reviews', 'user_id', 'reviewExists'));
+        return view('admin.users.reviews', compact('reviews', 'user_id', 'reviewExists','user'));
     }
 }
