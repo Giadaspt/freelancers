@@ -12,17 +12,19 @@
     </div>
     @endif
     
-    <h1 class="text-prova"> Modifica profilo </h1>
+    
+    
+    <div class="container">
 
+      <h1 class="text-colored text-center font-weight-bold mt-4 mb-4"> Modifica profilo </h1>
 
-  <div class="container">
       <form method="POST" action="{{ route('admin.users.update', $user) }}"
       enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
         <div class="form-group row">
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+            <label for="email" class="col-md-4 col-form-label text-md-right text-colored">{{ __('E-Mail Address') }}</label>
 
             <div class="col-md-6">
                 <input id="email" 
@@ -41,14 +43,17 @@
         </div>
 
         <div class="form-group row" accept = 'image/jpeg , image/jpg, image/gif, image/png' >
-            <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine del profilo') }}</label>
+            <label for="image" class="col-md-4 col-form-label text-md-right text-colored">{{ __('Immagine del profilo') }}</label>
 
             <div class="col-md-6">
+                
                 <input id="image" 
-                type="file" class="form-control @error('image') is-invalid @enderror" 
+                type="file" 
+                class="form-control upload-image @error('image') is-invalid @enderror" 
                 name="image" 
                 value="{{ old('image', $user->name) }}" 
-                autocomplete="image" autofocus>
+                autocomplete="image" autofocus
+                value="">
 
                 @error('image')
                     <span class="invalid-feedback" role="alert">
@@ -59,7 +64,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+            <label for="name" class="col-md-4 col-form-label text-md-right text-colored">{{ __('Name') }}</label>
 
             <div class="col-md-6">
                 <input id="name" 
@@ -76,7 +81,7 @@
         </div>
       
         <div class="form-group row">
-            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Lastname') }}</label>
+            <label for="lastname" class="col-md-4 col-form-label text-md-right text-colored">{{ __('Lastname') }}</label>
 
             <div class="col-md-6">
                 <input id="lastname" 
@@ -94,7 +99,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+            <label for="address" class="col-md-4 col-form-label text-md-right text-colored">{{ __('Address') }}</label>
 
             <div class="col-md-6">
                 <input id="address" 
@@ -112,7 +117,7 @@
         </div>
         
         <div class="form-group row">
-            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+            <label for="city" class="col-md-4 col-form-label text-md-right text-colored">{{ __('City') }}</label>
 
             <div class="col-md-6">
                 <input id="city" 
@@ -130,9 +135,9 @@
         </div>
 
         <div class="form-group row">
-            <label for="description_job" class="col-md-4 col-form-label text-md-right">{{ __('Descrizione') }}</label>
+            <label for="description_job" class="col-md-4 col-form-label text-md-right text-colored">{{ __('Descrizione') }}</label>
 
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4">
                 <textarea id="description_job" 
                 type="text" 
                 class="form-control @error('description_job') is-invalid @enderror" 
@@ -168,55 +173,71 @@
             @endforeach
         </div> --}}
 
+        <section class="row-custom ">
+
+            <div class="form-group mt-4 text-colored ">
+                <label for="categories" class="d-block font-weight-bold grandezza-font-cat-skil ml-2">Le categorie </label>
+                
+                @foreach ($categories as $category)
+                <div class="input-custom">
+                    <input 
+                    class="checkbox-custom mb-2"
+                    type="checkbox" 
+                    value="{{ $category->id}}"
+                    name="categories[]"
+                    id="category{{ $loop->iteration }}"
+           
+                    @if (!$errors->any() && $user->categories->contains($category->id) )
+                      checked
+                    @elseif ($errors->any() && in_array($category->id, old('categories', [])))
+                      checked
+                    @endif>
+                    <label class="mr-3 d-flex" for="tag{{ $loop->iteration }}">{{$category->name}}</label>
+                </div>
+                   @endforeach
+            </div>
+    
+            <div class="form-group  mt-4">
+                <label for="skills" class="d-block text-colored font-weight-bold grandezza-font-cat-skil ml-2">Le mie skill </label>
+    
+                @foreach ($skills as $skill)
+                <div class="input-custom">
+                    <input 
+                    class="checkbox-custom  mb-2"
+                    type="checkbox" 
+                    value="{{ $skill->id}}"
+                    name="skills[]"
+                    id="skill{{ $loop->iteration }}"
+           
+                    @if (!$errors->any() && $user->skills->contains($skill->id) )
+                      checked
+                    @elseif ($errors->any() && in_array($skill->id, old('skills', [])))
+                      checked
+                    @endif>
+                    <label class="mr-3" for="tag{{ $loop->iteration }}">{{$skill->name}}</label>
+                </div>
+                   @endforeach
+            </div>
+            </form>
         
-        <div class="form-group row mt-4">
-            @foreach ($categories as $category)
-            <input type="checkbox" 
-            value="{{ $category->id}}"
-            name="categories[]"
-            id="category{{ $loop->iteration }}"
-   
-            @if (!$errors->any() && $user->categories->contains($category->id) )
-              checked
-            @elseif ($errors->any() && in_array($category->id, old('categories', [])))
-              checked
-            @endif>
-            <label class="mr-3" for="tag{{ $loop->iteration }}">{{$category->name}}</label>
-           @endforeach
-        </div>
+        </section>
 
-        <div class="form-group row mt-4">
-            @foreach ($skills as $skill)
-            <input type="checkbox" 
-            value="{{ $skill->id}}"
-            name="skills[]"
-            id="skill{{ $loop->iteration }}"
-   
-            @if (!$errors->any() && $user->skills->contains($skill->id) )
-              checked
-            @elseif ($errors->any() && in_array($skill->id, old('skills', [])))
-              checked
-            @endif>
-            <label class="mr-3" for="tag{{ $loop->iteration }}">{{$skill->name}}</label>
-           @endforeach
-        </div>
+        <section class="d-flex justify-content-between text-colored row-custom mt-5">
+    
+            <form onsubmit="return confirm('Confermi di voler eliminare il tuo account?')" 
+            action="{{ route('admin.users.destroy', $user) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            
+                <button type="submit" class="btn btn-delete">
+                Elimina Profilo
+                </button>
+            </form>
 
-       
-
-        <button type="submit" class="btn btn-freelance">
-          Salva
-        </button>
-
-      </form>
-      <form onsubmit="return confirm('Confermi di voler eliminare il tuo account?')" 
-      action="{{ route('admin.users.destroy', $user) }}" method="POST">
-      @csrf
-      @method('DELETE')
-      
-        <button type="submit" class="btn btn-delete">
-          Elimina Profilo
-        </button>
-      </form>
-  </div>
+            <button type="submit" class="btn btn-freelance mr-3">
+                Salva
+            </button>
+        </section>
+    </div>
   
 @endsection

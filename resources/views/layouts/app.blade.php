@@ -20,7 +20,7 @@
   
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style_admin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style_admin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style_guest.css') }}" rel="stylesheet">
 </head>

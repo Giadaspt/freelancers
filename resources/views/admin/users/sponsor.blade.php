@@ -2,39 +2,41 @@
 
 @section('content')
 
-  <section class="container text-center mb-5">
-    <h1>Sponsorship</h1>
+  <section class="container-title text-center mb-5">
+    <h1 class="color-font">Sponsorship</h1>
 
-    <p> 
+    <p class="color-font"> 
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima incidunt odit dolorum obcaecati aliquid libero tenetur dolore mollitia numquam voluptas vel voluptate corrupti sapiente enim aperiam ut, iusto nobis itaque qui! Accusantium sapiente provident consequuntur, mollitia optio ea a, sint possimus minima incidunt deserunt repellendus, officia ad consequatur quia omnis.
 
     </p>
   </section>
   {{-- {{ route('admin.sponsorships.update', $sponsor) }} --}}
 
-  <div class="container  mt-5">
-    <form class="d-flex justify-content-between" action="" method="POST">
+  <div class="container mt-5">
+    <form class="d-flex justify-content-between " action="" method="POST">
       @csrf
       {{-- @method('PUT') --}}
 
         @foreach ($sponsors as $sponsor)
           
-            <a href="{{ route('admin.sponsorships.show', $sponsor) }}" class="card d-flex" style="width: 18rem;">
-              <div class="card-body">
+            <a href="{{ route('admin.sponsorships.show', $sponsor) }}" class="card sponsor-card d-flex" style="width: 18rem;">
+              <div class="card-body color-font ">
       
-                <h5 class="card-title">{{$sponsor->name}}</h5>
+                <h3 class="card-title font-weight-bold ">{{$sponsor->name}}</h3>
           
                 <h5>
-                  Prezzo:
-                  {{$sponsor->price}}
+                  <span class="font-weight-bold"> 
+                    Prezzo:
+                  </span>
+                  {{$sponsor->price}} &#8364
                 </h5>
           
                 <h5>
-                  Durata:
-                  {{$sponsor->duration}}
+                  <span class="font-weight-bold">
+                    Durata:
+                  </span>
+                  {{$sponsor->duration}} ore
                 </h5>
-                
-                {{-- <input class="form-check-input" type="radio" name="flexRadioDefault" id="{{$sponsor->id}}"> --}}
               </div>
             </a>
             {{-- <button class="btn btn-info">
@@ -46,12 +48,12 @@
           </form>
   </div>
 
-  <section class="container mt-5 text-center">
-    <h2 class="mt-5">Compara i pacchetti</h2>
+  <section class="container mt-5 text-center color-font">
+    <h2 class="font-weight-bold mt-5 mb-4">Compara i pacchetti</h2>
 
-    <div class="table-responsive">
-      <table class="table text-center">
-        <thead>
+    <div class="table-responsive ">
+      <table class="table text-center color-font">
+        <thead class="color-font">
           <tr>
             <th style="width: 34%;"></th>
 
@@ -61,7 +63,7 @@
             @endforeach
           </tr>
         </thead>
-        <tbody>
+        <tbody class="color-font">
           <tr>
             <th scope="row" class="text-start">Reach People</th>
             <td class="bi" width="24" height="24">&#10003</td>
@@ -82,25 +84,19 @@
             <td class="bi" width="24" height="24">&#10003</td>
           </tr>
           <tr>
-            <th scope="row" class="text-start">Sharing</th>
+            <th scope="row" class="text-start">In evidence longer</th>
             <td></td>
             <td class="bi" width="24" height="24">&#10003</td>
             <td class="bi" width="24" height="24">&#10003</td>
           </tr>
-          <tr>
-            <th scope="row" class="text-start">Unlimited members</th>
-            <td></td>
-            <td class="bi" width="24" height="24">&#10003</td>
-            <td class="bi" width="24" height="24">&#10003</td>
-          </tr>
-          <tr>
-            <th scope="row" class="text-start">Extra security</th>
-            <td></td>
-            <td></td>
-            <td class="bi" width="24" height="24">&#10003</td>
-          </tr>
+          
         </tbody>
       </table>
+    </div>
+    <div class="d-flex justify-content-end mt-4">
+      <button class="btn  btn-freelance mr-2">
+        <a class="text-white" href=" {{ URL::previous() }} "> Indietro </a>
+      </button>
     </div>
   </section>
   

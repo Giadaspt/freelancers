@@ -1,0 +1,59 @@
+.text-colored {
+  color: $secondaryColor;
+}
+
+.form-control {
+  border-radius: 4.25rem !important;
+}
+
+textarea.form-control {
+  height: 140px !important;
+  border-radius: 1.25rem !important;
+}
+
+.grandezza-font-cat-skil {
+  font-size: 18px !important;
+}
+
+.row-custom {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.input-custom {
+  display: inline-block ;
+  font-size: 14px !important;
+  width: 60px;
+  min-width: 30px;
+  margin: 16px;
+  vertical-align:top;
+}
+
+
+.checkbox-custom {
+  display: flex;
+  align-items: center;
+  width: 26px ;
+  height: 26px ;
+  border-radius: 5px !important;
+}
+
+
+.upload-image{
+  border: none !important;
+}
+
+::-webkit-file-upload-button {
+  color: white !important; 
+  background-color: $primaryColor !important;
+  border-radius: 16px !important;
+  border: none !important;
+  padding: 4px 14px !important;
+  box-shadow: 0px 10px 10px $shadow;
+  margin-right: 6px;
+
+  &:hover {
+    background-color: $buttonHoverColor !important;
+    box-shadow: 0px 10px 10px $shadowHover;
+  }
+}
