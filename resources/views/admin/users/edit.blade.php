@@ -213,7 +213,7 @@
       @csrf
       @method('DELETE')
       
-        <button type="submit" class="btn btn-freelance">
+        <button type="submit" class="btn btn-delete">
           Elimina Profilo
         </button>
       </form>

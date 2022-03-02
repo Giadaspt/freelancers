@@ -10027,3 +10027,12 @@ h3 {
 .btn-freelance:hover {
   background-color: #3772a8d0 !important;
 }
+
+.btn-delete {
+  color: white !important;
+  background-color: #e3342f !important;
+  border-radius: 20px !important;
+}
+.btn-delete:hover {
+  background-color: #e9413b !important;
+}

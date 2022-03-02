@@ -11,6 +11,16 @@
   }
 }
 
+.btn-delete {
+  color: white !important;
+  background-color: $red !important;
+  border-radius: 20px !important;
+
+  &:hover {
+    background-color: $redHover !important;
+  }
+}
+
 // .btn-freelance {
 //   display: inline-block;
 //   padding: .75rem 1.25rem;
