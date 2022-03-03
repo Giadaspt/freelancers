@@ -1,0 +1,13 @@
+.nav-freelancers{
+  background-color: $buttonHoverColor !important;
+  // box-shadow: 0px 10px 10px $secondaryColor !important;
+  .logo{
+    color: $thirdColor;
+  }
+  a{
+    color: $secondaryColor;
+    &:hover{
+      color: $thirdColor;
+    }
+  }
+}

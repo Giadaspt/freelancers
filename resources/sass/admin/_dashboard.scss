@@ -1,0 +1,45 @@
+
+.dash-card {
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px $shadow;
+  margin: 34px 0;
+  
+  &:hover {
+    p{
+      color: white;
+    }
+    background-color: $buttonHoverColor !important;
+    box-shadow: 0px 10px 10px $shadowHover;
+    transition: transform .3s;
+    transform: scale(1.05);
+  }
+  .color-font{
+    &:hover{
+    color: white !important;
+  }
+  }
+
+}
+
+.dash-message, .dash-review, .dash-statistiche{
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px $shadow;
+  margin: 34px 0;
+}
+
+.user-list{
+  ul{
+    list-style: none;
+  }
+}
+
+.user-card-header{
+  background-color: $secondaryColor !important;
+  color: white;
+}
+
+.card-user{
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px $shadow;
+  margin: 34px 0;
+}

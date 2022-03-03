@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="card-dash container mb-5">
+            <div class="card-user card mb-5">
                 
-                <div ><h4>ACCOUNT</h4></div>
-                <div class="d-flex ">
+                <div class="card-header user-card-header"><h4>ACCOUNT</h4></div>
+                <div class="d-flex card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -22,7 +22,7 @@
                     @else
                         <img width="200"  src="{{ asset('storage/img/istockphoto-1223671392-612x612.jpg')}}" alt="immagine" style="border-radius: 50%">
                     @endif
-                    <div class="">
+                    <div class="user-list">
                         <h1>{{ $user->name }} {{ $user->lastname }}</h1>
                         <ul>
                             <li>{{$user->email}}</li>
@@ -35,27 +35,34 @@
             </div>
         </div>
         <div class="container d-flex justify-content-between mb-5">
-            <div class="card text-center" style="width: 30%">
-                <div class="card-body">
-                  <a href="{{ route('admin.users.show', $user) }}">vedi profilo</a>
-                  <i class="fa-regular fa-user" style="font-size: 25px"></i>
-                </div>
+            <div class="card dash-card text-center" style="width: 30%">
+                <a href="{{ route('admin.users.show', $user) }}" class="card-body">
+                    <div class="img">
+                        <img width="100px" src=" {{asset('storage/img/Sample_User_Icon.png')}} " alt="">
+                    </div>
+                    <p class="pt-2">vedi profilo</p>
+                </a>
             </div>
-            <div class="card text-center" style="width: 30%">
-                <div class="card-body">
-                  <a href="{{ route('admin.users.edit', $user) }}">modifica profilo</a>
+            <div class="card dash-card text-center" style="width: 30%">
+                <a href="{{ route('admin.users.edit', $user) }}" class="card-body">
+                    <div class="img">
+                        <img width="100px" src=" {{asset('storage/img/pencil.png')}} " alt="">
+                    </div>
+                  <p class="pt-2">modifica profilo</p>
 
-                </div>
+                </a>
             </div>
-            <div class="card text-center" style="width: 30%">
-                <div class="card-body">
-                  <a href="{{ route('admin.sponsorships.index') }}">sponsorizza profilo</a>
-                  <i class="fa-regular fa-rocket-launch" style="font-size: 25px"></i>
-                </div>
+            <div class="card dash-card text-center" style="width: 30%">
+                <a href="{{ route('admin.sponsorships.index') }}" class="card-body">
+                    <div class="img">
+                        <img width="100px" src=" {{asset('storage/img/sponsor-icon-3.jpg')}} " alt="">
+                    </div>
+                  <p class="pt-2">sponsorizza profilo</p>
+                </a>
             </div>
         </div>
         <div class="container d-flex justify-content-between mb-5">
-            <div class="card" style="width: 45%">
+            <div class="card dash-message" style="width: 45%">
                 @if ($lastMessage)
                 <div class="card-body">
                   <h5 class="card-title">{{$lastMessage->name_sender}}</h5>
@@ -67,7 +74,7 @@
                     
                 @endif
             </div>
-            <div class="card" style="width: 45%">
+            <div class="card dash-review" style="width: 45%">
                 @if ($lastReview)
                     
                 <div class="card-body">
@@ -80,25 +87,25 @@
             </div>           
         </div>
         <div class="container d-flex justify-content-between">
-            <div class="card " style="width: 20%; min-width: 200px; min-height: 200px">
+            <div class="card dash-statistiche" style="width: 20%; min-width: 200px; min-height: 200px">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
                     <h5>MEDIA RECENSIONI:</h5>
                     <h2><a href="#" class="card-link">{{$avgReviews}}</a></h2>
                 </div>
             </div>
-            <div class="card " style="width: 20%; min-width: 200px; min-height: 200px">
+            <div class="card dash-statistiche" style="width: 20%; min-width: 200px; min-height: 200px">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
                     <h5>MESSAGGI RICEVUTI:</h5>
                     <h2><a href="#" class="card-link">{{$allMessages}}</a></h2>
                 </div>
             </div>
-            <div class="card " style="width: 20%; min-width: 200px; min-height: 200px">
+            <div class="card dash-statistiche" style="width: 20%; min-width: 200px; min-height: 200px">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
                     <h5>PROMOZIONI ACQUISTATE:</h5>
                     <h2><a href="#" class="card-link">Another link</a></h2>
                 </div>
             </div>
-            <div class="card " style="width: 20%; min-width: 200px; min-height: 200px">
+            <div class="card dash-statistiche" style="width: 20%; min-width: 200px; min-height: 200px">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
                     <h5>TOTALE SPONSOR:</h5>
                     <h2><a href="#" class="card-link">Another link</a></h2>

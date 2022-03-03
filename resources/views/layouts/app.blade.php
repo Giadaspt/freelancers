@@ -26,10 +26,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar bg-dark shadow-sm">
+        <nav class="navbar nav-freelancers navbar-expand-md navbar shadow-sm">
             <div class="container d-flex justify-content-betweenalign-items-center">
                 <div class="d-flex">
-                    <a class="nav-link">LOGO</a>
+                    <a class="nav-link logo">LOGO</a>
                     <span>
                         <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ route('home') }}">
                             Torna al sito
