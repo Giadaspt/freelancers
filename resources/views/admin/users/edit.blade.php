@@ -171,9 +171,7 @@
                     <textarea id="description_job" 
                     type="text" 
                     class="form-control @error('description_job') is-invalid @enderror" 
-                    name="description_job" 
-                    value="" 
-                    >{{ old('description_job', $user->description_job) }}</textarea>
+                    name="description_job" >{{ old('description_job', $user->description_job) }}</textarea>
 
                     @error('description_job')
                         <span class="invalid-feedback" role="alert">

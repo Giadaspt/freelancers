@@ -2,51 +2,63 @@
 
 @section('content')
 
-  <div class="container">
+  <div class="container text-colored">
     @auth
-      <div class="d-flex">
-        <h1>Ciao {{ $user->name }}</h1>
-        <span class="mt-2 ml-4">
-          <button class="">
-            <a href="{{ route('admin.users.edit', $user) }}"> Modifica</a>
-          </button>
-        </span>
-      </div>
-      <section class="profile_details">
-        <div >
-          <img width="100" src="{{ asset('storage/' . $user->image) }}" alt="">
+      <section class="profile_details"> 
+        <div class="d-flex align-items-center">
+          <img class="round-image mr-3" width="100" src="{{ asset('storage/' . $user->image) }}" alt="">
+
+          <h3 class="mr-3">{{ $user->name }}</h3>
+ 
+          <h3 class="mr-2">{{ $user->lastname }}</h3>
+
+          <span class="ml-4">
+            <button class="btn btn-freelance btn-modify-profile">
+              <a href="{{ route('admin.users.edit', $user) }}"> Modifica profilo</a>
+            </button>
+          </span>
         </div>
-    
-        <h3>{{ $user->name }}</h3>
 
-        <h3>{{ $user->lastname }}</h3>
-        <h3>{{ $user->email }}</h3>
-        <h3>{{ $user->address }}</h3>
-        <h3>{{ $user->city }}</h3>
-        <p>{{ $user->description_job }}</p>
 
-        @forelse ($user->categories as $category)
-            <h3 class="badge bg-warning text-white">
-              {{ $category->name }}
-            </h3>
-        @empty
-          - 
-        @endforelse
+        <div class="mt-3">
+          <h5>{{ $user->email }}</h5>
+      
+          <h5>{{ $user->address }}</h5>
+          <h5>{{ $user->city }}</h5>
 
-        {{-- @dd($categories)  --}}
+          <div class="mt-3 mb-3">
+            <h5 class="mr-2 font-weight-bold">Me ed il mio lavoro </h5>
+            <p>{{ $user->description_job }}</p>
+          </div>
 
-        @forelse ($user->skills as $skill)
-            <h3 class="badge bg-success text-white">
-              {{ $skill->name }}
-            </h3>
-        @empty
-          - 
-        @endforelse
-        {{-- @dd($skills)  --}}
+          <div class="d-flex">
+            <h5 class="mr-2 font-weight-bold">Mi occupo di: </h5>
+
+            @forelse ($user->categories as $category)
+                <p class="mr-2">
+                  {{ $category->name }},
+                </p>
+            @empty
+              - 
+            @endforelse
+          </div>
+  
+          <div class="d-flex">
+            <h5 class="mr-2 font-weight-bold">I miei punti di forza sono: </h5>
+
+            @forelse ($user->skills as $skill)
+                <p class="mr-2">
+                  {{ $skill->name }},
+                </p>
+            @empty
+              - 
+            @endforelse
+          </div>
+        </div>
       </section>
 
-      <div>
-        <embed width="200" src="{{ asset('storage/' . $user->cv) }}" alt="">
+      <div class="cv-file mt-4">
+        <embed src="{{ asset('storage/' . $user->cv) }}" alt="">
       </div>
     @endauth
 
