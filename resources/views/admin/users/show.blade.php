@@ -6,7 +6,9 @@
     @auth
       <section class="profile_details"> 
         <div class="d-flex align-items-center">
-          <img class="round-image mr-3" width="100" src="{{ asset('storage/' . $user->image) }}" alt="">
+          <div class="image-box mr-3">
+            <img class="round-image mr-3" width="100" src="{{ asset('storage/' . $user->image) }}" alt="">
+          </div>
 
           <h3 class="mr-3">{{ $user->name }}</h3>
  
