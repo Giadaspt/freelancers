@@ -32,6 +32,7 @@
                 class="form-control @error('email') is-invalid @enderror" 
                 name="email" 
                 value="{{ old('email', $user->email) }}" 
+                required autocomplete="email" autofocus
                 >
 
                 @error('email')
@@ -53,7 +54,8 @@
                 name="image" 
                 value="{{ old('image', $user->name) }}" 
                 autocomplete="image" autofocus
-                value="">
+                value=""
+                >
 
                 @error('image')
                     <span class="invalid-feedback" role="alert">
@@ -67,10 +69,12 @@
             <label for="name" class="col-md-4 col-form-label text-md-right text-colored">{{ __('Name') }}</label>
 
             <div class="col-md-6">
-                <input id="name" 
-                type="text" class="form-control @error('name') is-invalid @enderror" 
-                name="name" 
-                value="{{ old('name', $user->name) }}" >
+
+                    <input id="name" 
+                    type="text" class="form-control @error('name') is-invalid @enderror " 
+                    name="name" 
+                    value="{{ old('name', $user->name) }}" 
+                    required autocomplete="name" autofocus>
 
                 @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -88,7 +92,8 @@
                 type="text" 
                 class="form-control @error('lastname') is-invalid @enderror" 
                 name="lastname" 
-                value="{{ old('lastname', $user->lastname) }}" >
+                value="{{ old('lastname', $user->lastname) }}" 
+                required autocomplete="lastname" autofocus>
 
                 @error('lastname')
                     <span class="invalid-feedback" role="alert">
@@ -106,7 +111,8 @@
                 type="text" 
                 class="form-control @error('address') is-invalid @enderror" 
                 name="address" 
-                value="{{ old('address', $user->address) }}" >
+                value="{{ old('address', $user->address) }}" 
+                required autocomplete="address" autofocus>
 
                 @error('address')
                     <span class="invalid-feedback" role="alert">
@@ -124,7 +130,8 @@
                 type="text" 
                 class="form-control @error('city') is-invalid @enderror" 
                 name="city" 
-                value="{{ old('city', $user->city) }}" >
+                value="{{ old('city', $user->city) }}" 
+                required autocomplete="city" autofocus>
 
                 @error('city')
                     <span class="invalid-feedback" role="alert">
@@ -152,26 +159,6 @@
                 @enderror
             </div>
         </div>
-
-        {{-- <div class="form-group row mt-3">
-            @foreach ($categories as $category)
-                <input type="button" 
-                class="btn btn-outline-primary active"
-                @if (!$errors->any() && $user->categories->contains($category->id) )
-                    active
-                @elseif ($errors->any() && in_array($category->id, old('categories', [])))
-                    active
-                @endif
-
-                data-toggle="button" 
-                aria-pressed="false" 
-                autocomplete="off"
-                value="{{ $category->id}}"
-                id="category{{ $loop->iteration }}"
-                name="categories[]">
-                    {{ $category->name}}
-            @endforeach
-        </div> --}}
 
         <section class="row-custom ">
 
