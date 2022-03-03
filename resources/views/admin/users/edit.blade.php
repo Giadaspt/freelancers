@@ -51,7 +51,7 @@
                     
                     <input id="image" 
                     type="file" 
-                    class="form-control upload-image @error('image') is-invalid @enderror" 
+                    class="form-control upload-file @error('image') is-invalid @enderror" 
                     name="image" 
                     value="{{ old('image', $user->name) }}" 
                     autocomplete="image" autofocus
@@ -73,7 +73,7 @@
                     
                     <input id="cv" 
                     type="file" 
-                    class="form-control upload-cv @error('cv') is-invalid @enderror" 
+                    class="form-control upload-file @error('cv') is-invalid @enderror" 
                     name="cv" 
                     value="{{ old('cv', $user->name) }}" 
                     autocomplete="cv" autofocus
