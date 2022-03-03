@@ -10,7 +10,7 @@
     <title>Freelancers @yield('title')</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/admin.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -31,7 +31,7 @@
                 <div class="d-flex">
                     <a class="nav-link logo">LOGO</a>
                     <span>
-                        <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ route('home') }}">
+                        <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ route('welcome') }}">
                             Torna al sito
                         </a>
                     </span>

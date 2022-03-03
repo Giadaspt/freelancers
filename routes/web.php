@@ -16,14 +16,14 @@ use App\User;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.welcome');
-})->name('home');
+// Route::get('/', function () {
+//     return view('guest.welcome');
+// })->name('home');
 
-Auth::routes();
 
 // Route::get('/home', 'Admin\HomeController@index')->name('home');
 
+Auth::routes();
 
 Route::middleware('auth')
 ->namespace('Admin')
@@ -34,13 +34,6 @@ Route::middleware('auth')
         Route::get('/', 'HomeController@index')->name('index');
 
         Route::resource('/users', 'UserHomeController');
-
-        // Route::post('/users', 'UserHomeController@show')->name('show');
-        // Route::post('/users', 'UserHomeController@edit')->name('edit');
-        // Route::post('/users', 'UserHomeController@update')->name('update');
-        // Route::post('/users', 'UserHomeController@destroy')->name('destroy');
-
-        
 
         Route::get('/messages', 'PageController@messages')->name('message');
         
@@ -56,3 +49,8 @@ Route::middleware('auth')
 
 
     });
+
+
+    Route::get('{any?}', function(){
+        return view('guest.welcome');
+    })->where('any', '.*')->name('welcome');
