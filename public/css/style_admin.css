@@ -10245,3 +10245,55 @@ a {
   display: flex;
   justify-content: flex-end;
 }
+
+.dash-card {
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px darkgray;
+  margin: 34px 0;
+}
+.dash-card:hover {
+  background-color: #3772a8d0 !important;
+  box-shadow: 0px 10px 10px #616161;
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+.dash-card:hover p {
+  color: white;
+}
+.dash-card .color-font:hover {
+  color: white !important;
+}
+
+.dash-message, .dash-review, .dash-statistiche {
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px darkgray;
+  margin: 34px 0;
+}
+
+.user-list ul {
+  list-style: none;
+}
+
+.user-card-header {
+  background-color: #1A3854 !important;
+  color: white;
+}
+
+.card-user {
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px darkgray;
+  margin: 34px 0;
+}
+
+.nav-freelancers {
+  background-color: #3772a8d0 !important;
+}
+.nav-freelancers .logo {
+  color: #FDFF05;
+}
+.nav-freelancers a {
+  color: #1A3854;
+}
+.nav-freelancers a:hover {
+  color: #FDFF05;
+}
