@@ -9,38 +9,13 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class UserHomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function index(){
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -49,9 +24,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::find($id);
+
+        $user = Auth::user();
 
         $categories = Category::all();
 
@@ -66,9 +42,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        $user = User::find($id);
+        $user = Auth::user();
 
         $categories = Category::all();
 
@@ -101,7 +77,22 @@ class UserController extends Controller
             $image_path = Storage::putFile('img', $request->file('image'));
 
             $data['image'] = $image_path;
-        }
+        } 
+
+        if(array_key_exists('cv', $data)){
+            
+            if($user->cv){
+                Storage::delete($user->cv);
+            }
+
+            $data['cv'] =  $request->file('cv')->getClientOriginalName();
+
+            $cv_path = Storage::putFile('cv', $request->file('cv'));
+
+            $data['cv'] = $cv_path;
+        } 
+
+
 
         $new_user = new User();
         $new_user->fill($data);
@@ -132,10 +123,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::find($id);
-
         $user->delete();
 
         return redirect()->route('login')->with('deleted', "L'utente $user->name $user->lastname è stato eliminato");
@@ -149,6 +138,7 @@ class UserController extends Controller
             "city" => "required|max:150|min:2",
             "description_job" => "nullable|min:2",
             "image" => "nullable|mimes:jpg,png,jpeg,svg|max:32000",
+            "cv" => "nullable|mimes:jpg,png,jpeg,svg,pdf|max:32000",
         ];
     }
 
@@ -167,9 +157,11 @@ class UserController extends Controller
             "city.max" => "La città può contenere :max caratteri",
             "city.min" => "La città deve contenere :min caratteri",
             "description_job.min" => "La descrizione deve contenere :min caratteri",
-   
             "image.mimes" => "L'immagine deve essere un file di tipo:jpg ,png, jpeg, svg",
             "image.max" => "L'immagine è troppo grande",
+            "cv.mimes" => "Il file deve essere di tipo:jpg ,png, jpeg, svg, pdf",
+            "cv.max" => "Il file è troppo grande",
         ];
     }
+
 }

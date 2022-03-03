@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +33,14 @@ Route::middleware('auth')
 
         Route::get('/', 'HomeController@index')->name('index');
 
-        Route::resource('/users', 'UserController');
+        Route::resource('/users', 'UserHomeController');
+
+        // Route::post('/users', 'UserHomeController@show')->name('show');
+        // Route::post('/users', 'UserHomeController@edit')->name('edit');
+        // Route::post('/users', 'UserHomeController@update')->name('update');
+        // Route::post('/users', 'UserHomeController@destroy')->name('destroy');
+
+        
 
         Route::get('/messages', 'PageController@messages')->name('message');
         
