@@ -8,6 +8,7 @@
       :freelancerCard = "user"
     />
 
+
   </div>
 </template>
 
@@ -25,21 +26,47 @@ export default {
     return {
       apiUrl: 'http://127.0.0.1:8000/api',
       users: null,
+      category: [],
+      success: true,
+      errrorMsg: "",
     }
   },
 
   mounted() {
-    this.getApi();
+    this.getCategory(slug);
   }, 
 
   methods: {
     getApi(){
+      this.reset();
+
       axios.get(this.apiUrl)
         .then(res => {
           this.users = res.data.users;
+
           console.log(this.users);
       });
-    }
+    },
+
+    getCategory(slug){
+      this.reset();
+
+      axios.get(this.apiUrl + '/categories'+ slug)
+      .then(res =>{
+        this.users = res.data.categories;
+
+        console.log('user della chiamata',this.users);
+
+      });
+    },
+
+    reset(){
+      this.users = null;
+      this.success = true;
+      this.errorMsg = "";
+    },
+
+
     
   },
 

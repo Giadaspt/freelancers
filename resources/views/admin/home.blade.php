@@ -40,7 +40,7 @@
                     <div class="img">
                         <img width="100px" src=" {{asset('storage/img/Sample_User_Icon.png')}} " alt="">
                     </div>
-                    <p class="pt-2">vedi profilo</p>
+                    <p class="pt-2">Vedi profilo</p>
                 </a>
             </div>
             <div class="card dash-card text-center" style="width: 30%">
@@ -48,7 +48,7 @@
                     <div class="img">
                         <img width="100px" src=" {{asset('storage/img/pencil.png')}} " alt="">
                     </div>
-                  <p class="pt-2">modifica profilo</p>
+                  <p class="pt-2">Modifica profilo</p>
 
                 </a>
             </div>
@@ -57,7 +57,7 @@
                     <div class="img">
                         <img width="100px" src=" {{asset('storage/img/sponsor-icon-3.jpg')}} " alt="">
                     </div>
-                  <p class="pt-2">sponsorizza profilo</p>
+                  <p class="pt-2">Sponsorizza profilo</p>
                 </a>
             </div>
         </div>
