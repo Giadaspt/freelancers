@@ -1,22 +1,25 @@
 <template>
   <div class="container">
-    <div class="input-group mb-3">
-      <input 
+    <h1 class="mb-4 mt-4">Lista dei freelancer per categoria</h1>
 
-      type="text" 
-      class="form-control" 
-      placeholder="Cerca il tuo freelancers" >
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Button</button>
-      </div>
-    </div>
+    <FreelancerCard
+      v-for="(user, index ) in users"
+      :key="index"
+      :freelancerCard = "user"
+    />
 
   </div>
 </template>
 
 <script>
+import FreelancerCard from '../partials/FreelancerCard.vue';
+
 export default {
-  name: "Jumbotron",
+  name: "FreelancerList",
+
+  components: {
+    FreelancerCard,
+  },
 
   data(){
     return {
@@ -41,11 +44,8 @@ export default {
   },
 
 }
-
-
 </script>
 
 <style>
-
 
 </style>
