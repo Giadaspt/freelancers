@@ -2,15 +2,19 @@
   <div class="container">
     <div class="input-group mb-3">
       <input 
-
+      v-model="category"
       type="text" 
       class="form-control" 
       placeholder="Cerca il tuo freelancers" >
       <div class="input-group-append">
-        <router-link :to="{ name:'freelancerList'}" tag="button"> 
-          Cerca
+        <!-- :to="{ name:'freelancerList'}" -->
+        <router-link :to="{ name:'freelancerList', params:{slug: category}}"  > 
+          <button>
+
+            Cerca
+          </button>
         </router-link>
-      </div>
+      </div> 
     </div>
 
   </div>
@@ -18,7 +22,17 @@
 
 <script>
 export default {
-  name: "HomePage",
+  name: "Jumbotron",
+
+  data(){
+    return{
+      category: "",
+    }
+  },
+
+  methods:{
+
+  }
 }
 
 

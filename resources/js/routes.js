@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import HomePage from './components/HomePage';
+import HomePage from './components/pages/HomePage';
 import FreelancerList from './components/pages/FreelancerList';
 
 const router = new VueRouter({
@@ -20,7 +20,7 @@ const router = new VueRouter({
       component: HomePage,
     },
     {
-      path: '/freelancerList',
+      path: '/freelancerList/:slug',
       name: 'freelancerList',
       component: FreelancerList,
     },
