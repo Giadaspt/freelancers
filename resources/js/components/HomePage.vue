@@ -7,7 +7,10 @@
       class="form-control" 
       placeholder="Cerca il tuo freelancers" >
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Button</button>
+        <router-link :to="{ name:'freelancerList'}">
+          Cerca
+
+        </router-link>
       </div>
     </div>
 
