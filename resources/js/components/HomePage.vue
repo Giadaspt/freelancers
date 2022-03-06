@@ -1,30 +1,32 @@
 <template>
+ <div>
+  <Header/>
   <div class="container">
-    <div class="input-group mb-3">
-      <input 
+    
+ 
 
-      type="text" 
-      class="form-control" 
-      placeholder="Cerca il tuo freelancers" >
-      <div class="input-group-append">
-        <router-link :to="{ name:'freelancerList'}" tag="button"> 
-          Cerca
-        </router-link>
-      </div>
-    </div>
+   </div>
 
   </div>
 </template>
 
 <script>
+
+import Header from '../components/partials/Header.vue'
+
 export default {
-  name: "HomePage",
+
+ name: 'HomePage',
+
+  components: {
+    Header
+  },
 }
 
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 
 </style>

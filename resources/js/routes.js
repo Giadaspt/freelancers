@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 
 import HomePage from './components/HomePage';
 import FreelancerList from './components/pages/FreelancerList';
+import Profile from './components/Profile';
 
 const router = new VueRouter({
 
@@ -23,6 +24,11 @@ const router = new VueRouter({
       path: '/freelancerList',
       name: 'freelancerList',
       component: FreelancerList,
+    },
+    {
+      path: '/profile/:slug',
+      name: 'profile',
+      component: Profile
     },
   ]
 });

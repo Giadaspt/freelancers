@@ -18,7 +18,16 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::namespace('Api')
-    ->group(function(){
-        Route::get('/', 'UserController@index');
-    });
+// Route::namespace('Api')
+//     ->group(function(){
+//         Route::get('/', 'UserController@index');
+//     });
+
+    Route::namespace('Api')
+     ->prefix('users')
+     ->group(function(){
+         Route::get('/', 'UserController@index');
+         Route::get('/{slug}', 'UserController@show');
+         Route::get('/usercategory/{slug}', 'UserController@getUsersByCategory');
+         Route::get('/userskill/{slug}', 'UserController@getUsersBySkill');
+     });
