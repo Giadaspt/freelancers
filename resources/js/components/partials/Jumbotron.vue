@@ -1,16 +1,18 @@
 <template>
   <div class="container">
     <div class="input-group mb-3">
+
       <input 
-      v-model="category"
       type="text" 
+      v-model="category"
       class="form-control" 
       placeholder="Cerca il tuo freelancers" >
-      <div class="input-group-append">
-        <!-- :to="{ name:'freelancerList'}" -->
-        <router-link :to="{ name:'freelancerList', params:{slug: category}}"  > 
-          <button>
 
+      <div class="input-group-append">
+        <router-link :to="{ path:'freelancerList/' + this.category, params:{name: this.name}}"  > 
+        <!-- :to="{ name:'freelancerList'}" -->
+        <!-- this.slug -->
+          <button type="submit">
             Cerca
           </button>
         </router-link>
@@ -27,6 +29,8 @@ export default {
   data(){
     return{
       category: "",
+
+      name: this.$route.params.name,
     }
   },
 
