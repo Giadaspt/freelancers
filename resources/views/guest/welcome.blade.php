@@ -20,13 +20,13 @@
                 <div class="top-right links d-flex justify-content-end m-4">
                     @auth
                         <a
-                        class="{{ Route::currentRouteName() === 'admin.index' }} text-colored"
+                        class="text-colored {{ Route::currentRouteName() === 'admin.index' }} "
                          href="{{ route('admin.index') }}"> <h5>Il mio account</h5> </a>
                     @else
-                        <a href="{{ route('login') }} text-colored"> <h5>Login</h5> </a>
+                        <a class="text-colored" href="{{ route('login') }} "> <h5>Login</h5> </a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }} text-colored"> <h5>Register</h5> </a>
+                            <a class="text-colored" href="{{ route('register') }} "> <h5>Register</h5> </a>
                         @endif
                     @endauth
                 </div>
