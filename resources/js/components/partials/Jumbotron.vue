@@ -1,6 +1,7 @@
 <template>
  <div class="jumbotron">
   <div class="container">
+     <h1> Assumi i migliori freelancers online </h1>
     <div class="input-group mb-3">
       <input 
       v-model="category"
@@ -17,6 +18,8 @@
         </router-link>
       </div> 
      </div>
+
+    
 
     </div>
   </div>
@@ -45,8 +48,13 @@ export default {
  .jumbotron{
    width: 100%;
    height: 400px;
-   background-color: aqua;
+   background-color: rgb(184, 202, 202);
    margin-bottom: 0;
+     h1{
+       font-size: 90px;
+       margin-bottom: 25px;
+       color: #5165F6;
+     }
 }
 
 

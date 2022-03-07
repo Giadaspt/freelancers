@@ -3,7 +3,7 @@
 <div class="box-categories">
   <div class="search-container my-2">
      
-    <h1 class="mb-4 mt-4">Seleziona una categoria</h1>
+    <h2 class="mb-4 mt-4">Seleziona una categoria</h2>
       
          
          <button class="btn btn-info btn-category" v-for="(category, index) in categories"
@@ -40,11 +40,15 @@ export default {
 
  .box-categories{
    width: 100%;
-   height: 400px;
+   height: 350px;
      .btn-category{
        margin: 10px;
        width: calc(100% / 6 - 20px);
        height: 100px;
+       background-color: #5165F6;
+         &:hover{
+            background-color: #6b7add;
+         }
 
      }
 }

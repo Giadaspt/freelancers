@@ -16,4 +16,8 @@ export default {
 
 <style scoped lang="scss">
 
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
 </style>
