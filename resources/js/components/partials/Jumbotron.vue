@@ -1,4 +1,5 @@
 <template>
+ <div class="jumbotron">
   <div class="container">
     <div class="input-group mb-3">
       <input 
@@ -15,8 +16,9 @@
           </button>
         </router-link>
       </div> 
-    </div>
+     </div>
 
+    </div>
   </div>
 </template>
 
@@ -38,7 +40,15 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+ .jumbotron{
+   width: 100%;
+   height: 400px;
+   background-color: aqua;
+   margin-bottom: 0;
+}
+
 
 
 </style>
