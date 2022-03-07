@@ -1946,6 +1946,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FreelancerList",
@@ -1954,15 +1955,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      apiUrl: 'http://127.0.0.1:8000/api',
+      apiUrl: 'http://127.0.0.1:8000/api/',
       users: null,
-      category: [],
       success: true,
-      errrorMsg: ""
+      errrorMsg: "",
+      name: this.$route.params.name
     };
   },
   mounted: function mounted() {
-    this.getCategory(slug);
+    this.getCategory(this.name);
   },
   methods: {
     getApi: function getApi() {
@@ -1974,12 +1975,12 @@ __webpack_require__.r(__webpack_exports__);
         console.log(_this.users);
       });
     },
-    getCategory: function getCategory(slug) {
+    getCategory: function getCategory(name) {
       var _this2 = this;
 
       this.reset();
-      axios.get(this.apiUrl + '/categories' + slug).then(function (res) {
-        _this2.users = res.data.categories;
+      axios.get(this.apiUrl + 'categories/' + name).then(function (res) {
+        _this2.users = res.data.category.users;
         console.log('user della chiamata', _this2.users);
       });
     },
@@ -2299,14 +2300,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Jumbotron",
   data: function data() {
     return {
-      category: ""
+      category: "",
+      name: this.$route.params.name
     };
   },
   methods: {}
@@ -2635,6 +2639,43 @@ exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  hei
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
+=======
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("h1", { staticClass: "mb-4 mt-4" }, [
+        _vm._v("Lista dei freelancer per: " + _vm._s(_vm.name)),
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.users, function (user, index) {
+        return _c("FreelancerCard", {
+          key: index,
+          attrs: { freelancerCard: user },
+          model: {
+            value: _vm.name,
+            callback: function ($$v) {
+              _vm.name = $$v
+            },
+            expression: "name",
+          },
+        })
+      }),
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
 
 
 // module
@@ -2741,6 +2782,67 @@ function toComment(sourceMap) {
 
 // shim for using process in browser
 var process = module.exports = {};
+=======
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "input-group mb-3" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.category,
+            expression: "category",
+          },
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "Cerca il tuo freelancers" },
+        domProps: { value: _vm.category },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.category = $event.target.value
+          },
+        },
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "input-group-append" },
+        [
+          _c(
+            "router-link",
+            {
+              attrs: {
+                to: {
+                  path: "freelancerList/" + this.category,
+                  params: { name: this.name },
+                },
+              },
+            },
+            [
+              _c("button", { attrs: { type: "submit" } }, [
+                _vm._v("\n          Cerca\n        "),
+              ]),
+            ]
+          ),
+        ],
+        1
+      ),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
 
 // cached from whatever global is present so that test runners that stub it
 // don't break things.  But we need to wrap it in a try catch in case it is
@@ -20585,8 +20687,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'homepage',
     component: _components_pages_HomePage__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/freelancerList/:slug',
-    name: 'freelancerList',
+    path: '/freelancerList/:name',
+    name: 'freelancerList/',
     component: _components_pages_FreelancerList__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
 });

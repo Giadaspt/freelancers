@@ -1,11 +1,12 @@
 <template>
   <div class="container">
-    <h1 class="mb-4 mt-4">Lista dei freelancer per categoria</h1>
+    <h1 class="mb-4 mt-4">Lista dei freelancer per: {{ name }}</h1>
 
     <FreelancerCard
       v-for="(user, index ) in users"
       :key="index"
       :freelancerCard = "user"
+      v-model="name"
     />
 
 
@@ -24,16 +25,17 @@ export default {
 
   data(){
     return {
-      apiUrl: 'http://127.0.0.1:8000/api',
+      apiUrl: 'http://127.0.0.1:8000/api/',
       users: null,
-      category: [],
       success: true,
       errrorMsg: "",
+
+      name: this.$route.params.name,
     }
   },
 
   mounted() {
-    this.getCategory(slug);
+    this.getCategory(this.name);
   }, 
 
   methods: {
@@ -48,17 +50,19 @@ export default {
       });
     },
 
-    getCategory(slug){
+    getCategory(name){
       this.reset();
 
-      axios.get(this.apiUrl + '/categories'+ slug)
+      axios.get(this.apiUrl + 'categories/' + name)
       .then(res =>{
-        this.users = res.data.categories;
-
+        this.users = res.data.category.users;
+       
         console.log('user della chiamata',this.users);
 
       });
     },
+
+  
 
     reset(){
       this.users = null;
