@@ -47,7 +47,7 @@ export default {
 
  .jumbotron{
    width: 100%;
-   height: 400px;
+  //  height: 400px;
    background-color: rgb(184, 202, 202);
    margin-bottom: 0;
      h1{

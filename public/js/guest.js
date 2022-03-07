@@ -2505,7 +2505,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-categories[data-v-403bfede] {\n  width: 100%;\n  height: 350px;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  margin: 10px;\n  width: calc(16.6666666667% - 20px);\n  height: 100px;\n  background-color: #5165F6;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n  background-color: #6b7add;\n}", ""]);
+exports.push([module.i, ".box-categories[data-v-403bfede] {\n  width: 100%;\n  padding: 50px 0 50px 0;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  margin: 10px;\n  width: 164px;\n  height: 100px;\n  background-color: #5165F6;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n  background-color: #6b7add;\n}", ""]);
 
 // exports
 
@@ -2562,7 +2562,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  width: 100%;\n  height: 400px;\n  background-color: #b8caca;\n  margin-bottom: 0;\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 90px;\n  margin-bottom: 25px;\n  color: #5165F6;\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  width: 100%;\n  background-color: #b8caca;\n  margin-bottom: 0;\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 90px;\n  margin-bottom: 25px;\n  color: #5165F6;\n}", ""]);
 
 // exports
 
@@ -2600,7 +2600,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-profile[data-v-669e4bd7] {\n  padding: 10px;\n  width: 33.3333333333%;\n  height: 400px;\n}\n.box-profile .left-box[data-v-669e4bd7] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n  background-color: coral;\n}\n.box-profile .left-box .box-img[data-v-669e4bd7] {\n  width: 100%;\n  height: 120px;\n  background-color: darkturquoise;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-669e4bd7] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-669e4bd7] {\n  width: 100%;\n}\n.box-profile .right-box[data-v-669e4bd7] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #96ff50;\n}\n.box-profile .right-box .user-info[data-v-669e4bd7] {\n  width: 100%;\n  height: 85%;\n  background-color: indianred;\n}\n.box-profile .right-box .box-buttons[data-v-669e4bd7] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-669e4bd7] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #2dbe2d;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-669e4bd7]:hover {\n  background-color: #64cc64;\n}", ""]);
+exports.push([module.i, ".box-profile[data-v-669e4bd7] {\n  padding: 10px;\n  width: 350px;\n  height: 400px;\n}\n.box-profile .left-box[data-v-669e4bd7] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n  background-color: coral;\n}\n.box-profile .left-box .box-img[data-v-669e4bd7] {\n  width: 100%;\n  height: 120px;\n  background-color: darkturquoise;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-669e4bd7] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-669e4bd7] {\n  width: 100%;\n}\n.box-profile .right-box[data-v-669e4bd7] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #96ff50;\n}\n.box-profile .right-box .user-info[data-v-669e4bd7] {\n  width: 100%;\n  height: 85%;\n  background-color: indianred;\n}\n.box-profile .right-box .box-buttons[data-v-669e4bd7] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-669e4bd7] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #2dbe2d;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-669e4bd7]:hover {\n  background-color: #64cc64;\n}", ""]);
 
 // exports
 
@@ -2638,7 +2638,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-sponsored[data-v-b52c6432] {\n  width: 100%;\n  height: 400px;\n}", ""]);
+exports.push([module.i, ".box-sponsored[data-v-b52c6432] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -4627,7 +4627,7 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "box-sponsored d-flex" },
+      { staticClass: "box-sponsored d-flex flex-wrap" },
       _vm._l(3, function (i, index) {
         return _c("Profile", { key: index })
       }),

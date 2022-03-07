@@ -40,7 +40,8 @@ export default {
 
  .box-profile{
    padding: 10px;
-   width: calc(100% / 3);
+  //  width: calc(100% / 3);
+   width: 350px;
    height: 400px;
      .left-box{
        padding: 10px;

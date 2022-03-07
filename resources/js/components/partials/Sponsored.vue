@@ -1,7 +1,7 @@
 <template>
 <div>
 <h2>Freelancer in evidenza</h2> 
-<div class="box-sponsored d-flex">
+<div class="box-sponsored d-flex flex-wrap">
    
    <Profile
      v-for="(i, index) in 3" :key="index"
@@ -33,7 +33,7 @@ export default {
 
  .box-sponsored{
    width: 100%;
-   height: 400px;
+  //  height: 400px;
 }
 
 </style>

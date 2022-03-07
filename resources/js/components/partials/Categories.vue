@@ -40,10 +40,12 @@ export default {
 
  .box-categories{
    width: 100%;
-   height: 350px;
+   padding: 50px 0 50px 0;
+  //  height: 350px;
      .btn-category{
        margin: 10px;
-       width: calc(100% / 6 - 20px);
+      //  width: calc(100% / 6 - 20px);
+       width: 164px;
        height: 100px;
        background-color: #5165F6;
          &:hover{
