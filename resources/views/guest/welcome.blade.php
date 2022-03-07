@@ -25,10 +25,10 @@
                         class="text-colored {{ Route::currentRouteName() === 'admin.index' }} "
                          href="{{ route('admin.index') }}"> <h5>Il mio account</h5> </a>
                     @else
-                        <a class="text-colored" href="{{ route('login') }} "> <h5>Login</h5> </a>
+                        <a class="text-colored mr-4" href="{{ route('login') }} "> <h5>Accedi</h5> </a>
 
                         @if (Route::has('register'))
-                            <a class="text-colored" href="{{ route('register') }} "> <h5>Register</h5> </a>
+                            <a class="text-colored" href="{{ route('register') }} "> <h5>Registrati</h5> </a>
                         @endif
                     @endauth
                 </div>

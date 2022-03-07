@@ -1,12 +1,14 @@
 <template>
   <div class="container">
-    <h1 class="mb-4 mt-4">Lista dei freelancer per: {{ name }}</h1>
+    <h1 class="mb-4 mt-4" >
+      Lista dei freelancer per: {{ name }}
+    </h1>
 
     <FreelancerCard
       v-for="(user, index ) in users"
       :key="index"
       :freelancerCard = "user"
-      v-model="name"
+      v-model="category"
     />
 
 
@@ -29,6 +31,7 @@ export default {
       users: null,
       success: true,
       errrorMsg: "",
+      category: '',
 
       name: this.$route.params.name,
     }
@@ -62,15 +65,17 @@ export default {
       });
     },
 
-  
-
     reset(){
       this.users = null;
       this.success = true;
       this.errorMsg = "";
     },
 
-
+    getRightCategory(){
+      if(this.name === this.category.name){
+        return this.success;
+      } 
+    }
     
   },
 

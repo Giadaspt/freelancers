@@ -25,4 +25,6 @@ Route::namespace('Api')
         Route::get('categories/{name}', 'UserController@getCategoryUser');
 
         Route::get('categories/search', 'UserController@searchCategory');
+
+        Route::get('profile/', 'UserController@show');
     });
