@@ -1,5 +1,7 @@
 <template>
+ <div class="jumbotron">
   <div class="container">
+     <h1> Assumi i migliori freelancers online </h1>
     <div class="input-group mb-3">
 
       <input 
@@ -17,8 +19,11 @@
           </button>
         </router-link>
       </div> 
-    </div>
+     </div>
 
+    
+
+    </div>
   </div>
 </template>
 
@@ -42,7 +47,20 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+ .jumbotron{
+   width: 100%;
+  //  height: 400px;
+   background-color: rgb(184, 202, 202);
+   margin-bottom: 0;
+     h1{
+       font-size: 90px;
+       margin-bottom: 25px;
+       color: #5165F6;
+     }
+}
+
 
 
 </style>
