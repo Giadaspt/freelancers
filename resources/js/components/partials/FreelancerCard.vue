@@ -9,7 +9,10 @@
           <span><h3>{{ freelancerCard.lastname }}</h3></span>
         </h5>
         <p class="card-text">{{ freelancerCard.description_job }}</p>
-        <a href="#" class="btn btn-primary">Vai al profilo</a>
+
+        <router-link :to="{ name:'profile/', params:{slug: freelancerCard.slug} }">
+          <button class="btn btn-primary">Vai al profilo</button>
+        </router-link>
       </div>
     </div>
   </div>

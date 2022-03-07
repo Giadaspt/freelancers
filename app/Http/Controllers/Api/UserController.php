@@ -21,13 +21,26 @@ class UserController extends Controller
         return response()->json(compact('users', 'categories', 'skills'));
     }
 
+    public function show(){
+
+        $user = User::all();
+
+        if(!$user){
+            return 'Nessun utente trovato';
+        }
+
+        return response()->json($user);
+
+    }
+
     public function getCategoryUser($name_category){
         
         $category = Category::where('name', $name_category)->with('users')->first();
 
         $success = true;
         $error = "";
-
+        
+        
         if(!$category){
             $success = false;
             $error = 'categoria inesistente'; 
@@ -35,6 +48,7 @@ class UserController extends Controller
             $success = false;
             $error = 'Nessun utente appartiene a questa categoria';
         }
+  
 
         return response()->json(compact('success', 'category', 'error'));
     }
@@ -43,22 +57,11 @@ class UserController extends Controller
 
         $search = $request->get('query');
 
-        $categories = Category::where('name', 'like', '%'. $search . '%')
+        $category = Category::where('name', 'like', '%'. $search . '%')
                     ->with('user_id')
                     ->first();
 
-        // $categories = Category::where('name', 'like', '%'. $search . '%')
-        //             ->orWhere('slug', 'like', '%'. $search . '%')
-        //             ->with('user_id')
-        //             ->first();
 
-        // $users = User::table('users')
-        //     ->join('categories', 'users.id', '=', 'categories.id')
-        //     ->select('users.id', 'categories.id')
-        //     ->where('categories.name', 'like', '%'. $search . '%')
-        //     ->orWhere('categories.slug', 'like', '%'. $search . '%')
-        //     ->get();
-
-        return response()->json($categories);
+        return response()->json($category);
     }
 }
