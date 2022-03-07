@@ -2200,6 +2200,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Search",
   props: {
@@ -2313,7 +2316,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".search-container[data-v-6a2c7cbe] {\n  width: 100%;\n}\n.search-container h1[data-v-6a2c7cbe] {\n  color: #1A3854;\n}\n.search-container button[data-v-6a2c7cbe] {\n  width: calc(16.6666666667% - 10px);\n  height: 120px;\n  margin: 5px;\n  border-radius: 10px;\n  color: white;\n  background-color: #3772a8d0;\n  border: none;\n}\n.search-container button[data-v-6a2c7cbe]:hover {\n  background-color: #2b5175;\n}", ""]);
+exports.push([module.i, ".search-container[data-v-6a2c7cbe] {\n  width: 100%;\n}\n.search-container i[data-v-6a2c7cbe] {\n  font-size: 20px;\n}\n.search-container h1[data-v-6a2c7cbe] {\n  color: #1A3854;\n}\n.search-container button[data-v-6a2c7cbe] {\n  width: calc(16.6666666667% - 10px);\n  height: 120px;\n  margin: 5px;\n  border-radius: 10px;\n  color: white;\n  background-color: #5165F6;\n  border: none;\n}\n.search-container button[data-v-6a2c7cbe]:hover {\n  background-color: #2b5175;\n}", ""]);
 
 // exports
 
@@ -2351,7 +2354,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header[data-v-79cec062] {\n  height: 70px;\n  width: 100%;\n  background-color: #1A3854;\n}\nheader .button-search[data-v-79cec062] {\n  background-color: aqua;\n  border-radius: 10px;\n  border: none;\n  margin-right: 10px;\n  width: 200px;\n  height: 40px;\n  text-decoration: none;\n}\nheader router-link[data-v-79cec062] {\n  background-color: aquamarine;\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, "header[data-v-79cec062] {\n  height: 70px;\n  width: 100%;\n  background-color: #5165F6;\n}\nheader .button-search[data-v-79cec062] {\n  background-color: aqua;\n  border-radius: 10px;\n  border: none;\n  margin-right: 10px;\n  width: 200px;\n  height: 40px;\n  text-decoration: none;\n}\nheader router-link[data-v-79cec062] {\n  background-color: aquamarine;\n  text-decoration: none;\n}", ""]);
 
 // exports
 
@@ -3724,8 +3727,12 @@ var render = function () {
   return _c("div", { staticClass: "container" }, [
     _c(
       "div",
-      { staticClass: "search-container my-5" },
+      { staticClass: "search-container my-2" },
       [
+        _c("router-link", { attrs: { to: { name: "HomePage" } } }, [
+          _c("i", { staticClass: "fas fa-arrow-circle-left" }),
+        ]),
+        _vm._v(" "),
         _c("h1", { staticClass: "mb-4 mt-4" }, [
           _vm._v("Seleziona una categoria"),
         ]),

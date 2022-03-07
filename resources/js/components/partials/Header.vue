@@ -31,7 +31,7 @@ export default {
   header{
     height: 70px;
     width: 100%;
-    background-color: #1A3854;
+    background-color: #5165F6;
 
       .button-search{
         background-color: aqua;
