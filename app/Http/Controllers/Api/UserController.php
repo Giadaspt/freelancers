@@ -6,6 +6,7 @@ use App\User;
 use App\Category;
 use App\Skill;
 use App\Http\Controllers\Controller;
+use Illuminate\Cache\RedisTaggedCache;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -20,9 +21,9 @@ class UserController extends Controller
         return response()->json(compact('users', 'categories', 'skills'));
     }
 
-    public function getCategoryUser($slug_category){
+    public function getCategoryUser($name_category){
         
-        $category = Category::where('slug', $slug_category)->with('users', 'users.skills')->first();
+        $category = Category::where('name', $name_category)->with('users')->first();
 
         $success = true;
         $error = "";
@@ -36,5 +37,28 @@ class UserController extends Controller
         }
 
         return response()->json(compact('success', 'category', 'error'));
+    }
+
+    public function searchCategory(Request $request){
+
+        $search = $request->get('query');
+
+        $categories = Category::where('name', 'like', '%'. $search . '%')
+                    ->with('user_id')
+                    ->first();
+
+        // $categories = Category::where('name', 'like', '%'. $search . '%')
+        //             ->orWhere('slug', 'like', '%'. $search . '%')
+        //             ->with('user_id')
+        //             ->first();
+
+        // $users = User::table('users')
+        //     ->join('categories', 'users.id', '=', 'categories.id')
+        //     ->select('users.id', 'categories.id')
+        //     ->where('categories.name', 'like', '%'. $search . '%')
+        //     ->orWhere('categories.slug', 'like', '%'. $search . '%')
+        //     ->get();
+
+        return response()->json($categories);
     }
 }

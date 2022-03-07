@@ -20,8 +20,8 @@ const router = new VueRouter({
       component: HomePage,
     },
     {
-      path: '/freelancerList/:slug',
-      name: 'freelancerList',
+      path: '/freelancerList/:name',
+      name: 'freelancerList/',
       component: FreelancerList,
     },
   ]

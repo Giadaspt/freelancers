@@ -1946,6 +1946,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FreelancerList",
@@ -1954,15 +1955,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      apiUrl: 'http://127.0.0.1:8000/api',
+      apiUrl: 'http://127.0.0.1:8000/api/',
       users: null,
-      category: [],
       success: true,
-      errrorMsg: ""
+      errrorMsg: "",
+      name: this.$route.params.name
     };
   },
   mounted: function mounted() {
-    this.getCategory(slug);
+    this.getCategory(this.name);
   },
   methods: {
     getApi: function getApi() {
@@ -1974,12 +1975,12 @@ __webpack_require__.r(__webpack_exports__);
         console.log(_this.users);
       });
     },
-    getCategory: function getCategory(slug) {
+    getCategory: function getCategory(name) {
       var _this2 = this;
 
       this.reset();
-      axios.get(this.apiUrl + '/categories' + slug).then(function (res) {
-        _this2.users = res.data.categories;
+      axios.get(this.apiUrl + 'categories/' + name).then(function (res) {
+        _this2.users = res.data.category.users;
         console.log('user della chiamata', _this2.users);
       });
     },
@@ -2086,11 +2087,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Jumbotron",
   data: function data() {
     return {
-      category: ""
+      category: "",
+      name: this.$route.params.name
     };
   },
   methods: {}
@@ -2610,13 +2614,20 @@ var render = function () {
     { staticClass: "container" },
     [
       _c("h1", { staticClass: "mb-4 mt-4" }, [
-        _vm._v("Lista dei freelancer per categoria"),
+        _vm._v("Lista dei freelancer per: " + _vm._s(_vm.name)),
       ]),
       _vm._v(" "),
       _vm._l(_vm.users, function (user, index) {
         return _c("FreelancerCard", {
           key: index,
           attrs: { freelancerCard: user },
+          model: {
+            value: _vm.name,
+            callback: function ($$v) {
+              _vm.name = $$v
+            },
+            expression: "name",
+          },
         })
       }),
     ],
@@ -2743,10 +2754,17 @@ var render = function () {
             "router-link",
             {
               attrs: {
-                to: { name: "freelancerList", params: { slug: _vm.category } },
+                to: {
+                  path: "freelancerList/" + this.category,
+                  params: { name: this.name },
+                },
               },
             },
-            [_c("button", [_vm._v("\n\n          Cerca\n        ")])]
+            [
+              _c("button", { attrs: { type: "submit" } }, [
+                _vm._v("\n          Cerca\n        "),
+              ]),
+            ]
           ),
         ],
         1
@@ -17972,8 +17990,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'homepage',
     component: _components_pages_HomePage__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/freelancerList/:slug',
-    name: 'freelancerList',
+    path: '/freelancerList/:name',
+    name: 'freelancerList/',
     component: _components_pages_FreelancerList__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
 });

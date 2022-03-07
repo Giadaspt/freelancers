@@ -21,5 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Api')
     ->group(function(){
         Route::get('/', 'UserController@index');
-        Route::get('categories/{slug}', 'UserController@getCategoryUser');
+
+        Route::get('categories/{name}', 'UserController@getCategoryUser');
+
+        Route::get('categories/search', 'UserController@searchCategory');
     });
