@@ -43,7 +43,7 @@ Route::middleware('auth')
 
         Route::get('/users/{id}/editSponsorships', 'UserHomeController@editSponsorships')->name('editSponsorships');
 
-        Route::put('/users/{user}', 'UserHomeController@updateSponsorship')->name('updateSponsorship');
+        Route::put('/update/{user}', 'UserHomeController@updateSponsorship')->name('updateSponsorship');
 
         Route::get('/payment', 'PaymentController@pay');
 
