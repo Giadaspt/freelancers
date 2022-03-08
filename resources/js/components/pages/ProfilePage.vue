@@ -20,9 +20,11 @@
       </div>
     </div>
 
-    <div class=" mr-3">
-      <iframe width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"></iframe>
-      
+    <div class=" mr-3" >
+      <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
+      <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
+      <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
+      <iframe   :src="'/storage/' + user.cv"></iframe>
     </div>
 
     <section class="mt-4 mb-4">
