@@ -1,13 +1,15 @@
 <template>
   <div class="container d-flex flex-column">
-    <div class=" mr-3">
-      <img class=" mr-3" :src="'/storage/' + user.image" :alt="user.name">
-      <!-- <a :href="'/storage/' + user.image" data-lightbox="image" ></a> -->
+    <div class="d-flex align-items-center ">
+      <div class=" mr-3" >
+        <img class=" mr-3" :src="'/storage/' + user.image" :alt="user.name">
+        <!-- <a :href="'/storage/' + user.image" data-lightbox="image" ></a> -->
+      </div>
+      <h3 class="mr-2">{{ user.name }}</h3>
+      <h3>{{ user.lastname }}</h3>
     </div>
 
     <div class="mt-3" >
-      <h5>{{ user.name }}</h5>
-      <h5>{{ user.lastname }}</h5>
       <h5>{{ user.email }}</h5>
         
       <h5>{{ user.address }}</h5>
@@ -24,14 +26,14 @@
       <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
       <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
       <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
-      <iframe   :src="'/storage/' + user.cv"></iframe>
+      <iframe style="width: 200px; height: 350px;"  :src="'/storage/' + user.cv"></iframe>
     </div>
 
     <section class="mt-4 mb-4">
       <h3>Contattami</h3>
 
       <form method="POST" @submit.prevent="sendForm" >
-
+        
         <div class="form-group">
           <label for="email_sender" class="ml-2">Email</label>
           <input v-model="email_sender" type="email" class="form-control" id="email_sender" placeholder="Scrivi la tua email" required>
@@ -48,10 +50,17 @@
           <textarea v-model="text" class="form-control" id="text" rows="3" required ></textarea>
         </div>
 
-        <div class="d-flex">
-          <button type="submit" class="btn btn-freelance mr-3">Invia</button>
-          <button type="reset" class="btn btn-delete">Cancella</button>
-        </div>
+        <section class="d-flex justify-content-between">
+          <div class="d-flex">
+            <button type="submit" class="btn btn-freelance mr-3">Invia</button>
+            <button type="reset" class="btn btn-delete">Cancella</button>
+          </div>
+          <div class="back  mb-4">
+            <a class="btn-freelance btn-back d-flex justify-content-center" @click="$router.go(-1)">Indietro</a>
+          </div>
+        </section>
+
+
     </form>
     </section>
 
@@ -59,6 +68,7 @@
 </template>
 
 <script>
+
 export default {
   name: "ProfilePage",
 
@@ -164,7 +174,8 @@ export default {
 
 .cv-custom {
   width: 30%;
-  overflow: none;
+  overflow-y: none;
+  overflow-x: none;
 
   img {
     width: 100%;
@@ -173,6 +184,16 @@ export default {
   }
 }
 
+.back{
+  width: 90px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  .btn-back {
+    padding: 4px;
+  }
+}
 
 
 </style>

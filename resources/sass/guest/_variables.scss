@@ -11,9 +11,21 @@ $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66d9b;
-$red: #e3342f;
 $orange: #f6993f;
 $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+
+$primaryColor: #5DADEC; //navbar, sidebar, menu in generale
+$secondaryColor: #1A3854; // bottoni, link
+$buttonHoverColor: #3772a8d0; // bottoni, hover
+$thirdColor: #FDFF05; // bordo in hover
+
+$red: #e3342f; // bottone elimina
+$redHover: #e9413b; // bottone elimina in hover
+
+$shadow: rgb(169,169,169); //ombra sotto bottoni o card o cose simili
+$shadowHover: rgb(97, 97, 97); //ombra sotto bottoni o card o cose simili un po' più scuro per l'hover
+

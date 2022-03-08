@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div class="container-team4">
+    
     <h1 class="mb-4 mt-4" >
       Lista dei freelancer per: {{ name }}
     </h1>
@@ -11,6 +12,9 @@
       v-model="category"
     />
 
+    <div class="back  mb-4 ">
+      <a class="btn-freelance d-flex justify-content-center" @click="$router.go(-1)">Indietro</a>
+    </div>
 
   </div>
 </template>
@@ -82,6 +86,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+  .container-team4 {
+    width: 70%;
+    margin: 0 auto;
+  }
 
+  .back{
+  width: 90px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  a {
+    padding: 4px;
+  }
+}
 </style>
