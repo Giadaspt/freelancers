@@ -2121,14 +2121,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Categories",
   data: function data() {
     return {
-      categories: ['Support Specialist', 'Computer Programmer', 'Graphic Designer', 'Software Developer', 'Web Developer', 'Systems Analyst', 'Network Engineer', 'User Experience Designer', 'Database administrator', 'Software Engineer', 'It Security Specialist', 'Data Scientist']
+      // categories: ['Support Specialist', 'Computer Programmer', 'Graphic Designer', 'Software Developer', 'Web Developer', 'Systems Analyst', 'Network Engineer', 'User Experience Designer', 'Database administrator', 'Software Engineer', 'It Security Specialist', 'Data Scientist'],
+      apiUrl: 'http://127.0.0.1:8000/api/',
+      category: "",
+      categories: [],
+      name: this.$route.params.name
     };
   },
-  methods: {}
+  methods: {
+    getCategory: function getCategory() {
+      var _this = this;
+
+      axios.get(this.apiUrl).then(function (res) {
+        _this.categories = res.data.categories; // let cat = this.categories.find(item => item.name);
+        // this.category = cat;
+
+        console.log('user della chiamata', _this.categories);
+        console.log(res.data.categories);
+        console.log(_this.category); // return this.category
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getCategory();
+  }
 });
 
 /***/ }),
@@ -2304,7 +2334,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Jumbotron",
   data: function data() {
@@ -2384,6 +2413,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Profile",
   methods: {}
@@ -2400,6 +2436,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -2471,7 +2510,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-about[data-v-c3867f8e] {\n  width: 100%;\n  height: 300px;\n}\n.box-about .box-img-about[data-v-c3867f8e] {\n  width: 30%;\n  height: 100%;\n  background-color: darkgoldenrod;\n}\n.box-about .box-text-about[data-v-c3867f8e] {\n  width: 70%;\n  height: 100%;\n  background-color: #bdae89;\n}\n.box-about .box-text-about p[data-v-c3867f8e] {\n  font-size: 20px;\n}", ""]);
+exports.push([module.i, ".box-about[data-v-c3867f8e] {\n  width: 100%;\n  min-height: 400px;\n}\n.box-about .box-img-about[data-v-c3867f8e] {\n  height: 100%;\n}\n.box-about .box-text-about[data-v-c3867f8e] {\n  padding: 150px;\n  height: 100%;\n  font-size: 120%;\n}", ""]);
 
 // exports
 
@@ -2490,7 +2529,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-categories[data-v-403bfede] {\n  width: 100%;\n  padding: 50px 0 50px 0;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  margin: 10px;\n  width: 164px;\n  height: 100px;\n  background-color: #5165F6;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n  background-color: #6b7add;\n}", ""]);
+exports.push([module.i, ".box-categories[data-v-403bfede] {\n  padding: 100px 0;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  padding: 25px;\n  height: 100px;\n  margin: 15px;\n}", ""]);
 
 // exports
 
@@ -2528,7 +2567,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-howitworks[data-v-9a62b42e] {\n  width: 100%;\n  height: 200px;\n  background-color: #332c0b;\n}", ""]);
+exports.push([module.i, ".box-howitworks[data-v-9a62b42e] {\n  width: 100%;\n  max-height: 200px;\n  padding: 100px;\n}", ""]);
 
 // exports
 
@@ -2547,7 +2586,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  width: 100%;\n  background-color: #b8caca;\n  margin-bottom: 0;\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 90px;\n  margin-bottom: 25px;\n  color: #5165F6;\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  width: 100%;\n  background-image: url();\n  background-size: contain;\n  background-repeat: no-repeat;\n  margin-bottom: 0;\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 5vw;\n  margin-bottom: 25px;\n  color: #5165F6;\n}\n.btn-jumbo[data-v-d804be4c] {\n  background-color: #5165F6;\n  color: white;\n}\n.input[data-v-d804be4c] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-d804be4c]:hover {\n  box-shadow: 0px 0px 18px;\n}", ""]);
 
 // exports
 
@@ -2566,7 +2605,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-network[data-v-2f495c48] {\n  width: 100%;\n  height: 300px;\n}\n.box-network .box-img-network[data-v-2f495c48] {\n  width: 30%;\n  height: 100%;\n  background-color: aqua;\n}\n.box-network .text-network[data-v-2f495c48] {\n  width: 70%;\n  height: 100%;\n  background-color: chartreuse;\n}\n.box-network .text-network h2[data-v-2f495c48] {\n  font-size: 40px;\n}", ""]);
+exports.push([module.i, ".box-network[data-v-2f495c48] {\n  width: 100%;\n}\n.box-network .box-img-network[data-v-2f495c48] {\n  width: 40%;\n  min-height: 400px;\n  background-image: url(https://img.freepik.com/premium-vector/coworking-illustration-stylized-banner-with-people-sharing-office-self-directed-collaborative-flexible-voluntary-work-hipsters-freelancers-modern-brainstorming-talk_126608-1023.jpg);\n  background-size: cover;\n  background-position: center;\n}\n.box-network .text-network[data-v-2f495c48] {\n  width: 60%;\n  height: 100%;\n  padding: 80px;\n}\n.box-network .text-network h2[data-v-2f495c48] {\n  font-size: 40px;\n}", ""]);
 
 // exports
 
@@ -2585,7 +2624,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-profile[data-v-669e4bd7] {\n  padding: 10px;\n  width: 350px;\n  height: 400px;\n}\n.box-profile .left-box[data-v-669e4bd7] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n  background-color: coral;\n}\n.box-profile .left-box .box-img[data-v-669e4bd7] {\n  width: 100%;\n  height: 120px;\n  background-color: darkturquoise;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-669e4bd7] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-669e4bd7] {\n  width: 100%;\n}\n.box-profile .right-box[data-v-669e4bd7] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #96ff50;\n}\n.box-profile .right-box .user-info[data-v-669e4bd7] {\n  width: 100%;\n  height: 85%;\n  background-color: indianred;\n}\n.box-profile .right-box .box-buttons[data-v-669e4bd7] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-669e4bd7] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #2dbe2d;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-669e4bd7]:hover {\n  background-color: #64cc64;\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -2604,7 +2643,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  height: 300px;\n}\n.box-register .box-img-register[data-v-7de36336] {\n  width: 30%;\n  height: 100%;\n  background-color: #0b48b8;\n}\n.box-register .box-text-register[data-v-7de36336] {\n  width: 70%;\n  height: 100%;\n  background-color: #89bda7;\n}\n.box-register .box-text-register p[data-v-7de36336] {\n  font-size: 20px;\n}", ""]);
+exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  min-height: 400px;\n}\n.box-register .box-text-register[data-v-7de36336] {\n  height: 100%;\n  padding: 80px;\n}\n.box-register .box-text-register p[data-v-7de36336] {\n  font-size: 20px;\n}", ""]);
 
 // exports
 
@@ -4058,21 +4097,17 @@ var render = function () {
       _c(
         "div",
         { staticClass: "container" },
-        [
-          _c("Categories"),
-          _vm._v(" "),
-          _c("Sponsored"),
-          _vm._v(" "),
-          _c("HowItWorks"),
-          _vm._v(" "),
-          _c("Network"),
-          _vm._v(" "),
-          _c("AboutUs"),
-          _vm._v(" "),
-          _c("Register"),
-        ],
+        [_c("Categories"), _vm._v(" "), _c("Sponsored")],
         1
       ),
+      _vm._v(" "),
+      _c("HowItWorks"),
+      _vm._v(" "),
+      _c("Network"),
+      _vm._v(" "),
+      _c("AboutUs"),
+      _vm._v(" "),
+      _c("Register"),
       _vm._v(" "),
       _c("Footer"),
     ],
@@ -4108,15 +4143,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box-about d-flex" }, [
-      _c("div", { staticClass: "box-img-about" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "box-text-about text-center p-4" }, [
-        _c("h2", [_vm._v("Dicono di noi")]),
+    return _c(
+      "div",
+      {
+        staticClass:
+          "box-about d-flex row justify-content-center align-content-center",
+      },
+      [
+        _c("div", { staticClass: "box-text-about text-center col-8" }, [
+          _c("h2", [_vm._v("Dicono di noi")]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("Oltre il 99% di clienti soddisfatti")]),
+        ]),
         _vm._v(" "),
-        _c("p", [_vm._v("Oltre il 99% di clienti soddisfatti")]),
-      ]),
-    ])
+        _c("div", { staticClass: "box-img-about col-4 text-right" }, [
+          _c("img", { attrs: { src: __webpack_require__(/*! ../img/voti.jpg */ "./resources/js/components/img/voti.jpg"), alt: "" } }),
+        ]),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -4141,23 +4185,34 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "box-categories" }, [
+    _c("h2", { staticClass: "text-center my-5" }, [
+      _vm._v("Seleziona una categoria"),
+    ]),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "search-container my-2" },
+      {
+        staticClass:
+          "d-flex justify-content-center align-content-center flex-wrap",
+      },
       [
-        _c("h2", { staticClass: "mb-4 mt-4" }, [
-          _vm._v("Seleziona una categoria"),
-        ]),
-        _vm._v(" "),
-        _vm._l(_vm.categories, function (category, index) {
-          return _c(
-            "button",
-            { key: index, staticClass: "btn btn-info btn-category" },
-            [_vm._v(" " + _vm._s(category) + " ")]
-          )
-        }),
-      ],
-      2
+        _c(
+          "div",
+          { staticClass: "d-flex justify-content-between row" },
+          _vm._l(_vm.categories, function (category, index) {
+            return _c(
+              "a",
+              {
+                key: index,
+                staticClass: "card dash-card text-center col-3 btn-category",
+                attrs: { href: "freelancerList/" + category.name },
+              },
+              [_vm._v(_vm._s(category.name))]
+            )
+          }),
+          0
+        ),
+      ]
     ),
   ])
 }
@@ -4355,8 +4410,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box-howitworks" }, [
-      _c("h2", [_vm._v("Qui c'è il come funziona")]),
+    return _c("div", { staticClass: "box-howitworks my-5" }, [
+      _c("h2", [_vm._v("Come funziona:")]),
+      _vm._v(" "),
+      _c("h4", [_vm._v("Cerca il freelancer più adatto al tuo progetto...")]),
     ])
   },
 ]
@@ -4385,7 +4442,7 @@ var render = function () {
     _c("div", { staticClass: "container" }, [
       _c("h1", [_vm._v(" Assumi i migliori freelancers online ")]),
       _vm._v(" "),
-      _c("div", { staticClass: "input-group mb-3" }, [
+      _c("div", { staticClass: "input-group mb-3 input" }, [
         _c("input", {
           directives: [
             {
@@ -4395,7 +4452,7 @@ var render = function () {
               expression: "category",
             },
           ],
-          staticClass: "form-control",
+          staticClass: "form-control input-jumbo",
           attrs: { type: "text", placeholder: "Cerca il tuo freelancers" },
           domProps: { value: _vm.category },
           on: {
@@ -4410,7 +4467,7 @@ var render = function () {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "input-group-append" },
+          { staticClass: "input-group-append " },
           [
             _c(
               "router-link",
@@ -4423,9 +4480,14 @@ var render = function () {
                 },
               },
               [
-                _c("button", { attrs: { type: "submit" } }, [
-                  _vm._v("\n           Cerca\n         "),
-                ]),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-jumbo ml-5 ",
+                    attrs: { type: "submit" },
+                  },
+                  [_vm._v("\n           Cerca \n         ")]
+                ),
               ]
             ),
           ],
@@ -4464,17 +4526,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box-network d-flex" }, [
-      _c("div", { staticClass: "box-img-network" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-network d-flex align-items-center" }, [
-        _c("h2", { staticClass: "text-center" }, [
-          _vm._v(
-            "Il più grande network di freelancers italiano, con più di 50.000 iscritti attivi"
-          ),
+    return _c(
+      "div",
+      {
+        staticClass:
+          "box-network d-flex justify-content-center align-content-center row",
+      },
+      [
+        _c("div", { staticClass: "box-img-network col-4" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "text-network col-8" }, [
+          _c("h2", { staticClass: "text-left" }, [
+            _vm._v(
+              "Il più grande network di freelancers italiano, con più di 50.000 iscritti attivi"
+            ),
+          ]),
         ]),
-      ]),
-    ])
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -4505,25 +4574,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box-profile d-flex" }, [
-      _c("div", { staticClass: "left-box" }, [
-        _c("div", { staticClass: "box-img" }),
+    return _c("div", { staticClass: "card-deck mx-2" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: "", alt: "qui immagine centrale rounded" },
+        }),
         _vm._v(" "),
-        _c("div", { staticClass: "box-info" }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "right-box" }, [
-        _c("div", { staticClass: "user-info" }),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "box-buttons d-flex justify-content-center" },
-          [
-            _c("button", { staticClass: "btn-profile" }, [_vm._v("Vedi")]),
-            _vm._v(" "),
-            _c("button", { staticClass: "btn-profile" }, [_vm._v("Contatta")]),
-          ]
-        ),
+        _c("div", { staticClass: "card-body" }, [
+          _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-text" }, [
+            _vm._v(
+              "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+            ),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-text" }, [
+            _c("small", { staticClass: "text-muted" }, [
+              _vm._v("Last updated 3 mins ago"),
+            ]),
+          ]),
+        ]),
       ]),
     ])
   },
@@ -4549,24 +4621,28 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box-register d-flex" }, [
-      _c("div", { staticClass: "box-img-register" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "box-text-register text-center p-4" }, [
+  return _c("div", { staticClass: "box-register d-flex" }, [
+    _c(
+      "div",
+      { staticClass: "box-text-register text-center container" },
+      [
         _c("h2", [_vm._v("Sei un freelancer?")]),
         _vm._v(" "),
         _c("p", [_vm._v("Iscriviti e raggiungi i tuoi clienti")]),
-      ]),
-    ])
-  },
-]
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: "/register" } }, [
+          _c(
+            "button",
+            { staticClass: "btn btn-info", attrs: { type: "submit" } },
+            [_vm._v("Iscriviti")]
+          ),
+        ]),
+      ],
+      1
+    ),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -4588,12 +4664,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "my-5" }, [
     _c("h2", [_vm._v("Freelancer in evidenza")]),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "box-sponsored d-flex flex-wrap" },
+      { staticClass: "box-sponsored d-flex justify-content-center" },
       _vm._l(3, function (i, index) {
         return _c("Profile", { key: index })
       }),
@@ -19491,6 +19567,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/img/voti.jpg":
+/*!**********************************************!*\
+  !*** ./resources/js/components/img/voti.jpg ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/voti.jpg?e5e705b77bde2568cee576cf2c1e8546";
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/FreelancerList.vue":
 /*!**********************************************************!*\
   !*** ./resources/js/components/pages/FreelancerList.vue ***!
@@ -20549,7 +20636,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })

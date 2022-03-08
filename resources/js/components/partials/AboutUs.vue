@@ -1,15 +1,15 @@
 <template>
 
-<div class="box-about d-flex">
+<div class="box-about d-flex row justify-content-center align-content-center">
   
-  <div class="box-img-about"></div>
-
-  <div class="box-text-about text-center p-4">
+  <div class="box-text-about text-center col-8">
     <h2>Dicono di noi</h2>
-    <p>Oltre il 99% di clienti soddisfatti</p>
+    <h3>Oltre il 99% di clienti soddisfatti</h3>
   </div>
- 
 
+  <div class="box-img-about col-4 text-right">
+    <img src="..\img\voti.jpg" alt="">
+  </div>
 
 </div>
  
@@ -31,19 +31,17 @@ export default {
 
  .box-about{
    width: 100%;
-   height: 300px;
+   min-height: 400px;
      .box-img-about{
-       width: 30%;
+       
        height: 100%;
-       background-color:darkgoldenrod;
+      
      }
      .box-text-about{
-       width: 70%;
+       padding: 150px;
        height: 100%;
-       background-color:rgb(189, 174, 137);
-         p{
-           font-size: 20px;
-         }
+       font-size: 120%;
+
      }
 }
 

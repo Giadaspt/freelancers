@@ -7,6 +7,7 @@
 
      <Sponsored/>
 
+    </div>
      <HowItWorks/>
 
      <Network/>
@@ -15,7 +16,6 @@
 
      <Register/>
 
-    </div>
     
     <Footer/>
 

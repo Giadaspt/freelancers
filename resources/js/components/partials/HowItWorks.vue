@@ -1,9 +1,9 @@
 <template>
 
-<div class="box-howitworks">
+<div class="box-howitworks my-5">
 
-   <h2>Qui c'è il come funziona</h2>
-
+   <h2>Come funziona:</h2>
+   <h4>Cerca il freelancer più adatto al tuo progetto...</h4>
 
 </div>
  
@@ -25,8 +25,8 @@ export default {
 
  .box-howitworks{
    width: 100%;
-   height: 200px;
-   background-color: rgb(51, 44, 11);
+   max-height: 200px;
+   padding: 100px;
 }
 
 </style>

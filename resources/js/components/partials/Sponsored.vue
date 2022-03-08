@@ -1,7 +1,7 @@
 <template>
-<div>
+<div class="my-5">
 <h2>Freelancer in evidenza</h2> 
-<div class="box-sponsored d-flex flex-wrap">
+<div class="box-sponsored d-flex justify-content-center">
    
    <Profile
      v-for="(i, index) in 3" :key="index"
