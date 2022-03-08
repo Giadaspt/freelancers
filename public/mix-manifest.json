@@ -1,6 +1,6 @@
 {
     "/js/admin.js": "/js/admin.js",
     "/css/style_admin.css": "/css/style_admin.css",
-    "/css/style_guest.css": "/css/style_guest.css",
-    "/js/guest.js": "/js/guest.js"
+    "/js/guest.js": "/js/guest.js",
+    "/css/style_guest.css": "/css/style_guest.css"
 }
