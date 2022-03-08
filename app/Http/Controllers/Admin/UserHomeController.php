@@ -7,9 +7,12 @@ use App\Skill;
 use App\User;
 
 use App\Http\Controllers\Controller;
+use App\Sponsorship;
+use App\SponsorshipUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 
 class UserHomeController extends Controller
 {
@@ -33,7 +36,9 @@ class UserHomeController extends Controller
 
         $skills = Skill::all();
 
-        return view('admin.users.show', compact('user', 'categories', 'skills'));
+        $sponsorships = Sponsorship::all();
+
+        return view('admin.users.show', compact('user', 'categories', 'skills', 'sponsorships'));
     }
 
     /**
@@ -53,6 +58,19 @@ class UserHomeController extends Controller
         return view('admin.users.edit', compact('user','categories', 'skills' ));
     }
 
+    public function editSponsorships($id)
+    {
+        $user = User::find($id);
+
+        $categories = Category::all();
+
+        $skills = Skill::all();
+
+        $sponsorships = Sponsorship::all();
+        
+        return view('admin.users.riepilogoSponsor', compact('user','categories', 'skills', 'sponsorships' ));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -62,9 +80,12 @@ class UserHomeController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        
         $request->validate($this->makeValidation(), $this->makeValidationMessage());
         
         $data = $request->all();
+
+        // dd($data);
 
         if(array_key_exists('image', $data)){
             
@@ -101,6 +122,8 @@ class UserHomeController extends Controller
 
         $user->update($data);
 
+       
+
         if(array_key_exists('categories', $data)){
             $user->categories()->sync($data['categories']);
         } else {
@@ -114,8 +137,35 @@ class UserHomeController extends Controller
             $user->skills()->detach();
         }
 
+        // if(array_key_exists('sponsorships', $data)){
+        //     $user->sponsorships()->attach($data['sponsorships']);
+        // } else {
+        //     $user->sponsorships()->detach();
+        // }
+
         return redirect()->route('admin.users.show', $user);
     }
+
+     public function updateSponsorship(Request $req, User $user){
+
+        $dataSponsor = $req->all();
+
+        // dd($dataSponsor);
+
+        $new_user = new User();
+        $new_user->fill($dataSponsor);
+
+        $user->update($dataSponsor);
+
+        if(array_key_exists('sponsorships', $dataSponsor)){
+            $user->sponsorships()->attach($dataSponsor['sponsorships']);
+        } else {
+            $user->sponsorships()->detach();
+        }
+
+        return redirect()->route('admin.users.show', $user);
+
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -139,6 +189,7 @@ class UserHomeController extends Controller
             "description_job" => "nullable|min:2",
             "image" => "nullable|mimes:jpg,png,jpeg,svg|max:32000",
             "cv" => "nullable|mimes:jpg,png,jpeg,svg,pdf|max:32000",
+            "sponsorships" => "nullable"
         ];
     }
 

@@ -2,35 +2,166 @@
 
 @section('content')
 
+{{-- <h1> {{$sponsorships}} </h1> --}}
+
 
   <div class="container color-font font-weight-bold">
-    <h1 class="mt-4 mb-4">Riepilogo acquisto sponsorship {{ $sponsor->name }}</h1>
+    
+    @if (isset($_GET['base']))
     <div>
+      <h1 class="mt-4 mb-4">Riepilogo acquisto sponsorship {{ $sponsorships[0]->name }}</h1>
       <h4>
         <span class="font-weight-bold"> 
           Prezzo:
         </span>
-        {{$sponsor->price}} &#8364
+        {{$sponsorships[0]->price}} &#8364
       </h4>
+
       <h4>
         <span class="font-weight-bold">
           Durata:
         </span>
-        {{$sponsor->duration}} ore
+        {{$sponsorships[0]->duration}} ore
       </h4>
 
       <h4>
-        Se acquisti ora il pacchetto durerà fino a {{$sponsor->duration}} ore
+        Se acquisti ora il pacchetto durerà fino a {{$sponsorships[0]->duration}} ore
       </h4>
     </div>
+    @endif
 
-    <form method="POST" id="payment-form" action="{{route('admin.index', $sponsor)}}">  
+    @if (isset($_GET['premium']))
+    <div>
+      <h1 class="mt-4 mb-4">Riepilogo acquisto sponsorship {{ $sponsorships[1]->name }}</h1>
+      <h4>
+        <span class="font-weight-bold"> 
+          Prezzo:
+        </span>
+        {{$sponsorships[1]->price}} &#8364
+      </h4>
+
+      <h4>
+        <span class="font-weight-bold">
+          Durata:
+        </span>
+        {{$sponsorships[1]->duration}} ore
+      </h4>
+
+      <h4>
+        Se acquisti ora il pacchetto durerà fino a {{$sponsorships[1]->duration}} ore
+      </h4>
+    </div>
+    @endif
+
+    @if (isset($_GET['elite']))
+    <div>
+      <h1 class="mt-4 mb-4">Riepilogo acquisto sponsorship {{ $sponsorships[2]->name }}</h1>
+      <h4>
+        <span class="font-weight-bold"> 
+          Prezzo:
+        </span>
+        {{$sponsorships[2]->price}} &#8364
+      </h4>
+
+      <h4>
+        <span class="font-weight-bold">
+          Durata:
+        </span>
+        {{$sponsorships[2]->duration}} ore
+      </h4>
+
+      <h4>
+        Se acquisti ora il pacchetto durerà fino a {{$sponsorships[2]->duration}} ore
+      </h4>
+    </div>
+    @endif
+    
+
+    <form method="POST" action="{{route('admin.updateSponsorship', $user)}}"
+     enctype="multipart/form-data" >  
       @csrf
-      @method('GET')
+      @method('PUT')
       
       <div class="d-flex justify-content-center align-items-center"></div>
       
       <div id="dropin"></div>
+
+      <div class="mb-3">
+
+        {{-- @foreach ($sponsorships as $sponsorship) --}}
+            
+          <span class="d-inline-block mr-3">
+            <input   
+           
+         
+             name="sponsorships[]"
+             type="radio" 
+             id="sponsorship0" 
+             value="{{ $sponsorships[0]->id }}"
+             hidden
+
+             @if (isset($_GET['base']))
+              checked
+             @endif
+           
+
+             {{-- @if (!$errors->any() && $user->sponsorships->contains($sponsorship->id))
+                 checked
+             @elseif($errors->any() && in_array($sponsorship->id, old('sponsorship', [])) )
+                 checked
+             @endif --}}
+            
+             >
+          </span>
+
+
+          <span class="d-inline-block mr-3">
+            <input   
+           
+         
+             name="sponsorships[]"
+             type="radio" 
+             id="sponsorship1" 
+             value="{{ $sponsorships[1]->id }}"
+             hidden
+
+             @if (isset($_GET['premium']))
+              checked
+             @endif
+           
+
+             {{-- @if (!$errors->any() && $user->sponsorships->contains($sponsorship->id))
+                 checked
+             @elseif($errors->any() && in_array($sponsorship->id, old('sponsorship', [])) )
+                 checked
+             @endif --}}
+             >
+          </span>
+
+          <span class="d-inline-block mr-3">
+            <input   
+           
+             name="sponsorships[]"
+             type="radio" 
+             id="sponsorship2" 
+             value="{{ $sponsorships[2]->id }}"
+             hidden
+
+             @if (isset($_GET['elite']))
+              checked
+             @endif
+           
+             {{-- @if (!$errors->any() && $user->sponsorships->contains($sponsorship->id))
+                 checked
+             @elseif($errors->any() && in_array($sponsorship->id, old('sponsorship', [])) )
+                 checked
+             @endif --}}        
+             >
+          </span>
+
+        {{-- @endforeach --}}
+ 
+      </div>
       
       <input id="nonce" name="payment_method_nonce" type="hidden"/>
       <div class="d-flex justify-content-center align-items-center">
@@ -39,7 +170,7 @@
       </div>
     </form>
   
-    <div class="">
+    <div class="container">
       <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
       <script>
         var form = document.querySelector('#payment-form');

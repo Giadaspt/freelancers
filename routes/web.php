@@ -41,6 +41,10 @@ Route::middleware('auth')
 
         Route::resource('/sponsorships', 'SponsorController');
 
+        Route::get('/users/{id}/editSponsorships', 'UserHomeController@editSponsorships')->name('editSponsorships');
+
+        Route::put('/users/{user}', 'UserHomeController@updateSponsorship')->name('updateSponsorship');
+
         Route::get('/payment', 'PaymentController@pay');
 
         Route::delete('/users/messages/{id}', 'PageController@deleteMessage')->name('deleteMessage');
