@@ -3,6 +3,8 @@
 @section('content')
 
   <div class="container text-colored">
+
+    {{-- <h1> {{$user->sponsorships->id}} </h1> --}}
     @auth
       <section class="profile_details"> 
         <div class="d-flex align-items-center">
@@ -56,6 +58,27 @@
               - 
             @endforelse
           </div>
+ 
+          <div class="sponsored-box">
+
+            @forelse ($user->sponsorships as $sponsorship)
+              <p class="mr-2">
+               <h3 class="text-success">IL TUO PROFILO E' SPONSORIZZATO</h3> 
+                <h3>pacchetto: <strong class="text-primary">{{ $sponsorship->name }} </strong> </h3>
+                {{-- {{ $sponsorship->id }}, --}}
+                <p>Data di inizio:   {{ $sponsorship->pivot->created_at }} </p>
+               
+              </p>
+              @empty
+               
+            @endforelse
+
+            {{-- <h4 class="text-success">Il tuo profilo è sponsorizzato</h4>
+            <p>pacchetto: </p> --}}
+
+          </div>
+
+
         </div>
       </section>
 

@@ -10226,15 +10226,38 @@ textarea.form-control {
   border-radius: 20px !important;
   box-shadow: 0px 10px 10px darkgray;
   margin: 34px 0;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  background-color: #fafaf1 !important;
 }
-.sponsor-card:hover {
-  background-color: #3772a8d0 !important;
-  box-shadow: 0px 10px 10px #616161;
-  transition: transform 0.3s;
-  transform: scale(1.2);
+.sponsor-card h3 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+.sponsor-card p {
+  font-size: 30px;
 }
 .sponsor-card .color-font:hover {
   color: white !important;
+}
+
+.container-pack {
+  border-radius: 200px;
+  color: #1A3854;
+}
+.container-pack .button-pack {
+  border: none;
+  padding: 10px;
+  width: 120px;
+  border-radius: 10px;
+  background-color: #13c030;
+  color: white;
+  transition: all 0.4s;
+}
+.container-pack .button-pack:hover {
+  transform: scale(1.3);
 }
 
 .container-payment {

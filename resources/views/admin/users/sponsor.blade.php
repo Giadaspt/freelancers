@@ -13,13 +13,43 @@
   {{-- {{ route('admin.sponsorships.update', $sponsor) }} --}}
 
   <div class="container mt-5">
-    <form class="d-flex justify-content-between " action="" method="POST">
+    <form class="d-flex justify-content-between" action=" {{route('admin.editSponsorships', $user)}} " method="GET">
       @csrf
       {{-- @method('PUT') --}}
 
-        @foreach ($sponsors as $sponsor)
-          
-            <a href="{{ route('admin.sponsorships.show', $sponsor) }}" class="card sponsor-card d-flex" style="width: 18rem;">
+        {{-- @foreach ($sponsors as $sponsor) --}}
+        <div class="container-pack bg-secondary d-flex flex-column align-items-center">
+          <div class="card sponsor-card"> 
+            <h3> {{$sponsors[0]->name}} </h3>
+            <p>Prezzo: {{$sponsors[0]->price}} €</p>
+            <p>Durata: {{$sponsors[0]->duration}} ore</p>
+          </div>
+          <input class="button-pack" type="submit" name="base" value="Acquista">
+        </div>
+
+        <div class="container-pack bg-info d-flex flex-column align-items-center">
+           <div class="card sponsor-card">
+                <h3> {{$sponsors[1]->name}} </h3>
+                <p>Prezzo: {{$sponsors[1]->price}} €</p>
+                <p>Durata: {{$sponsors[1]->duration}} ore</p>
+            </div>
+            <input class="button-pack" type="submit" name="premium" value="Acquista">
+        </div>
+
+        <div class="container-pack bg-warning d-flex flex-column align-items-center">
+           <div class="card sponsor-card">
+              <h3> {{$sponsors[2]->name}} </h3>
+              <p>Prezzo: {{$sponsors[2]->price}} €</p>
+              <p>Durata: {{$sponsors[2]->duration}} ore</p>
+           </div>
+            <input class="button-pack" type="submit" name="elite" value="Acquista">
+        </div>
+    
+
+        
+
+
+            {{-- <a href="{{ route('admin.editSponsorships', $user) }}" class="card sponsor-card d-flex" style="width: 18rem">
               <div class="card-body color-font ">
       
                 <h3 class="card-title font-weight-bold ">{{$sponsor->name}}</h3>
@@ -38,11 +68,11 @@
                   {{$sponsor->duration}} ore
                 </h5>
               </div>
-            </a>
+            </a> --}}
             {{-- <button class="btn btn-info">
               <a href="{{ route('admin.sponsorships.show', $sponsor) }}" id="{{$sponsor->id}}" class="card-link">Acquista</a>
           </button> --}}
-            @endforeach
+            {{-- @endforeach --}}
             
             
           </form>
@@ -57,10 +87,12 @@
           <tr>
             <th style="width: 34%;"></th>
 
-            @foreach ($sponsors as $sponsor)
+        
               
-            <th style="width: 22%;">{{ $sponsor->name }}</th>
-            @endforeach
+            <th style="width: 22%;">{{ $sponsors[0]->name }}</th>
+            <th style="width: 22%;">{{ $sponsors[1]->name }}</th>
+            <th style="width: 22%;">{{ $sponsors[2]->name }}</th>
+       
           </tr>
         </thead>
         <tbody class="color-font">
@@ -93,8 +125,8 @@
         </tbody>
       </table>
     </div>
-    <div class="d-flex justify-content-end mt-4">
-      <button class="btn  btn-freelance mr-2">
+    <div class="d-flex justify-content-start mt-4">
+      <button class="btn btn-freelance mr-2">
         <a class="text-white" href=" {{ URL::previous() }} "> Indietro </a>
       </button>
     </div>

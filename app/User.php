@@ -29,7 +29,7 @@ class User extends Authenticatable
         'slug', 
         'category_id',
         'skill_id',
-        'sponsorship_id'
+        // 'sponsorship_id'
     ];
 
     /**
@@ -63,7 +63,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Skill');
     }
     public function sponsorships(){
-        return $this->belongsToMany('App\Sponsorship');
+        return $this->belongsToMany('App\Sponsorship', 'sponsorship_user', 'user_id', 'sponsorship_id')->withTimestamps();
     }
 
     public static function generateSlug($name){
