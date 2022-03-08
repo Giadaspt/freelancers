@@ -43,6 +43,7 @@ class PageController extends Controller
     //     }
     // }
 
+    
 
     public function deleteMessage($id)
     {
@@ -52,5 +53,7 @@ class PageController extends Controller
 
         return redirect()->route('admin.message')->with('deleted', "Messaggio eliminato");
     }
+
+
 
 }

@@ -27,4 +27,6 @@ Route::namespace('Api')
         Route::get('categories/search', 'UserController@searchCategory');
 
         Route::get('profile/', 'UserController@show');
+
+        Route::post('message/', 'MessageController@store');
     });
