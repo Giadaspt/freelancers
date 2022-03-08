@@ -14,14 +14,15 @@ class MessageController extends Controller
         
         $request->validate($this->makeValidation(), $this->makeValidationMessage());
 
-        $data = $request->all();
-
-        Log::info($data);
-
         $success = true;
         
         $new_message = new Message();
-        $new_message->fill($data);
+        $new_message->user_id = $request->user['id'];
+        $new_message->name_sender = $request->name_sender;
+        $new_message->email_sender = $request->email_sender;
+        $new_message->text = $request->text;
+
+        // $new_message->fill($data);
         $new_message->save();
 
         return response()->json(compact('success'));

@@ -2191,15 +2191,14 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         // this.message = res.data.message;
         _this2.sending = false;
-        console.log(res.data); // if(res.data.errors){
-        //   this.errors = res.data.errors;
-        // } else {
-        //   this.errors = {};
-        //   this.name_sender = '',
-        //   this.email_sender = '',
-        //   this.text = '',
-        //   this.success = true
-        // }
+        console.log(res.data);
+
+        if (res.data.errors) {
+          _this2.errors = res.data.errors;
+        } else {
+          _this2.errors = {};
+          _this2.name_sender = '', _this2.email_sender = '', _this2.text = '', _this2.success = true;
+        }
       })["catch"](function (err) {
         console.log(err);
       });

@@ -111,8 +111,6 @@ export default {
     // },
 
      sendForm(){
-
-
         this.sending = true;
   
         axios.post("http://127.0.0.1:8000/api/message/", {
@@ -131,17 +129,17 @@ export default {
 
           console.log(res.data);
 
-          // if(res.data.errors){
-          //   this.errors = res.data.errors;
+          if(res.data.errors){
+            this.errors = res.data.errors;
 
-          // } else {
+          } else {
    
-          //   this.errors = {};
-          //   this.name_sender = '',
-          //   this.email_sender = '',
-          //   this.text = '',
-          //   this.success = true
-          // }
+            this.errors = {};
+            this.name_sender = '',
+            this.email_sender = '',
+            this.text = '',
+            this.success = true
+          }
 
          
 
