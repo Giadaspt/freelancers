@@ -29,25 +29,29 @@
 
     <section class="mt-4 mb-4">
       <h3>Contattami</h3>
-      <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1" class="ml-2">Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Scrivi la tua email" required>
-        <small id="emailHelp" class="form-text text-muted">La tua email sarà visibile solo al professionista che stai contattando</small>
-      </div>
-      <div class="form-group">
-        <label for="name" class="ml-2">Nome</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nome" required>
-      </div>
-      <div class="form-group">
-        <label for="lastname" class="ml-2">Cognome</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cognome" required>
-      </div>
-      <div class="form-group">
-        <label for="description_job">Scrivi il tuo messaggio</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required ></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Invia</button>
+
+      <form method="POST" @submit.prevent="sendForm" >
+
+        <div class="form-group">
+          <label for="email_sender" class="ml-2">Email</label>
+          <input v-model="email_sender" type="email" class="form-control" id="email_sender" placeholder="Scrivi la tua email" required>
+          <small id="emailHelp" class="form-text text-muted">La tua email sarà visibile solo al professionista che stai contattando</small>
+        </div>
+
+        <div class="form-group">
+          <label for="name_sender" class="ml-2">Nome</label>
+          <input v-model="name_sender" type="text" class="form-control" id="name_sender" placeholder="Nome" required>
+        </div>
+
+        <div class="form-group">
+          <label for="text">Scrivi il tuo messaggio</label>
+          <textarea v-model="text" class="form-control" id="text" rows="3" required ></textarea>
+        </div>
+
+        <div class="d-flex">
+          <button type="submit" class="btn btn-freelance mr-3">Invia</button>
+          <button type="reset" class="btn btn-delete">Cancella</button>
+        </div>
     </form>
     </section>
 
@@ -62,12 +66,18 @@ export default {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
       users: [],
-
       user: '',
-
       slug: this.$route.params.slug,
+
+  
+      name_sender: '',
+      email_sender: '',
+      text: '',
+      errors:{},
+      success: false,
+      sending: false,
     }
-  },
+  }, 
 
   mounted() {
     this.getUser();
@@ -75,6 +85,7 @@ export default {
 
 
   methods: {
+
     getUser(){
       axios.get(this.apiUrl)
         .then(res => {
@@ -82,9 +93,9 @@ export default {
 
           let userOk = this.users.find(item => item.id );
 
-          console.log('user',this.users);
-          console.log('res data',res.data.users);
-          console.log('user ok', userOk);
+          // console.log('user',this.users);
+          // console.log('res data',res.data.users);
+          // console.log('user ok', userOk);
 
           this.user = userOk;
 
@@ -92,12 +103,58 @@ export default {
       });
     },  
     
-    lightBox(){
-      return lightbox.option({
-        'resizeDuration': 200,
-        'wrapAround': true
-      })
-    }
+    // lightBox(){
+    //   return lightbox.option({
+    //     'resizeDuration': 200,
+    //     'wrapAround': true
+    //   })
+    // },
+
+     sendForm(){
+        this.sending = true;
+  
+        axios.post("http://127.0.0.1:8000/api/message/", {
+
+          name_sender: this.name_sender,
+          email_sender: this.email_sender,
+          text: this.text,
+          user: this.user
+          
+          })
+          .then((res) => {
+
+          // this.message = res.data.message;
+
+          this.sending = false;
+
+          console.log(res.data);
+
+          if(res.data.errors){
+            this.errors = res.data.errors;
+
+          } else {
+   
+            this.errors = {};
+            this.name_sender = '',
+            this.email_sender = '',
+            this.text = '',
+            this.success = true
+          }
+
+         
+
+        }).catch((err) => {
+          console.log(err);
+        });
+      },
+
+      reset(){
+        this.errors = {};
+        this.name_sender = '',
+        this.email_sender = '',
+        this.text = '',
+        this.success = true
+      }
 
   }
 }

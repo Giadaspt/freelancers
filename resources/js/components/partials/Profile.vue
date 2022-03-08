@@ -8,10 +8,9 @@
    </div>
 
 
-   <div class="right-box">
-       <div class="user-info">
-
-       </div>
+    <div class="right-box">
+      <div class="user-info">
+    </div>
 
        <div class="box-buttons d-flex justify-content-center">
          <button class="btn-profile">Vedi</button>
