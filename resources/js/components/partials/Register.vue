@@ -1,12 +1,15 @@
 <template>
 
 <div class="box-register d-flex">
-  
-  <div class="box-img-register"></div>
 
-  <div class="box-text-register text-center p-4">
+  <div class="box-text-register text-center container">
     <h2>Sei un freelancer?</h2>
     <p>Iscriviti e raggiungi i tuoi clienti</p>
+    <router-link to="/register">
+
+      <button class="btn btn-info" type="submit">Iscriviti</button>
+
+    </router-link>
   </div>
  
 
@@ -31,16 +34,12 @@ export default {
 
  .box-register{
    width: 100%;
-   height: 300px;
-     .box-img-register{
-       width: 30%;
-       height: 100%;
-       background-color:rgb(11, 72, 184);
-     }
+   min-height: 400px;
+
      .box-text-register{
-       width: 70%;
        height: 100%;
-       background-color:rgb(137, 189, 167);
+       padding: 80px;
+      //  background-color:rgb(137, 189, 167);
          p{
            font-size: 20px;
          }
