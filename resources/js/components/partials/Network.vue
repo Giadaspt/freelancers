@@ -30,8 +30,10 @@ export default {
 <style lang="scss" scoped>
 
  .box-network{
-   width: 100%;
+   width: 80%;
    min-height: 400px;
+   margin: auto;
+
      .box-img-network{
        width: 50%;
        min-height: 500px;
@@ -47,6 +49,7 @@ export default {
      .text-network{
        width: 50%;
        height: 100%;
+       margin-left: 100px;
        
       //  background-color: ;
          h2{
