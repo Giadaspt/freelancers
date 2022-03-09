@@ -1,13 +1,13 @@
 <template>
 
-<div class="box-about d-flex justify-content-center align-items-center">
+<div class="box-about  row d-flex align-items-center justify-content-between">
   
-  <div class="box-text-about text-center">
+  <div class="box-text-about text-center col-12 col-md mr-5">
     <h2>Dicono di noi</h2>
     <h3>Oltre il 99% di clienti soddisfatti</h3>
   </div>
 
-  <div class="box-img-about text-right d-flex justify-content-center align-items-center">
+  <div class="box-img-about text-right col-12 col-md ml-2">
     <img src="..\img\voti.jpg" alt="">
   </div>
 
@@ -30,24 +30,23 @@ export default {
 <style lang="scss" scoped>
 
  .box-about{
-   width: 80%;
-   min-height: 400px;
-   padding-bottom: 100px;
-   margin: auto;
+  width: 85%;
+  margin: 100px auto;
+
      .box-img-about{
-       width: 50%;
-       height: 100%;
+       margin-bottom: 50px;
        img{
-         border-radius: 15px;
-         box-shadow: 0px 1px 10px rgb(255, 255, 255, 0.5);
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0px 1px 10px rgb(255, 255, 255, 0.5);
        }
       
      }
      .box-text-about{
-       
-       width: 50%;
-       height: 100%;
-       font-size: 120%;
+       margin-bottom: 50px;
+      //  h2 h3{
+      //    font-size: 3vw !important;
+      //  }
 
      }
 }

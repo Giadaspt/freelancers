@@ -87,7 +87,7 @@ export default {
     height: 100px;
     margin: 5px;
     width: calc(100% / 7);
-    font-size: 20px;
+    font-size: 1vw;
     text-transform: uppercase;
   }
   
