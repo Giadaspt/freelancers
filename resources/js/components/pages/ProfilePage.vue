@@ -5,7 +5,7 @@
       <!-- section of profile details -->
       <section class="left-side" >
           <div class="d-flex align-items-center" >
-            <div class=" mr-3">
+            <div class="profile-image mr-3">
               <img class=" mr-3" :src="'/storage/' + user.image" :alt="user.name">
             </div>
             <h3 class="mr-2">{{ user.name }}</h3>
@@ -40,11 +40,11 @@
                     </p>
                   </span>
                 </div>
-              <div class="mr-3" >
+              <div class="mr-3 cv" >
                   <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
                   <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
                   <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
-                  <iframe style="width: 200px; height: 350px;"  :src="'/storage/' + user.cv"></iframe>
+                  <iframe class="curriculum"   :src="'/storage/' + user.cv"></iframe>
               </div>
           </div>
       </section>

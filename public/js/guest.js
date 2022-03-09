@@ -4526,7 +4526,7 @@ var render = function () {
     _c("div", { staticClass: "side d-flex flex-wrap row" }, [
       _c("section", { staticClass: "left-side" }, [
         _c("div", { staticClass: "d-flex align-items-center" }, [
-          _c("div", { staticClass: " mr-3" }, [
+          _c("div", { staticClass: "profile-image mr-3" }, [
             _c("img", {
               staticClass: " mr-3",
               attrs: { src: "/storage/" + _vm.user.image, alt: _vm.user.name },
@@ -4597,9 +4597,9 @@ var render = function () {
             ),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "mr-3" }, [
+          _c("div", { staticClass: "mr-3 cv" }, [
             _c("iframe", {
-              staticStyle: { width: "200px", height: "350px" },
+              staticClass: "curriculum",
               attrs: { src: "/storage/" + _vm.user.cv },
             }),
           ]),
