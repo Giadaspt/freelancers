@@ -5,6 +5,15 @@
       Lista dei freelancer per: {{ name }}
     </h1>
 
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Visualizza per</label>
+    <select class="form-control" id="exampleFormControlSelect1" aria-placeholder="seleziona un filtro">
+      <option value="" selected> Applica un filtro </option>
+      <option>Media recensioni più alta</option>
+      <option> Numero recensioni </option>
+      </select>
+    </div>
+
     <FreelancerCard
       v-for="(user, index ) in users"
       :key="index"
