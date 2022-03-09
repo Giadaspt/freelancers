@@ -33,7 +33,7 @@ class ReviewController extends Controller
         return [
             "author_name" => "required|max:50|min:2",
             "vote" => "required",
-            "text" => "max:255|min:2",
+            "text" => "required|max:255|min:2",
         ];
     }
 
@@ -42,9 +42,10 @@ class ReviewController extends Controller
             "author_name.required" =>"Il nome è obbligatorio",
             "author_name.max" =>"Il nome può avere massimo 50 caratteri",
             "author_name.min" =>"Il nome deve avere minimo 2 caratteri",
-            "vote.required" =>"il voto è obbligatoria",
+            "vote.required" =>"il voto è obbligatorio",
             "email_sender.max" =>"Il nome può avere massimo 150 caratteri",
             "email_sender.min" =>"Il nome deve avere minimo 2 caratteri",
+            "text.required" =>"il messaggio è obbligatorio",
             "text.max" =>"Il messaggio può avere massimo 255 caratteri",
             "text.min" =>"Il messaggio deve avere minimo 2 caratteri",
            

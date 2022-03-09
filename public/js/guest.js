@@ -4809,7 +4809,7 @@ var render = function () {
                 },
               ],
               staticClass: "form-control",
-              attrs: { id: "text", rows: "3" },
+              attrs: { id: "text", rows: "3", required: "" },
               domProps: { value: _vm.text },
               on: {
                 input: function ($event) {
@@ -4822,10 +4822,10 @@ var render = function () {
             }),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "d-flex justify-content-between" }, [
+          _c("div", { staticClass: "flex-row justify-content-between" }, [
             _vm._m(2),
             _vm._v(" "),
-            _c("div", { staticClass: "back mt-4 mb-4" }, [
+            _c("div", { staticClass: "back mt-4 mb-4 ml-auto" }, [
               _c(
                 "a",
                 {
@@ -4876,7 +4876,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", {}, [
+    return _c("div", { staticClass: "d-flex" }, [
       _c(
         "button",
         {

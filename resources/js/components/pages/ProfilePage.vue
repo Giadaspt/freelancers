@@ -138,15 +138,15 @@
 
         <div class="form-group">
           <label for="text">Scrivi il tuo messaggio</label>
-          <textarea v-model="text" class="form-control" id="text" rows="3"></textarea>
+          <textarea v-model="text" class="form-control" id="text" rows="3" required></textarea>
         </div>
 
-        <div class="d-flex justify-content-between">
-          <div class="">
+        <div class="flex-row justify-content-between">
+          <div class="d-flex">
             <button type="submit" class="btn btn-freelance mr-3 mb-3">Invia</button>
             <button type="reset" class="btn btn-delete ">Cancella</button>
           </div>
-          <div class="back mt-4 mb-4">
+          <div class="back mt-4 mb-4 ml-auto">
             <a class="btn-freelance btn-back justify-content-center" @click="$router.go(-1)">Indietro</a>
           </div>
         </div>
