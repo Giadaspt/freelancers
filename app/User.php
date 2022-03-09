@@ -29,7 +29,8 @@ class User extends Authenticatable
         'slug', 
         'category_id',
         'skill_id',
-        // 'sponsorship_id'
+        'review_id',
+        'sponsorship_id'
     ];
 
     /**

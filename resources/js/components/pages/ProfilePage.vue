@@ -84,23 +84,20 @@
     <section class="reviews-section">
       <h3>Recensioni</h3>
       <div>
-        <h2>Qua ci vanno le recensioni stampate</h2>
-        <!-- qua vanno stamapte le recensioni -->
+        <Review
+        v-for="(review, index ) in reviews"
+        :key="index"
+        :userReview = "review"
+        v-model="name"
+        />
       </div>
 
-      
       <form method="POST" @submit.prevent="sendFormReview" class="mb-4">
 
         <div class="form-group">
           <label for="author_name" class="ml-2">Nome</label>
           <input v-model="author_name" type="text" class="form-control" id="author_name" placeholder="Nome" required>
         </div>
-
-        <!-- <div class="form-group">
-          <label for="vote" class="ml-2">Voto</label>
-          <input v-model="vote" type="number" min="1" max="5"  class="form-control" id="vote" placeholder="Voto" required>
-          <small id="emailHelp" class="form-text text-muted">Inserisci un voto da 1 a 5</small>
-        </div> -->
 
         <p>Inserisci un voto da 1 a 5</p>
         <form class="rating" required>
@@ -157,17 +154,27 @@
 </template>
 
 <script>
+import Review from '../partials/Review.vue';
+
 export default {
   name: "ProfilePage",
+
+  components: {
+    Review,
+  },
+
   data(){
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
       users: [],
       user: this.$route.params.user,
-      slug: this.$route.params.slug,
-
       categories: [], 
       skills: [],
+
+      reviews: [],
+      name: this.$route.params.name,
+      author_name: '',
+      vote: 0,
   
       name_sender: '',
       email_sender: '',
@@ -176,8 +183,6 @@ export default {
       success: false,
       sending: false,
 
-      author_name: '',
-      vote: 0,
     }
   }, 
 
@@ -188,28 +193,17 @@ export default {
   }, 
 
   methods: {
-    getUser(){
-      axios.get(this.apiUrl, )
+    getUser(name){
+      axios.get(this.apiUrl + 'reviews/' + name)
         .then(res => {
-          this.users = res.data.users;
-          this.categories = res.data.category;
-          this.skills = res.data.skills; 
+          // this.users = res.data.users;
+          // this.categories = res.data.category;
+          // this.skills = res.data.skills; 
+
+          this.reviews = res.data.review.users;
+          console.log('reviw', this.reviews );
+          console.log('reviwwwwwww', res.data.review.users);
           
-          // console.log(this.user);
-           let userOk = this.users;
-
-          // userOk.forEach(user => {
-          //   console.log(user);
-            
-          // });
-
-          // let userOk = this.users.find(item => item.id);
-
-          // console.log('user',this.users);
-          // console.log('res data',res.data.users);
-          console.log('user ok', userOk);
-
-          // this.user = userOk;
           
       });
     },  

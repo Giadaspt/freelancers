@@ -6,6 +6,7 @@ use App\User;
 use App\Category;
 use App\Skill;
 use App\Http\Controllers\Controller;
+use App\Review;
 use Illuminate\Cache\RedisTaggedCache;
 use Illuminate\Http\Request;
 
@@ -22,15 +23,16 @@ class UserController extends Controller
 
     public function show(){
 
-        $user = User::with('categories', 'skills')->first();
+        $user = User::with('categories', 'skills', 'reviews')->first();
         $categories = Category::all();
         $skills = Skill::all();
+        $reviews = Review::all();
 
         if(!$user){
             return 'Nessun utente trovato';
         };
 
-        return response()->json(compact('user', 'categories', 'skills'));
+        return response()->json(compact('user', 'categories', 'skills','reviews'));
 
     }
 
