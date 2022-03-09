@@ -63,9 +63,7 @@ export default {
 
       });
     },
-
-  
-
+    
     reset(){
       this.users = null;
       this.success = true;
@@ -73,7 +71,6 @@ export default {
     },
 
 
-    
   },
 
 }
