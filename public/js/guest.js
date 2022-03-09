@@ -2364,6 +2364,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Footer",
   methods: {}
@@ -2708,7 +2710,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "footer[data-v-bc338846] {\n  color: white;\n  width: 100%;\n  height: 250px;\n  background-color: black;\n}\nfooter .container-footer-box[data-v-bc338846] {\n  height: 100%;\n}\nfooter .container-footer-box li[data-v-bc338846] {\n  list-style: none;\n}\nfooter .container-footer-box a[data-v-bc338846] {\n  text-decoration: none;\n  color: white;\n}\nfooter .footer-box[data-v-bc338846] {\n  width: 33.3333333333%;\n  height: 100%;\n}\nfooter .bottom-footer[data-v-bc338846] {\n  width: 100%;\n  background-color: black;\n  color: white;\n}", ""]);
+exports.push([module.i, "footer[data-v-bc338846] {\n  color: white;\n  width: 100%;\n  height: 250px;\n  background-color: black;\n}\nfooter .container-footer-box[data-v-bc338846] {\n  height: 100%;\n}\nfooter .container-footer-box li[data-v-bc338846] {\n  list-style: none;\n}\nfooter .container-footer-box a[data-v-bc338846] {\n  text-decoration: none;\n  color: white;\n}\nfooter .footer-box[data-v-bc338846] {\n  width: 33.3333333333%;\n  height: 100%;\n}\nfooter .bottom-footer[data-v-bc338846] {\n  width: 100%;\n  background-color: black;\n  color: white;\n}\nfooter .bottom-footer .icon[data-v-bc338846] {\n  height: 20px;\n  margin-left: 10px;\n  cursor: pointer;\n}\nfooter .bottom-footer .icon[data-v-bc338846]:hover {\n  scale: 1.1;\n  transition: 0.3s;\n}", ""]);
 
 // exports
 
@@ -4753,7 +4755,32 @@ var staticRenderFns = [
             ),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "box-social" }),
+          _c("div", { staticClass: "box-social d-flex" }, [
+            _vm._v("\r\n        Seguici "),
+            _c("img", {
+              staticClass: "icon",
+              attrs: {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png",
+                alt: "",
+              },
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "icon",
+              attrs: {
+                src: "https://syrus.blog/wp-content/uploads/2021/10/TWITTER.png",
+                alt: "",
+              },
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "icon",
+              attrs: {
+                src: "https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw",
+                alt: "",
+              },
+            }),
+          ]),
         ]),
       ]),
     ])
@@ -21211,7 +21238,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\Cristian\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })
