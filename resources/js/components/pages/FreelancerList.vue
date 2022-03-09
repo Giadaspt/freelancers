@@ -8,7 +8,9 @@
       :freelancerCard = "user"
       v-model="name"
     />
-
+    <div class="back mt-4 mb-4">
+      <a class="btn-freelance btn-back justify-content-center" @click="$router.go(-1)">Indietro</a>
+    </div>
 
   </div>
 </template>
@@ -61,9 +63,7 @@ export default {
 
       });
     },
-
-  
-
+    
     reset(){
       this.users = null;
       this.success = true;
@@ -71,12 +71,19 @@ export default {
     },
 
 
-    
   },
 
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+  .back{
+  width: 90px;
+  height: 20px;
+  text-align: center;
+  .btn-back {
+    cursor: pointer;
+    padding: 4px;
+  }
+}
 </style>
