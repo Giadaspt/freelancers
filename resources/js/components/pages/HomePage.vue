@@ -1,8 +1,8 @@
 <template>
   <div>
     <Jumbotron/>
-    <div class="container">
     
+    <div class="container">
      <Categories/>
 
      <Sponsored/>

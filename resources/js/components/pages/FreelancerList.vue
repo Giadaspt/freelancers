@@ -1,29 +1,14 @@
 <template>
-  <div class="container-team4">
-    
-    <h1 class="mb-4 mt-4" >
-      Lista dei freelancer per: {{ name }}
-    </h1>
-
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Visualizza per</label>
-    <select class="form-control" id="exampleFormControlSelect1" aria-placeholder="seleziona un filtro">
-      <option value="" selected> Applica un filtro </option>
-      <option>Media recensioni più alta</option>
-      <option> Numero recensioni </option>
-      </select>
-    </div>
+  <div class="container">
+    <h1 class="mb-4 mt-4">Lista dei freelancer per: {{ name }}</h1>
 
     <FreelancerCard
       v-for="(user, index ) in users"
       :key="index"
       :freelancerCard = "user"
-      v-model="category"
+      v-model="name"
     />
 
-    <div class="back  mb-4 ">
-      <a class="btn-freelance d-flex justify-content-center" @click="$router.go(-1)">Indietro</a>
-    </div>
 
   </div>
 </template>
@@ -44,7 +29,6 @@ export default {
       users: null,
       success: true,
       errrorMsg: "",
-      category: '',
 
       name: this.$route.params.name,
     }
@@ -78,37 +62,21 @@ export default {
       });
     },
 
+  
+
     reset(){
       this.users = null;
       this.success = true;
       this.errorMsg = "";
     },
 
-    getRightCategory(){
-      if(this.name === this.category.name){
-        return this.success;
-      } 
-    }
+
     
   },
 
 }
 </script>
 
-<style scoped lang="scss">
-  .container-team4 {
-    width: 70%;
-    margin: 0 auto;
-  }
+<style>
 
-  .back{
-  width: 90px;
-  height: 20px;
-  text-align: center;
-  cursor: pointer;
-
-  a {
-    padding: 4px;
-  }
-}
 </style>

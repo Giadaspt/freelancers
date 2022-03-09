@@ -92,7 +92,7 @@ export default {
      }
 
      .bottom-footer{
-          height: 30px;
+          
           width: 100%;
           background-color: rgb(0, 0, 0);
           color: white;
