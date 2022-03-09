@@ -2137,11 +2137,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ProfilePage",
   data: function data() {
@@ -2385,6 +2380,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4514,8 +4514,6 @@ var render = function () {
               ),
             ]),
           ]),
-          _vm._v(" "),
-          _vm._m(1),
         ]
       ),
     ]),
@@ -4539,12 +4537,6 @@ var staticRenderFns = [
         [_vm._v("Cancella")]
       ),
     ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", [_c("h3", [_vm._v("Recensioni")])])
   },
 ]
 render._withStripped = true
@@ -4789,22 +4781,63 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("h5", { staticClass: "card-title" }, [
-          _c("span", [_c("h3", [_vm._v(_vm._s(_vm.freelancerCard.name))])]),
+    _c("div", { staticClass: "card custom-card row" }, [
+      _c(
+        "div",
+        { staticClass: "card-body p-0" },
+        [
+          _c("div", { staticClass: "top" }),
           _vm._v(" "),
-          _c("span", [_c("h3", [_vm._v(_vm._s(_vm.freelancerCard.lastname))])]),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "card-text" }, [
-          _vm._v(_vm._s(_vm.freelancerCard.description_job)),
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-          _vm._v("Vai al profilo"),
-        ]),
-      ]),
+          _c(
+            "h5",
+            { staticClass: "card-title d-flex align-items-center p-4" },
+            [
+              _c("div", { staticClass: "profile-image" }, [
+                _c("img", {
+                  attrs: {
+                    src: "/storege/" + _vm.freelancerCard.image,
+                    alt: "",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("span", [
+                _c("h3", { staticClass: "name ml-4 mr-3" }, [
+                  _vm._v(_vm._s(_vm.freelancerCard.name)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("span", [
+                _c("h3", { staticClass: "name" }, [
+                  _vm._v(_vm._s(_vm.freelancerCard.lastname)),
+                ]),
+              ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-text pl-4 pr-4" }, [
+            _vm._v(_vm._s(_vm.freelancerCard.description_job)),
+          ]),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              attrs: {
+                to: {
+                  name: "profile/",
+                  params: { slug: _vm.freelancerCard.slug },
+                },
+              },
+            },
+            [
+              _c("button", { staticClass: "btn btn-freelance m-4" }, [
+                _vm._v("Vai al profilo"),
+              ]),
+            ]
+          ),
+        ],
+        1
+      ),
     ]),
   ])
 }
@@ -21178,7 +21211,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })

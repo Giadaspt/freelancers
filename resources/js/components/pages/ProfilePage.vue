@@ -60,11 +60,6 @@
           </div>
         </section>
 
-        <section >
-          <h3>Recensioni</h3>
-
-          
-        </section>
 
     </form>
     </section>
@@ -73,17 +68,14 @@
 </template>
 
 <script>
-
 export default {
   name: "ProfilePage",
-
   data(){
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
       users: [],
       user: '',
       slug: this.$route.params.slug,
-
   
       name_sender: '',
       email_sender: '',
@@ -93,27 +85,19 @@ export default {
       sending: false,
     }
   }, 
-
   mounted() {
     this.getUser();
   }, 
-
-
   methods: {
-
     getUser(){
       axios.get(this.apiUrl)
         .then(res => {
           this.users = res.data.users;
-
           let userOk = this.users.find(item => item.id );
-
           // console.log('user',this.users);
           // console.log('res data',res.data.users);
           // console.log('user ok', userOk);
-
           this.user = userOk;
-
           return this.user;
       });
     },  
@@ -124,12 +108,10 @@ export default {
     //     'wrapAround': true
     //   })
     // },
-
      sendForm(){
         this.sending = true;
   
         axios.post("http://127.0.0.1:8000/api/message/", {
-
           name_sender: this.name_sender,
           email_sender: this.email_sender,
           text: this.text,
@@ -137,16 +119,11 @@ export default {
           
           })
           .then((res) => {
-
           // this.message = res.data.message;
-
           this.sending = false;
-
           console.log(res.data);
-
           if(res.data.errors){
             this.errors = res.data.errors;
-
           } else {
    
             this.errors = {};
@@ -155,14 +132,11 @@ export default {
             this.text = '',
             this.success = true
           }
-
          
-
         }).catch((err) => {
           console.log(err);
         });
       },
-
       reset(){
         this.errors = {};
         this.name_sender = '',
@@ -170,35 +144,28 @@ export default {
         this.text = '',
         this.success = true
       }
-
   }
 }
 </script>
 
 <style scoped lang="scss">
-
 .cv-custom {
   width: 30%;
   overflow-y: none;
   overflow-x: none;
-
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
-
 .back{
   width: 90px;
   height: 20px;
   text-align: center;
   cursor: pointer;
-
   .btn-back {
     padding: 4px;
   }
 }
-
-
 </style>
