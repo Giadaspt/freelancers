@@ -24,12 +24,14 @@ class UserController extends Controller
     public function show(){
 
         $user = User::all();
+        $categories = Category::all();
+        $skills = Skill::all();
 
         if(!$user){
             return 'Nessun utente trovato';
-        }
+        };
 
-        return response()->json($user);
+        return response()->json(compact('users', 'categories', 'skills'));
 
     }
 

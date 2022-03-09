@@ -43,8 +43,10 @@
    <div class="container d-flex justify-content-between">
     <p>Copyright ©2022 BFreelancer - Spark Technology S.r.l. P.IVA 04578412</p> 
 
-    <div class="box-social">
-  
+    <div class="box-social d-flex">
+        Seguici <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png" alt="">
+        <img class="icon" src="https://syrus.blog/wp-content/uploads/2021/10/TWITTER.png" alt="">
+        <img class="icon" src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw" alt="">
     </div>
    </div>
  </div>
@@ -97,6 +99,15 @@ export default {
           background-color: rgb(0, 0, 0);
           color: white;
          
+         .icon{
+           height: 20px;
+           margin-left: 10px;
+           cursor: pointer;
+           &:hover{
+             scale: 1.1;
+             transition: 0.3s;
+           }
+         }
         }
 }
 
