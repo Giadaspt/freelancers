@@ -8,7 +8,9 @@
       :freelancerCard = "user"
       v-model="name"
     />
-
+    <div class="back mt-4 mb-4">
+      <a class="btn-freelance btn-back justify-content-center" @click="$router.go(-1)">Indietro</a>
+    </div>
 
   </div>
 </template>
