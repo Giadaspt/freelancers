@@ -26,7 +26,8 @@ export default {
  .box-howitworks{
    width: 100%;
    max-height: 200px;
-   margin: 100px 0;
+   padding-top: 100px;
+   padding: 60px 0;
    
 }
 
