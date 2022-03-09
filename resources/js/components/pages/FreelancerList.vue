@@ -79,6 +79,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+  .back{
+  width: 90px;
+  height: 20px;
+  text-align: center;
+  .btn-back {
+    cursor: pointer;
+    padding: 4px;
+  }
+}
 </style>
