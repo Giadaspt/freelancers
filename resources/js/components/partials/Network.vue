@@ -1,11 +1,11 @@
 <template>
 
-<div class="box-network d-flex">
+<div class="box-network d-flex justify-content-center align-content-center">
 
-   <div class="box-img-network"></div>
+   <div class="box-img-network"><img src="..\img\1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg" alt=""></div>
 
-   <div class="text-network d-flex align-items-center">
-     <h2 class="text-center">Il più grande network di freelancers italiano, con più di 50.000 iscritti attivi</h2>
+   <div class="text-network">
+     <h2 class="text-left">Il più grande network di freelancers italiano, con più di 50.000 iscritti attivi</h2>
    </div>
 
 
@@ -29,16 +29,21 @@ export default {
 
  .box-network{
    width: 100%;
-   height: 300px;
      .box-img-network{
-       width: 30%;
-       height: 100%;
-       background-color: aqua;
+       width: 50%;
+       min-height: 400px;
+       margin-right: 50px;
+       img{
+         width: 100%;
+       }
+     
+
      }
      .text-network{
-       width: 70%;
+       width: 50%;
        height: 100%;
-       background-color: chartreuse;
+       
+      //  background-color: ;
          h2{
            font-size: 40px;
          }
