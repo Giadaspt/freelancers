@@ -30,9 +30,10 @@ export default {
 <style lang="scss" scoped>
 
  .box-about{
-   width: 100%;
+   width: 80%;
    min-height: 400px;
    padding-bottom: 100px;
+   margin: auto;
      .box-img-about{
        width: 50%;
        height: 100%;

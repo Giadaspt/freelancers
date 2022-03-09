@@ -2791,7 +2791,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-about[data-v-c3867f8e] {\n  width: 100%;\n  min-height: 400px;\n  padding-bottom: 100px;\n}\n.box-about .box-img-about[data-v-c3867f8e] {\n  width: 50%;\n  height: 100%;\n}\n.box-about .box-img-about img[data-v-c3867f8e] {\n  border-radius: 15px;\n  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-about .box-text-about[data-v-c3867f8e] {\n  width: 50%;\n  height: 100%;\n  font-size: 120%;\n}", ""]);
+exports.push([module.i, ".box-about[data-v-c3867f8e] {\n  width: 80%;\n  min-height: 400px;\n  padding-bottom: 100px;\n  margin: auto;\n}\n.box-about .box-img-about[data-v-c3867f8e] {\n  width: 50%;\n  height: 100%;\n}\n.box-about .box-img-about img[data-v-c3867f8e] {\n  border-radius: 15px;\n  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-about .box-text-about[data-v-c3867f8e] {\n  width: 50%;\n  height: 100%;\n  font-size: 120%;\n}", ""]);
 
 // exports
 
@@ -2810,7 +2810,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-categories[data-v-403bfede] {\n  min-height: 500px;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  height: 100px;\n  margin: 5px;\n  width: 14.2857142857%;\n}\n.box-categories .cat-card[data-v-403bfede] {\n  border-radius: 20px;\n  box-shadow: 0px 10px 10px darkgray;\n}\n.box-categories .cat-card[data-v-403bfede]:hover {\n  box-shadow: 0px 10px 10px darkgray;\n  transition: transform 0.3s;\n  transform: scale(1.05);\n}\n.box-categories .cat-card:hover a[data-v-403bfede] {\n  color: white;\n}", ""]);
+exports.push([module.i, ".box-categories[data-v-403bfede] {\n  min-height: 500px;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  height: 100px;\n  margin: 5px;\n  width: 14.2857142857%;\n  font-size: 20px;\n  text-transform: uppercase;\n}\n.box-categories .cat-card[data-v-403bfede] {\n  border-radius: 20px;\n  box-shadow: 0px 10px 10px darkgray;\n}\n.box-categories .cat-card[data-v-403bfede]:hover {\n  box-shadow: 0px 10px 10px darkgray;\n  transition: transform 0.3s;\n  transform: scale(1.05);\n}\n.box-categories .cat-card:hover a[data-v-403bfede] {\n  color: white;\n}", ""]);
 
 // exports
 
@@ -2848,7 +2848,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-howitworks[data-v-9a62b42e] {\n  width: 100%;\n  max-height: 200px;\n  padding-top: 100px;\n  padding: 60px 0;\n}", ""]);
+exports.push([module.i, ".box-howitworks[data-v-9a62b42e] {\n  width: 80%;\n  max-height: 200px;\n  padding-top: 100px;\n  margin: auto;\n}", ""]);
 
 // exports
 
@@ -2862,12 +2862,13 @@ exports.push([module.i, ".box-howitworks[data-v-9a62b42e] {\n  width: 100%;\n  m
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  width: 100%;\n  background-image: url();\n  background-size: contain;\n  background-repeat: no-repeat;\n  margin-bottom: 0;\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 5vw;\n  margin-bottom: 25px;\n  color: #5165F6;\n}\n.btn-jumbo[data-v-d804be4c] {\n  background-color: #5165F6;\n  color: white;\n}\n.input[data-v-d804be4c] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-d804be4c]:hover {\n  box-shadow: 0px 0px 18px;\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  width: 100%;\n  min-height: 600px;\n  background-image: url(" + escape(__webpack_require__(/*! ../img/jumbo.png */ "./resources/js/components/img/jumbo.png")) + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  margin-bottom: 0;\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 5vw;\n  margin-bottom: 25px;\n  color: #5165F6;\n}\n.btn-jumbo[data-v-d804be4c] {\n  background-color: #5165F6;\n  color: white;\n}\n.input[data-v-d804be4c] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-d804be4c]:hover {\n  box-shadow: 0px 0px 18px;\n}", ""]);
 
 // exports
 
@@ -2886,7 +2887,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-network[data-v-2f495c48] {\n  width: 100%;\n  min-height: 400px;\n}\n.box-network .box-img-network[data-v-2f495c48] {\n  width: 50%;\n  min-height: 500px;\n  margin-right: 50px;\n}\n.box-network .box-img-network img[data-v-2f495c48] {\n  width: 100%;\n  border-radius: 15px;\n  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-network .text-network[data-v-2f495c48] {\n  width: 50%;\n  height: 100%;\n}\n.box-network .text-network h2[data-v-2f495c48] {\n  font-size: 40px;\n}", ""]);
+exports.push([module.i, ".box-network[data-v-2f495c48] {\n  width: 80%;\n  min-height: 400px;\n  margin: auto;\n}\n.box-network .box-img-network[data-v-2f495c48] {\n  width: 50%;\n  min-height: 500px;\n  margin-right: 50px;\n}\n.box-network .box-img-network img[data-v-2f495c48] {\n  width: 100%;\n  border-radius: 15px;\n  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-network .text-network[data-v-2f495c48] {\n  width: 50%;\n  height: 100%;\n  margin-left: 100px;\n}\n.box-network .text-network h2[data-v-2f495c48] {\n  font-size: 40px;\n}", ""]);
 
 // exports
 
@@ -2962,7 +2963,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.bg-home{\n  background-color: #5DADEC;\n  width: 100%!important;\n  color: white;\n}\n\n", ""]);
+exports.push([module.i, "\n.bg-home{\n  background-color: #5DADEC;\n  width: 100%!important;\n  color: white;\n}\n.container-custom{\n  width: 80%;\n  padding: auto 0;\n}\n\n", ""]);
 
 // exports
 
@@ -3051,6 +3052,33 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/url/escape.js":
+/*!***************************************************!*\
+  !*** ./node_modules/css-loader/lib/url/escape.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
 }
 
 
@@ -4476,7 +4504,7 @@ var render = function () {
       _c("div", { staticClass: "bg-home" }, [
         _c(
           "div",
-          { staticClass: "container" },
+          {},
           [
             _c("HowItWorks"),
             _vm._v(" "),
@@ -5380,11 +5408,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box-howitworks" }, [
-      _c("h2", [_vm._v("Come funziona:")]),
-      _vm._v(" "),
-      _c("h4", [_vm._v("Cerca il freelancer più adatto al tuo progetto...")]),
-    ])
+    return _c(
+      "div",
+      {
+        staticClass:
+          "box-howitworks d-flex flex-column justify-content-center align-items-center",
+      },
+      [
+        _c("h2", [_vm._v("Come funziona:")]),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Cerca il freelancer più adatto al tuo progetto...")]),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -5408,64 +5443,71 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "jumbotron" }, [
-    _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v(" Assumi i migliori freelancers online ")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "input-group mb-3 input" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.category,
-              expression: "category",
-            },
-          ],
-          staticClass: "form-control input-jumbo",
-          attrs: { type: "text", placeholder: "Cerca il tuo freelancers" },
-          domProps: { value: _vm.category },
-          on: {
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.category = $event.target.value
-            },
-          },
-        }),
+  return _c(
+    "div",
+    {
+      staticClass:
+        "jumbotron d-flex justify-content-center align-items-center flex-column",
+    },
+    [
+      _c("div", { staticClass: "container " }, [
+        _c("h1", [_vm._v(" Assumi i migliori freelancers online ")]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "input-group-append " },
-          [
-            _c(
-              "router-link",
+        _c("div", { staticClass: "input-group mb-3 input" }, [
+          _c("input", {
+            directives: [
               {
-                attrs: {
-                  to: {
-                    path: "freelancerList/" + this.category,
-                    params: { name: this.name },
+                name: "model",
+                rawName: "v-model",
+                value: _vm.category,
+                expression: "category",
+              },
+            ],
+            staticClass: "form-control input-jumbo",
+            attrs: { type: "text", placeholder: "Cerca il tuo freelancers" },
+            domProps: { value: _vm.category },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.category = $event.target.value
+              },
+            },
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "input-group-append " },
+            [
+              _c(
+                "router-link",
+                {
+                  attrs: {
+                    to: {
+                      path: "freelancerList/" + this.category,
+                      params: { name: this.name },
+                    },
                   },
                 },
-              },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-jumbo ml-5 ",
-                    attrs: { type: "submit" },
-                  },
-                  [_vm._v("\n           Cerca \n         ")]
-                ),
-              ]
-            ),
-          ],
-          1
-        ),
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-jumbo ml-5 ",
+                      attrs: { type: "submit" },
+                    },
+                    [_vm._v("\n           Cerca \n         ")]
+                  ),
+                ]
+              ),
+            ],
+            1
+          ),
+        ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -20569,6 +20611,17 @@ module.exports = "/images/1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg?
 
 /***/ }),
 
+/***/ "./resources/js/components/img/jumbo.png":
+/*!***********************************************!*\
+  !*** ./resources/js/components/img/jumbo.png ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/jumbo.png?ed1daf218aa2c52e04c76020676d1362";
+
+/***/ }),
+
 /***/ "./resources/js/components/img/voti.jpg":
 /*!**********************************************!*\
   !*** ./resources/js/components/img/voti.jpg ***!
@@ -21753,7 +21806,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+
 module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+
 
 
 /***/ })

@@ -1,6 +1,6 @@
 <template>
- <div class="jumbotron">
-  <div class="container">
+ <div class="jumbotron d-flex justify-content-center align-items-center flex-column">
+  <div class="container ">
      <h1> Assumi i migliori freelancers online </h1>
     <div class="input-group mb-3 input">
 
@@ -50,9 +50,10 @@ export default {
 
  .jumbotron{
    width: 100%;
+  min-height: 600px;
   //  background-color: rgb(202, 219, 219);
-  background-image: url();
-  background-size: contain;
+  background-image: url('../img/jumbo.png');
+  background-size: cover;
   background-repeat: no-repeat;
    margin-bottom: 0;
      h1{

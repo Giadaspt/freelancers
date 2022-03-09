@@ -87,6 +87,8 @@ export default {
     height: 100px;
     margin: 5px;
     width: calc(100% / 7);
+    font-size: 20px;
+    text-transform: uppercase;
   }
   
   .cat-card{

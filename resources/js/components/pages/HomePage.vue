@@ -9,7 +9,7 @@
     </div>
     
     <div class="bg-home">
-      <div class="container">
+      <div class="">
 
 
      <HowItWorks/>
@@ -61,6 +61,10 @@ export default {
     background-color: #5DADEC;
     width: 100%!important;
     color: white;
+  }
+  .container-custom{
+    width: 80%;
+    padding: auto 0;
   }
 
 </style>
