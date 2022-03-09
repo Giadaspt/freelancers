@@ -17,13 +17,13 @@ class HomeController extends Controller
 
         $messages = Message::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
         
-        $lastMessage = $messages->last();
+        $lastMessage = $messages->first();
         
         $allMessages = $messages->count();
 
         $reviews = Review::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
         
-        $lastReview = $reviews->last();
+        $lastReview = $reviews->first();
 
         $allReviews = $reviews->count();
 
