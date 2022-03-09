@@ -2240,7 +2240,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
       users: [],
-      user: '',
+      user: this.$route.params.user,
       slug: this.$route.params.slug,
       categories: [],
       skills: [],
@@ -2256,6 +2256,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getUser();
+    console.log('user singolo', this.user);
+    console.log('user tanti', this.users);
   },
   methods: {
     getUser: function getUser() {
@@ -2263,17 +2265,17 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(this.apiUrl).then(function (res) {
         _this.users = res.data.users;
-        _this.categories = res.data.categories;
-        _this.skills = res.data.skills;
+        _this.categories = res.data.category;
+        _this.skills = res.data.skills; // console.log(this.user);
 
-        var userOk = _this.users.find(function (item) {
-          return item.id;
-        }); // console.log('user',this.users);
+        var userOk = _this.users; // userOk.forEach(user => {
+        //   console.log(user);
+        // });
+        // let userOk = this.users.find(item => item.id);
+        // console.log('user',this.users);
         // console.log('res data',res.data.users);
-        // console.log('user ok', userOk);
 
-
-        _this.user = userOk;
+        console.log('user ok', userOk); // this.user = userOk;
       });
     },
     sendFormMessage: function sendFormMessage() {
@@ -2527,6 +2529,9 @@ __webpack_require__.r(__webpack_exports__);
   name: "FreelancerCard",
   props: {
     "freelancerCard": Object
+  },
+  mounted: function mounted() {
+    console.log('freelancer', this.freelancerCard);
   }
 });
 
@@ -4558,7 +4563,7 @@ var render = function () {
             _c(
               "span",
               { staticClass: " cat" },
-              _vm._l(_vm.categories, function (category) {
+              _vm._l(_vm.user.categories, function (category) {
                 return _c("p", { key: "" + category.id, staticClass: "mr-2" }, [
                   _vm._v(
                     "\r\n                      " +
@@ -4741,6 +4746,7 @@ var render = function () {
       _c(
         "form",
         {
+          staticClass: "mb-4",
           attrs: { method: "POST" },
           on: {
             submit: function ($event) {
@@ -5333,10 +5339,7 @@ var render = function () {
             "router-link",
             {
               attrs: {
-                to: {
-                  name: "profile/",
-                  params: { name: _vm.freelancerCard.name },
-                },
+                to: { name: "profile/", params: { user: _vm.freelancerCard } },
               },
             },
             [

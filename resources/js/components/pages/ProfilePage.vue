@@ -3,9 +3,9 @@
 
     <div class="side d-flex flex-wrap row">
       <!-- section of profile details -->
-      <section class="left-side">
-          <div class="d-flex align-items-center">
-            <div class=" mr-3" >
+      <section class="left-side" >
+          <div class="d-flex align-items-center" >
+            <div class=" mr-3">
               <img class=" mr-3" :src="'/storage/' + user.image" :alt="user.name">
             </div>
             <h3 class="mr-2">{{ user.name }}</h3>
@@ -26,7 +26,7 @@
             <div class="left-side ">
                   <h5 class="mr-2 font-weight-bold">Mi occupo di: </h5>
                 <span class=" cat">
-                  <p class="mr-2" v-for="category in categories" :key="`${category.id}`">
+                  <p class="mr-2" v-for="category in user.categories" :key="`${category.id}`">
                       {{ category.name }},
                   </p>
                 </span>  
@@ -89,7 +89,7 @@
       </div>
 
       
-      <form method="POST" @submit.prevent="sendFormReview" >
+      <form method="POST" @submit.prevent="sendFormReview" class="mb-4">
 
         <div class="form-group">
           <label for="author_name" class="ml-2">Nome</label>
@@ -163,7 +163,7 @@ export default {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
       users: [],
-      user: '',
+      user: this.$route.params.user,
       slug: this.$route.params.slug,
 
       categories: [], 
@@ -183,23 +183,33 @@ export default {
 
   mounted() {
     this.getUser();
+    console.log('user singolo',this.user);
+    console.log('user tanti',this.users);
   }, 
 
   methods: {
     getUser(){
-      axios.get(this.apiUrl)
+      axios.get(this.apiUrl, )
         .then(res => {
           this.users = res.data.users;
-          this.categories = res.data.categories;
-          this.skills = res.data.skills;
+          this.categories = res.data.category;
+          this.skills = res.data.skills; 
+          
+          // console.log(this.user);
+           let userOk = this.users;
 
-          let userOk = this.users.find(item => item.id);
+          // userOk.forEach(user => {
+          //   console.log(user);
+            
+          // });
+
+          // let userOk = this.users.find(item => item.id);
 
           // console.log('user',this.users);
           // console.log('res data',res.data.users);
-          // console.log('user ok', userOk);
+          console.log('user ok', userOk);
 
-          this.user = userOk;
+          // this.user = userOk;
           
       });
     },  
@@ -212,7 +222,7 @@ export default {
           email_sender: this.email_sender,
           text: this.text,
           user: this.user
-          
+
           })
           .then((res) => {
           // this.message = res.data.message;

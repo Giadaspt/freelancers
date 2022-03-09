@@ -14,7 +14,6 @@ class UserController extends Controller
     public function index(){
 
         $users =  User::all();
-
         $categories = Category::all();
         $skills = Skill::all();
 
@@ -23,7 +22,7 @@ class UserController extends Controller
 
     public function show(){
 
-        $user = User::all();
+        $user = User::with('categories', 'skills')->first();
         $categories = Category::all();
         $skills = Skill::all();
 
@@ -31,7 +30,7 @@ class UserController extends Controller
             return 'Nessun utente trovato';
         };
 
-        return response()->json(compact('users', 'categories', 'skills'));
+        return response()->json(compact('user', 'categories', 'skills'));
 
     }
 

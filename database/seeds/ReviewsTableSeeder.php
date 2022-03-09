@@ -13,15 +13,15 @@ class ReviewsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i=0; $i<10; $i++){
-            $new_review = new Review();
+        // for($i=0; $i<10; $i++){
+        //     $new_review = new Review();
  
-            $new_review->author_name = $faker->firstName;
-            $new_review->text = $faker->text;
-            $new_review->vote = random_int(1,5);
+        //     $new_review->author_name = $faker->firstName;
+        //     $new_review->text = $faker->text;
+        //     $new_review->vote = random_int(1,5);
  
-            $new_review->save();
+        //     $new_review->save();
  
-        }
+        // }
     }
 }

@@ -12,7 +12,7 @@
         </h5>
         <p class="card-text pl-4 pr-4">{{ freelancerCard.description_job }}</p>
 
-        <router-link :to="{ name:'profile/', params:{name: freelancerCard.name} }">
+        <router-link :to="{ name:'profile/', params:{user: freelancerCard}}">
           <button class="btn btn-freelance m-4">Vai al profilo</button>
         </router-link>
       </div>
@@ -23,9 +23,16 @@
 <script>
 export default {
   name: "FreelancerCard",
+
   props: {
     "freelancerCard": Object,
+  },
+
+  mounted(){
+
+    console.log('freelancer',this.freelancerCard);
   }
+
 }
 </script>
 
