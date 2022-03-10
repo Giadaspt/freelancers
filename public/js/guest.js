@@ -2269,19 +2269,22 @@ __webpack_require__.r(__webpack_exports__);
       success: false,
       sending: false,
       userCategory: [],
-      userComplete: {}
+      userComplete: {},
+      userReviews: {}
     };
   },
   mounted: function mounted() {
-    console.log('user singolo', this.user);
-    console.log('user tanti', this.users);
-    console.log('user cati', this.userCategory); // console.log('reviews vai',this.reviews);
+    // console.log('user singolo',this.user);
+    // console.log('user tanti',this.users);
+    // console.log('user cati',this.userCategory);
+    // console.log('reviews vai',this.reviews);
     // console.log('reviews yes',this.review);
     // console.log('cat cat',this.category);
-
     this.getApi();
     this.getAllCat();
     this.getCategories();
+    this.getAllRev();
+    this.getReviews();
   },
   methods: {
     getApi: function getApi() {
@@ -2294,18 +2297,16 @@ __webpack_require__.r(__webpack_exports__);
           if (utente.id === _this.user.id) {
             return _this.userComplete = utente;
           }
-        });
-        console.log('user complete', _this.userComplete);
-        console.log('userObj', userObj);
-        console.log('reviw user', _this.users);
+        }); // console.log('user complete',this.userComplete);
+        // console.log('userObj', userObj);
+        // console.log('reviw user', this.users );
       });
     },
     getAllCat: function getAllCat() {
       var _this2 = this;
 
       axios.get(this.apiUrl).then(function (res) {
-        _this2.categories = res.data.categories;
-        console.log('cat cat', _this2.categories);
+        _this2.categories = res.data.categories; // console.log('cat cat',this.categories);
       });
     },
     getCategories: function getCategories() {
@@ -2322,8 +2323,31 @@ __webpack_require__.r(__webpack_exports__);
       console.log('array cat2', this.userCategory);
       console.log('array pivot', this.user.pivot.category_id);
     },
-    sendFormMessage: function sendFormMessage() {
+    getAllRev: function getAllRev() {
       var _this4 = this;
+
+      axios.get(this.apiUrl).then(function (res) {
+        _this4.reviews = res.data.reviews;
+        console.log('cat rev', _this4.reviews);
+      });
+    },
+    getReviews: function getReviews() {
+      var _this5 = this;
+
+      var rev = this.reviews;
+      rev.forEach(function (rec) {
+        if (rec.user_id == _this5.user.id) {
+          console.log('rev.id', rec.id);
+          console.log('rec.id rev', rec.user_id);
+          return _this5.userReviews = rec;
+        }
+      });
+      console.log('array rev', rev);
+      console.log('array rev2', this.userReviews);
+      console.log('user.id rev', this.user.id);
+    },
+    sendFormMessage: function sendFormMessage() {
+      var _this6 = this;
 
       this.sending = true;
       axios.post("http://127.0.0.1:8000/api/message/", {
@@ -2333,21 +2357,21 @@ __webpack_require__.r(__webpack_exports__);
         user: this.user
       }).then(function (res) {
         // this.message = res.data.message;
-        _this4.sending = false;
+        _this6.sending = false;
         console.log(res.data);
 
         if (res.data.errors) {
-          _this4.errors = res.data.errors;
+          _this6.errors = res.data.errors;
         } else {
-          _this4.errors = {};
-          _this4.name_sender = '', _this4.email_sender = '', _this4.text = '', _this4.success = true;
+          _this6.errors = {};
+          _this6.name_sender = '', _this6.email_sender = '', _this6.text = '', _this6.success = true;
         }
       })["catch"](function (err) {
         console.log(err);
       });
     },
     sendFormReview: function sendFormReview() {
-      var _this5 = this;
+      var _this7 = this;
 
       this.sending = true;
       axios.post("http://127.0.0.1:8000/api/review/", {
@@ -2357,14 +2381,14 @@ __webpack_require__.r(__webpack_exports__);
         user: this.user
       }).then(function (res) {
         // this.message = res.data.message;
-        _this5.sending = false;
+        _this7.sending = false;
         console.log(res.data);
 
         if (res.data.errors) {
-          _this5.errors = res.data.errors;
+          _this7.errors = res.data.errors;
         } else {
-          _this5.errors = {};
-          _this5.author_name = '', _this5.vote = 0, _this5.text = '', _this5.success = true;
+          _this7.errors = {};
+          _this7.author_name = '', _this7.vote = 0, _this7.text = '', _this7.success = true;
         }
       })["catch"](function (err) {
         console.log(err);
@@ -4763,6 +4787,7 @@ var render = function () {
           _c("div", { staticClass: "box-img mr-3 cv" }, [
             _c("iframe", {
               staticClass: "curriculum",
+              staticStyle: { width: "200 height:375" },
               attrs: { src: "/storage/" + _vm.user.cv },
             }),
           ]),
@@ -21939,7 +21964,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })

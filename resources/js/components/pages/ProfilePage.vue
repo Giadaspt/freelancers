@@ -201,13 +201,14 @@ export default {
 
       userCategory: [],
       userComplete: {},
+      userReviews: {},
     }
   },
 
   mounted() {
-    console.log('user singolo',this.user);
-    console.log('user tanti',this.users);
-    console.log('user cati',this.userCategory);
+    // console.log('user singolo',this.user);
+    // console.log('user tanti',this.users);
+    // console.log('user cati',this.userCategory);
     // console.log('reviews vai',this.reviews);
     // console.log('reviews yes',this.review);
 
@@ -216,6 +217,8 @@ export default {
     this.getApi();
     this.getAllCat();
     this.getCategories();
+    this.getAllRev();
+    this.getReviews()
   },
 
   methods: {
@@ -233,10 +236,10 @@ export default {
             }
 
           });
-            console.log('user complete',this.userComplete);
-            console.log('userObj', userObj);
+            // console.log('user complete',this.userComplete);
+            // console.log('userObj', userObj);
 
-          console.log('reviw user', this.users );
+          // console.log('reviw user', this.users );
       });
     },
 
@@ -246,14 +249,12 @@ export default {
         .then(res => {
           this.categories = res.data.categories;
 
-          console.log('cat cat',this.categories);
+          // console.log('cat cat',this.categories);
       });
     },
 
       getCategories(){
         let cat = this.categories;
-
-
         cat.forEach(category => {
 
           if(category.id = this.user.pivot.category_id){
@@ -266,6 +267,34 @@ export default {
         console.log('array cat2',this.userCategory);
         console.log('array pivot',this.user.pivot.category_id);
 
+    },
+
+      getAllRev(){
+
+      axios.get(this.apiUrl)
+        .then(res => {
+          this.reviews = res.data.reviews;
+
+          console.log('cat rev',this.reviews);
+      });
+    },
+
+     getReviews(){
+        let rev = this.reviews;
+
+        rev.forEach(rec => {
+
+          if(rec.user_id == this.user.id){
+            console.log('rev.id', rec.id);
+            console.log('rec.id rev',rec.user_id); 
+            return this.userReviews = rec;
+          }
+        });
+
+        console.log('array rev',rev);
+        console.log('array rev2',this.userReviews);
+        console.log('user.id rev',this.user.id);
+     
 
     },
 
@@ -298,6 +327,7 @@ export default {
           console.log(err);
         });
       },
+
 
      sendFormReview(){
         this.sending = true;

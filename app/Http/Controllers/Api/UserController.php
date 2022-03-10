@@ -33,10 +33,10 @@ class UserController extends Controller
 
         $categories = Category::with('users')->get();
         $skills = Skill::all();
-        $review = Review::all();
+        $reviews = Review::all();
    
 
-        return response()->json(compact('users', 'categories', 'skills', 'selected_sponsored'));
+        return response()->json(compact('users', 'categories', 'skills', 'selected_sponsored', 'reviews'));
     }
 
     public function show(){
