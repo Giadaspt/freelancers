@@ -44,13 +44,20 @@ export default {
     AboutUs,
     Register,
     Footer
-  }
+  },
+
+  
+
+
+
+
+  
 }
 
 
 </script>
 
-<style>
+<style lang="scss">
 
 
 </style>

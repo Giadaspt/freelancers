@@ -1,7 +1,10 @@
 <template>
  <div class="jumbotron">
-  <div class="container">
-     <h1> Assumi i migliori freelancers online </h1>
+  <div class="container text-center d-flex flex-column align-items-center">
+
+       <h1> Assumi i migliori freelancers online </h1>
+
+     
     <div class="input-group mb-3 input">
 
       <input 

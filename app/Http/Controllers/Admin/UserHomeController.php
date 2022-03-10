@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
+use Carbon\Carbon;
 
 class UserHomeController extends Controller
 {
@@ -30,6 +31,22 @@ class UserHomeController extends Controller
     public function show(User $user)
     {
 
+        $date_now = Carbon::now();
+
+        $packBaseExpiration = '';
+        $packPremiumExpiration = '';
+        $packEliteExpiration = '';
+
+       if(count($user->sponsorships) > 0){
+
+         $packBaseExpiration = Carbon::parse($user->sponsorships[count($user->sponsorships) - 1]->pivot->created_at)->addHours(24);
+
+         $packPremiumExpiration = Carbon::parse($user->sponsorships[count($user->sponsorships) - 1]->pivot->created_at)->addHours(72);
+
+         $packEliteExpiration = Carbon::parse($user->sponsorships[count($user->sponsorships) - 1]->pivot->created_at)->addHours(144);
+
+       }
+       
         $user = Auth::user();
 
         $categories = Category::all();
@@ -38,7 +55,7 @@ class UserHomeController extends Controller
 
         $sponsorships = Sponsorship::all();
 
-        return view('admin.users.show', compact('user', 'categories', 'skills', 'sponsorships'));
+        return view('admin.users.show', compact('user', 'categories', 'skills', 'sponsorships', 'packBaseExpiration', 'packPremiumExpiration', 'packEliteExpiration', 'date_now'));
     }
 
     /**
