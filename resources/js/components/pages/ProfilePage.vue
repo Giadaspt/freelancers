@@ -48,7 +48,7 @@
                   <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
                   <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
                   <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
-                  <iframe class="curriculum"   :src="'/storage/' + user.cv"></iframe>
+                  <iframe class="curriculum"  style="width:200 height:375 " :src="'/storage/' + user.cv"></iframe>
                   <!-- <img class="curriculum"   :src="'/storage/' + user.cv"> -->
               </div>
           </div>
@@ -265,7 +265,7 @@ export default {
         console.log('array cat',cat);
         console.log('array cat2',this.userCategory);
         console.log('array pivot',this.user.pivot.category_id);
-      
+
 
     },
 
