@@ -31,7 +31,7 @@ class UserController extends Controller
                   
              }
 
-        $categories = Category::all();
+        $categories = Category::with('users')->get();
         $skills = Skill::all();
         $review = Review::all();
    
@@ -88,17 +88,5 @@ class UserController extends Controller
     }
 
     
-    public function getReview($slug){
 
-        $reviews = Review::all();
-
-        // $reviews = Review::where('user_id', $user_id)->get();
-        // $user = User::where('user_id', $user->id)->get();
-
-        // $user_id = $request->user['id'];
-
-        $user = User::where('slug', $slug)->with('users.reviews')->first();
-
-        return response()->json(compact($user));
-    }
 }

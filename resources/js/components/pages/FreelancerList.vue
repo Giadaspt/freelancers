@@ -32,26 +32,20 @@ export default {
       success: true,
       errrorMsg: "",
 
+      category: "",
+      categories: [],
+
       name: this.$route.params.name,
     }
   },
 
   mounted() {
     this.getCategory(this.name);
+
   }, 
 
   methods: {
-    getApi(){
-      this.reset();
-
-      axios.get(this.apiUrl)
-        .then(res => {
-          this.users = res.data.users;
-
-          console.log(this.users);
-      });
-    },
-
+ 
     getCategory(name){
       this.reset();
 
@@ -63,6 +57,18 @@ export default {
 
       });
     },
+    
+    // getCategory(name){
+    //   this.reset();
+
+    //   axios.get(this.apiUrl + 'categories/' + name)
+    //   .then(res =>{
+    //     this.users = res.data.category.users;
+       
+    //     console.log('user della chiamata',this.users);
+
+    //   });
+    // },
     
     reset(){
       this.users = null;
