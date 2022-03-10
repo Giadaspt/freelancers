@@ -1,6 +1,8 @@
 <template>
 <div class="container">
 
+  <!-- <h1> {{user}} </h1> -->
+
     <div class="side d-flex flex-wrap row">
       <!-- section of profile details -->
       <section class="left-side" >
@@ -35,16 +37,25 @@
               <div class="left-side " >
                   <h5 class="mr-2 font-weight-bold">I miei punti di forza sono: </h5>
                   <span class="skill">
-                    <p class="mr-2" v-for="skill in skills" :key="`${skill.id}`">
+                    <p class="mr-2" v-for="skill in user.skills" :key="`${skill.id}`">
                       {{ skill.name }},
                     </p>
                   </span>
                 </div>
-              <div class="mr-3 cv" >
+              <div class="left-side " >
+                  <h5 class="mr-2 font-weight-bold">Recensioni </h5>
+                  <span class="skill">
+                    <p class="mr-2" v-for="review in user.reviews" :key="`${review.id}`">
+                      {{ review.name }},
+                    </p>
+                  </span>
+                </div>
+              <div class="box-img mr-3 cv" >
                   <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
                   <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
                   <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
-                  <iframe class="curriculum"   :src="'/storage/' + user.cv"></iframe>
+                  <!-- <iframe class="curriculum"   :src="'/storage/' + user.cv"></iframe> -->
+                  <img class="curriculum"   :src="'/storage/' + user.cv">
               </div>
           </div>
       </section>
@@ -334,5 +345,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+   .box-img{
+     width: 250px;
+     height: 350px;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+     
+   }
 
 </style>

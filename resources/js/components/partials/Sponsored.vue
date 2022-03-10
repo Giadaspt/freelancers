@@ -15,7 +15,7 @@
 
         <div class="left-box">
             <div class="box-img">
-              <img :src="user.image" alt="">
+              
             </div>
             <div class="box-info">
 
@@ -38,14 +38,14 @@
                 <div class="box-description">
                     <p> {{user.description_job}} </p>
                 </div>
-               
-      
             </div>
 
-            <div class="box-buttons d-flex justify-content-center">
+            <!-- <div class="box-buttons d-flex justify-content-center">
               <button class="btn-profile">Vedi</button>
-              <button class="btn-profile">Contatta</button>
-            </div>
+            </div> -->
+             <router-link :to="{ name:'profile/', params:{user: user, name: user.name}}">
+               <button class="btn btn-freelance m-4">Vai al profilo</button>
+            </router-link>
         </div>
 
     <!-- </div> -->
@@ -62,6 +62,10 @@
 export default {
   name: "Sponsored",
 
+  props: {
+    "freelancerCard": Object,
+  },
+
   // components:{
   //   Profile
   // },
@@ -75,6 +79,7 @@ export default {
     return{
       apiUrl: 'http://127.0.0.1:8000/api/',
       sponsored: [],
+      name:this.$route.params.name
     }
   },
 
