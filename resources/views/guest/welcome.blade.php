@@ -15,7 +15,7 @@
     
     </head>
     <body>
-        <div class="container flex-center position-ref full-height d-flex align-items-center justify-content-between">
+        <div class="container-team4 d-flex align-items-center justify-content-between">
             <div>
                 <a class="nav-link logo">
                     <img src="{{ asset('storage/img/logo.png') }}" >
@@ -23,7 +23,7 @@
             </div>
 
             @if (Route::has('login'))
-                <div class="top-right links d-flex justify-content-end m-4">
+                <div class="top-right links d-flex  m-4">
                     @auth
                         <a
                         class="text-colored {{ Route::currentRouteName() === 'admin.index' }} "
@@ -37,9 +37,9 @@
                     @endauth
                 </div>
             @endif
-            <div  class="content">
+        </div>
+        <div  class="content">
 
-            </div>
         </div>
 
         <div id="app"></div>
