@@ -48,18 +48,30 @@ export default {
     AboutUs,
     Register,
     Footer
-  }
+  },
+
+  
+
+
+
+
+  
 }
 
 
 </script>
 
-<style>
+
+<style lang="scss">
+
+
+
   .bg-home{
     background-color: #5DADEC;
     
     color: white;
   }
   
+
 
 </style>

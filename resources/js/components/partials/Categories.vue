@@ -4,7 +4,9 @@
   <h2 class="text-center py-5">Seleziona una categoria</h2>        
   <div class="d-flex justify-content-center align-content-center flex-wrap">
       
-      <a class="card cat-card text-center btn-category d-flex align-items-center justify-content-center" v-for="(category, index) in categories" :key="index" :href="'freelancerList/'+ category.name">{{category.name}}</a>   
+
+      <a class="box-category text-center btn-category d-flex align-items-center justify-content-center" v-for="(category, index) in categories" :key="index" :href="'freelancerList/'+ category.name">{{category.name}}</a>   
+
      
     </div>
 </div>
@@ -61,23 +63,37 @@ export default {
 
 <style lang="scss" scoped>
 
-//  .box-categories{
-//    width: 100%;
-//    padding: 50px 0 50px 0;
-//   //  height: 350px;
-//      .btn-category{
-//        border-radius: 10px;
-//        text-transform: uppercase;
-//        width: calc(100% / 6 - 20px);
-//        width: 164px;
-//        height: 100px;
-//       //  background-color: #5165F6;
-//        color: white;
-//          &:hover{
-//             // background-color: #6b7add;
-//          }
+ .box-categories{
+   width: 100%;
+   padding: 50px 0 50px 0;
+  //  height: 350px;
+     .btn-category{
+       border-radius: 10px;
+       margin: 10px;
+       text-transform: uppercase;
+      //  width: calc(100% / 6 - 20px);
+       width: 164px;
+       height: 100px;
+       background-color: #5165F6;
+       color: white;
+         &:hover{
+            background-color: #6b7add;
+         }
 
-//      }
+     }
+}
+
+
+// .box-categories{
+ 
+//   margin: 50px 200px;
+
+//   .btn-category{
+   
+//     height: 100px;
+//     margin: 5px;
+//     width: calc(100% / 7);
+//   }
 // }
 
 .box-categories{
@@ -106,5 +122,6 @@ export default {
   }
 }
 }
+
 
 </style>
