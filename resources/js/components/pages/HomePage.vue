@@ -1,21 +1,25 @@
 <template>
   <div>
     <Jumbotron/>
-    
-    <div class="container">
+    <div class="bg-home">
      <Categories/>
-
+    </div>
+    <div class="container">
      <Sponsored/>
-
+    </div>
+    
+    <div class="bg-home">
+      
      <HowItWorks/>
 
      <Network/>
 
      <AboutUs/>
+      
+    </div>
 
      <Register/>
 
-    </div>
     
     <Footer/>
 
@@ -57,7 +61,17 @@ export default {
 
 </script>
 
+
 <style lang="scss">
+
+
+
+  .bg-home{
+    background-color: #5DADEC;
+    
+    color: white;
+  }
+  
 
 
 </style>

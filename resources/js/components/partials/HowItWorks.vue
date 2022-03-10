@@ -1,6 +1,6 @@
 <template>
 
-<div class="box-howitworks">
+<div class="box-howitworks d-flex flex-column justify-content-center align-items-center">
 
    <h2>Come funziona:</h2>
    <h4>Cerca il freelancer più adatto al tuo progetto...</h4>
@@ -24,9 +24,10 @@ export default {
 <style lang="scss" scoped>
 
  .box-howitworks{
-   width: 100%;
+   width: 80%;
    max-height: 200px;
-   margin: 100px 0;
+   padding-top: 100px;
+   margin: auto;
    
 }
 

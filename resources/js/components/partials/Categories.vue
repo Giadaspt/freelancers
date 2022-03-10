@@ -1,10 +1,12 @@
 <template>
 
 <div class="box-categories">
-  <h2 class="text-center my-5">Seleziona una categoria</h2>        
+  <h2 class="text-center py-5">Seleziona una categoria</h2>        
   <div class="d-flex justify-content-center align-content-center flex-wrap">
       
+
       <a class="box-category text-center btn-category d-flex align-items-center justify-content-center" v-for="(category, index) in categories" :key="index" :href="'freelancerList/'+ category.name">{{category.name}}</a>   
+
      
     </div>
 </div>
@@ -81,6 +83,7 @@ export default {
      }
 }
 
+
 // .box-categories{
  
 //   margin: 50px 200px;
@@ -92,5 +95,33 @@ export default {
 //     width: calc(100% / 7);
 //   }
 // }
+
+.box-categories{
+  min-height: 500px;
+  .btn-category{
+   
+    height: 100px;
+    margin: 5px;
+    width: calc(100% / 7);
+    font-size: 1vw;
+    text-transform: uppercase;
+  }
+  
+  .cat-card{
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px rgb(169,169,169);
+    &:hover {
+    a{
+      color: white;
+    }
+    
+    box-shadow: 0px 10px 10px rgb(169,169,169);
+    transition: transform .3s;
+    transform: scale(1.05);
+    
+  }
+}
+}
+
 
 </style>

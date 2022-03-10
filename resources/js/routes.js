@@ -26,7 +26,7 @@ const router = new VueRouter({
       component: FreelancerList,
     },
     {
-      path: '/profile',
+      path: '/profile/:name',
       name: 'profile/',
       component: ProfilePage,
     },
