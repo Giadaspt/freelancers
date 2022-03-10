@@ -2819,6 +2819,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 // import Profile from './Profile.vue'
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Sponsored",
@@ -3055,7 +3056,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #c3d5e4;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n  border: 1px solid lightgray;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  border: 1px solid lightgray;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 85%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 50%;\n  width: 100%;\n  overflow: auto;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}", ""]);
+exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #c3d5e4;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n  border: 1px solid lightgray;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  border: 1px solid lightgray;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 85%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 40%;\n  width: 100%;\n  overflow: auto;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}", ""]);
 
 // exports
 
@@ -5825,12 +5826,20 @@ var render = function () {
           { key: "user" + user.id, staticClass: "box-profile d-flex" },
           [
             _c("div", { staticClass: "left-box" }, [
-              _c("div", { staticClass: "box-img" }),
+              _c("div", { staticClass: "box-img" }, [
+                _c("img", {
+                  attrs: { src: "/storage/" + user.image, alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "box-info" }, [
-                _c("h3", { staticClass: "my-3" }, [_vm._v(_vm._s(user.name))]),
+                _c("h5", [_vm._v("Categoria")]),
                 _vm._v(" "),
-                _c("p", [_vm._v(" " + _vm._s(user.city) + " ")]),
+                _c("p", [_vm._v(" " + _vm._s(user.categories[0].name) + " ")]),
+                _vm._v(" "),
+                _c("h5", [_vm._v("Skills principali")]),
+                _vm._v(" "),
+                _c("p", [_vm._v(" " + _vm._s(user.skills[0].name) + " ")]),
                 _vm._v(" "),
                 _c("h6", [_vm._v("Media recensioni")]),
               ]),
@@ -5841,15 +5850,11 @@ var render = function () {
               { staticClass: "right-box" },
               [
                 _c("div", { staticClass: "user-info" }, [
-                  _c("h5", [_vm._v("Categoria")]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(" " + _vm._s(user.categories[0].name) + " "),
+                  _c("h3", { staticClass: "my-3" }, [
+                    _vm._v(_vm._s(user.name)),
                   ]),
                   _vm._v(" "),
-                  _c("h5", [_vm._v("Skills principali")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(" " + _vm._s(user.skills[0].name) + " ")]),
+                  _c("p", [_vm._v(" " + _vm._s(user.city) + " ")]),
                   _vm._v(" "),
                   _c("h5", [_vm._v("Panoramica")]),
                   _vm._v(" "),
@@ -5869,7 +5874,7 @@ var render = function () {
                     },
                   },
                   [
-                    _c("button", { staticClass: "btn btn-freelance m-4" }, [
+                    _c("button", { staticClass: "btn btn-freelance mb-4" }, [
                       _vm._v("Vai al profilo"),
                     ]),
                   ]
@@ -21934,9 +21939,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
-
+module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })

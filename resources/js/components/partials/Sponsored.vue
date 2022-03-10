@@ -15,12 +15,13 @@
 
         <div class="left-box">
             <div class="box-img">
-              
+              <img :src="'/storage/' + user.image" alt="">
             </div>
             <div class="box-info">
-
-               <h3 class="my-3">{{user.name}}</h3>
-               <p> {{user.city}} </p>
+              <h5>Categoria</h5>
+               <p> {{user.categories[0].name}} </p>
+               <h5>Skills principali</h5>
+               <p> {{user.skills[0].name}} </p>       
                <h6>Media recensioni</h6>
         <!-- <p> qui il dato dinamico delle reviews </p> -->
                 
@@ -30,10 +31,10 @@
 
         <div class="right-box">
             <div class="user-info">
-               <h5>Categoria</h5>
-               <p> {{user.categories[0].name}} </p>
-               <h5>Skills principali</h5>
-               <p> {{user.skills[0].name}} </p>
+              <h3 class="my-3">{{user.name}}</h3>
+               <p> {{user.city}} </p>
+
+               
                <h5>Panoramica</h5>
                 <div class="box-description">
                     <p> {{user.description_job}} </p>
@@ -44,7 +45,7 @@
               <button class="btn-profile">Vedi</button>
             </div> -->
              <router-link :to="{ name:'profile/', params:{user: user, name: user.name}}">
-               <button class="btn btn-freelance m-4">Vai al profilo</button>
+               <button class="btn btn-freelance mb-4">Vai al profilo</button>
             </router-link>
         </div>
 
@@ -151,7 +152,7 @@ export default {
            height: 85%;
              .box-description{
                 font-size: 13px;
-                height: 50%;
+                height: 40%;
                 width: 100%;
                 overflow: auto;
              }
