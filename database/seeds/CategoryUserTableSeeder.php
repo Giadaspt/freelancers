@@ -13,14 +13,14 @@ class CategoryUserTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i= 0; $i < 20; $i++){
+        // for($i= 0; $i < 20; $i++){
 
-            $user = User::inrandomOrder()->first();
+        //     $user = User::inrandomOrder()->first();
 
-            $category_id = Category::inRandomOrder()->first()->id;
+        //     $category_id = Category::inRandomOrder()->first()->id;
 
-            $user->categories()->attach($category_id);
+        //     $user->categories()->attach($category_id);
             
-        }
+        // }
     }
 }

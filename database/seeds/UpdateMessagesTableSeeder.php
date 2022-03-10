@@ -13,13 +13,13 @@ class UpdateMessagesTableSeeder extends Seeder
      */
     public function run()
     {
-        $messages = Message::all();
+        // $messages = Message::all();
 
-        foreach($messages as $message){
+        // foreach($messages as $message){
 
-            $data=['user_id'=>User::inRandomOrder()->first()->id];
+        //     $data=['user_id'=>User::inRandomOrder()->first()->id];
 
-            $message->update($data);
-        }
+        //     $message->update($data);
+        // }
     }
 }
