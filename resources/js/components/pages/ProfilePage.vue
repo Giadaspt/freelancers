@@ -4,10 +4,12 @@
     <div class="side d-flex flex-wrap row">
       <!-- section of profile details -->
 
+
       <section class="left-side">
           <div class="d-flex align-items-center">
             <div class=" box-img mr-3" >
               <img class=" mr-3" :src="'/storage/' + user.image" :alt="user.name">
+
 
             </div>
             <h3 class="mr-2">{{ user.name }}</h3>
@@ -42,7 +44,7 @@
                     </p>
                   </span>
                 </div>
-                
+
               <div class=" box-img-cv mr-3" >
                   <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
                   <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
@@ -218,6 +220,7 @@ export default {
   methods: {
     getApi(){
       axios.get(this.apiUrl )
+
         .then(res => {
 
           this.users = res.data.users;
@@ -236,6 +239,28 @@ export default {
 
     getUserReview(slug){
       axios.get(this.apiUrl + '/review/' + slug)
+
+        .then(res => {
+
+          this.users = res.data.users;
+          // this.reviews = res.data.reviews;
+
+
+          // for ( let i=0; i < this.users.length; i++ ){
+          //   let user = this.users[i];
+          //   return user
+          // }
+
+
+          console.log('reviw user', this.users );
+
+
+      });
+    },
+
+
+    getUserReview(slug){
+      axios.get(this.apiUrl + '/review/' + slug)
         .then(res => {
 
           this.users = res.data.users;
@@ -251,6 +276,7 @@ export default {
 
       });
     },
+
 
      sendFormMessage(){
         this.sending = true;

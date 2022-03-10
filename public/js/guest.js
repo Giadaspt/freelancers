@@ -2650,6 +2650,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Jumbotron",
   data: function data() {
@@ -2860,6 +2861,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 
+
 exports.push([module.i, "", ""]);
 
 // exports
@@ -2880,6 +2882,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".box-img[data-v-a644de9c] {\n  width: 100px;\n  height: 100px;\n}\n.box-img img[data-v-a644de9c] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.container-info .box-img-cv[data-v-a644de9c] {\n  width: 250px;\n  height: 350px;\n}\n.container-info .box-img-cv img[data-v-a644de9c] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+
 
 
 // exports
@@ -2919,7 +2922,9 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 
+
 exports.push([module.i, ".box-categories[data-v-403bfede] {\n  width: 100%;\n  padding: 50px 0 50px 0;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  border-radius: 10px;\n  margin: 10px;\n  text-transform: uppercase;\n  width: 164px;\n  height: 100px;\n  background-color: #5165F6;\n  color: white;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n  background-color: #6b7add;\n}\n.box-categories[data-v-403bfede] {\n  min-height: 500px;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  height: 100px;\n  margin: 5px;\n  width: 14.2857142857%;\n  font-size: 1vw;\n  text-transform: uppercase;\n}\n.box-categories .cat-card[data-v-403bfede] {\n  border-radius: 20px;\n  box-shadow: 0px 10px 10px darkgray;\n}\n.box-categories .cat-card[data-v-403bfede]:hover {\n  box-shadow: 0px 10px 10px darkgray;\n  transition: transform 0.3s;\n  transform: scale(1.05);\n}\n.box-categories .cat-card:hover a[data-v-403bfede] {\n  color: white;\n}", ""]);
+
 
 // exports
 
@@ -3632,6 +3637,7 @@ if(false) {}
 /***/ }),
 
 
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/ProfilePage.vue?vue&type=style&index=0&id=a644de9c&scoped=true&lang=scss&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/ProfilePage.vue?vue&type=style&index=0&id=a644de9c&scoped=true&lang=scss& ***!
@@ -3661,6 +3667,7 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
+
 
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/partials/AboutUs.vue?vue&type=style&index=0&id=c3867f8e&lang=scss&scoped=true&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -4673,7 +4680,9 @@ var render = function () {
       _c("section", { staticClass: "left-side" }, [
         _c("div", { staticClass: "d-flex align-items-center" }, [
 
+
           _c("div", { staticClass: " box-img mr-3" }, [
+
 
             _c("img", {
               staticClass: " mr-3",
@@ -4746,8 +4755,10 @@ var render = function () {
           ]),
           _vm._v(" "),
 
+
           _c("div", { staticClass: " box-img-cv mr-3" }, [
             _c("img", { attrs: { src: "/storage/" + _vm.user.cv } }),
+
 
           ]),
         ]),
@@ -5600,16 +5611,14 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-
-  return _c("div", { staticClass: "jumbotron" }, [
-    _c(
-      "div",
-      {
-        staticClass:
-          "container text-center d-flex flex-column align-items-center",
-      },
-      [
-
+  return _c(
+    "div",
+    {
+      staticClass:
+        "jumbotron d-flex flex-column align-items-center justify-content-center",
+    },
+    [
+      _c("div", { staticClass: "container " }, [
         _c("h1", [_vm._v(" Assumi i migliori freelancers online ")]),
         _vm._v(" "),
         _c("div", { staticClass: "input-group mb-3 input" }, [
@@ -5665,9 +5674,11 @@ var render = function () {
           ),
         ]),
 
+
       ]
     ),
   ])
+
 
 
 }
@@ -21923,10 +21934,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
-
-
+module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 /***/ })
 

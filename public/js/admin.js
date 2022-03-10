@@ -37347,6 +37347,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports, __webpack_require__) {
 
 
+
 __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\admin.js */"./resources/js/admin.js");
 __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\sass\admin\style_admin.scss */"./resources/sass/admin/style_admin.scss");
 module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\sass\guest\style_guest.scss */"./resources/sass/guest/style_guest.scss");
