@@ -10132,6 +10132,18 @@ h3 {
   border-color: #1A3854 !important;
 }
 
+.logo {
+  width: 265px;
+  height: 45px;
+  vertical-align: middle;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .btn-freelance {
   color: white !important;
   background-color: #1A3854 !important;
@@ -10313,10 +10325,19 @@ textarea.form-control {
   background-color: #3772a8d0 !important;
 }
 .nav-freelancers .logo {
-  color: #FDFF05;
+  width: 265px;
+  height: 50px;
+  vertical-align: middle;
+}
+.nav-freelancers .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .nav-freelancers a {
   color: #1A3854;
+  font-weight: 600;
 }
 .nav-freelancers a:hover {
   color: #FDFF05;
@@ -10343,4 +10364,8 @@ embed {
   width: 500px;
   height: 700px;
   overflow: none;
+}
+
+.nav-item {
+  list-style: none;
 }

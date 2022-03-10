@@ -15,7 +15,13 @@
     
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="container flex-center position-ref full-height d-flex align-items-center justify-content-between">
+            <div>
+                <a class="nav-link logo">
+                    <img src="{{ asset('storage/img/logo.png') }}" >
+                </a>
+            </div>
+
             @if (Route::has('login'))
                 <div class="top-right links d-flex justify-content-end m-4">
                     @auth

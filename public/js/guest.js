@@ -2993,7 +2993,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  min-height: 400px;\n}\n.box-register .box-text-register[data-v-7de36336] {\n  height: 100%;\n}\n.box-register .box-text-register p[data-v-7de36336] {\n  font-size: 20px;\n}\n.box-register .box-text-register a[data-v-7de36336] {\n  text-decoration: none;\n  color: white;\n}", ""]);
+exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  min-height: 400px;\n  background-image: url(https://image.ibb.co/caiYGS/freelancing.jpg);\n  background-size: cover;\n}\n.box-register .opaco[data-v-7de36336] {\n  width: 100%;\n  height: 100%;\n  padding: 120px 0;\n  background-color: black;\n  opacity: 0.4;\n}\n.box-register .box-text-register[data-v-7de36336] {\n  height: 100%;\n  color: white;\n}\n.box-register .box-text-register h2[data-v-7de36336] {\n  font-weight: 700;\n}\n.box-register .box-text-register p[data-v-7de36336] {\n  font-weight: 600;\n  font-size: 20px;\n}\n.box-register .box-text-register a[data-v-7de36336] {\n  text-decoration: none;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -5696,15 +5696,29 @@ var staticRenderFns = [
           "box-register d-flex justify-content-center align-items-center flex-row",
       },
       [
-        _c("div", { staticClass: "box-text-register text-center container " }, [
-          _c("h2", [_vm._v("Sei un freelancer?")]),
-          _vm._v(" "),
-          _c("p", [_vm._v("Iscriviti e raggiungi i tuoi clienti")]),
-          _vm._v(" "),
+        _c("div", { staticClass: "opaco" }, [
           _c(
-            "button",
-            { staticClass: "btn btn-info", attrs: { type: "submit" } },
-            [_c("a", { attrs: { href: "register/" } }, [_vm._v("Iscriviti")])]
+            "div",
+            { staticClass: "box-text-register text-center container " },
+            [
+              _c("h2", [_vm._v("Sei un freelancer?")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Iscriviti "),
+                _c("br"),
+                _vm._v(" e raggiungi i tuoi clienti"),
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn btn-info", attrs: { type: "submit" } },
+                [
+                  _c("a", { attrs: { href: "register/" } }, [
+                    _vm._v("Iscriviti"),
+                  ]),
+                ]
+              ),
+            ]
           ),
         ]),
       ]
