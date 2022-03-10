@@ -9,17 +9,36 @@ use App\Http\Controllers\Controller;
 use App\Review;
 use Illuminate\Cache\RedisTaggedCache;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function index(){
 
         $users =  User::with('categories', 'skills', 'reviews')->get();
+
+        $users =  User::with(['sponsorships', 'categories', 'skills'])->get();
+
+        $selected_sponsored = [];
+        $c = 0;
+        $maxSponsored = 3;
+ 
+
+           foreach ($users as $user){
+                if(count($user->sponsorships) > 0 && $c < $maxSponsored ){
+                    $selected_sponsored[] = $user;
+                    $c = $c + 1;
+                }
+                  
+             }
+        
+       
+
         $categories = Category::all();
         $skills = Skill::all();
    
 
-        return response()->json(compact('users', 'categories', 'skills'));
+        return response()->json(compact('users', 'categories', 'skills', 'selected_sponsored'));
     }
 
     public function show(){
