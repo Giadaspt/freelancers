@@ -1961,6 +1961,8 @@ __webpack_require__.r(__webpack_exports__);
       users: null,
       success: true,
       errrorMsg: "",
+      category: "",
+      categories: [],
       name: this.$route.params.name
     };
   },
@@ -1968,24 +1970,23 @@ __webpack_require__.r(__webpack_exports__);
     this.getCategory(this.name);
   },
   methods: {
-    getApi: function getApi() {
+    getCategory: function getCategory(name) {
       var _this = this;
 
       this.reset();
-      axios.get(this.apiUrl).then(function (res) {
-        _this.users = res.data.users;
-        console.log(_this.users);
-      });
-    },
-    getCategory: function getCategory(name) {
-      var _this2 = this;
-
-      this.reset();
       axios.get(this.apiUrl + 'categories/' + name).then(function (res) {
-        _this2.users = res.data.category.users;
-        console.log('user della chiamata', _this2.users);
+        _this.users = res.data.category.users;
+        console.log('user della chiamata', _this.users);
       });
     },
+    // getCategory(name){
+    //   this.reset();
+    //   axios.get(this.apiUrl + 'categories/' + name)
+    //   .then(res =>{
+    //     this.users = res.data.category.users;
+    //     console.log('user della chiamata',this.users);
+    //   });
+    // },
     reset: function reset() {
       this.users = null;
       this.success = true;
@@ -2245,14 +2246,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 // import Review from '../partials/Review.vue';
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ProfilePage",
@@ -2267,7 +2260,6 @@ __webpack_require__.r(__webpack_exports__);
       categories: [],
       skills: [],
       reviews: [],
-      name: this.$route.params.author_name,
       author_name: '',
       vote: 0,
       name_sender: '',
@@ -2275,75 +2267,68 @@ __webpack_require__.r(__webpack_exports__);
       text: '',
       errors: {},
       success: false,
-      sending: false
+      sending: false,
+      userCategory: [],
+      userComplete: {}
     };
   },
   mounted: function mounted() {
     console.log('user singolo', this.user);
-    console.log('user tanti', this.users); // console.log('reviews vai',this.reviews);
+    console.log('user tanti', this.users);
+    console.log('user cati', this.userCategory); // console.log('reviews vai',this.reviews);
     // console.log('reviews yes',this.review);
     // console.log('cat cat',this.category);
 
     this.getApi();
+    this.getAllCat();
+    this.getCategories();
   },
   methods: {
     getApi: function getApi() {
       var _this = this;
 
       axios.get(this.apiUrl).then(function (res) {
-        _this.users = res.data.users; // this.reviews = res.data.reviews;
-        // for ( let i=0; i < this.users.length; i++ ){
-        //   let user = this.users[i];
-        //   return user
-        // }
-
+        _this.users = res.data.users;
+        var userObj = _this.users;
+        userObj.forEach(function (utente) {
+          if (utente.id === _this.user.id) {
+            return _this.userComplete = utente;
+          }
+        });
+        console.log('user complete', _this.userComplete);
+        console.log('userObj', userObj);
         console.log('reviw user', _this.users);
       });
     },
-    getUserReview: function getUserReview(slug) {
+    getAllCat: function getAllCat() {
       var _this2 = this;
 
-      axios.get(this.apiUrl + '/review/' + slug).then(function (res) {
-        _this2.users = res.data.users; // this.reviews = res.data.reviews;
-        // for ( let i=0; i < this.users.length; i++ ){
-        //   let user = this.users[i];
-        //   return user
-        // }
-
-        console.log('reviw user', _this2.users);
+      axios.get(this.apiUrl).then(function (res) {
+        _this2.categories = res.data.categories;
+        console.log('cat cat', _this2.categories);
       });
     },
-    sendFormMessage: function sendFormMessage() {
+    getCategories: function getCategories() {
       var _this3 = this;
+
+      var cat = this.categories;
+      cat.forEach(function (category) {
+        if (category.id = _this3.user.pivot.category_id) {
+          console.log('array pivot cat.id', category.id);
+          return _this3.userCategory.push(category.name);
+        }
+      });
+      console.log('array cat', cat);
+      console.log('array cat2', this.userCategory);
+      console.log('array pivot', this.user.pivot.category_id);
+    },
+    sendFormMessage: function sendFormMessage() {
+      var _this4 = this;
 
       this.sending = true;
       axios.post("http://127.0.0.1:8000/api/message/", {
         name_sender: this.name_sender,
         email_sender: this.email_sender,
-        text: this.text,
-        user: this.user
-      }).then(function (res) {
-        // this.message = res.data.message;
-        _this3.sending = false;
-        console.log(res.data);
-
-        if (res.data.errors) {
-          _this3.errors = res.data.errors;
-        } else {
-          _this3.errors = {};
-          _this3.name_sender = '', _this3.email_sender = '', _this3.text = '', _this3.success = true;
-        }
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    },
-    sendFormReview: function sendFormReview() {
-      var _this4 = this;
-
-      this.sending = true;
-      axios.post("http://127.0.0.1:8000/api/review/", {
-        author_name: this.author_name,
-        vote: this.vote,
         text: this.text,
         user: this.user
       }).then(function (res) {
@@ -2355,7 +2340,31 @@ __webpack_require__.r(__webpack_exports__);
           _this4.errors = res.data.errors;
         } else {
           _this4.errors = {};
-          _this4.author_name = '', _this4.vote = 0, _this4.text = '', _this4.success = true;
+          _this4.name_sender = '', _this4.email_sender = '', _this4.text = '', _this4.success = true;
+        }
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    sendFormReview: function sendFormReview() {
+      var _this5 = this;
+
+      this.sending = true;
+      axios.post("http://127.0.0.1:8000/api/review/", {
+        author_name: this.author_name,
+        vote: this.vote,
+        text: this.text,
+        user: this.user
+      }).then(function (res) {
+        // this.message = res.data.message;
+        _this5.sending = false;
+        console.log(res.data);
+
+        if (res.data.errors) {
+          _this5.errors = res.data.errors;
+        } else {
+          _this5.errors = {};
+          _this5.author_name = '', _this5.vote = 0, _this5.text = '', _this5.success = true;
         }
       })["catch"](function (err) {
         console.log(err);
@@ -4698,7 +4707,7 @@ var render = function () {
           _vm._v(" "),
           _c("h5", [_vm._v(_vm._s(_vm.user.city))]),
           _vm._v(" "),
-          _c("div", { staticClass: "mt-3 mb-3" }, [
+          _c("div", { staticClass: "mt-3 mb-3 mr-4" }, [
             _vm.user.description_job != null
               ? _c("h5", { staticClass: "mr-2 font-weight-bold" }, [
                   _vm._v("Me ed il mio lavoro "),
@@ -4716,7 +4725,7 @@ var render = function () {
             _c(
               "span",
               { staticClass: " cat" },
-              _vm._l(_vm.user.categories, function (category) {
+              _vm._l(_vm.userComplete.categories, function (category) {
                 return _c("p", { key: "" + category.id, staticClass: "mr-2" }, [
                   _vm._v(
                     "\r\n                      " +
@@ -4737,7 +4746,7 @@ var render = function () {
             _c(
               "span",
               { staticClass: "skill" },
-              _vm._l(_vm.user.skills, function (skill) {
+              _vm._l(_vm.userComplete.skills, function (skill) {
                 return _c("p", { key: "" + skill.id, staticClass: "mr-2" }, [
                   _vm._v(
                     "\r\n                      " +
@@ -4750,29 +4759,8 @@ var render = function () {
             ),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "left-side " }, [
-            _c("h5", { staticClass: "mr-2 font-weight-bold" }, [
-              _vm._v("Recensioni "),
-            ]),
-            _vm._v(" "),
-            _c(
-              "span",
-              { staticClass: "skill" },
-              _vm._l(_vm.user.reviews, function (review) {
-                return _c("p", { key: "" + review.id, staticClass: "mr-2" }, [
-                  _vm._v(
-                    "\r\n                      " +
-                      _vm._s(review.name) +
-                      ",\r\n                    "
-                  ),
-                ])
-              }),
-              0
-            ),
-          ]),
-          _vm._v(" "),
           _c("div", { staticClass: "box-img mr-3 cv" }, [
-            _c("img", {
+            _c("iframe", {
               staticClass: "curriculum",
               attrs: { src: "/storage/" + _vm.user.cv },
             }),
@@ -4935,39 +4923,7 @@ var render = function () {
     _c("section", { staticClass: "reviews-section" }, [
       _c("h3", [_vm._v("Recensioni")]),
       _vm._v(" "),
-      _c(
-        "div",
-        _vm._l(_vm.users, function (user, ind) {
-          return _c(
-            "div",
-            { key: "" + ind, staticClass: "card cust-card row" },
-            _vm._l(user.reviews, function (review, ind) {
-              return _c(
-                "div",
-                { key: "" + ind, staticClass: "card-body p-0" },
-                [
-                  _c("div", { staticClass: "top" }),
-                  _vm._v(" "),
-                  _c(
-                    "h3",
-                    {
-                      staticClass:
-                        "card-title d-flex align-items-center name ml-4 mr-3 p-4",
-                    },
-                    [_vm._v(_vm._s(review.author_name))]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text pl-4 pr-4" }, [
-                    _vm._v(_vm._s(review.text)),
-                  ]),
-                ]
-              )
-            }),
-            0
-          )
-        }),
-        0
-      ),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "form",
@@ -5222,7 +5178,33 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "card cust-card row" }, [
+        _c("div", { staticClass: "card-body p-0" }, [
+          _c("div", { staticClass: "top" }),
+          _vm._v(" "),
+          _c(
+            "h3",
+            {
+              staticClass:
+                "card-title d-flex align-items-center name ml-4 mr-3 p-4",
+            },
+            [_vm._v("nome di chi recensisce")]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-text pl-4 pr-4" }, [
+            _vm._v("text della recensione"),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -21952,7 +21934,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+
+module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+
 
 
 /***/ })
