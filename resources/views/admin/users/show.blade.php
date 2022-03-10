@@ -61,23 +61,38 @@
  
           <div class="sponsored-box">
 
-            @forelse ($user->sponsorships as $sponsorship)
-              <p class="mr-2">
-               <h3 class="text-success">IL TUO PROFILO E' SPONSORIZZATO</h3> 
-                <h3>pacchetto: <strong class="text-primary">{{ $sponsorship->name }} </strong> </h3>
-                {{-- {{ $sponsorship->id }}, --}}
-                <p>Data di inizio:   {{ $sponsorship->pivot->created_at }} </p>
-               
-              </p>
-              @empty
-               
-            @endforelse
+            {{-- <h2> {{$user->sponsorships}} </h2> --}}
 
-            {{-- <h4 class="text-success">Il tuo profilo è sponsorizzato</h4>
-            <p>pacchetto: </p> --}}
+              @if(count($user->sponsorships) === 0)
+                  <p>Il tuo profilo non è sponsorizzato</p>    
+               <a href="{{ route('admin.sponsorships.index') }}" class="btn btn-success"> Sponsorizza il profilo </a>    
+                  @elseif($user->sponsorships[count($user->sponsorships) - 1]->name === 'Base' && $packBaseExpiration < $date_now) 
+                  
+                  <p class="text-danger">La tua sponsorizzazione è terminata il {{$packBaseExpiration }}</p> 
+                  <a href="{{ route('admin.sponsorships.index') }}" class="btn btn-success"> Sponsorizza il profilo </a>
+                  @elseif($user->sponsorships[count($user->sponsorships) - 1]->name === 'Premium' && $packPremiumExpiration < $date_now) 
+                  <p class="text-danger">La tua sponsorizzazione è terminata il {{$packPremiumExpiration }}</p> 
+                  <a href="{{ route('admin.sponsorships.index') }}" class="btn btn-success"> Sponsorizza il profilo </a>
+                  @elseif($user->sponsorships[count($user->sponsorships) - 1]->name === 'Elite' && $packEliteExpiration < $date_now) 
+                  <p class="text-danger">La tua sponsorizzazione è terminata il {{$packEliteExpiration }} </p> 
+                  <a href="{{ route('admin.sponsorships.index') }}" class="btn btn-success"> Sponsorizza il profilo </a>
+                @else
+                  <h3 class="text-success">IL TUO PROFILO E' SPONSORIZZATO</h3> 
+                  <h3>pacchetto: <strong class="text-primary">{{ $user->sponsorships[count($user->sponsorships) - 1]->name }} </strong> </h3>
+                  <p>Data di inizio:   {{ $user->sponsorships[count($user->sponsorships) - 1]->pivot->created_at }} </p>
 
+                  @if($user->sponsorships[count($user->sponsorships) - 1]->name === 'Base')
+                  <p>Data di scadenza: {{$packBaseExpiration}} </p>
+                  @elseif($user->sponsorships[count($user->sponsorships) - 1]->name === 'Premium')
+                  <p>Data di scadenza: {{$packPremiumExpiration}} </p>
+                  @elseif($user->sponsorships[count($user->sponsorships) - 1]->name === 'Elite')
+                  <p>Data di scadenza: {{$packEliteExpiration}} </p>
+                  @endif
+               @endif
+            
           </div>
 
+      
 
         </div>
       </section>

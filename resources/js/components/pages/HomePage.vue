@@ -9,15 +9,13 @@
     </div>
     
     <div class="bg-home">
-      <div class="container">
-
-
+      
      <HowItWorks/>
 
      <Network/>
 
      <AboutUs/>
-      </div>
+      
     </div>
 
      <Register/>
@@ -50,17 +48,30 @@ export default {
     AboutUs,
     Register,
     Footer
-  }
+  },
+
+  
+
+
+
+
+  
 }
 
 
 </script>
 
-<style>
+
+<style lang="scss">
+
+
+
   .bg-home{
     background-color: #5DADEC;
-    width: 100%!important;
+    
     color: white;
   }
+  
+
 
 </style>
