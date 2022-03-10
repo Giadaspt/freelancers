@@ -93,17 +93,17 @@
         <!-- <h1>{{ users[0].reviews[0].author_name }} </h1>
         <h1>Ciao </h1> -->
          <div class="card cust-card row" >
-          <div class="card-body p-0" >
+          <div class="card-body p-0" v-for="review in userReviews" :key="review.id">
             <div class="top"></div>
-              <h3 class="card-title d-flex align-items-center name ml-4 mr-3 p-4" >nome di chi recensisce</h3>
-              <!-- <div class="stars">
-                  <i
-                    v-for="(i, index) in 5" :key="`${index}`"
-                    :class="i < user.reviews.vote ? 'fas fa-star' : 'far fa-star' ">
-                  </i>
-              </div> -->
+              <h3 class="card-title d-flex align-items-center name ml-4 mr-3 p-4" >{{review.author_name}}</h3>
+              <div class="stars">
+                  <span
+                    v-for="(i, index) in review.vote" :key="`${index}`">
+                    ★
+                  </span>
+              </div>
 
-          <p class="card-text pl-4 pr-4">text della recensione</p>
+          <p class="card-text pl-4 pr-4">{{review.text}}</p>
         </div>
       </div>
       </div>
@@ -201,7 +201,7 @@ export default {
 
       userCategory: [],
       userComplete: {},
-      userReviews: {},
+      userReviews: [],
     }
   },
 
@@ -217,8 +217,9 @@ export default {
     this.getApi();
     this.getAllCat();
     this.getCategories();
-    this.getAllRev();
-    this.getReviews()
+   
+    
+     this.getAllRev();
   },
 
   methods: {
@@ -243,7 +244,7 @@ export default {
       });
     },
 
-      getAllCat(){
+    getAllCat(){
 
       axios.get(this.apiUrl)
         .then(res => {
@@ -253,47 +254,54 @@ export default {
       });
     },
 
-      getCategories(){
-        let cat = this.categories;
-        cat.forEach(category => {
+    getCategories(){
+      let cat = this.categories;
+      cat.forEach(category => {
 
-          if(category.id = this.user.pivot.category_id){
-            console.log('array pivot cat.id',category.id);
-            return this.userCategory.push(category.name)
-          }
-        });
+        if(category.id = this.user.pivot.category_id){
+          console.log('array pivot cat.id',category.id);
+          return this.userCategory.push(category.name)
+        }
+      });
 
-        console.log('array cat',cat);
-        console.log('array cat2',this.userCategory);
-        console.log('array pivot',this.user.pivot.category_id);
+        // console.log('array cat',cat);
+        // console.log('array cat2',this.userCategory);
+        // console.log('array pivot',this.user.pivot.category_id);
 
     },
 
-      getAllRev(){
+    getAllRev(){
 
       axios.get(this.apiUrl)
         .then(res => {
           this.reviews = res.data.reviews;
+          this.getReviews();
 
-          console.log('cat rev',this.reviews);
+          console.log('all reviews',this.reviews);
       });
+
+      
     },
 
      getReviews(){
-        let rev = this.reviews;
+        let rev = [];
+        rev = this.reviews;
+        console.log('tutti i rev',rev);
 
         rev.forEach(rec => {
+          console.log('una review', rec);
+          console.log('review.id', rec.id);
 
           if(rec.user_id == this.user.id){
-            console.log('rev.id', rec.id);
-            console.log('rec.id rev',rec.user_id); 
-            return this.userReviews = rec;
+            
+            console.log('id dello user che ha la recensione',rec.user_id); 
+            return this.userReviews.push(rec);
           }
         });
 
-        console.log('array rev',rev);
-        console.log('array rev2',this.userReviews);
-        console.log('user.id rev',this.user.id);
+        
+        console.log('i reviews dello user',this.userReviews);
+        console.log('user.id',this.user.id);
      
 
     },
