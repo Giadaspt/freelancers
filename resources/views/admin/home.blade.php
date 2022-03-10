@@ -14,13 +14,15 @@
                         </div>
                     @endif
                     @if ($user->image)
-                        
-                    <div>
+                    
+                    
                         <img width="200" height="200" src="{{ asset('storage/' . $user->image) }}" alt="{{$user->name}}" style="border-radius: 50%" >
                         
-                    </div>
+                    
                     @else
+                    
                         <img width="200"  src="{{ asset('storage/img/istockphoto-1223671392-612x612.jpg')}}" alt="immagine" style="border-radius: 50%">
+                    
                     @endif
                     <div class="user-list">
                         <h1>{{ $user->name }} {{ $user->lastname }}</h1>
@@ -38,7 +40,7 @@
             <div class="card dash-card text-center" style="width: 30%">
                 <a href="{{ route('admin.users.show', $user) }}" class="card-body">
                     <div class="img">
-                        <img width="100px" src=" {{asset('storage/img/show.jpg')}} " alt="">
+                        <img width="100px" src=" {{asset('storage/img/show.png')}} " alt="">
                     </div>
                     <p class="pt-2">Vedi profilo</p>
                 </a>
@@ -46,7 +48,7 @@
             <div class="card dash-card text-center" style="width: 30%">
                 <a href="{{ route('admin.users.edit', $user) }}" class="card-body">
                     <div class="img">
-                        <img width="100px" src=" {{asset('storage/img/modifica.jpg')}} " alt="">
+                        <img width="100px" src=" {{asset('storage/img/modifica.png')}} " alt="">
                     </div>
                   <p class="pt-2">Modifica profilo</p>
 
@@ -55,7 +57,7 @@
             <div class="card dash-card text-center" style="width: 30%">
                 <a href="{{ route('admin.sponsorships.index') }}" class="card-body">
                     <div class="img">
-                        <img width="100px" src=" {{asset('storage/img/sponsor.jpg')}} " alt="">
+                        <img width="100px" src=" {{asset('storage/img/sponsor.png')}} " alt="">
                     </div>
                   <p class="pt-2">Sponsorizza profilo</p>
                 </a>
