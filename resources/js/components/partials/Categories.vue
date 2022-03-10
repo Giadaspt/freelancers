@@ -72,6 +72,7 @@ export default {
        margin: 10px;
        text-transform: uppercase;
        min-width: 100px;
+       font-size: 16px !important;
        height: 100px;
       // background-color: #5165F6;
       background-color: white;
