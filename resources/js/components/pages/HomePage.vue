@@ -66,11 +66,11 @@ export default {
 
 
 
-  .bg-home{
-    background-color: #5DADEC;
+  // .bg-home{
+  //   background-color: #5DADEC;
     
-    color: white;
-  }
+  //   color: white;
+  // }
   
 
 

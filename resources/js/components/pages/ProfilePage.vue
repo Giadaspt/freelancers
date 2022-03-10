@@ -5,14 +5,14 @@
       <!-- section of profile details -->
       <section class="left-side">
           <div class="d-flex align-items-center">
-            <div class=" mr-3" >
+            <div class=" box-img mr-3" >
               <img class=" mr-3" :src="'/storage/' + user.image" :alt="user.name">
             </div>
             <h3 class="mr-2">{{ user.name }}</h3>
             <h3>{{ user.lastname }}</h3>
           </div>
 
-          <div class="mt-3" >
+          <div class="container-info mt-3" >
             <h5>{{ user.email }}</h5>
               
             <h5>{{ user.address }}</h5>
@@ -40,11 +40,12 @@
                     </p>
                   </span>
                 </div>
-              <div class="mr-3" >
+              <div class=" box-img-cv mr-3" >
                   <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
                   <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
                   <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
-                  <iframe style="width: 200px; height: 350px;"  :src="'/storage/' + user.cv"></iframe>
+                  <img :src="'/storage/' + user.cv">
+                  <!-- <iframe style="width: 200px; height: 350px;"  :src="'/storage/' + user.cv"></iframe> -->
               </div>
           </div>
       </section>
@@ -273,5 +274,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
+   .box-img{
+     width: 100px;
+     height: 100px;
+         img{
+           width: 100%;
+           object-fit: cover;
+         }
+   }
 
+   .container-info{
+       .box-img-cv{
+         width: 250px;
+         height: 350px;
+           img{
+             width: 100%;
+             object-fit: cover;
+           }
+       }
+   }
 </style>

@@ -7,7 +7,6 @@
      v-for="(i, index) in 3" :key="index"
    /> -->
 
-   <!-- <p> {{selected_sponsored}} </p> -->
 
  <!-- PROFILO 1 -->
    <div class="box-profile d-flex" v-for="user in sponsored" :key="`user${user.id}`" >
@@ -15,7 +14,7 @@
 
         <div class="left-box">
             <div class="box-img">
-              <img :src="user.image" alt="">
+              <img class=" mr-3" :src="'/storage/' + user.image" :alt="user.name">
             </div>
             <div class="box-info">
 
@@ -30,21 +29,28 @@
 
         <div class="right-box">
             <div class="user-info">
-               <h5>Categoria</h5>
-               <p> {{user.categories[0].name}} </p>
-               <h5>Skills principali</h5>
-               <p> {{user.skills[0].name}} </p>
-               <h5>Panoramica</h5>
+               <div class="box-info-category">
+                    <h5>Categoria</h5>
+                    <div v-if="user.categories.length > 0"> 
+                       <p>{{user.categories[0].name}}</p>
+                    </div>               
+               </div>
+
+               <div class="box-info-skill">
+                    <h5>Skill principale</h5>
+                      <div v-if="user.skills.length > 0"> 
+                         <p>{{user.skills[0].name}}</p>
+                      </div>
+               </div>
+               
                 <div class="box-description">
                     <p> {{user.description_job}} </p>
                 </div>
-               
-      
+                
             </div>
 
             <div class="box-buttons d-flex justify-content-center">
               <button class="btn-profile">Vedi</button>
-              <button class="btn-profile">Contatta</button>
             </div>
         </div>
 
@@ -149,6 +155,14 @@ export default {
                 height: 50%;
                 width: 100%;
                 overflow: auto;
+             }
+             .box-info-category{
+                width: 100%;
+                height: 80px;
+             }
+              .box-info-skill{
+                width: 100%;
+                height: 80px;
              }
          }
 
