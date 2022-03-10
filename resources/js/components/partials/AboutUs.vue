@@ -35,6 +35,7 @@ export default {
 
      .box-img-about{
        margin-bottom: 50px;
+       max-width: 650px;
        img{
         width: 100%;
         border-radius: 15px;

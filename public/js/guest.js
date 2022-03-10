@@ -2878,7 +2878,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-about[data-v-c3867f8e] {\n  width: 85%;\n  margin: 100px auto;\n}\n.box-about .box-img-about[data-v-c3867f8e] {\n  margin-bottom: 50px;\n}\n.box-about .box-img-about img[data-v-c3867f8e] {\n  width: 100%;\n  border-radius: 15px;\n  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-about .box-text-about[data-v-c3867f8e] {\n  margin-bottom: 50px;\n}", ""]);
+exports.push([module.i, ".box-about[data-v-c3867f8e] {\n  width: 85%;\n  margin: 100px auto;\n}\n.box-about .box-img-about[data-v-c3867f8e] {\n  margin-bottom: 50px;\n  max-width: 650px;\n}\n.box-about .box-img-about img[data-v-c3867f8e] {\n  width: 100%;\n  border-radius: 15px;\n  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-about .box-text-about[data-v-c3867f8e] {\n  margin-bottom: 50px;\n}", ""]);
 
 // exports
 
@@ -2897,7 +2897,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-categories[data-v-403bfede] {\n  width: 100%;\n  padding: 50px 0 50px 0;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  border-radius: 10px;\n  margin: 10px;\n  text-transform: uppercase;\n  min-width: 100px;\n  height: 100px;\n  background-color: white;\n  color: #5165F6;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n  box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n  transition: 0.3s;\n}\n@media (max-width: 550px) {\n.box-categories .btn-category[data-v-403bfede] {\n    background-color: white;\n    color: #5165F6;\n    font-size: 2.5vw !important;\n    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-categories .btn-category[data-v-403bfede]:focus {\n    background-color: #6b7add;\n    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n    transition: 0.3s;\n    color: white;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n    color: #5165F6;\n    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n    transition: 0.3s;\n}\n}\n.box-categories[data-v-403bfede] {\n  min-height: 500px;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  height: 100px;\n  margin: 5px;\n  width: 14.2857142857%;\n  font-size: 1vw;\n  text-transform: uppercase;\n}\n.box-categories .cat-card[data-v-403bfede] {\n  border-radius: 20px;\n  box-shadow: 0px 10px 10px darkgray;\n}\n.box-categories .cat-card[data-v-403bfede]:hover {\n  box-shadow: 0px 10px 10px darkgray;\n  transition: transform 0.3s;\n  transform: scale(1.05);\n}\n.box-categories .cat-card:hover a[data-v-403bfede] {\n  color: white;\n}", ""]);
+exports.push([module.i, ".box-categories[data-v-403bfede] {\n  width: 100%;\n  padding: 50px 0 50px 0;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  border-radius: 10px;\n  margin: 10px;\n  text-transform: uppercase;\n  min-width: 100px;\n  font-size: 16px !important;\n  height: 100px;\n  background-color: white;\n  color: #5165F6;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n  box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n  transition: 0.3s;\n}\n@media (max-width: 550px) {\n.box-categories .btn-category[data-v-403bfede] {\n    background-color: white;\n    color: #5165F6;\n    font-size: 2.5vw !important;\n    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-categories .btn-category[data-v-403bfede]:focus {\n    background-color: #6b7add;\n    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n    transition: 0.3s;\n    color: white;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n    color: #5165F6;\n    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n    transition: 0.3s;\n}\n}\n.box-categories[data-v-403bfede] {\n  min-height: 500px;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  height: 100px;\n  margin: 5px;\n  width: 14.2857142857%;\n  font-size: 1vw;\n  text-transform: uppercase;\n}\n.box-categories .cat-card[data-v-403bfede] {\n  border-radius: 20px;\n  box-shadow: 0px 10px 10px darkgray;\n}\n.box-categories .cat-card[data-v-403bfede]:hover {\n  box-shadow: 0px 10px 10px darkgray;\n  transition: transform 0.3s;\n  transform: scale(1.05);\n}\n.box-categories .cat-card:hover a[data-v-403bfede] {\n  color: white;\n}", ""]);
 
 // exports
 
@@ -2916,7 +2916,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "footer[data-v-bc338846] {\n  color: white;\n  width: 100%;\n  min-height: 250px;\n  background-color: black;\n}\nfooter .container-footer-box[data-v-bc338846] {\n  height: 100%;\n}\nfooter .container-footer-box li[data-v-bc338846] {\n  list-style: none;\n}\nfooter .container-footer-box a[data-v-bc338846] {\n  text-decoration: none;\n  color: white;\n}\nfooter .footer-box[data-v-bc338846] {\n  width: 33.3333333333%;\n  height: 100%;\n}\nfooter .bottom-footer[data-v-bc338846] {\n  width: 100%;\n  background-color: black;\n  color: white;\n}\nfooter .bottom-footer .icon[data-v-bc338846] {\n  height: 20px;\n  margin-left: 10px;\n  cursor: pointer;\n}\nfooter .bottom-footer .icon[data-v-bc338846]:hover {\n  scale: 1.1;\n  transition: 0.3s;\n}", ""]);
+exports.push([module.i, "footer[data-v-bc338846] {\n  color: white;\n  width: 100%;\n  background-color: black;\n}\nfooter .container-footer-box[data-v-bc338846] {\n  height: 100%;\n}\nfooter .container-footer-box li[data-v-bc338846] {\n  list-style: none;\n}\nfooter .container-footer-box a[data-v-bc338846] {\n  text-decoration: none;\n  color: white;\n}\nfooter .footer-box[data-v-bc338846] {\n  width: 33.3333333333%;\n  height: 100%;\n}\nfooter .bottom-footer[data-v-bc338846] {\n  width: 100%;\n  background-color: black;\n  color: white;\n}\nfooter .bottom-footer .icon[data-v-bc338846] {\n  height: 20px;\n  margin-left: 10px;\n  cursor: pointer;\n}\nfooter .bottom-footer .icon[data-v-bc338846]:hover {\n  scale: 1.1;\n  transition: 0.3s;\n}", ""]);
 
 // exports
 
@@ -5270,7 +5270,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", [
-      _c("div", { staticClass: "container container-footer-box" }, [
+      _c("div", { staticClass: "container container-footer-box py-5" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "footer-box col-12 col-md col-lg" }, [
             _c("ul", [
@@ -5646,10 +5646,7 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "box-img-network col-12 col-md mr-5" }, [
           _c("img", {
-            attrs: {
-              src: __webpack_require__(/*! ../img/1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg */ "./resources/js/components/img/1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg"),
-              alt: "",
-            },
+            attrs: { src: __webpack_require__(/*! ../img/network.jpg */ "./resources/js/components/img/network.jpg"), alt: "" },
           }),
         ]),
         _vm._v(" "),
@@ -20704,17 +20701,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/img/1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/components/img/1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg?dca31a8dfb9e98a779138f734188bb01";
-
-/***/ }),
-
 /***/ "./resources/js/components/img/jumbo.png":
 /*!***********************************************!*\
   !*** ./resources/js/components/img/jumbo.png ***!
@@ -20723,6 +20709,17 @@ module.exports = "/images/1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg?
 /***/ (function(module, exports) {
 
 module.exports = "/images/jumbo.png?ed1daf218aa2c52e04c76020676d1362";
+
+/***/ }),
+
+/***/ "./resources/js/components/img/network.jpg":
+/*!*************************************************!*\
+  !*** ./resources/js/components/img/network.jpg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/network.jpg?7f5468ead1cbb6edda7e9c4ffdbe2981";
 
 /***/ }),
 
