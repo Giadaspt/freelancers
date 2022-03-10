@@ -31,7 +31,7 @@ export default {
 
  .box-about{
   width: 85%;
-  margin: 100px auto;
+  margin: auto;
 
      .box-img-about{
        margin-bottom: 50px;

@@ -10343,6 +10343,11 @@ textarea.form-control {
   color: #FDFF05;
 }
 
+.container-team4 {
+  width: 100%;
+  margin: auto !important;
+}
+
 .image-box {
   width: 150px;
   height: 150px;
