@@ -13,14 +13,14 @@ class SkillUserTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i= 0; $i < 20; $i++){
+        // for($i= 0; $i < 20; $i++){
 
-            $user = User::inrandomOrder()->first();
+        //     $user = User::inrandomOrder()->first();
 
-            $skill_id = Skill::inRandomOrder()->first()->id;
+        //     $skill_id = Skill::inRandomOrder()->first()->id;
 
-            $user->skills()->attach($skill_id);
+        //     $user->skills()->attach($skill_id);
             
-        }
+        // } 
     }
 }

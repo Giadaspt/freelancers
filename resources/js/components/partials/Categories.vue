@@ -41,7 +41,7 @@ export default {
         // this.category = cat;
        
         
-        console.log('user della chiamata',this.categories);
+        // console.log('user della chiamata',this.categories);
         console.log(res.data.categories);
         console.log(this.category);
         // return this.category

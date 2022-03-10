@@ -2234,79 +2234,83 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// import Review from '../partials/Review.vue';
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ProfilePage",
+  // components: {
+  //   Review,
+  // },
   data: function data() {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
       users: [],
-      user: '',
-      slug: this.$route.params.slug,
+      user: this.$route.params.user,
       categories: [],
       skills: [],
+      reviews: [],
+      name: this.$route.params.author_name,
+      author_name: '',
+      vote: 0,
       name_sender: '',
       email_sender: '',
       text: '',
       errors: {},
       success: false,
-      sending: false,
-      author_name: '',
-      vote: 0
+      sending: false
     };
   },
   mounted: function mounted() {
-    this.getUser();
+    console.log('user singolo', this.user);
+    console.log('user tanti', this.users); // console.log('reviews vai',this.reviews);
+    // console.log('reviews yes',this.review);
+    // console.log('cat cat',this.category);
+
+    this.getApi();
   },
   methods: {
-    getUser: function getUser() {
+    getApi: function getApi() {
       var _this = this;
 
       axios.get(this.apiUrl).then(function (res) {
-        _this.users = res.data.users;
-        _this.categories = res.data.categories;
-        _this.skills = res.data.skills;
+        _this.users = res.data.users; // this.reviews = res.data.reviews;
+        // for ( let i=0; i < this.users.length; i++ ){
+        //   let user = this.users[i];
+        //   return user
+        // }
 
-        var userOk = _this.users.find(function (item) {
-          return item.id;
-        }); // console.log('user',this.users);
-        // console.log('res data',res.data.users);
-        // console.log('user ok', userOk);
+        console.log('reviw user', _this.users);
+      });
+    },
+    getUserReview: function getUserReview(slug) {
+      var _this2 = this;
 
+      axios.get(this.apiUrl + '/review/' + slug).then(function (res) {
+        _this2.users = res.data.users; // this.reviews = res.data.reviews;
+        // for ( let i=0; i < this.users.length; i++ ){
+        //   let user = this.users[i];
+        //   return user
+        // }
 
-        _this.user = userOk;
+        console.log('reviw user', _this2.users);
       });
     },
     sendFormMessage: function sendFormMessage() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.sending = true;
       axios.post("http://127.0.0.1:8000/api/message/", {
         name_sender: this.name_sender,
         email_sender: this.email_sender,
-        text: this.text,
-        user: this.user
-      }).then(function (res) {
-        // this.message = res.data.message;
-        _this2.sending = false;
-        console.log(res.data);
-
-        if (res.data.errors) {
-          _this2.errors = res.data.errors;
-        } else {
-          _this2.errors = {};
-          _this2.name_sender = '', _this2.email_sender = '', _this2.text = '', _this2.success = true;
-        }
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    },
-    sendFormReview: function sendFormReview() {
-      var _this3 = this;
-
-      this.sending = true;
-      axios.post("http://127.0.0.1:8000/api/review/", {
-        author_name: this.author_name,
-        vote: this.vote,
         text: this.text,
         user: this.user
       }).then(function (res) {
@@ -2318,7 +2322,31 @@ __webpack_require__.r(__webpack_exports__);
           _this3.errors = res.data.errors;
         } else {
           _this3.errors = {};
-          _this3.author_name = '', _this3.vote = 0, _this3.text = '', _this3.success = true;
+          _this3.name_sender = '', _this3.email_sender = '', _this3.text = '', _this3.success = true;
+        }
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    sendFormReview: function sendFormReview() {
+      var _this4 = this;
+
+      this.sending = true;
+      axios.post("http://127.0.0.1:8000/api/review/", {
+        author_name: this.author_name,
+        vote: this.vote,
+        text: this.text,
+        user: this.user
+      }).then(function (res) {
+        // this.message = res.data.message;
+        _this4.sending = false;
+        console.log(res.data);
+
+        if (res.data.errors) {
+          _this4.errors = res.data.errors;
+        } else {
+          _this4.errors = {};
+          _this4.author_name = '', _this4.vote = 0, _this4.text = '', _this4.success = true;
         }
       })["catch"](function (err) {
         console.log(err);
@@ -2404,8 +2432,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(this.apiUrl).then(function (res) {
         _this.categories = res.data.categories; // let cat = this.categories.find(item => item.name);
         // this.category = cat;
+        // console.log('user della chiamata',this.categories);
 
-        console.log('user della chiamata', _this.categories);
         console.log(res.data.categories);
         console.log(_this.category); // return this.category
       });
@@ -2527,6 +2555,12 @@ __webpack_require__.r(__webpack_exports__);
   name: "FreelancerCard",
   props: {
     "freelancerCard": Object
+  },
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {
+    console.log('freelancer', this.freelancerCard);
   }
 });
 
@@ -4521,10 +4555,10 @@ var render = function () {
     _c("div", { staticClass: "side d-flex flex-wrap row" }, [
       _c("section", { staticClass: "left-side" }, [
         _c("div", { staticClass: "d-flex align-items-center" }, [
-          _c("div", { staticClass: " mr-3" }, [
+          _c("div", { staticClass: "profile-image mr-3" }, [
             _c("img", {
               staticClass: " mr-3",
-              attrs: { src: "/storage/" + _vm.user.image, alt: _vm.user.name },
+              attrs: { src: "/storage/" + _vm.user.image, alt: "" },
             }),
           ]),
           _vm._v(" "),
@@ -4558,7 +4592,7 @@ var render = function () {
             _c(
               "span",
               { staticClass: " cat" },
-              _vm._l(_vm.categories, function (category) {
+              _vm._l(_vm.user.categories, function (category) {
                 return _c("p", { key: "" + category.id, staticClass: "mr-2" }, [
                   _vm._v(
                     "\r\n                      " +
@@ -4592,9 +4626,9 @@ var render = function () {
             ),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "mr-3" }, [
+          _c("div", { staticClass: "mr-3 cv" }, [
             _c("iframe", {
-              staticStyle: { width: "200px", height: "350px" },
+              staticClass: "curriculum",
               attrs: { src: "/storage/" + _vm.user.cv },
             }),
           ]),
@@ -4684,7 +4718,7 @@ var render = function () {
                 attrs: {
                   type: "text",
                   id: "name_sender",
-                  placeholder: "Nome",
+                  placeholder: "Scrivi il tuo nome",
                   required: "",
                 },
                 domProps: { value: _vm.name_sender },
@@ -4736,11 +4770,44 @@ var render = function () {
     _c("section", { staticClass: "reviews-section" }, [
       _c("h3", [_vm._v("Recensioni")]),
       _vm._v(" "),
-      _vm._m(1),
+      _c(
+        "div",
+        _vm._l(_vm.users, function (user, ind) {
+          return _c(
+            "div",
+            { key: "" + ind, staticClass: "card cust-card row" },
+            _vm._l(user.reviews, function (review, ind) {
+              return _c(
+                "div",
+                { key: "" + ind, staticClass: "card-body p-0" },
+                [
+                  _c("div", { staticClass: "top" }),
+                  _vm._v(" "),
+                  _c(
+                    "h3",
+                    {
+                      staticClass:
+                        "card-title d-flex align-items-center name ml-4 mr-3 p-4",
+                    },
+                    [_vm._v(_vm._s(review.author_name))]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text pl-4 pr-4" }, [
+                    _vm._v(_vm._s(review.text)),
+                  ]),
+                ]
+              )
+            }),
+            0
+          )
+        }),
+        0
+      ),
       _vm._v(" "),
       _c(
         "form",
         {
+          staticClass: "mb-4",
           attrs: { method: "POST" },
           on: {
             submit: function ($event) {
@@ -4948,7 +5015,7 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "d-flex justify-content-between" }, [
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "back mt-4 mb-4" }, [
               _c(
@@ -4987,14 +5054,6 @@ var staticRenderFns = [
         { staticClass: "btn btn-delete", attrs: { type: "reset" } },
         [_vm._v("Cancella")]
       ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h2", [_vm._v("Qua ci vanno le recensioni stampate")]),
     ])
   },
   function () {
@@ -5305,7 +5364,7 @@ var render = function () {
               _c("div", { staticClass: "profile-image" }, [
                 _c("img", {
                   attrs: {
-                    src: "/storege/" + _vm.freelancerCard.image,
+                    src: "/storage/" + _vm.freelancerCard.image,
                     alt: "",
                   },
                 }),
@@ -5335,7 +5394,10 @@ var render = function () {
               attrs: {
                 to: {
                   name: "profile/",
-                  params: { name: _vm.freelancerCard.name },
+                  params: {
+                    user: _vm.freelancerCard,
+                    name: _vm.freelancerCard.name,
+                  },
                 },
               },
             },

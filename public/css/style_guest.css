@@ -10049,11 +10049,13 @@ h3 {
      object-fit: cover;
 }
 
-.cv-custom {
-  overflow-y: none;
-  overflow-x: none;
+.profile-image {
+  width: 120px;
+  min-width: 20px;
+  height: 120px;
+  min-height: 20px;
 }
-.cv-custom img {
+.profile-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -10088,6 +10090,11 @@ h3 {
 
 .reviews-section {
   margin-top: 58px;
+}
+
+.curriculum {
+  width: 700px;
+  height: 800px;
 }
 
 /* voto con stelline */
@@ -10155,4 +10162,19 @@ h3 {
 .rating label input:focus:not(:checked) ~ .icon:last-child {
   color: #5DADEC;
   text-shadow: 0 0 5px #FDFF05;
+}
+
+.cust-card {
+  display: flex;
+  width: 30%;
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px darkgray;
+  margin: 34px 0;
+}
+.cust-card .top {
+  min-width: 0;
+  height: 30px;
+  background-color: #1A3854 !important;
+  border-radius: 20px 20px 0 0 !important;
+  padding: 0;
 }
