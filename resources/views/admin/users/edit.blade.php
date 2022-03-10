@@ -227,7 +227,7 @@
                     @endforeach
 
                 </div>
-                <button type="submit" class="btn btn-freelance mr-3" onclick="return confirm('Le tue modifiche sono state salvate correttamente')">
+                <button type="submit" class="btn btn-freelance mr-3" >
                     Salva
                 </button>
                 </form>
