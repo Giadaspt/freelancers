@@ -2270,7 +2270,7 @@ __webpack_require__.r(__webpack_exports__);
       sending: false,
       userCategory: [],
       userComplete: {},
-      userReviews: {}
+      userReviews: []
     };
   },
   mounted: function mounted() {
@@ -2284,7 +2284,6 @@ __webpack_require__.r(__webpack_exports__);
     this.getAllCat();
     this.getCategories();
     this.getAllRev();
-    this.getReviews();
   },
   methods: {
     getApi: function getApi() {
@@ -2318,33 +2317,38 @@ __webpack_require__.r(__webpack_exports__);
           console.log('array pivot cat.id', category.id);
           return _this3.userCategory.push(category.name);
         }
-      });
-      console.log('array cat', cat);
-      console.log('array cat2', this.userCategory);
-      console.log('array pivot', this.user.pivot.category_id);
+      }); // console.log('array cat',cat);
+      // console.log('array cat2',this.userCategory);
+      // console.log('array pivot',this.user.pivot.category_id);
     },
     getAllRev: function getAllRev() {
       var _this4 = this;
 
       axios.get(this.apiUrl).then(function (res) {
         _this4.reviews = res.data.reviews;
-        console.log('cat rev', _this4.reviews);
+
+        _this4.getReviews();
+
+        console.log('all reviews', _this4.reviews);
       });
     },
     getReviews: function getReviews() {
       var _this5 = this;
 
-      var rev = this.reviews;
+      var rev = [];
+      rev = this.reviews;
+      console.log('tutti i rev', rev);
       rev.forEach(function (rec) {
+        console.log('una review', rec);
+        console.log('review.id', rec.id);
+
         if (rec.user_id == _this5.user.id) {
-          console.log('rev.id', rec.id);
-          console.log('rec.id rev', rec.user_id);
-          return _this5.userReviews = rec;
+          console.log('id dello user che ha la recensione', rec.user_id);
+          return _this5.userReviews.push(rec);
         }
       });
-      console.log('array rev', rev);
-      console.log('array rev2', this.userReviews);
-      console.log('user.id rev', this.user.id);
+      console.log('i reviews dello user', this.userReviews);
+      console.log('user.id', this.user.id);
     },
     sendFormMessage: function sendFormMessage() {
       var _this6 = this;
@@ -4949,7 +4953,42 @@ var render = function () {
     _c("section", { staticClass: "reviews-section" }, [
       _c("h3", [_vm._v("Recensioni")]),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", [
+        _c(
+          "div",
+          { staticClass: "card cust-card row" },
+          _vm._l(_vm.userReviews, function (review) {
+            return _c("div", { key: review.id, staticClass: "card-body p-0" }, [
+              _c("div", { staticClass: "top" }),
+              _vm._v(" "),
+              _c(
+                "h3",
+                {
+                  staticClass:
+                    "card-title d-flex align-items-center name ml-4 mr-3 p-4",
+                },
+                [_vm._v(_vm._s(review.author_name))]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "stars" },
+                _vm._l(review.vote, function (i, index) {
+                  return _c("span", { key: "" + index }, [
+                    _vm._v("\r\n                    ★\r\n                  "),
+                  ])
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text pl-4 pr-4" }, [
+                _vm._v(_vm._s(review.text)),
+              ]),
+            ])
+          }),
+          0
+        ),
+      ]),
       _vm._v(" "),
       _c(
         "form",
@@ -5204,33 +5243,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "card cust-card row" }, [
-        _c("div", { staticClass: "card-body p-0" }, [
-          _c("div", { staticClass: "top" }),
-          _vm._v(" "),
-          _c(
-            "h3",
-            {
-              staticClass:
-                "card-title d-flex align-items-center name ml-4 mr-3 p-4",
-            },
-            [_vm._v("nome di chi recensisce")]
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-text pl-4 pr-4" }, [
-            _vm._v("text della recensione"),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -21964,7 +21977,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\violt\Desktop\Progetto-finale\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })
