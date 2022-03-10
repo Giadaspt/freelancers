@@ -2921,7 +2921,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-about[data-v-c3867f8e] {\n  width: 85%;\n  margin: 100px auto;\n}\n.box-about .box-img-about[data-v-c3867f8e] {\n  margin-bottom: 50px;\n  max-width: 650px;\n}\n.box-about .box-img-about img[data-v-c3867f8e] {\n  width: 100%;\n  border-radius: 15px;\n  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-about .box-text-about[data-v-c3867f8e] {\n  margin-bottom: 50px;\n}", ""]);
+exports.push([module.i, ".box-about[data-v-c3867f8e] {\n  width: 85%;\n  margin: auto;\n}\n.box-about .box-img-about[data-v-c3867f8e] {\n  margin-bottom: 50px;\n  max-width: 650px;\n}\n.box-about .box-img-about img[data-v-c3867f8e] {\n  width: 100%;\n  border-radius: 15px;\n  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-about .box-text-about[data-v-c3867f8e] {\n  margin-bottom: 50px;\n}", ""]);
 
 // exports
 
@@ -2998,7 +2998,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  min-height: 60vh;\n  background-image: url(" + escape(__webpack_require__(/*! ../img/jumbo.png */ "./resources/js/components/img/jumbo.png")) + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  margin-bottom: 0;\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 5vw;\n  margin-bottom: 25px;\n  color: #5165F6;\n}\n.btn-jumbo[data-v-d804be4c] {\n  display: inline-block;\n  border-radius: 10rem;\n  color: #fff;\n  transition: all 0.3s;\n  position: relative;\n  overflow: hidden;\n  z-index: 1;\n}\n.btn-jumbo[data-v-d804be4c]:after {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #0cf;\n  border-radius: 10rem;\n  z-index: -2;\n}\n.btn-jumbo[data-v-d804be4c]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 0%;\n  height: 100%;\n  background-color: #008fb3;\n  transition: all 0.3s;\n  border-radius: 10rem;\n  z-index: -1;\n}\n.btn-jumbo[data-v-d804be4c]:hover {\n  color: #fff;\n}\n.btn-jumbo[data-v-d804be4c]:hover:before {\n  width: 100%;\n}\n.input[data-v-d804be4c] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-d804be4c]:hover {\n  box-shadow: 0px 0px 18px;\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  min-height: 60vh;\n  background-image: url(" + escape(__webpack_require__(/*! ../img/jumbo.png */ "./resources/js/components/img/jumbo.png")) + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  margin-bottom: 0;\n}\n@media (max-width: 900px) {\n.jumbotron[data-v-d804be4c] {\n    background-color: #EBF2F8;\n    background-image: none;\n}\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 5vw;\n  margin-bottom: 25px;\n  color: #5165F6;\n}\n.btn-jumbo[data-v-d804be4c] {\n  display: inline-block;\n  border-radius: 10rem;\n  color: #fff;\n  transition: all 0.3s;\n  position: relative;\n  overflow: hidden;\n  z-index: 1;\n}\n.btn-jumbo[data-v-d804be4c]:after {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #0cf;\n  border-radius: 10rem;\n  z-index: -2;\n}\n.btn-jumbo[data-v-d804be4c]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 0%;\n  height: 100%;\n  background-color: #008fb3;\n  transition: all 0.3s;\n  border-radius: 10rem;\n  z-index: -1;\n}\n.btn-jumbo[data-v-d804be4c]:hover {\n  color: #fff;\n}\n.btn-jumbo[data-v-d804be4c]:hover:before {\n  width: 100%;\n}\n.input[data-v-d804be4c] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-d804be4c]:hover {\n  box-shadow: 0px 0px 18px;\n}", ""]);
 
 // exports
 
@@ -3036,7 +3036,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  min-height: 400px;\n  background-image: url(https://image.ibb.co/caiYGS/freelancing.jpg);\n  background-size: cover;\n}\n.box-register .opaco[data-v-7de36336] {\n  width: 100%;\n  height: 100%;\n  padding: 120px 0;\n  background-color: black;\n  opacity: 0.4;\n}\n.box-register .box-text-register[data-v-7de36336] {\n  height: 100%;\n  color: white;\n}\n.box-register .box-text-register h2[data-v-7de36336] {\n  font-weight: 700;\n}\n.box-register .box-text-register p[data-v-7de36336] {\n  font-weight: 600;\n  font-size: 20px;\n}\n.box-register .box-text-register a[data-v-7de36336] {\n  text-decoration: none;\n  color: white;\n}", ""]);
+exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  background-color: #EBEBEB;\n  background-image: url(https://img.freepik.com/free-photo/top-view-person-writing-laptop-with-copy-space_23-2148708035.jpg?w=1480);\n  background-repeat: no-repeat;\n  background-size: auto;\n}\n.box-register .opaco[data-v-7de36336] {\n  width: 100%;\n  height: 100%;\n  padding: 120px 0;\n  background-color: black;\n  opacity: 0.4;\n}\n.box-register .box-text-register[data-v-7de36336] {\n  height: 100%;\n  color: white;\n}\n.box-register .box-text-register h2[data-v-7de36336] {\n  font-weight: 700;\n}\n.box-register .box-text-register p[data-v-7de36336] {\n  font-weight: 600;\n  font-size: 20px;\n}\n.box-register .box-text-register a[data-v-7de36336] {\n  text-decoration: none;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -21934,7 +21934,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
 module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+
 
 
 /***/ })

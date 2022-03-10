@@ -32,9 +32,11 @@ export default {
 
  .box-register{
    width: 100%;
-   min-height: 400px;
-   background-image: url(https://image.ibb.co/caiYGS/freelancing.jpg);
-   background-size: cover;
+   background-color: #EBEBEB;
+   background-image: url(https://img.freepik.com/free-photo/top-view-person-writing-laptop-with-copy-space_23-2148708035.jpg?w=1480);
+   background-repeat: no-repeat;
+   background-size: auto;
+   
     .opaco{
       width: 100%;
       height: 100%;
