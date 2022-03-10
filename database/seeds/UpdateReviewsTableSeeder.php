@@ -13,13 +13,13 @@ class UpdateReviewsTableSeeder extends Seeder
      */
     public function run()
     {
-        $reviews = Review::all();
+        // $reviews = Review::all();
 
-        foreach($reviews as $review){
+        // foreach($reviews as $review){
 
-            $data=['user_id'=>User::inRandomOrder()->first()->id];
+        //     $data=['user_id'=>User::inRandomOrder()->first()->id];
 
-            $review->update($data);
-        }
+        //     $review->update($data);
+        // }
     }
 }

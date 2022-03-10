@@ -1,6 +1,9 @@
-.cv-custom {
-  overflow-y: none;
-  overflow-x: none;
+.profile-image{
+  width: 120px;
+  min-width: 20px;
+  height: 120px;
+  min-height: 20px;
+
   img {
     width: 100%;
     height: 100%;
@@ -40,6 +43,10 @@
   margin-top: 58px;
 }
 
+.curriculum{
+  width: 700px;
+  height: 800px;
+}
 
 /* voto con stelline */
 

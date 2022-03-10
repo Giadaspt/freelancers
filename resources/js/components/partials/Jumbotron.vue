@@ -1,11 +1,9 @@
 <template>
 
- <div class="jumbotron">
-  <div class="container text-center d-flex flex-column align-items-center">
+ <div class="jumbotron d-flex flex-column align-items-center justify-content-center">
+  <div class="container ">
 
        <h1> Assumi i migliori freelancers online </h1>
-
-     
 
 
     <div class="input-group mb-3 input">
@@ -20,7 +18,7 @@
         <router-link :to="{ path:'freelancerList/' + this.category, params:{name: this.name}}"  > 
         <!-- :to="{ name:'freelancerList'}" -->
         <!-- this.slug -->
-          <button class="btn btn-jumbo ml-5 " type="submit">
+          <button class="btn btn-jumbo ml-3 " type="submit">
             Cerca 
           </button>
         </router-link>
@@ -55,9 +53,8 @@ export default {
 <style lang="scss" scoped>
 
  .jumbotron{
-   width: 100%;
-  min-height: 600px;
-  //  background-color: rgb(202, 219, 219);
+  
+  min-height: 60vh;
   background-image: url('../img/jumbo.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -68,10 +65,47 @@ export default {
        color: #5165F6;
      }
 }
-.btn-jumbo{
-  background-color: #5165F6;
-  color: white;
+
+.btn-jumbo {
+display: inline-block;
+border-radius: 10rem;
+color: #fff;
+transition: all .3s;
+position: relative;
+overflow: hidden;
+z-index: 1;
+&:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #0cf;
+border-radius: 10rem;
+z-index: -2;
 }
+&:before {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0%;
+height: 100%;
+background-color: darken(#0cf, 15%);
+transition: all .3s;
+border-radius: 10rem;
+z-index: -1;
+}
+&:hover {
+color: #fff;
+&:before {
+width: 100%;
+}
+}
+}
+
+
 .input{
   width: 80% !important;
 }
@@ -81,7 +115,10 @@ export default {
     box-shadow: 0px 0px 18px;
   }
 
+
 }
+
+
 
 
 

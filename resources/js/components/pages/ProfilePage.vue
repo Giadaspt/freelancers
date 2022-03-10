@@ -3,10 +3,12 @@
 
     <div class="side d-flex flex-wrap row">
       <!-- section of profile details -->
+
       <section class="left-side">
           <div class="d-flex align-items-center">
             <div class=" box-img mr-3" >
               <img class=" mr-3" :src="'/storage/' + user.image" :alt="user.name">
+
             </div>
             <h3 class="mr-2">{{ user.name }}</h3>
             <h3>{{ user.lastname }}</h3>
@@ -14,7 +16,7 @@
 
           <div class="container-info mt-3" >
             <h5>{{ user.email }}</h5>
-              
+
             <h5>{{ user.address }}</h5>
             <h5>{{ user.city }}</h5>
 
@@ -26,13 +28,13 @@
             <div class="left-side ">
                   <h5 class="mr-2 font-weight-bold">Mi occupo di: </h5>
                 <span class=" cat">
-                  <p class="mr-2" v-for="category in categories" :key="`${category.id}`">
+                  <p class="mr-2" v-for="category in user.categories" :key="`${category.id}`">
                       {{ category.name }},
                   </p>
-                </span>  
+                </span>
               </div>
-        
-              <div class="left-side ">
+
+              <div class="left-side " >
                   <h5 class="mr-2 font-weight-bold">I miei punti di forza sono: </h5>
                   <span class="skill">
                     <p class="mr-2" v-for="skill in skills" :key="`${skill.id}`">
@@ -40,12 +42,14 @@
                     </p>
                   </span>
                 </div>
+                
               <div class=" box-img-cv mr-3" >
                   <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
                   <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
                   <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
                   <img :src="'/storage/' + user.cv">
                   <!-- <iframe style="width: 200px; height: 350px;"  :src="'/storage/' + user.cv"></iframe> -->
+
               </div>
           </div>
       </section>
@@ -55,7 +59,7 @@
         <h3>Contattami</h3>
 
         <form method="POST" @submit.prevent="sendFormMessage" >
-          
+
           <div class="form-group">
             <label for="email_sender" class="ml-2">Email</label>
             <input v-model="email_sender" type="email" class="form-control" id="email_sender" placeholder="Scrivi la tua email" required>
@@ -64,7 +68,7 @@
 
           <div class="form-group">
             <label for="name_sender" class="ml-2">Nome</label>
-            <input v-model="name_sender" type="text" class="form-control" id="name_sender" placeholder="Nome" required>
+            <input v-model="name_sender" type="text" class="form-control" id="name_sender" placeholder="Scrivi il tuo nome" required>
           </div>
 
           <div class="form-group">
@@ -72,9 +76,9 @@
             <textarea v-model="text" class="form-control" id="text" rows="3" required ></textarea>
           </div>
 
-        
+
             <div class="d-flex">
-              <button type="submit" class="btn btn-freelance mr-3">Invia</button>
+              <button @click="alertDisplayMess()" type="submit" class="btn btn-freelance mr-3" >Invia</button>
               <button type="reset" class="btn btn-delete">Cancella</button>
             </div>
         </form>
@@ -84,24 +88,34 @@
     <!-- reviews section -->
     <section class="reviews-section">
       <h3>Recensioni</h3>
+
       <div>
-        <h2>Qua ci vanno le recensioni stampate</h2>
-        <!-- qua vanno stamapte le recensioni -->
+        <!-- <h1>{{ users[0].reviews[0].author_name }} </h1>
+        <h1>Ciao </h1> -->
+         <div class="card cust-card row" v-for="(user, ind) in users"
+          :key="`${ind}`">
+          <div class="card-body p-0" v-for="(review, ind) in user.reviews"
+          :key="`${ind}`">
+            <div class="top"></div>
+              <h3 class="card-title d-flex align-items-center name ml-4 mr-3 p-4" >{{ review.author_name }}</h3>
+              <!-- <div class="stars">
+                  <i
+                    v-for="(i, index) in 5" :key="`${index}`"
+                    :class="i < user.reviews.vote ? 'fas fa-star' : 'far fa-star' ">
+                  </i>
+              </div> -->
+
+          <p class="card-text pl-4 pr-4">{{ review.text }}</p>
+        </div>
+      </div>
       </div>
 
-      
-      <form method="POST" @submit.prevent="sendFormReview" >
+      <form method="POST" @submit.prevent="sendFormReview" class="mb-4">
 
         <div class="form-group">
           <label for="author_name" class="ml-2">Nome</label>
           <input v-model="author_name" type="text" class="form-control" id="author_name" placeholder="Nome" required>
         </div>
-
-        <!-- <div class="form-group">
-          <label for="vote" class="ml-2">Voto</label>
-          <input v-model="vote" type="number" min="1" max="5"  class="form-control" id="vote" placeholder="Voto" required>
-          <small id="emailHelp" class="form-text text-muted">Inserisci un voto da 1 a 5</small>
-        </div> -->
 
         <p>Inserisci un voto da 1 a 5</p>
         <form class="rating" required>
@@ -118,7 +132,7 @@
             <input type="radio" name="vote" value="3" v-model="vote"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
-            <span class="icon">★</span>   
+            <span class="icon">★</span>
           </label>
           <label>
             <input type="radio" name="vote" value="4" v-model="vote"/>
@@ -144,32 +158,42 @@
 
         <div class="d-flex justify-content-between">
           <div class="">
-            <button type="submit" class="btn btn-freelance mr-3 mb-3">Invia</button>
+            <button @click="alertDisplayRev()" type="submit" class="btn btn-freelance mr-3 mb-3">Invia</button>
             <button type="reset" class="btn btn-delete ">Cancella</button>
           </div>
           <div class="back mt-4 mb-4">
             <a class="btn-freelance btn-back justify-content-center" @click="$router.go(-1)">Indietro</a>
           </div>
         </div>
-      </form> 
+      </form>
     </section>
 
   </div>
 </template>
 
 <script>
+// import Review from '../partials/Review.vue';
+
 export default {
   name: "ProfilePage",
+
+  // components: {
+  //   Review,
+  // },
+
   data(){
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
       users: [],
-      user: '',
-      slug: this.$route.params.slug,
-
-      categories: [], 
+      user: this.$route.params.user,
+      categories: [],
       skills: [],
-  
+
+      reviews: [],
+      name: this.$route.params.author_name,
+      author_name: '',
+      vote: 0,
+
       name_sender: '',
       email_sender: '',
       text: '',
@@ -177,43 +201,66 @@ export default {
       success: false,
       sending: false,
 
-      author_name: '',
-      vote: 0,
     }
-  }, 
+  },
 
   mounted() {
-    this.getUser();
-  }, 
+    console.log('user singolo',this.user);
+    console.log('user tanti',this.users);
+    // console.log('reviews vai',this.reviews);
+    // console.log('reviews yes',this.review);
+
+    // console.log('cat cat',this.category);
+
+    this.getApi();
+  },
 
   methods: {
-    getUser(){
-      axios.get(this.apiUrl)
+    getApi(){
+      axios.get(this.apiUrl )
         .then(res => {
+
           this.users = res.data.users;
-          this.categories = res.data.categories;
-          this.skills = res.data.skills;
+          // this.reviews = res.data.reviews;
 
-          let userOk = this.users.find(item => item.id);
+          // for ( let i=0; i < this.users.length; i++ ){
+          //   let user = this.users[i];
+          //   return user
+          // }
 
-          // console.log('user',this.users);
-          // console.log('res data',res.data.users);
-          // console.log('user ok', userOk);
+          console.log('reviw user', this.users );
 
-          this.user = userOk;
-          
+
       });
-    },  
-    
+    },
+
+    getUserReview(slug){
+      axios.get(this.apiUrl + '/review/' + slug)
+        .then(res => {
+
+          this.users = res.data.users;
+          // this.reviews = res.data.reviews;
+
+          // for ( let i=0; i < this.users.length; i++ ){
+          //   let user = this.users[i];
+          //   return user
+          // }
+
+          console.log('reviw user', this.users );
+
+
+      });
+    },
+
      sendFormMessage(){
         this.sending = true;
-  
+
         axios.post("http://127.0.0.1:8000/api/message/", {
           name_sender: this.name_sender,
           email_sender: this.email_sender,
           text: this.text,
           user: this.user
-          
+
           })
           .then((res) => {
           // this.message = res.data.message;
@@ -222,14 +269,14 @@ export default {
           if(res.data.errors){
             this.errors = res.data.errors;
           } else {
-   
+
             this.errors = {};
             this.name_sender = '',
             this.email_sender = '',
             this.text = '',
             this.success = true
           }
-         
+
         }).catch((err) => {
           console.log(err);
         });
@@ -237,13 +284,13 @@ export default {
 
      sendFormReview(){
         this.sending = true;
-  
+
         axios.post("http://127.0.0.1:8000/api/review/", {
           author_name: this.author_name,
           vote: this.vote,
           text: this.text,
           user: this.user
-          
+
           })
           .then((res) => {
           // this.message = res.data.message;
@@ -252,14 +299,14 @@ export default {
           if(res.data.errors){
             this.errors = res.data.errors;
           } else {
-   
+
             this.errors = {};
             this.author_name = '',
             this.vote = 0,
             this.text = '',
             this.success = true
           }
-         
+
         }).catch((err) => {
           console.log(err);
         });
@@ -268,6 +315,24 @@ export default {
       change() {
         console.log('New star rating: ' + this.value);
       },
+
+      alertDisplayMess() {
+        // $swal function calls SweetAlert into the application with the specified configuration.
+        if(this.success = true){
+          this.$swal('Messaggio inviato', 'il tuo messaggio è stato inviato correttamente', 'OK');
+        } else {
+          this.success = false;
+        }
+      },
+
+      alertDisplayRev() {
+        // $swal function calls SweetAlert into the application with the specified configuration.
+        if(this.success = true){
+          this.$swal('Grazie', 'la tua recensione è stata invata correttamente', 'OK');
+        } else {
+          this.success = false;
+        }
+      }
 
   }
 }
