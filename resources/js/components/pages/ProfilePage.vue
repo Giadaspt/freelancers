@@ -73,7 +73,7 @@
 
 
             <div class="d-flex">
-              <button type="submit" class="btn btn-freelance mr-3">Invia</button>
+              <button @click="alertDisplayMess()" type="submit" class="btn btn-freelance mr-3" >Invia</button>
               <button type="reset" class="btn btn-delete">Cancella</button>
             </div>
         </form>
@@ -153,7 +153,7 @@
 
         <div class="d-flex justify-content-between">
           <div class="">
-            <button type="submit" class="btn btn-freelance mr-3 mb-3">Invia</button>
+            <button @click="alertDisplayRev()" type="submit" class="btn btn-freelance mr-3 mb-3">Invia</button>
             <button type="reset" class="btn btn-delete ">Cancella</button>
           </div>
           <div class="back mt-4 mb-4">
@@ -310,6 +310,24 @@ export default {
       change() {
         console.log('New star rating: ' + this.value);
       },
+
+      alertDisplayMess() {
+        // $swal function calls SweetAlert into the application with the specified configuration.
+        if(this.success = true){
+          this.$swal('Messaggio inviato', 'il tuo messaggio è stato inviato correttamente', 'OK');
+        } else {
+          this.success = false;
+        }
+      },
+
+      alertDisplayRev() {
+        // $swal function calls SweetAlert into the application with the specified configuration.
+        if(this.success = true){
+          this.$swal('Grazie', 'la tua recensione è stata invata correttamente', 'OK');
+        } else {
+          this.success = false;
+        }
+      }
 
   }
 }
