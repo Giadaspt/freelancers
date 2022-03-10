@@ -32,4 +32,6 @@ Route::namespace('Api')
 
         Route::post('review/', 'ReviewController@store');
 
+        Route::post('review/{slug}', 'ReviewController@getReview');
+
     });
