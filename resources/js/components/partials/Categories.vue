@@ -69,8 +69,8 @@ export default {
        border-radius: 10px;
        margin: 10px;
        text-transform: uppercase;
-       width: calc(100% / 6 - 20px);
-      //  width: 164px;
+      //  width: calc(100% / 6 - 20px);
+       width: 164px;
        height: 100px;
        background-color: #5165F6;
        color: white;
