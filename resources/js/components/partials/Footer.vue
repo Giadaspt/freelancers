@@ -1,7 +1,7 @@
 <template>
 
 <footer>
- <div class="container container-footer-box">
+ <div class="container container-footer-box py-5">
    <div class="row">
      <div class="footer-box col-12 col-md col-lg">
        <ul>
@@ -74,7 +74,7 @@ export default {
  footer{
    color: white;
    width: 100%;
-   min-height: 250px;
+   
    background-color: rgb(0, 0, 0);
     .container-footer-box{
       height: 100%;

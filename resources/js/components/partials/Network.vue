@@ -3,7 +3,7 @@
 <div class="box-network  row d-flex align-items-center justify-content-between">
 
    <div class="box-img-network col-12 col-md mr-5">
-     <img src="..\img\1000_F_336109524_1kF7K2gTjZ8yoeC2HXsN2pRaaavee8UW.jpg" alt="">
+     <img src="..\img\network.jpg" alt="">
    </div>
 
    <div class="text-network col-12 col-md ml-2">
