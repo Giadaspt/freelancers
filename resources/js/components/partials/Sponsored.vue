@@ -1,7 +1,7 @@
 <template>
 <div class="my-5">
 <h2>Freelancer in evidenza</h2> 
-<div class="box-sponsored d-flex justify-content-center flex-wrap">
+<div class="box-sponsored d-flex justify-content-start flex-wrap">
    
    <!-- <Profile
      v-for="(i, index) in 3" :key="index"
@@ -14,17 +14,21 @@
     <!-- <div class="box-profile d-flex" v-if="user.sponsorships.length > 0"> -->
 
         <div class="left-box">
-            <div class="box-img">
-              <img :src="'/storage/' + user.image" alt="">
+            <div class="box-img" v-if="user.image">
+              <img :src="'/storage/' + user.image" alt="" style="border-radius: 50%">
             </div>
-            <div class="box-info">
-              <h5>Categoria</h5>
-               <p> {{user.categories[0].name}} </p>
-               <h5>Skills principali</h5>
-               <p> {{user.skills[0].name}} </p>       
-               <h6>Media recensioni</h6>
-        <!-- <p> qui il dato dinamico delle reviews </p> -->
-                
+            <div class="box-img" v-else>
+              <img :src="'storage/img/istockphoto-1223671392-612x612.jpg'" alt="" style="border-radius: 50%">
+            </div>
+            
+
+            
+            <div class="box-info mt-4 pl-4 ">
+              
+               <h5>Descrizione</h5>
+                <div class="box-description ">
+                    <p> {{user.description_job}} </p>
+                </div>           
              </div>
         
         </div>
@@ -32,24 +36,28 @@
         <div class="right-box">
             <div class="user-info">
               <h3 class="my-3">{{user.name}}</h3>
+              <h6>Media recensioni</h6>
                <p> {{user.city}} </p>
+             
+              <div class="pl-4">
+               <h5>Mi occupo di:</h5>
+               <p> {{user.categories[0].name}} </p>
+               <h5>I miei punti di forza:</h5>
+               <p> {{user.skills[0].name}} </p>       
 
-               
-               <h5>Panoramica</h5>
-                <div class="box-description">
-                    <p> {{user.description_job}} </p>
-                </div>
+              </div>
+              
             </div>
 
-            <!-- <div class="box-buttons d-flex justify-content-center">
-              <button class="btn-profile">Vedi</button>
-            </div> -->
+            <div class="d-flex justify-content-end">
              <router-link :to="{ name:'profile/', params:{user: user, name: user.name}}">
-               <button class="btn btn-freelance mb-4">Vai al profilo</button>
+               <button class="btn btn-freelance mb-4 " type="submit">Vai al profilo</button>
             </router-link>
+
+            </div>
         </div>
 
-    <!-- </div> -->
+   
    
   </div> 
 
@@ -114,25 +122,25 @@ export default {
 
  .box-profile{
    margin: 10px; 
-   width: 330px;
+   width: 400px;
    height: 400px;
    border-radius: 20px;
-   overflow: hidden;
+   padding: 6px;
+   
    background-color: rgb(195, 213, 228);
      .left-box{
        padding: 10px;
        width: 40%;
        height: 100%;
-       border: 1px solid lightgray;
+      
       //  background-color: coral;
          .box-img{
            width: 105px;
            height: 105px;
-           background-color: white;
-           border-radius: 50%;
-           overflow: hidden;
+                
              img{
                width: 100%;
+               height: 100%;
                object-fit: cover;
              }
          }
@@ -145,7 +153,7 @@ export default {
        padding: 10px;
        width: 60%;
        height: 100%;
-       border: 1px solid lightgray;
+     
       //  background-color: rgb(150, 255, 80);
          .user-info{
            width: 100%;
@@ -156,22 +164,6 @@ export default {
                 width: 100%;
                 overflow: auto;
              }
-         }
-
-         .box-buttons{
-             padding: 10px;
-              .btn-profile {
-                width: 100px !important;
-                margin: 7px;
-                padding: 7px;
-                background-color: #5165F6;
-                border: none;
-                border-radius: 10px;
-                color: white;
-                  &:hover{
-                    background-color: #6b7add
-                  }
-              }
          }
 
         
