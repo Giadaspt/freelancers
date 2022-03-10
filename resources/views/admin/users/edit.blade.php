@@ -227,7 +227,7 @@
                     @endforeach
 
                 </div>
-                <button type="submit" class="btn btn-freelance mr-3">
+                <button type="submit" class="btn btn-freelance mr-3" onclick="return confirm('Le tue modifiche sono state salvate correttamente')">
                     Salva
                 </button>
                 </form>
@@ -239,10 +239,7 @@
                 action="{{ route('admin.users.destroy', $user) }}" method="POST">
                 @csrf
                 @method('DELETE')
-
-                
-                
-                    <button type="submit" class="btn btn-delete">
+                    <button type="submit" class="btn btn-delete" onclick="return confirm('Vuoi eliminare il tuo profilo?')">
                     Elimina Profilo
                     </button>
                 </form>

@@ -166,7 +166,7 @@
       <input id="nonce" name="payment_method_nonce" type="hidden"/>
       <div class="d-flex justify-content-center align-items-center">
           <a class="mr-4" href="{{route('admin.sponsorships.index')}}">Annulla transazione</a>
-          <button class="btn btn-freelance " type="submit">Conferma acquisto</button>
+          <button class="btn btn-freelance " type="submit" onclick="return confirm('Acquisto confermato')">Conferma acquisto</button>
       </div>
     </form>
   
@@ -184,11 +184,21 @@
           }
           form.addEventListener('submit', function (event) {
             event.preventDefault();
+       
             instance.requestPaymentMethod(function (err, payload) {
               if (err) {
                 console.log('Request Payment Method Error', err);
                 return;
               }
+              Swal.fire({
+                text: "Pagamento completato con successo",
+                icon: "success",
+                buttonsStyling: false,
+                confirmButtonText: "Ok",
+                customClass: {
+                confirmButton: "btn btn-primary"
+                }
+              });
               // Add the nonce to the form and submit
               document.querySelector('#nonce').value = payload.nonce;
               form.submit();

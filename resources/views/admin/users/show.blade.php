@@ -100,6 +100,10 @@
       <div class="cv-file mt-4">
         <embed src="{{ asset('storage/' . $user->cv) }}" alt="">
       </div>
+
+      <button class="btn btn-freelance  mr-2 mt-5">
+        <a class="text-white" href=" {{ URL::previous() }} "> Indietro </a>
+      </button>
     @endauth
 
 
