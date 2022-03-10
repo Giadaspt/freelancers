@@ -71,16 +71,38 @@ export default {
        border-radius: 10px;
        margin: 10px;
        text-transform: uppercase;
-      //  width: calc(100% / 6 - 20px);
-       width: 164px;
+       min-width: 100px;
        height: 100px;
-       background-color: #5165F6;
-       color: white;
+      // background-color: #5165F6;
+      background-color: white;
+       color: #5165F6;
+      // color: white;
          &:hover{
-            background-color: #6b7add;
+            // background-color: #6b7add;
+            box-shadow: 0px 1px 20px rgb(255, 255, 255, 0.5);
+            transition: 0.3s;
          }
-
      }
+
+    @media (max-width: 550px) {
+      .btn-category{
+        background-color: white;
+        color: #5165F6;
+        font-size: 2.5vw !important;
+        box-shadow: 0px 1px 10px rgb(255, 255, 255, 0.5);
+         &:focus{
+            background-color: #6b7add;
+            box-shadow: 0px 1px 20px rgb(255, 255, 255, 0.5);
+            transition: 0.3s;
+            color: white;
+         }
+         &:hover{
+            color: #5165F6;
+            box-shadow: 0px 1px 20px rgb(255, 255, 255, 0.5);
+            transition: 0.3s;
+         }
+      }
+}
 }
 
 
