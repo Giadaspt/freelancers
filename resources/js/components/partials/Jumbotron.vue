@@ -59,6 +59,11 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
    margin-bottom: 0;
+   @media (max-width: 900px) {
+    background-color: #EBF2F8;
+    background-image: none;
+  }
+
      h1{
        font-size: 5vw;
        margin-bottom: 25px;
@@ -114,9 +119,8 @@ width: 100%;
   &:hover{
     box-shadow: 0px 0px 18px;
   }
-
-
 }
+
 
 
 
