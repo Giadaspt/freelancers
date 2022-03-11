@@ -14,6 +14,7 @@
                         </div>
                     @endif
                     @if ($user->image)
+
                         
                     <div class="box-img-dashboard">
                         <img src="{{ asset('storage/' . $user->image) }}" alt="{{$user->name}}" 
@@ -21,6 +22,7 @@
                     </div>
                     @else
                         <img width="200"  src="{{ asset('storage/img/user.jpeg')}}" alt="immagine" style="border-radius: 50%">
+
                     @endif
                     <div class="user-list">
                         <h1>{{ $user->name }} {{ $user->lastname }}</h1>

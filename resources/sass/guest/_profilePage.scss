@@ -34,6 +34,7 @@
 }
 
 
+
 .cat, .skill {
   display: flex;
   flex-wrap: wrap;
@@ -44,9 +45,43 @@
 }
 
 .curriculum{
-  width: 700px;
-  height: 800px;
+  width: 200px;
+  height: 400px;
 }
+
+.cust-card-review{
+  margin-right: 50px;
+}
+
+.card {
+  flex-direction: row !important;
+  margin: 0 16px;
+}
+
+.cust-card-review {
+  display: flex;
+  width: 30%;
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px $shadow;
+
+  .card-body{
+    width: 30%;
+  }
+
+  .top {
+    min-width: 0;
+    height: 30px;
+    background-color: $secondaryColor !important;
+    border-radius: 20px 20px 0  0!important;
+    padding: 0;
+  }
+}
+
+.starGraphic {
+  font-size: 20px;
+  color: $thirdColor;
+}
+
 
 /* voto con stelline */
 

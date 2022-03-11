@@ -20,15 +20,16 @@
             <h5>{{ user.address }}</h5>
             <h5>{{ user.city }}</h5>
 
-            <div class="mt-3 mb-3">
+            <div class="mt-3 mb-3 mr-4">
               <h5 class="mr-2 font-weight-bold" v-if="user.description_job != null">Me ed il mio lavoro </h5>
               <p>{{ user.description_job }}</p>
             </div>
 
             <div class="left-side ">
                   <h5 class="mr-2 font-weight-bold">Mi occupo di: </h5>
+
                 <span class=" cat">
-                  <p class="mr-2" v-for="category in user.categories" :key="`${category.id}`">
+                  <p class="mr-2" v-for="category in userComplete.categories" :key="`${category.id}`">
                       {{ category.name }},
                   </p>
                 </span>
@@ -37,25 +38,18 @@
               <div class="left-side " >
                   <h5 class="mr-2 font-weight-bold">I miei punti di forza sono: </h5>
                   <span class="skill">
-                    <p class="mr-2" v-for="skill in user.skills" :key="`${skill.id}`">
+                    <p class="mr-2" v-for="skill in userComplete.skills" :key="`${skill.id}`">
                       {{ skill.name }},
                     </p>
                   </span>
                 </div>
-              <div class="left-side " >
-                  <h5 class="mr-2 font-weight-bold">Recensioni </h5>
-                  <span class="skill">
-                    <p class="mr-2" v-for="review in user.reviews" :key="`${review.id}`">
-                      {{ review.name }},
-                    </p>
-                  </span>
-                </div>
+             
               <div class="box-img mr-3 cv" >
                   <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
                   <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
                   <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
-                  <!-- <iframe class="curriculum"   :src="'/storage/' + user.cv"></iframe> -->
-                  <img class="curriculum"   :src="'/storage/' + user.cv">
+                  <iframe class="curriculum"  style="width:200 height:375 " :src="'/storage/' + user.cv"></iframe>
+                  <!-- <img class="curriculum"   :src="'/storage/' + user.cv"> -->
               </div>
           </div>
       </section>
@@ -95,25 +89,22 @@
     <section class="reviews-section">
       <h3>Recensioni</h3>
 
-      <div>
-        <!-- <h1>{{ users[0].reviews[0].author_name }} </h1>
-        <h1>Ciao </h1> -->
-         <div class="card cust-card row" v-for="(user, ind) in users"
-          :key="`${ind}`">
-          <div class="card-body p-0" v-for="(review, ind) in user.reviews"
-          :key="`${ind}`">
+      <div class="cust-review d-flex mr-3">
+        <div class="card row cust-card-review mb-4 mr-4"  v-for="review in userReviews" :key="review.id">
+          <div class="card-body p-0" >
             <div class="top"></div>
-              <h3 class="card-title d-flex align-items-center name ml-4 mr-3 p-4" >{{ review.author_name }}</h3>
-              <!-- <div class="stars">
-                  <i
-                    v-for="(i, index) in 5" :key="`${index}`"
-                    :class="i < user.reviews.vote ? 'fas fa-star' : 'far fa-star' ">
-                  </i>
-              </div> -->
-
-          <p class="card-text pl-4 pr-4">{{ review.text }}</p>
+              
+              <h3 class="card-title d-flex align-items-center ml-4 mb-0  mt-3" >{{review.author_name}}</h3>
+              <div class="stars ml-4 mr-3  d-flex">
+                  <span 
+                    class="starGraphic"
+                    v-for="(i, index) in review.vote" :key="`${index}`">
+                    ★
+                  </span>
+              </div>
+              <p class="card-text ml-4 mr-3 mb-3">{{review.text}}</p>
+          </div>
         </div>
-      </div>
       </div>
 
       <form method="POST" @submit.prevent="sendFormReview" class="mb-4">
@@ -196,7 +187,6 @@ export default {
       skills: [],
 
       reviews: [],
-      name: this.$route.params.author_name,
       author_name: '',
       vote: 0,
 
@@ -207,18 +197,28 @@ export default {
       success: false,
       sending: false,
 
+
+      userCategory: [],
+      userComplete: {},
+      userReviews: [],
     }
   },
 
   mounted() {
-    console.log('user singolo',this.user);
-    console.log('user tanti',this.users);
+    // console.log('user singolo',this.user);
+    // console.log('user tanti',this.users);
+    // console.log('user cati',this.userCategory);
     // console.log('reviews vai',this.reviews);
     // console.log('reviews yes',this.review);
 
     // console.log('cat cat',this.category);
 
     this.getApi();
+    this.getAllCat();
+    this.getCategories();
+   
+    
+     this.getAllRev();
   },
 
   methods: {
@@ -227,35 +227,82 @@ export default {
         .then(res => {
 
           this.users = res.data.users;
-          // this.reviews = res.data.reviews;
 
-          // for ( let i=0; i < this.users.length; i++ ){
-          //   let user = this.users[i];
-          //   return user
-          // }
+          let userObj= this.users;
 
-          console.log('reviw user', this.users );
+          userObj.forEach(utente =>{
+            if(utente.id === this.user.id){
+              return this.userComplete = utente;
+            }
 
+          });
+            // console.log('user complete',this.userComplete);
+            // console.log('userObj', userObj);
 
+          // console.log('reviw user', this.users );
       });
     },
 
-    getUserReview(slug){
-      axios.get(this.apiUrl + '/review/' + slug)
+    getAllCat(){
+
+      axios.get(this.apiUrl)
         .then(res => {
+          this.categories = res.data.categories;
 
-          this.users = res.data.users;
-          // this.reviews = res.data.reviews;
-
-          // for ( let i=0; i < this.users.length; i++ ){
-          //   let user = this.users[i];
-          //   return user
-          // }
-
-          console.log('reviw user', this.users );
-
-
+          // console.log('cat cat',this.categories);
       });
+    },
+
+    getCategories(){
+      let cat = this.categories;
+      cat.forEach(category => {
+
+        if(category.id = this.user.pivot.category_id){
+          console.log('array pivot cat.id',category.id);
+          return this.userCategory.push(category.name)
+        }
+      });
+
+        // console.log('array cat',cat);
+        // console.log('array cat2',this.userCategory);
+        // console.log('array pivot',this.user.pivot.category_id);
+
+    },
+
+    getAllRev(){
+
+      axios.get(this.apiUrl)
+        .then(res => {
+          this.reviews = res.data.reviews;
+          this.getReviews();
+
+          console.log('all reviews',this.reviews);
+      });
+
+      
+    },
+
+     getReviews(){
+        let rev = [];
+        rev = this.reviews;
+        console.log('tutti i rev',rev);
+
+        rev.forEach(rec => {
+          console.log('una review', rec);
+          console.log('review.id', rec.id);
+
+          if(rec.user_id == this.user.id){
+            
+            console.log('id dello user che ha la recensione',rec.user_id); 
+            return this.userReviews.push(rec);
+          }
+        });
+
+        
+        console.log('i reviews dello user',this.userReviews);
+        console.log('user.id',this.user.id);
+     
+
     },
 
      sendFormMessage(){
@@ -287,6 +334,7 @@ export default {
           console.log(err);
         });
       },
+
 
      sendFormReview(){
         this.sending = true;
