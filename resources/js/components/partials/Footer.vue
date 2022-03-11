@@ -19,7 +19,7 @@
         <a href="#"><li> Cerco un professionista </li></a> 
         <a href="#"><li> Sono un professionista </li></a> 
         <a href="#"><li> Domande frequenti </li></a> 
-        <a href="#"><li> Guida per freelancerList </li></a> 
+        <a href="#"><li> Guida per freelancer </li></a> 
         <a href="#"><li> Trova lavori per freelance </li></a>
        </ul>
         

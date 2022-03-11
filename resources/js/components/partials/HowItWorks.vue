@@ -2,8 +2,8 @@
 
 <div class="box-howitworks d-flex flex-column justify-content-center align-items-center">
 
-   <h2>Come funziona:</h2>
-   <h4>Cerca il freelancer più adatto al tuo progetto...</h4>
+   <!-- <h2>Come funziona:</h2>
+   <h4>Cerca il freelancer più adatto al tuo progetto...</h4> -->
 
 </div>
  

@@ -1,6 +1,6 @@
 <template>
-
-<div class="box-categories">
+<div class="container">
+ <div class="box-categories">
   <h2 class="text-center py-5">Seleziona una categoria</h2>        
   <div class="d-flex justify-content-center align-content-center flex-wrap">
       
@@ -9,6 +9,7 @@
 
      
     </div>
+  </div>
 </div>
 </template>
 
@@ -72,11 +73,11 @@ export default {
        margin: 10px;
        text-transform: uppercase;
        min-width: 100px;
-       font-size: 16px !important;
+       font-size: 14px !important;
        height: 100px;
       // background-color: #5165F6;
-      background-color: white;
-       color: #5165F6;
+       background-color: white;
+       color: #2d5e8b;
       // color: white;
          &:hover{
             // background-color: #6b7add;

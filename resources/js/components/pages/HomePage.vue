@@ -2,11 +2,14 @@
   <div>
     <Jumbotron/>
     <div class="bg-home">
-     <Categories/>
+      <Categories/>
     </div>
+
     <div class="container">
-     <Sponsored/>
+      <Sponsored/>
     </div>
+
+ 
     
     <div class="bg-home">
       

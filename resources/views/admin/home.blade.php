@@ -14,15 +14,15 @@
                         </div>
                     @endif
                     @if ($user->image)
-                    
-                    
-                        <img width="200" height="200" src="{{ asset('storage/' . $user->image) }}" alt="{{$user->name}}" style="border-radius: 50%" >
+
                         
-                    
+                    <div class="box-img-dashboard">
+                        <img src="{{ asset('storage/' . $user->image) }}" alt="{{$user->name}}" 
+                         >       
+                    </div>
                     @else
-                    
-                        <img width="200"  src="{{ asset('storage/img/istockphoto-1223671392-612x612.jpg')}}" alt="immagine" style="border-radius: 50%">
-                    
+                        <img width="200"  src="{{ asset('storage/img/user.jpeg')}}" alt="immagine" style="border-radius: 50%">
+
                     @endif
                     <div class="user-list">
                         <h1>{{ $user->name }} {{ $user->lastname }}</h1>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="container d-flex justify-content-between mb-5">
-            <div class="card dash-card text-center" style="width: 30%">
+            <div class="card-bg-color card dash-card text-center" style="width: 30%">
                 <a href="{{ route('admin.users.show', $user) }}" class="card-body">
                     <div class="img">
                         <img width="100px" src=" {{asset('storage/img/show.png')}} " alt="">
@@ -89,30 +89,25 @@
             </div>           
         </div>
         <div class="container d-flex justify-content-between">
-            <div class="card dash-statistiche" style="width: 20%; min-width: 200px; min-height: 200px">
+            <div class="card dash-statistiche text-dark" style="width: 30%; min-width: 200px; min-height: 200px">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
                     <h5>MEDIA RECENSIONI:</h5>
-                    <h2><a href="#" class="card-link">{{$avgReviews}}</a></h2>
+                    <h2><a href="#" class="card-link text-dark">{{$avgReviews}}</a></h2>
                 </div>
             </div>
-            <div class="card dash-statistiche" style="width: 20%; min-width: 200px; min-height: 200px">
+            <div class="card dash-statistiche text-info" style="width: 30%; min-width: 200px; min-height: 200px">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
                     <h5>MESSAGGI RICEVUTI:</h5>
-                    <h2><a href="#" class="card-link">{{$allMessages}}</a></h2>
+                    <h2><a href="#" class="card-link text-info">{{$allMessages}}</a></h2>
                 </div>
             </div>
-            <div class="card dash-statistiche" style="width: 20%; min-width: 200px; min-height: 200px">
+            <div class="card dash-statistiche text-success" style="width: 30%; min-width: 200px; min-height: 200px">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
                     <h5>PROMOZIONI ACQUISTATE:</h5>
-                    <h2><a href="#" class="card-link">Another link</a></h2>
+                    <h2><a href="#" class="card-link text-success"> {{$allSponsorships}} </a></h2>
                 </div>
             </div>
-            <div class="card dash-statistiche" style="width: 20%; min-width: 200px; min-height: 200px">
-                <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
-                    <h5>TOTALE SPONSOR:</h5>
-                    <h2><a href="#" class="card-link">Another link</a></h2>
-                </div>
-            </div>
+        
         </div>
     </div>
 </div>

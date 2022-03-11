@@ -34,7 +34,7 @@
             <div class="container d-flex justify-content-betweenalign-items-center">
                 <div class="d-flex align-items-center">
                     <a class="nav-link logo">
-                        <img src="{{ asset('storage/img/logo.png') }}" >
+                        <img src="{{ asset('storage/img/logo.png') }}">
                     </a>
                     <span>
                         <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ route('welcome') }}">
@@ -68,9 +68,11 @@
 
                         <div class="dropdown show" >
                             
-                            <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                         
+                            <a class="btn btn-light dropdown-toggle"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                         
                                 @if ($user->image)
-                                    <img width="30" height="30" src="{{ asset('storage/' . $user->image) }}" alt="{{$user->name}}" style="border-radius: 50%" >
+                                    <span class="box-img-header">
+                                        <img src="{{ asset('storage/' . $user->image) }}" alt="{{$user->name}}">
+                                    </span>
                                 @else
                                     <img width="30"  src="{{ asset('storage/img/istockphoto-1223671392-612x612.jpg')}}" alt="immagine" style="border-radius: 50%">
                                 @endif                         
