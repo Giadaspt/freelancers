@@ -1,40 +1,42 @@
 <template>
 <div class="my-5">
 <h2 class="text-center my-5">Freelancer in evidenza</h2> 
-<div class="box-sponsored d-flex justify-content-center flex-wrap">
-   
-   <div class="box-profile d-flex" v-for="user in sponsored" :key="`user${user.id}`" >
+  <div class="box-sponsored d-flex justify-content-center flex-wrap" v-if="sponsored">
+      <div class="box-profile d-flex" v-for="user in sponsored" :key="`user${user.id}`" >
+        
+          <div class="left-box">
+              <div class="box-img">
+                <img class=" mr-3" :src="'/storage/' + user.image" alt="">
+              </div>
+              <div class="box-info">
 
-        <div class="left-box">
-            <div class="box-img">
-               <img class=" mr-3" :src="'/storage/' + user.image" alt="">
-            </div>
-            <div class="box-info">
+                <h6>Categoria</h6>
+                <p class="text-info"> {{user.categories[0].name}} </p>
+                <h6>Skills principali</h6>
+                <p class="text-info"> {{user.skills[0].name}} </p>
+                        
+              </div>       
+          </div>
 
-               <h6>Categoria</h6>
-               <p class="text-info"> {{user.categories[0].name}} </p>
-               <h6>Skills principali</h6>
-               <p class="text-info"> {{user.skills[0].name}} </p>
-                       
-             </div>       
-        </div>
-
-        <div class="right-box">
-            <div class="user-info">
-               <h3 class="my-3 text-warning">{{user.name}}</h3>
-               <p> {{user.city}} </p>
-               <h5>Panoramica</h5>
-                <div class="box-description">
-                    <p class="font-italic"> {{user.description_job}} </p>
-                </div>
-            </div>
-    
-             <router-link :to="{ name:'profile/', params:{user: user, name: user.name}}">
-               <button class="btn btn-freelance m-4">Vai al profilo</button>
-            </router-link>
-        </div>
-     </div> 
-   </div>
+          <div class="right-box">
+              <div class="user-info">
+                <h3 class="my-3 text-warning">{{user.name}}</h3>
+                <p> {{user.city}} </p>
+                <h5>Panoramica</h5>
+                  <div class="box-description">
+                      <p class="font-italic"> {{user.description_job}} </p>
+                  </div>
+              </div>
+      
+              <router-link :to="{ name:'profile/', params:{user: user, slug: user.slug}}">
+                <button class="btn btn-freelance m-4">Vai al profilo</button>
+              </router-link>
+          </div>
+      </div>  
+  </div>
+  <div class="d-flex justify-content-center h-100" v-else>
+    <div id="loading-bar-spinner" class="spinner"><div class="spinner-icon"></div></div>
+  </div> 
  </div>
 </template>
 
@@ -162,10 +164,30 @@ export default {
                     background-color: #6b7add
                   }
               }
-         }
-
-        
+         }    
      }
 }
+#loading-bar-spinner.spinner {
+    left: 50%;
+    margin-left: -20px;
+    top: 50%;
+    margin-top: -20px;
+    position: absolute;
+    z-index: 19 !important;
+    animation: loading-bar-spinner 400ms linear infinite;
+}
 
+#loading-bar-spinner.spinner .spinner-icon {
+    width: 40px;
+    height: 40px;
+    border:  solid 4px transparent;
+    border-top-color:  #00C8B1 !important;
+    border-left-color: #00C8B1 !important;
+    border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
 </style>
