@@ -10108,6 +10108,7 @@ h3 {
 
 .cust-card-review {
   display: flex;
+  width: 30%;
   border-radius: 20px !important;
   box-shadow: 0px 10px 10px darkgray;
 }
@@ -10120,6 +10121,11 @@ h3 {
   background-color: #1A3854 !important;
   border-radius: 20px 20px 0 0 !important;
   padding: 0;
+}
+
+.starGraphic {
+  font-size: 20px;
+  color: #FDFF05;
 }
 
 /* voto con stelline */

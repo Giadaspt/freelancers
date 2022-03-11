@@ -4962,44 +4962,45 @@ var render = function () {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "cust-review mr-3" },
+        { staticClass: "cust-review d-flex mr-3" },
         _vm._l(_vm.userReviews, function (review) {
           return _c(
             "div",
-            { key: review.id, staticClass: "card cust-card-review mb-4" },
+            {
+              key: review.id,
+              staticClass: "card row cust-card-review mb-4 mr-4",
+            },
             [
               _c("div", { staticClass: "card-body p-0" }, [
                 _c("div", { staticClass: "top" }),
                 _vm._v(" "),
                 _c(
-                  "div",
-                  { staticClass: "stars ml-4 mr-3 p-2 d-flex" },
-                  [
-                    _c(
-                      "h3",
-                      {
-                        staticClass:
-                          "card-title d-flex align-items-center ml-4 mr-3 p-2",
-                      },
-                      [_vm._v(_vm._s(review.author_name))]
-                    ),
-                    _vm._v(" "),
-                    _vm._l(review.vote, function (i, index) {
-                      return _c(
-                        "span",
-                        { key: "" + index, staticClass: "starGraphic" },
-                        [
-                          _vm._v(
-                            "\r\n                    ★\r\n                  "
-                          ),
-                        ]
-                      )
-                    }),
-                  ],
-                  2
+                  "h3",
+                  {
+                    staticClass:
+                      "card-title d-flex align-items-center ml-4 mb-0  mt-3",
+                  },
+                  [_vm._v(_vm._s(review.author_name))]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "card-text ml-4 mr-3 p-2" }, [
+                _c(
+                  "div",
+                  { staticClass: "stars ml-4 mr-3  d-flex" },
+                  _vm._l(review.vote, function (i, index) {
+                    return _c(
+                      "span",
+                      { key: "" + index, staticClass: "starGraphic" },
+                      [
+                        _vm._v(
+                          "\r\n                    ★\r\n                  "
+                        ),
+                      ]
+                    )
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text ml-4 mr-3 mb-3" }, [
                   _vm._v(_vm._s(review.text)),
                 ]),
               ]),

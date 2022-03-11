@@ -89,20 +89,20 @@
     <section class="reviews-section">
       <h3>Recensioni</h3>
 
-      <div class="cust-review mr-3">
-        <div class="card cust-card-review mb-4"  v-for="review in userReviews" :key="review.id">
+      <div class="cust-review d-flex mr-3">
+        <div class="card row cust-card-review mb-4 mr-4"  v-for="review in userReviews" :key="review.id">
           <div class="card-body p-0" >
             <div class="top"></div>
-              <div class="stars ml-4 mr-3 p-2 d-flex">
-              <h3 class="card-title d-flex align-items-center ml-4 mr-3 p-2" >{{review.author_name}}</h3>
+              
+              <h3 class="card-title d-flex align-items-center ml-4 mb-0  mt-3" >{{review.author_name}}</h3>
+              <div class="stars ml-4 mr-3  d-flex">
                   <span 
                     class="starGraphic"
                     v-for="(i, index) in review.vote" :key="`${index}`">
                     ★
                   </span>
               </div>
-
-              <p class="card-text ml-4 mr-3 p-2">{{review.text}}</p>
+              <p class="card-text ml-4 mr-3 mb-3">{{review.text}}</p>
           </div>
         </div>
       </div>
