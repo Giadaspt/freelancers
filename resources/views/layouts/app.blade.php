@@ -64,8 +64,6 @@
                             Dashboard 
                         </a>
 
-                        <a class="nav-link">Statistiche</a>
-
                         <div class="dropdown show" >
                             
                             <a class="btn btn-light dropdown-toggle"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                         
