@@ -2840,7 +2840,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 // import Profile from './Profile.vue'
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Sponsored",
@@ -3077,9 +3076,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-
 exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.text-orange[data-v-b52c6432] {\n  color: #eb8f26;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #f3f3f3;\n  box-shadow: 5px 10px 18px #888888;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n  margin-top: 15px;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #1B3952;\n  color: white;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 80%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 60%;\n  width: 100%;\n  overflow: hidden;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}", ""]);
-
 
 // exports
 
@@ -5857,14 +5854,13 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "box-sponsored d-flex justify-content-start flex-wrap" },
+      { staticClass: "box-sponsored d-flex justify-content-center flex-wrap" },
       _vm._l(_vm.sponsored, function (user) {
         return _c(
           "div",
           { key: "user" + user.id, staticClass: "box-profile d-flex" },
           [
             _c("div", { staticClass: "left-box" }, [
-
               _c("div", { staticClass: "box-img" }, [
                 _c("img", {
                   staticClass: " mr-3",
@@ -5883,13 +5879,10 @@ var render = function () {
                 _vm._v(" "),
                 _c("p", { staticClass: "text-info" }, [
                   _vm._v(" " + _vm._s(user.skills[0].name) + " "),
-
-
                 ]),
               ]),
             ]),
             _vm._v(" "),
-
             _c(
               "div",
               { staticClass: "right-box" },
@@ -5908,39 +5901,27 @@ var render = function () {
                       _vm._v(" " + _vm._s(user.description_job) + " "),
                     ]),
                   ]),
-
                 ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "d-flex justify-content-end" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: {
-                          name: "profile/",
-                          params: { user: user, name: user.name },
-                        },
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    attrs: {
+                      to: {
+                        name: "profile/",
+                        params: { user: user, name: user.name },
                       },
                     },
-                    [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-freelance mb-4 ",
-                          attrs: { type: "submit" },
-                        },
-                        [_vm._v("Vai al profilo")]
-                      ),
-                    ]
-                  ),
-                ],
-                1
-              ),
-            ]),
+                  },
+                  [
+                    _c("button", { staticClass: "btn btn-freelance m-4" }, [
+                      _vm._v("Vai al profilo"),
+                    ]),
+                  ]
+                ),
+              ],
+              1
+            ),
           ]
         )
       }),
@@ -21998,10 +21979,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
-
-
+module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })
