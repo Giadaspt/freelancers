@@ -1949,6 +1949,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FreelancerList",
@@ -2014,6 +2026,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partials_AboutUs_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../partials/AboutUs.vue */ "./resources/js/components/partials/AboutUs.vue");
 /* harmony import */ var _partials_Register_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../partials/Register.vue */ "./resources/js/components/partials/Register.vue");
 /* harmony import */ var _partials_Footer_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../partials/Footer.vue */ "./resources/js/components/partials/Footer.vue");
+//
 //
 //
 //
@@ -2840,6 +2853,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 // import Profile from './Profile.vue'
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Sponsored",
@@ -2885,7 +2900,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".back[data-v-b8c4dd52] {\n  width: 90px;\n  height: 20px;\n  text-align: center;\n}\n.back .btn-back[data-v-b8c4dd52] {\n  cursor: pointer;\n  padding: 4px;\n}", ""]);
+exports.push([module.i, ".back[data-v-b8c4dd52] {\n  width: 90px;\n  height: 20px;\n  text-align: center;\n}\n.back .btn-back[data-v-b8c4dd52] {\n  cursor: pointer;\n  padding: 4px;\n}\nfigure[data-v-b8c4dd52] {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  width: 6.25em;\n  height: 6.25em;\n  -webkit-animation: rotate-data-v-b8c4dd52 2.4s linear infinite;\n          animation: rotate-data-v-b8c4dd52 2.4s linear infinite;\n}\n.white[data-v-b8c4dd52] {\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: white;\n  -webkit-animation: flash-data-v-b8c4dd52 2.4s linear infinite;\n          animation: flash-data-v-b8c4dd52 2.4s linear infinite;\n  opacity: 0;\n}\n.dot[data-v-b8c4dd52] {\n  position: absolute;\n  margin: auto;\n  width: 2.4em;\n  height: 2.4em;\n  border-radius: 100%;\n  transition: all 1s ease;\n}\n.dot[data-v-b8c4dd52]:nth-child(2) {\n  top: 0;\n  bottom: 0;\n  left: 0;\n  background: #FF4444;\n  -webkit-animation: dotsY-data-v-b8c4dd52 2.4s linear infinite;\n          animation: dotsY-data-v-b8c4dd52 2.4s linear infinite;\n}\n.dot[data-v-b8c4dd52]:nth-child(3) {\n  left: 0;\n  right: 0;\n  top: 0;\n  background: #FFBB33;\n  -webkit-animation: dotsX-data-v-b8c4dd52 2.4s linear infinite;\n          animation: dotsX-data-v-b8c4dd52 2.4s linear infinite;\n}\n.dot[data-v-b8c4dd52]:nth-child(4) {\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background: #99CC00;\n  -webkit-animation: dotsY-data-v-b8c4dd52 2.4s linear infinite;\n          animation: dotsY-data-v-b8c4dd52 2.4s linear infinite;\n}\n.dot[data-v-b8c4dd52]:nth-child(5) {\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: #33B5E5;\n  -webkit-animation: dotsX-data-v-b8c4dd52 2.4s linear infinite;\n          animation: dotsX-data-v-b8c4dd52 2.4s linear infinite;\n}\n@-webkit-keyframes rotate-data-v-b8c4dd52 {\n0% {\n    transform: rotate(0);\n}\n10% {\n    width: 6.25em;\n    height: 6.25em;\n}\n66% {\n    width: 2.4em;\n    height: 2.4em;\n}\n100% {\n    transform: rotate(360deg);\n    width: 6.25em;\n    height: 6.25em;\n}\n}\n@keyframes rotate-data-v-b8c4dd52 {\n0% {\n    transform: rotate(0);\n}\n10% {\n    width: 6.25em;\n    height: 6.25em;\n}\n66% {\n    width: 2.4em;\n    height: 2.4em;\n}\n100% {\n    transform: rotate(360deg);\n    width: 6.25em;\n    height: 6.25em;\n}\n}\n@-webkit-keyframes dotsY-data-v-b8c4dd52 {\n66% {\n    opacity: 0.1;\n    width: 2.4em;\n}\n77% {\n    opacity: 1;\n    width: 0;\n}\n}\n@keyframes dotsY-data-v-b8c4dd52 {\n66% {\n    opacity: 0.1;\n    width: 2.4em;\n}\n77% {\n    opacity: 1;\n    width: 0;\n}\n}\n@-webkit-keyframes dotsX-data-v-b8c4dd52 {\n66% {\n    opacity: 0.1;\n    height: 2.4em;\n}\n77% {\n    opacity: 1;\n    height: 0;\n}\n}\n@keyframes dotsX-data-v-b8c4dd52 {\n66% {\n    opacity: 0.1;\n    height: 2.4em;\n}\n77% {\n    opacity: 1;\n    height: 0;\n}\n}\n@-webkit-keyframes flash-data-v-b8c4dd52 {\n33% {\n    opacity: 0;\n    border-radius: 0%;\n}\n55% {\n    opacity: 0.6;\n    border-radius: 100%;\n}\n66% {\n    opacity: 0;\n}\n}\n@keyframes flash-data-v-b8c4dd52 {\n33% {\n    opacity: 0;\n    border-radius: 0%;\n}\n55% {\n    opacity: 0.6;\n    border-radius: 100%;\n}\n66% {\n    opacity: 0;\n}\n}", ""]);
 
 // exports
 
@@ -3076,7 +3091,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.text-orange[data-v-b52c6432] {\n  color: #eb8f26;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #f3f3f3;\n  box-shadow: 5px 10px 18px #888888;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n  margin-top: 15px;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #1B3952;\n  color: white;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 80%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 60%;\n  width: 100%;\n  overflow: hidden;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}", ""]);
+exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.text-orange[data-v-b52c6432] {\n  color: #eb8f26;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #f3f3f3;\n  box-shadow: 5px 10px 18px #888888;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n  margin-top: 15px;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #1B3952;\n  color: white;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 80%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 60%;\n  width: 100%;\n  overflow: hidden;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}\n#loading-bar-spinner.spinner[data-v-b52c6432] {\n  left: 50%;\n  margin-left: -20px;\n  top: 50%;\n  margin-top: -20px;\n  position: absolute;\n  z-index: 19 !important;\n  -webkit-animation: loading-bar-spinner-data-v-b52c6432 400ms linear infinite;\n          animation: loading-bar-spinner-data-v-b52c6432 400ms linear infinite;\n}\n#loading-bar-spinner.spinner .spinner-icon[data-v-b52c6432] {\n  width: 40px;\n  height: 40px;\n  border: solid 4px transparent;\n  border-top-color: #00C8B1 !important;\n  border-left-color: #00C8B1 !important;\n  border-radius: 50%;\n}\n@-webkit-keyframes loading-bar-spinner-data-v-b52c6432 {\n0% {\n    transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n    transform: rotate(360deg);\n}\n}\n@keyframes loading-bar-spinner-data-v-b52c6432 {\n0% {\n    transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n    transform: rotate(360deg);\n}\n}", ""]);
 
 // exports
 
@@ -4592,47 +4607,67 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("h1", { staticClass: "mb-4 mt-4" }, [
-        _vm._v("Lista dei freelancer per: " + _vm._s(_vm.name)),
-      ]),
-      _vm._v(" "),
-      _vm._l(_vm.users, function (user, index) {
-        return _c("FreelancerCard", {
-          key: index,
-          attrs: { freelancerCard: user },
-          model: {
-            value: _vm.name,
-            callback: function ($$v) {
-              _vm.name = $$v
-            },
-            expression: "name",
-          },
-        })
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "back mt-4 mb-4" }, [
-        _c(
-          "a",
-          {
-            staticClass: "btn-freelance btn-back justify-content-center",
-            on: {
-              click: function ($event) {
-                return _vm.$router.go(-1)
-              },
-            },
-          },
-          [_vm._v("Indietro")]
-        ),
-      ]),
-    ],
-    2
-  )
+  return _c("div", { staticClass: "container freelancers" }, [
+    _c("h1", { staticClass: "mb-4 mt-4" }, [
+      _vm._v("Lista dei freelancer per: " + _vm._s(_vm.name)),
+    ]),
+    _vm._v(" "),
+    _vm.users
+      ? _c(
+          "div",
+          [
+            _vm._l(_vm.users, function (user, index) {
+              return _c("FreelancerCard", {
+                key: index,
+                attrs: { freelancerCard: user },
+                model: {
+                  value: _vm.name,
+                  callback: function ($$v) {
+                    _vm.name = $$v
+                  },
+                  expression: "name",
+                },
+              })
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "back mt-4 mb-4" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn-freelance btn-back justify-content-center",
+                  on: {
+                    click: function ($event) {
+                      return _vm.$router.go(-1)
+                    },
+                  },
+                },
+                [_vm._v("Indietro")]
+              ),
+            ]),
+          ],
+          2
+        )
+      : _c("div", [_vm._m(0)]),
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("figure", [
+      _c("div", { staticClass: "dot white" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "dot" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "dot" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "dot" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "dot" }),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -5852,84 +5887,102 @@ var render = function () {
       _vm._v("Freelancer in evidenza"),
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "box-sponsored d-flex justify-content-center flex-wrap" },
-      _vm._l(_vm.sponsored, function (user) {
-        return _c(
+    _vm.sponsored
+      ? _c(
           "div",
-          { key: "user" + user.id, staticClass: "box-profile d-flex" },
-          [
-            _c("div", { staticClass: "left-box" }, [
-              _c("div", { staticClass: "box-img" }, [
-                _c("img", {
-                  staticClass: " mr-3",
-                  attrs: { src: "/storage/" + user.image, alt: "" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "box-info" }, [
-                _c("h6", [_vm._v("Categoria")]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-info" }, [
-                  _vm._v(" " + _vm._s(user.categories[0].name) + " "),
-                ]),
-                _vm._v(" "),
-                _c("h6", [_vm._v("Skills principali")]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-info" }, [
-                  _vm._v(" " + _vm._s(user.skills[0].name) + " "),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c(
+          {
+            staticClass:
+              "box-sponsored d-flex justify-content-center flex-wrap",
+          },
+          _vm._l(_vm.sponsored, function (user) {
+            return _c(
               "div",
-              { staticClass: "right-box" },
+              { key: "user" + user.id, staticClass: "box-profile d-flex" },
               [
-                _c("div", { staticClass: "user-info" }, [
-                  _c("h3", { staticClass: "my-3 text-warning" }, [
-                    _vm._v(_vm._s(user.name)),
+                _c("div", { staticClass: "left-box" }, [
+                  _c("div", { staticClass: "box-img" }, [
+                    _c("img", {
+                      staticClass: " mr-3",
+                      attrs: { src: "/storage/" + user.image, alt: "" },
+                    }),
                   ]),
                   _vm._v(" "),
-                  _c("p", [_vm._v(" " + _vm._s(user.city) + " ")]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("Panoramica")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "box-description" }, [
-                    _c("p", { staticClass: "font-italic" }, [
-                      _vm._v(" " + _vm._s(user.description_job) + " "),
+                  _c("div", { staticClass: "box-info" }, [
+                    _c("h6", [_vm._v("Categoria")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-info" }, [
+                      _vm._v(" " + _vm._s(user.categories[0].name) + " "),
+                    ]),
+                    _vm._v(" "),
+                    _c("h6", [_vm._v("Skills principali")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-info" }, [
+                      _vm._v(" " + _vm._s(user.skills[0].name) + " "),
                     ]),
                   ]),
                 ]),
                 _vm._v(" "),
                 _c(
-                  "router-link",
-                  {
-                    attrs: {
-                      to: {
-                        name: "profile/",
-                        params: { user: user, name: user.name },
-                      },
-                    },
-                  },
+                  "div",
+                  { staticClass: "right-box" },
                   [
-                    _c("button", { staticClass: "btn btn-freelance m-4" }, [
-                      _vm._v("Vai al profilo"),
+                    _c("div", { staticClass: "user-info" }, [
+                      _c("h3", { staticClass: "my-3 text-warning" }, [
+                        _vm._v(_vm._s(user.name)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(" " + _vm._s(user.city) + " ")]),
+                      _vm._v(" "),
+                      _c("h5", [_vm._v("Panoramica")]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "box-description" }, [
+                        _c("p", { staticClass: "font-italic" }, [
+                          _vm._v(" " + _vm._s(user.description_job) + " "),
+                        ]),
+                      ]),
                     ]),
-                  ]
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: {
+                            name: "profile/",
+                            params: { user: user, slug: user.slug },
+                          },
+                        },
+                      },
+                      [
+                        _c("button", { staticClass: "btn btn-freelance m-4" }, [
+                          _vm._v("Vai al profilo"),
+                        ]),
+                      ]
+                    ),
+                  ],
+                  1
                 ),
-              ],
-              1
-            ),
-          ]
+              ]
+            )
+          }),
+          0
         )
-      }),
-      0
-    ),
+      : _c("div", { staticClass: "d-flex justify-content-center h-100" }, [
+          _vm._m(0),
+        ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "spinner", attrs: { id: "loading-bar-spinner" } },
+      [_c("div", { staticClass: "spinner-icon" })]
+    )
+  },
+]
 render._withStripped = true
 
 
@@ -21979,7 +22032,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })
