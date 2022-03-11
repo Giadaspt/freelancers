@@ -2245,7 +2245,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 // import Review from '../partials/Review.vue';
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ProfilePage",
@@ -4961,42 +4960,54 @@ var render = function () {
     _c("section", { staticClass: "reviews-section" }, [
       _c("h3", [_vm._v("Recensioni")]),
       _vm._v(" "),
-      _c("div", [
-        _c(
-          "div",
-          { staticClass: "card cust-card row" },
-          _vm._l(_vm.userReviews, function (review) {
-            return _c("div", { key: review.id, staticClass: "card-body p-0" }, [
-              _c("div", { staticClass: "top" }),
-              _vm._v(" "),
-              _c(
-                "h3",
-                {
-                  staticClass:
-                    "card-title d-flex align-items-center name ml-4 mr-3 p-4",
-                },
-                [_vm._v(_vm._s(review.author_name))]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "stars" },
-                _vm._l(review.vote, function (i, index) {
-                  return _c("span", { key: "" + index }, [
-                    _vm._v("\r\n                    ★\r\n                  "),
-                  ])
-                }),
-                0
-              ),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text pl-4 pr-4" }, [
-                _vm._v(_vm._s(review.text)),
+      _c(
+        "div",
+        { staticClass: "cust-review mr-3" },
+        _vm._l(_vm.userReviews, function (review) {
+          return _c(
+            "div",
+            { key: review.id, staticClass: "card cust-card-review mb-4" },
+            [
+              _c("div", { staticClass: "card-body p-0" }, [
+                _c("div", { staticClass: "top" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "stars ml-4 mr-3 p-2 d-flex" },
+                  [
+                    _c(
+                      "h3",
+                      {
+                        staticClass:
+                          "card-title d-flex align-items-center ml-4 mr-3 p-2",
+                      },
+                      [_vm._v(_vm._s(review.author_name))]
+                    ),
+                    _vm._v(" "),
+                    _vm._l(review.vote, function (i, index) {
+                      return _c(
+                        "span",
+                        { key: "" + index, staticClass: "starGraphic" },
+                        [
+                          _vm._v(
+                            "\r\n                    ★\r\n                  "
+                          ),
+                        ]
+                      )
+                    }),
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text ml-4 mr-3 p-2" }, [
+                  _vm._v(_vm._s(review.text)),
+                ]),
               ]),
-            ])
-          }),
-          0
-        ),
-      ]),
+            ]
+          )
+        }),
+        0
+      ),
       _vm._v(" "),
       _c(
         "form",
@@ -22005,7 +22016,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })

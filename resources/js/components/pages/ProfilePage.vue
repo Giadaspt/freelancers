@@ -89,23 +89,22 @@
     <section class="reviews-section">
       <h3>Recensioni</h3>
 
-      <div>
-        <!-- <h1>{{ users[0].reviews[0].author_name }} </h1>
-        <h1>Ciao </h1> -->
-         <div class="card cust-card row" >
-          <div class="card-body p-0" v-for="review in userReviews" :key="review.id">
+      <div class="cust-review mr-3">
+        <div class="card cust-card-review mb-4"  v-for="review in userReviews" :key="review.id">
+          <div class="card-body p-0" >
             <div class="top"></div>
-              <h3 class="card-title d-flex align-items-center name ml-4 mr-3 p-4" >{{review.author_name}}</h3>
-              <div class="stars">
-                  <span
+              <div class="stars ml-4 mr-3 p-2 d-flex">
+              <h3 class="card-title d-flex align-items-center ml-4 mr-3 p-2" >{{review.author_name}}</h3>
+                  <span 
+                    class="starGraphic"
                     v-for="(i, index) in review.vote" :key="`${index}`">
                     ★
                   </span>
               </div>
 
-          <p class="card-text pl-4 pr-4">{{review.text}}</p>
+              <p class="card-text ml-4 mr-3 p-2">{{review.text}}</p>
+          </div>
         </div>
-      </div>
       </div>
 
       <form method="POST" @submit.prevent="sendFormReview" class="mb-4">

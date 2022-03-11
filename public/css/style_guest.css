@@ -10097,6 +10097,31 @@ h3 {
   height: 400px;
 }
 
+.cust-card-review {
+  margin-right: 50px;
+}
+
+.card {
+  flex-direction: row !important;
+  margin: 0 16px;
+}
+
+.cust-card-review {
+  display: flex;
+  border-radius: 20px !important;
+  box-shadow: 0px 10px 10px darkgray;
+}
+.cust-card-review .card-body {
+  width: 30%;
+}
+.cust-card-review .top {
+  min-width: 0;
+  height: 30px;
+  background-color: #1A3854 !important;
+  border-radius: 20px 20px 0 0 !important;
+  padding: 0;
+}
+
 /* voto con stelline */
 .rating {
   display: inline-block;
@@ -10162,19 +10187,4 @@ h3 {
 .rating label input:focus:not(:checked) ~ .icon:last-child {
   color: #5DADEC;
   text-shadow: 0 0 5px #FDFF05;
-}
-
-.cust-card {
-  display: flex;
-  width: 30%;
-  border-radius: 20px !important;
-  box-shadow: 0px 10px 10px darkgray;
-  margin: 34px 0;
-}
-.cust-card .top {
-  min-width: 0;
-  height: 30px;
-  background-color: #1A3854 !important;
-  border-radius: 20px 20px 0 0 !important;
-  padding: 0;
 }
