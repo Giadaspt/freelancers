@@ -6,23 +6,21 @@
         <h1> <strong>Assumi i migliori freelancers online</strong>  </h1>
      </div>
       
-
-
       <div class="input-group mb-3 input">
 
         <input 
         type="text" 
         v-model="category"
         class="form-control input-jumbo" 
-        placeholder="Cerca il tuo freelancers" >
+        placeholder="Cerca il tuo freelancers"  >
+        <!-- @keypress="searchCat" -->
 
         <div class="input-group-append ">
+          <!-- <router-link :to="{ path:'freelancerList/' + this.category, params:{name: this.name}}"  >  -->
           <router-link :to="{ path:'freelancerList/' + this.category, params:{name: this.name}}"  > 
-          <!-- :to="{ name:'freelancerList'}" -->
-          <!-- this.slug -->
-            <button class="btn btn-jumbo ml-3 " type="submit">
+            <a class="btn btn-jumbo ml-3 " >
               Cerca 
-            </button>
+            </a>
           </router-link>
         </div> 
       </div>
@@ -38,13 +36,78 @@ export default {
 
   data(){
     return{
+      apiUrl: 'http://127.0.0.1:8000/api/',
+
+      users: [],
+
       category: "",
 
       name: this.$route.params.name,
+
+      okSearch: true,
     }
   },
 
+  mounted(){
+    this.getCategory(this.name);
+
+    console.log('vediamo cosa sei', this.name);
+  },
+
+  computed: {
+    
+  },
+
   methods:{
+    getCategory(name){
+
+      axios.get(this.apiUrl + 'categories/' + name)
+      .then(res =>{
+        this.users = res.data.category.users;
+       
+        console.log('user della chiamata',this.users);
+
+      });
+    },
+
+    searchCat(){
+      console.log('users in search', this.users);
+      let users = this.users;
+
+      // users.forEach(user => {
+      //   console.log('user.name', user.name);
+      //   return user.name;
+      // })
+    
+
+      // this.category = this.name;
+      // console.log('search name cat', this.name);
+      console.log('search', this.category);
+      console.log('user della chiamata',users);
+      console.log('cat splitatta', this.category.split(""));
+
+       let catSearch = this.category.split("");
+
+      // this.category.split("") = this.name.split("")
+
+      users.forEach(cat => { 
+
+        if(this.category.split("") == this.name.split("") && this.category === this.name){
+          this.okSearch = true;
+          return cat.name.toLowerCase().includes(this.name.toLowerCase()) ;
+        } else {
+          this.okSearch = false;
+        }
+       
+      });
+
+      console.log('search cat after loop', this.category);
+      console.log('search name cat after loop', this.name);
+      console.log('user della chiamata after loop',users);
+    },
+
+      
+
 
   }
 }

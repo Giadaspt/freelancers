@@ -1958,7 +1958,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
-      users: null,
+      users: [],
       success: true,
       errrorMsg: "",
       category: "",
@@ -1967,26 +1967,50 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.getCategory(this.name);
+    this.getCategory();
   },
   methods: {
-    getCategory: function getCategory(name) {
+    // getCategory(name){
+    //   this.reset();
+    //   axios.get(this.apiUrl + 'categories' + name)
+    //   .then(res =>{
+    //     this.users = res.data.category.users;
+    //     console.log('user della chiamata free list',this.users);
+    //   });
+    // },
+    getCategory: function getCategory() {
       var _this = this;
 
       this.reset();
-      axios.get(this.apiUrl + 'categories/' + name).then(function (res) {
-        _this.users = res.data.category.users;
-        console.log('user della chiamata', _this.users);
+      axios.get(this.apiUrl).then(function (res) {
+        _this.categories = res.data.categories;
+        console.log('user della chiamata free list', _this.categories);
+
+        _this.getCatUsers();
       });
     },
-    // getCategory(name){
-    //   this.reset();
-    //   axios.get(this.apiUrl + 'categories/' + name)
-    //   .then(res =>{
-    //     this.users = res.data.category.users;
-    //     console.log('user della chiamata',this.users);
-    //   });
-    // },
+    getCatUsers: function getCatUsers() {
+      var _this2 = this;
+
+      var cats = this.categories; // console.log(cats);
+
+      cats.forEach(function (cat) {
+        var varCat = cat.name.toLowerCase(); // console.log(varCat);
+
+        if (varCat.includes(_this2.name.toLowerCase())) {
+          console.log(_this2.name.toLowerCase());
+          var utenti = cat.users;
+          var utentini = [];
+          utenti.forEach(function (user) {
+            utentini.push(user);
+            _this2.users = utentini;
+            console.log('this user', user);
+            console.log('push this utetnini', utentini);
+            console.log('push this user', _this2.users);
+          });
+        }
+      });
+    },
     reset: function reset() {
       this.users = null;
       this.success = true;
@@ -2702,17 +2726,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Jumbotron",
   data: function data() {
     return {
+      apiUrl: 'http://127.0.0.1:8000/api/',
+      users: [],
       category: "",
-      name: this.$route.params.name
+      name: this.$route.params.name,
+      okSearch: true
     };
   },
-  methods: {}
+  mounted: function mounted() {
+    this.getCategory(this.name);
+    console.log('vediamo cosa sei', this.name);
+  },
+  computed: {},
+  methods: {
+    getCategory: function getCategory(name) {
+      var _this = this;
+
+      axios.get(this.apiUrl + 'categories/' + name).then(function (res) {
+        _this.users = res.data.category.users;
+        console.log('user della chiamata', _this.users);
+      });
+    },
+    searchCat: function searchCat() {
+      var _this2 = this;
+
+      console.log('users in search', this.users);
+      var users = this.users; // users.forEach(user => {
+      //   console.log('user.name', user.name);
+      //   return user.name;
+      // })
+      // this.category = this.name;
+      // console.log('search name cat', this.name);
+
+      console.log('search', this.category);
+      console.log('user della chiamata', users);
+      console.log('cat splitatta', this.category.split(""));
+      var catSearch = this.category.split(""); // this.category.split("") = this.name.split("")
+
+      users.forEach(function (cat) {
+        if (_this2.category.split("") == _this2.name.split("") && _this2.category === _this2.name) {
+          _this2.okSearch = true;
+          return cat.name.toLowerCase().includes(_this2.name.toLowerCase());
+        } else {
+          _this2.okSearch = false;
+        }
+      });
+      console.log('search cat after loop', this.category);
+      console.log('search name cat after loop', this.name);
+      console.log('user della chiamata after loop', users);
+    }
+  }
 });
 
 /***/ }),
@@ -5685,14 +5752,9 @@ var render = function () {
                   },
                 },
                 [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-jumbo ml-3 ",
-                      attrs: { type: "submit" },
-                    },
-                    [_vm._v("\n             Cerca \n           ")]
-                  ),
+                  _c("a", { staticClass: "btn btn-jumbo ml-3 " }, [
+                    _vm._v("\n             Cerca \n           "),
+                  ]),
                 ]
               ),
             ],
@@ -21979,7 +22041,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })
