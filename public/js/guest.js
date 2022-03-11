@@ -5574,7 +5574,7 @@ var render = function () {
                   name: "profile/",
                   params: {
                     user: _vm.freelancerCard,
-                    name: _vm.freelancerCard.name,
+                    slug: _vm.freelancerCard.slug,
                   },
                 },
               },
@@ -21959,7 +21959,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'freelancerList/',
     component: _components_pages_FreelancerList__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/profile/:name',
+    path: '/profile/:slug',
     name: 'profile/',
     component: _components_pages_ProfilePage__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
@@ -21979,7 +21979,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giada\Documents\ESERCIZ-BOOLEAN-44\LARAVEL\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })
