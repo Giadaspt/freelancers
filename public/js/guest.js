@@ -2041,6 +2041,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2441,6 +2444,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Categories",
   data: function data() {
@@ -2662,6 +2666,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Jumbotron",
   data: function data() {
@@ -2735,9 +2741,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Register",
-  methods: {}
+  methods: {
+    register: function register() {
+      axios.post('/register')["finally"](function (err) {
+        window.location.href = '/register';
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2751,25 +2764,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2931,7 +2925,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-categories[data-v-403bfede] {\n  width: 100%;\n  padding: 50px 0 50px 0;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  border-radius: 10px;\n  margin: 10px;\n  text-transform: uppercase;\n  min-width: 100px;\n  font-size: 16px !important;\n  height: 100px;\n  background-color: white;\n  color: #5165F6;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n  box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n  transition: 0.3s;\n}\n@media (max-width: 550px) {\n.box-categories .btn-category[data-v-403bfede] {\n    background-color: white;\n    color: #5165F6;\n    font-size: 2.5vw !important;\n    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-categories .btn-category[data-v-403bfede]:focus {\n    background-color: #6b7add;\n    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n    transition: 0.3s;\n    color: white;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n    color: #5165F6;\n    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n    transition: 0.3s;\n}\n}\n.box-categories[data-v-403bfede] {\n  min-height: 500px;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  height: 100px;\n  margin: 5px;\n  width: 14.2857142857%;\n  font-size: 1vw;\n  text-transform: uppercase;\n}\n.box-categories .cat-card[data-v-403bfede] {\n  border-radius: 20px;\n  box-shadow: 0px 10px 10px darkgray;\n}\n.box-categories .cat-card[data-v-403bfede]:hover {\n  box-shadow: 0px 10px 10px darkgray;\n  transition: transform 0.3s;\n  transform: scale(1.05);\n}\n.box-categories .cat-card:hover a[data-v-403bfede] {\n  color: white;\n}", ""]);
+exports.push([module.i, ".box-categories[data-v-403bfede] {\n  width: 100%;\n  padding: 50px 0 50px 0;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  border-radius: 10px;\n  margin: 10px;\n  text-transform: uppercase;\n  min-width: 100px;\n  font-size: 14px !important;\n  height: 100px;\n  background-color: white;\n  color: #2d5e8b;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n  box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n  transition: 0.3s;\n}\n@media (max-width: 550px) {\n.box-categories .btn-category[data-v-403bfede] {\n    background-color: white;\n    color: #5165F6;\n    font-size: 2.5vw !important;\n    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.5);\n}\n.box-categories .btn-category[data-v-403bfede]:focus {\n    background-color: #6b7add;\n    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n    transition: 0.3s;\n    color: white;\n}\n.box-categories .btn-category[data-v-403bfede]:hover {\n    color: #5165F6;\n    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);\n    transition: 0.3s;\n}\n}\n.box-categories[data-v-403bfede] {\n  min-height: 500px;\n}\n.box-categories .btn-category[data-v-403bfede] {\n  height: 100px;\n  margin: 5px;\n  width: 14.2857142857%;\n  font-size: 1vw;\n  text-transform: uppercase;\n}\n.box-categories .cat-card[data-v-403bfede] {\n  border-radius: 20px;\n  box-shadow: 0px 10px 10px darkgray;\n}\n.box-categories .cat-card[data-v-403bfede]:hover {\n  box-shadow: 0px 10px 10px darkgray;\n  transition: transform 0.3s;\n  transform: scale(1.05);\n}\n.box-categories .cat-card:hover a[data-v-403bfede] {\n  color: white;\n}", ""]);
 
 // exports
 
@@ -2989,7 +2983,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  min-height: 60vh;\n  background-image: url(" + escape(__webpack_require__(/*! ../img/jumbo.png */ "./resources/js/components/img/jumbo.png")) + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  margin-bottom: 0;\n}\n@media (max-width: 900px) {\n.jumbotron[data-v-d804be4c] {\n    background-color: #EBF2F8;\n    background-image: none;\n}\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 5vw;\n  margin-bottom: 25px;\n  color: #5165F6;\n}\n.btn-jumbo[data-v-d804be4c] {\n  display: inline-block;\n  border-radius: 10rem;\n  color: #fff;\n  transition: all 0.3s;\n  position: relative;\n  overflow: hidden;\n  z-index: 1;\n}\n.btn-jumbo[data-v-d804be4c]:after {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #0cf;\n  border-radius: 10rem;\n  z-index: -2;\n}\n.btn-jumbo[data-v-d804be4c]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 0%;\n  height: 100%;\n  background-color: #008fb3;\n  transition: all 0.3s;\n  border-radius: 10rem;\n  z-index: -1;\n}\n.btn-jumbo[data-v-d804be4c]:hover {\n  color: #fff;\n}\n.btn-jumbo[data-v-d804be4c]:hover:before {\n  width: 100%;\n}\n.input[data-v-d804be4c] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-d804be4c]:hover {\n  box-shadow: 0px 0px 18px;\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-d804be4c] {\n  min-height: 55vh;\n  background-image: url(" + escape(__webpack_require__(/*! ../img/jumbo4.jpg */ "./resources/js/components/img/jumbo4.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  margin-bottom: 0;\n}\n@media (max-width: 900px) {\n.jumbotron[data-v-d804be4c] {\n    background-color: #EBF2F8;\n    background-image: none;\n}\n}\n.jumbotron h1[data-v-d804be4c] {\n  font-size: 5vw;\n  margin-bottom: 25px;\n  color: #1B3952;\n}\n.jumbotron .box-title[data-v-d804be4c] {\n  width: 800px;\n}\n.btn-jumbo[data-v-d804be4c] {\n  display: inline-block;\n  border-radius: 10rem;\n  color: #fff;\n  transition: all 0.3s;\n  position: relative;\n  overflow: hidden;\n  z-index: 1;\n}\n.btn-jumbo[data-v-d804be4c]:after {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #0cf;\n  border-radius: 10rem;\n  z-index: -2;\n}\n.btn-jumbo[data-v-d804be4c]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 0%;\n  height: 100%;\n  background-color: #008fb3;\n  transition: all 0.3s;\n  border-radius: 10rem;\n  z-index: -1;\n}\n.btn-jumbo[data-v-d804be4c]:hover {\n  color: #fff;\n}\n.btn-jumbo[data-v-d804be4c]:hover:before {\n  width: 100%;\n}\n.input[data-v-d804be4c] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-d804be4c]:hover {\n  box-shadow: 0px 0px 18px;\n}", ""]);
 
 // exports
 
@@ -3027,7 +3021,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  background-color: #EBEBEB;\n  background-image: url(https://img.freepik.com/free-photo/top-view-person-writing-laptop-with-copy-space_23-2148708035.jpg?w=1480);\n  background-repeat: no-repeat;\n  background-size: auto;\n}\n.box-register .opaco[data-v-7de36336] {\n  width: 100%;\n  height: 100%;\n  padding: 120px 0;\n  background-color: black;\n  opacity: 0.4;\n}\n.box-register .box-text-register[data-v-7de36336] {\n  height: 100%;\n  color: white;\n}\n.box-register .box-text-register h2[data-v-7de36336] {\n  font-weight: 700;\n}\n.box-register .box-text-register p[data-v-7de36336] {\n  font-weight: 600;\n  font-size: 20px;\n}\n.box-register .box-text-register a[data-v-7de36336] {\n  text-decoration: none;\n  color: white;\n}", ""]);
+exports.push([module.i, ".box-register[data-v-7de36336] {\n  width: 100%;\n  background-color: #EBEBEB;\n  background-image: url(https://img.freepik.com/free-photo/top-view-person-writing-laptop-with-copy-space_23-2148708035.jpg?w=1480);\n  background-repeat: no-repeat;\n  background-size: auto;\n}\n.box-register button[data-v-7de36336] {\n  width: 200px;\n  height: 60px;\n  font-size: 20px;\n  border-radius: 10px;\n}\n.box-register .opaco[data-v-7de36336] {\n  width: 100%;\n  height: 100%;\n  padding: 120px 0;\n  background-color: black;\n  opacity: 0.5;\n}\n.box-register .box-text-register[data-v-7de36336] {\n  height: 100%;\n  color: white;\n}\n.box-register .box-text-register h2[data-v-7de36336] {\n  font-weight: 700;\n  font-size: 40px;\n}\n.box-register .box-text-register p[data-v-7de36336] {\n  font-weight: 600;\n  font-size: 40px;\n}\n.box-register .box-text-register a[data-v-7de36336] {\n  text-decoration: none;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -3046,7 +3040,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #c3d5e4;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n  border: 1px solid lightgray;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  border: 1px solid lightgray;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 85%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 50%;\n  width: 100%;\n  overflow: auto;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}", ""]);
+exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.text-orange[data-v-b52c6432] {\n  color: #eb8f26;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #f3f3f3;\n  box-shadow: 5px 10px 18px #888888;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n  margin-top: 15px;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #1B3952;\n  color: white;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 80%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 60%;\n  width: 100%;\n  overflow: hidden;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}", ""]);
 
 // exports
 
@@ -5298,31 +5292,33 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "box-categories" }, [
-    _c("h2", { staticClass: "text-center py-5" }, [
-      _vm._v("Seleziona una categoria"),
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "box-categories" }, [
+      _c("h2", { staticClass: "text-center py-5" }, [
+        _vm._v("Seleziona una categoria"),
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "d-flex justify-content-center align-content-center flex-wrap",
+        },
+        _vm._l(_vm.categories, function (category, index) {
+          return _c(
+            "a",
+            {
+              key: index,
+              staticClass:
+                "box-category text-center btn-category d-flex align-items-center justify-content-center",
+              attrs: { href: "freelancerList/" + category.name },
+            },
+            [_vm._v(_vm._s(category.name))]
+          )
+        }),
+        0
+      ),
     ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass:
-          "d-flex justify-content-center align-content-center flex-wrap",
-      },
-      _vm._l(_vm.categories, function (category, index) {
-        return _c(
-          "a",
-          {
-            key: index,
-            staticClass:
-              "box-category text-center btn-category d-flex align-items-center justify-content-center",
-            attrs: { href: "freelancerList/" + category.name },
-          },
-          [_vm._v(_vm._s(category.name))]
-        )
-      }),
-      0
-    ),
   ])
 }
 var staticRenderFns = []
@@ -5400,7 +5396,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("a", { attrs: { href: "#" } }, [
-                _c("li", [_vm._v(" Guida per freelancerList ")]),
+                _c("li", [_vm._v(" Guida per freelancer ")]),
               ]),
               _vm._v(" "),
               _c("a", { attrs: { href: "#" } }, [
@@ -5585,27 +5581,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", {
+    staticClass:
+      "box-howitworks d-flex flex-column justify-content-center align-items-center",
+  })
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "box-howitworks d-flex flex-column justify-content-center align-items-center",
-      },
-      [
-        _c("h2", [_vm._v("Come funziona:")]),
-        _vm._v(" "),
-        _c("h4", [_vm._v("Cerca il freelancer più adatto al tuo progetto...")]),
-      ]
-    )
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -5627,15 +5608,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass:
-        "jumbotron d-flex flex-column align-items-center justify-content-center",
-    },
-    [
-      _c("div", { staticClass: "container " }, [
-        _c("h1", [_vm._v(" Assumi i migliori freelancers online ")]),
+  return _c("div", { staticClass: "jumbotron" }, [
+    _c(
+      "div",
+      { staticClass: "container d-flex flex-column align-items-center" },
+      [
+        _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "input-group mb-3 input" }, [
           _c("input", {
@@ -5681,7 +5659,7 @@ var render = function () {
                       staticClass: "btn btn-jumbo ml-3 ",
                       attrs: { type: "submit" },
                     },
-                    [_vm._v("\n           Cerca \n         ")]
+                    [_vm._v("\n             Cerca \n           ")]
                   ),
                 ]
               ),
@@ -5689,11 +5667,22 @@ var render = function () {
             1
           ),
         ]),
-      ]),
-    ]
-  )
+      ]
+    ),
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "box-title" }, [
+      _c("h1", [
+        _c("strong", [_vm._v("Assumi i migliori freelancers online")]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -5767,47 +5756,42 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    {
+      staticClass:
+        "box-register d-flex justify-content-center align-items-center flex-row",
+    },
+    [
+      _c("div", { staticClass: "opaco" }, [
+        _c("div", { staticClass: "box-text-register text-center container " }, [
+          _c("h2", [_vm._v("Sei un freelancer?")]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-register btn-success",
+              on: { click: _vm.register },
+            },
+            [_vm._v("Iscriviti")]
+          ),
+        ]),
+      ]),
+    ]
+  )
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "box-register d-flex justify-content-center align-items-center flex-row",
-      },
-      [
-        _c("div", { staticClass: "opaco" }, [
-          _c(
-            "div",
-            { staticClass: "box-text-register text-center container " },
-            [
-              _c("h2", [_vm._v("Sei un freelancer?")]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v("Iscriviti "),
-                _c("br"),
-                _vm._v(" e raggiungi i tuoi clienti"),
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn btn-info", attrs: { type: "submit" } },
-                [
-                  _c("a", { attrs: { href: "register/" } }, [
-                    _vm._v("Iscriviti"),
-                  ]),
-                ]
-              ),
-            ]
-          ),
-        ]),
-      ]
-    )
+    return _c("p", [
+      _vm._v("Iscriviti "),
+      _c("br"),
+      _vm._v(" e raggiungi i tuoi clienti"),
+    ])
   },
 ]
 render._withStripped = true
@@ -5832,7 +5816,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "my-5" }, [
-    _c("h2", [_vm._v("Freelancer in evidenza")]),
+    _c("h2", { staticClass: "text-center my-5" }, [
+      _vm._v("Freelancer in evidenza"),
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -5843,14 +5829,25 @@ var render = function () {
           { key: "user" + user.id, staticClass: "box-profile d-flex" },
           [
             _c("div", { staticClass: "left-box" }, [
-              _c("div", { staticClass: "box-img" }),
+              _c("div", { staticClass: "box-img" }, [
+                _c("img", {
+                  staticClass: " mr-3",
+                  attrs: { src: "/storage/" + user.image, alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "box-info" }, [
-                _c("h3", { staticClass: "my-3" }, [_vm._v(_vm._s(user.name))]),
+                _c("h6", [_vm._v("Categoria")]),
                 _vm._v(" "),
-                _c("p", [_vm._v(" " + _vm._s(user.city) + " ")]),
+                _c("p", { staticClass: "text-info" }, [
+                  _vm._v(" " + _vm._s(user.categories[0].name) + " "),
+                ]),
                 _vm._v(" "),
-                _c("h6", [_vm._v("Media recensioni")]),
+                _c("h6", [_vm._v("Skills principali")]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-info" }, [
+                  _vm._v(" " + _vm._s(user.skills[0].name) + " "),
+                ]),
               ]),
             ]),
             _vm._v(" "),
@@ -5859,20 +5856,18 @@ var render = function () {
               { staticClass: "right-box" },
               [
                 _c("div", { staticClass: "user-info" }, [
-                  _c("h5", [_vm._v("Categoria")]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(" " + _vm._s(user.categories[0].name) + " "),
+                  _c("h3", { staticClass: "my-3 text-warning" }, [
+                    _vm._v(_vm._s(user.name)),
                   ]),
                   _vm._v(" "),
-                  _c("h5", [_vm._v("Skills principali")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(" " + _vm._s(user.skills[0].name) + " ")]),
+                  _c("p", [_vm._v(" " + _vm._s(user.city) + " ")]),
                   _vm._v(" "),
                   _c("h5", [_vm._v("Panoramica")]),
                   _vm._v(" "),
                   _c("div", { staticClass: "box-description" }, [
-                    _c("p", [_vm._v(" " + _vm._s(user.description_job) + " ")]),
+                    _c("p", { staticClass: "font-italic" }, [
+                      _vm._v(" " + _vm._s(user.description_job) + " "),
+                    ]),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -20805,14 +20800,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/img/jumbo.png":
-/*!***********************************************!*\
-  !*** ./resources/js/components/img/jumbo.png ***!
-  \***********************************************/
+/***/ "./resources/js/components/img/jumbo4.jpg":
+/*!************************************************!*\
+  !*** ./resources/js/components/img/jumbo4.jpg ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/jumbo.png?ed1daf218aa2c52e04c76020676d1362";
+module.exports = "/images/jumbo4.jpg?2aa1bc70bdfaa74cf272b3337e0e1775";
 
 /***/ }),
 
@@ -21952,7 +21947,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Utente\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\feder\Documents\laravel\freelancers\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })

@@ -1,29 +1,31 @@
 <template>
 
- <div class="jumbotron d-flex flex-column align-items-center justify-content-center">
-  <div class="container ">
-
-       <h1> Assumi i migliori freelancers online </h1>
-
-
-    <div class="input-group mb-3 input">
-
-      <input 
-      type="text" 
-      v-model="category"
-      class="form-control input-jumbo" 
-      placeholder="Cerca il tuo freelancers" >
-
-      <div class="input-group-append ">
-        <router-link :to="{ path:'freelancerList/' + this.category, params:{name: this.name}}"  > 
-        <!-- :to="{ name:'freelancerList'}" -->
-        <!-- this.slug -->
-          <button class="btn btn-jumbo ml-3 " type="submit">
-            Cerca 
-          </button>
-        </router-link>
-      </div> 
+ <div class="jumbotron">
+  <div class="container d-flex flex-column align-items-center">
+     <div class="box-title">
+        <h1> <strong>Assumi i migliori freelancers online</strong>  </h1>
      </div>
+      
+
+
+      <div class="input-group mb-3 input">
+
+        <input 
+        type="text" 
+        v-model="category"
+        class="form-control input-jumbo" 
+        placeholder="Cerca il tuo freelancers" >
+
+        <div class="input-group-append ">
+          <router-link :to="{ path:'freelancerList/' + this.category, params:{name: this.name}}"  > 
+          <!-- :to="{ name:'freelancerList'}" -->
+          <!-- this.slug -->
+            <button class="btn btn-jumbo ml-3 " type="submit">
+              Cerca 
+            </button>
+          </router-link>
+        </div> 
+      </div>
     </div>
     
   </div>
@@ -53,10 +55,12 @@ export default {
 <style lang="scss" scoped>
 
  .jumbotron{
-  
-  min-height: 60vh;
-  background-image: url('../img/jumbo.png');
+
+  min-height: 55vh;
+  // background-image: url('../img/jumbo.png');
+  background-image: url('../img/jumbo4.jpg');
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
    margin-bottom: 0;
    @media (max-width: 900px) {
@@ -67,8 +71,13 @@ export default {
      h1{
        font-size: 5vw;
        margin-bottom: 25px;
-       color: #5165F6;
+       color: #1B3952;
      }
+
+     .box-title{
+     width: 800px;
+    //  height: 300px;
+   }
 }
 
 .btn-jumbo {

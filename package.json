@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "aos": "^2.3.4",
         "braintree": "^3.10.0",
         "lightbox2": "^2.11.3",
         "vue-bootstrap-typeahead": "^0.2.6",

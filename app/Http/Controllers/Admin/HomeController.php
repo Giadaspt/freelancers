@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Message;
 use App\Review;
+use App\Sponsorship;
+use App\SponsorshipUser;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -28,8 +30,12 @@ class HomeController extends Controller
         $allReviews = $reviews->count();
 
         $avgReviews=round(Review::avg('vote'),1);
+
+        $sponsorships = Sponsorship::all();
+
+        $allSponsorships = $sponsorships->count();
         
-        return view('admin.home', compact('user', 'lastMessage', 'lastReview', 'allMessages', 'allReviews', 'avgReviews'));
+        return view('admin.home', compact('user', 'lastMessage', 'lastReview', 'allMessages', 'allReviews', 'avgReviews', 'allSponsorships'));
 
     }
 
