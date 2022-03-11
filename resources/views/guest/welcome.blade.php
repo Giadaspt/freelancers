@@ -17,7 +17,7 @@
     <body>
         <div class="container-team4 d-flex align-items-center justify-content-between">
             <div>
-                <a class="nav-link logo">
+                <a href=" {{route('welcome')}}"  class="nav-link logo">
                     <img src="{{ asset('storage/img/logo.png') }}" >
                 </a>
             </div>

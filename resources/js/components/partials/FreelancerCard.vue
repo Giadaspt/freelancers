@@ -12,7 +12,7 @@
         </h5>
         <p class="card-text pl-4 pr-4">{{ freelancerCard.description_job }}</p>
 
-        <router-link :to="{ name:'profile/', params:{user: freelancerCard, name: freelancerCard.name}}">
+        <router-link :to="{ name:'profile/', params:{user: freelancerCard, slug: freelancerCard.slug}}">
           <button class="btn btn-freelance m-4">Vai al profilo</button>
         </router-link>
       </div>
@@ -30,7 +30,7 @@ export default {
 
   data(){
     return{
-
+ 
     }
   },
 

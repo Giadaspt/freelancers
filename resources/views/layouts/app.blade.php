@@ -33,7 +33,7 @@
         <nav class="navbar nav-freelancers navbar-expand-md navbar shadow-sm">
             <div class="container d-flex justify-content-betweenalign-items-center">
                 <div class="d-flex align-items-center">
-                    <a class="nav-link logo">
+                    <a href=" {{route('welcome')}} " class="nav-link logo">
                         <img src="{{ asset('storage/img/logo.png') }}">
                     </a>
                     <span>
