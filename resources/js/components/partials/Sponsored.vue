@@ -1,10 +1,12 @@
 <template>
 <div class="my-5">
+ 
 <h2 class="text-center my-5">Freelancer in evidenza</h2> 
   <div class="box-sponsored d-flex justify-content-center flex-wrap" v-if="sponsored">
       <div data-aos="fade-up" data-aos-duration="3000" class="box-profile d-flex" v-for="user in sponsored" :key="`user${user.id}`" >
-        
+         
           <div class="left-box">
+        
               <div class="box-img">
                 <img class=" mr-3" :src="'/storage/' + user.image" alt="">
               </div>
@@ -14,8 +16,19 @@
                 <p class="text-info"> {{user.categories[0].name}} </p>
                 <h6>Skills principali</h6>
                 <p class="text-info"> {{user.skills[0].name}} </p>
+                
                         
-              </div>       
+              </div>  
+
+              <h6>Ultima recensione</h6>
+                <p v-if="user.reviews.length > 0" class="text-info">
+
+                  <span 
+                    class="starGraphic"
+                    v-for="(i, index) in user.reviews[0].vote" :key="index">
+                    ★
+                  </span>
+                 </p>  
           </div>
 
           <div class="right-box">
@@ -63,7 +76,7 @@ export default {
   data(){
     return{
       apiUrl: 'http://127.0.0.1:8000/api/',
-      sponsored: [],
+      sponsored: {},
       name:this.$route.params.name
     }
   },
@@ -73,6 +86,7 @@ export default {
       axios.get(this.apiUrl)
         .then(res => {
           this.sponsored = res.data.selected_sponsored;  
+          this.avgReviews = res.data.selected_sponsored.reviews
           console.log('sponsored:', this.sponsored);  
       });
     }, 
@@ -129,6 +143,7 @@ export default {
 
          .box-info{
            width: 100%;
+           height: 50%;
            margin-top: 15px;
          }
      }

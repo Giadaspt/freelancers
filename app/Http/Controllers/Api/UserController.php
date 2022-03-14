@@ -15,9 +15,9 @@ class UserController extends Controller
 {
     public function index(){
 
-        $users =  User::with('categories', 'skills', 'reviews')->get();
+        // $users =  User::with('categories', 'skills', 'reviews')->get();
 
-        $users =  User::with(['sponsorships', 'categories', 'skills'])->get();
+        $users =  User::with(['sponsorships', 'categories', 'skills', 'reviews'])->get();
 
         $selected_sponsored = [];
         $c = 0;
@@ -36,7 +36,7 @@ class UserController extends Controller
         $reviews = Review::all();
    
 
-        return response()->json(compact('users', 'categories', 'skills', 'selected_sponsored', 'reviews'));
+        return response()->json(compact('users', 'categories', 'skills', 'selected_sponsored'));
     }
 
     public function show(){
