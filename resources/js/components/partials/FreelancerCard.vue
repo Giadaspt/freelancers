@@ -36,14 +36,9 @@ export default {
 
   data(){
     return{
- 
+      
     }
   },
-
-  mounted(){
-
-    console.log('freelancer',this.freelancerCard);
-  }
 
 }
 </script>

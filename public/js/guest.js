@@ -2016,6 +2016,7 @@ __webpack_require__.r(__webpack_exports__);
       errrorMsg: "",
       category: "",
       categories: [],
+      varCat: '',
       name: this.$route.params.name
     };
   },
@@ -2717,9 +2718,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {};
-  },
-  mounted: function mounted() {
-    console.log('freelancer', this.freelancerCard);
   }
 });
 
