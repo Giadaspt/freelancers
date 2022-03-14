@@ -6,8 +6,10 @@
 
     {{-- <h1> {{$user->sponsorships->id}} </h1> --}}
     @auth
+    <div class="container-flex d-flex">
       <section class="profile_details"> 
-        <div class="d-flex align-items-center">
+    
+         <div class="d-flex align-items-center">
           <div class="image-box mr-3">
             <img class="round-image mr-3" width="100" src="{{ asset('storage/' . $user->image) }}" alt="">
           </div>
@@ -90,17 +92,15 @@
                   @endif
                @endif
             
-          </div>
-
-      
+           </div>  
 
         </div>
       </section>
 
-      <div class="cv-file mt-4">
-        <embed src="{{ asset('storage/' . $user->cv) }}" alt="">
-      </div>
-
+        <div class="cv-file mt-4">
+          <embed src="{{ asset('storage/' . $user->cv) }}" alt="">
+        </div>
+    </div>
       <button class="btn btn-freelance  mr-2 mt-5">
         <a class="text-white" href=" {{ URL::previous() }} "> Indietro </a>
       </button>

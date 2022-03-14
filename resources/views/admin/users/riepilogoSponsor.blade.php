@@ -166,7 +166,7 @@
       <input id="nonce" name="payment_method_nonce" type="hidden"/>
       <div class="d-flex justify-content-center align-items-center">
           <a class="mr-4" href="{{route('admin.sponsorships.index')}}">Annulla transazione</a>
-          <button class="btn btn-freelance " type="submit" onclick="return confirm('Acquisto confermato')">Conferma acquisto</button>
+          <button class="btn btn-freelance " type="submit">Conferma acquisto</button>
       </div>
     </form>
   

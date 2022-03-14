@@ -2,7 +2,7 @@
 <div class="my-5">
 <h2 class="text-center my-5">Freelancer in evidenza</h2> 
   <div class="box-sponsored d-flex justify-content-center flex-wrap" v-if="sponsored">
-      <div class="box-profile d-flex" v-for="user in sponsored" :key="`user${user.id}`" >
+      <div data-aos="fade-up" data-aos-duration="3000" class="box-profile d-flex" v-for="user in sponsored" :key="`user${user.id}`" >
         
           <div class="left-box">
               <div class="box-img">

@@ -10024,11 +10024,6 @@ h3 {
   box-shadow: 0px 10px 10px darkgray;
   margin: 34px 0;
 }
-.custom-card:hover {
-  box-shadow: 0px 10px 10px #616161;
-  transition: transform 0.4s;
-  transform: scale(1.05);
-}
 .custom-card .top {
   min-width: 0;
   height: 30px;
@@ -10077,10 +10072,10 @@ h3 {
   flex-wrap: wrap;
 }
 .side .left-side {
-  width: 70%;
+  width: 60%;
 }
 .side .right-side {
-  width: 30%;
+  width: 40%;
 }
 
 .cat, .skill {
@@ -10093,8 +10088,8 @@ h3 {
 }
 
 .curriculum {
-  width: 200px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
 }
 
 .cust-card-review {

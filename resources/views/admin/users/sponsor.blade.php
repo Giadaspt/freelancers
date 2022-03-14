@@ -3,17 +3,17 @@
 @section('content')
 
   <section class="container-title text-center mb-5">
-    <h1 class="color-font">Sponsorship</h1>
+    <h1 class="color-font">SPONSORIZZA IL PROFILO</h1>
 
-    <p class="color-font"> 
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima incidunt odit dolorum obcaecati aliquid libero tenetur dolore mollitia numquam voluptas vel voluptate corrupti sapiente enim aperiam ut, iusto nobis itaque qui! Accusantium sapiente provident consequuntur, mollitia optio ea a, sint possimus minima incidunt deserunt repellendus, officia ad consequatur quia omnis.
+    <h3 class="color-font"> 
+     Acquista un pacchetto tra i 3 proposti e il tuo profilo verrà messo in evidenza,  per tutto il tempo indicato, nella home page del sito.
 
-    </p>
+    </h3>
   </section>
   {{-- {{ route('admin.sponsorships.update', $sponsor) }} --}}
 
   <div class="container mt-5">
-    <form class="d-flex justify-content-between" action=" {{route('admin.editSponsorships', $user)}} " method="GET">
+    <form class="d-flex justify-content-between flex-wrap" action=" {{route('admin.editSponsorships', $user)}} " method="GET">
       @csrf
       {{-- @method('PUT') --}}
 
@@ -75,7 +75,7 @@
             {{-- @endforeach --}}
             
             
-          </form>
+        </form>
   </div>
 
   <section class="container mt-5 text-center color-font">

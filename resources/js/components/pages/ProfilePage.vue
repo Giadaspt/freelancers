@@ -1,7 +1,7 @@
 <template>
 <div class="container">
 
-  <!-- <h1> {{user}} </h1> -->
+
 
     <div class="side d-flex flex-wrap row">
       <!-- section of profile details -->
@@ -48,17 +48,17 @@
                   <!-- <embed width="500" height="375" frameborder="0" class="cv-custom mr-3" :src="'/storage/' + user.cv" :alt="user.name"> -->
                   <!-- <object :data="'/storage/' + user.cv" type="file" data-active-view="true"></object> -->
                   <!-- <a style="width:500 height:375 "   :href="'/storage/' + user.cv"></a>  -->
-                  <iframe class="curriculum"  style="width:200 height:375 " :src="'/storage/' + user.cv"></iframe>
+                  <iframe class="curriculum" :src="'/storage/' + user.cv"></iframe>
                   <!-- <img class="curriculum"   :src="'/storage/' + user.cv"> -->
               </div>
           </div>
       </section>
 
       <!-- form per inviare messaggi -->
-      <section class="mt-4 mb-4 right-side">
+    <section class="mt-4 mb-4 right-side">
         <h3>Contattami</h3>
 
-        <form method="POST" @submit.prevent="sendFormMessage" >
+        <form class="form-right-side" method="POST" @submit.prevent="sendFormMessage" >
 
           <div class="form-group">
             <label for="email_sender" class="ml-2">Email</label>
@@ -79,36 +79,13 @@
 
             <div class="d-flex">
               <button @click="alertDisplayMess()" type="submit" class="btn btn-freelance mr-3" >Invia</button>
-              <button type="reset" class="btn btn-delete">Cancella</button>
+              <!-- <button type="reset" class="btn btn-delete">Cancella</button> -->
             </div>
         </form>
-      </section>
-    </div>
 
-    <!-- reviews section -->
-    <section class="reviews-section">
-      <h3>Recensioni</h3>
-
-      <div class="cust-review d-flex mr-3">
-        <div class="card row cust-card-review mb-4 mr-4"  v-for="review in userReviews" :key="review.id">
-          <div class="card-body p-0" >
-            <div class="top"></div>
-              
-              <h3 class="card-title d-flex align-items-center ml-4 mb-0  mt-3" >{{review.author_name}}</h3>
-              <div class="stars ml-4 mr-3  d-flex">
-                  <span 
-                    class="starGraphic"
-                    v-for="(i, index) in review.vote" :key="`${index}`">
-                    ★
-                  </span>
-              </div>
-              <p class="card-text ml-4 mr-3 mb-3">{{review.text}}</p>
-          </div>
-        </div>
-      </div>
-
-      <form method="POST" @submit.prevent="sendFormReview" class="mb-4">
-
+         <h3 class="mt-4">Scrivi una recensione su {{ user.name }} </h3>
+      <form method="POST" @submit.prevent="sendFormReview" class="mb-4 form-right-side">
+        
         <div class="form-group">
           <label for="author_name" class="ml-2">Nome</label>
           <input v-model="author_name" type="text" class="form-control" id="author_name" placeholder="Nome" required>
@@ -156,15 +133,45 @@
         <div class="d-flex justify-content-between">
           <div class="">
             <button @click="alertDisplayRev()" type="submit" class="btn btn-freelance mr-3 mb-3">Invia</button>
-            <button type="reset" class="btn btn-delete ">Cancella</button>
+            <!-- <button type="reset" class="btn btn-delete ">Cancella</button> -->
           </div>
-          <div class="back mt-4 mb-4">
-            <a class="btn-freelance btn-back justify-content-center" @click="$router.go(-1)">Indietro</a>
-          </div>
+          
         </div>
       </form>
-    </section>
+      </section>
+    </div>
 
+    <!-- reviews section -->
+    <section class="reviews-section">
+      <h3>Recensioni</h3>
+
+      <!-- <h1>{{userReviews.length}} </h1>
+      <h3>{{userReviews}} </h3> -->
+
+      <div v-if=" userReviews.length > 0 " class="cust-review d-flex mr-3 justify-content-center">
+        <div class="card row cust-card-review mb-4 mr-4"  v-for="(i, index) in 3" :key="index">
+          <div class="card-body p-0" >
+            <div class="top"></div>
+              
+              <h3 class="card-title d-flex align-items-center ml-4 mb-0  mt-3" >{{userReviews[i].author_name}}</h3>
+              <div class="stars ml-4 mr-3  d-flex">
+                  <span 
+                    class="starGraphic"
+                    v-for="(i, index) in userReviews[i].vote" :key="index">
+                    ★
+                  </span>
+              </div>
+              <p class="card-text ml-4 mr-3 mb-3">{{userReviews[i].text}}</p>
+          </div>
+        </div>
+      </div>
+       <div v-else> {{ user.name }} non ha ancora ricevuto recensioni </div>
+
+
+    </section>
+         <div class="back mt-4 mb-4">
+            <a class="btn-freelance btn-back justify-content-center" @click="$router.go(-1)">Indietro</a>
+          </div>
   </div>
 </template>
 
@@ -200,7 +207,7 @@ export default {
 
       userCategory: [],
       userComplete: {},
-      userReviews: [],
+      userReviews: []
     }
   },
 
@@ -212,13 +219,11 @@ export default {
     // console.log('reviews yes',this.review);
 
     // console.log('cat cat',this.category);
-
+    this.getAllRev();
     this.getApi();
     this.getAllCat();
     this.getCategories();
    
-    
-     this.getAllRev();
   },
 
   methods: {
@@ -291,7 +296,7 @@ export default {
           console.log('una review', rec);
           console.log('review.id', rec.id);
 
-          if(rec.user_id == this.user.id){
+          if(rec.user_id === this.user.id){
             
             console.log('id dello user che ha la recensione',rec.user_id); 
             return this.userReviews.push(rec);
@@ -403,6 +408,12 @@ export default {
           object-fit: cover;
         }
      
+   }
+
+   .form-right-side{
+     border: 1px solid lightgray;
+     padding: 20px;
+     border-radius: 15px;
    }
 
 </style>

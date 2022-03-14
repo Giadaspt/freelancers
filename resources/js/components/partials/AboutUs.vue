@@ -2,12 +2,11 @@
 
 <div class="box-about  row d-flex align-items-center justify-content-between">
   
-  <div class="box-text-about text-center col-12 col-md mr-5">
-    <h2>Dicono di noi</h2>
-    <h3>Oltre il 99% di clienti soddisfatti</h3>
+  <div data-aos="zoom-in" data-aos-duration="3000" class="box-text-about text-center col-12 col-md mr-5">
+    <h2>Oltre il 99% di clienti soddisfatti</h2>
   </div>
 
-  <div class="box-img-about text-right col-12 col-md ml-2">
+  <div data-aos="zoom-in" data-aos-duration="3000" class="box-img-about text-right col-12 col-md ml-2">
     <img src="..\img\voti.jpg" alt="">
   </div>
 
