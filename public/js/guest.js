@@ -2976,6 +2976,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import Profile from './Profile.vue'
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Sponsored",
@@ -2991,7 +3004,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/',
-      sponsored: [],
+      sponsored: {},
       name: this.$route.params.name
     };
   },
@@ -3001,6 +3014,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(this.apiUrl).then(function (res) {
         _this.sponsored = res.data.selected_sponsored;
+        _this.avgReviews = res.data.selected_sponsored.reviews;
         console.log('sponsored:', _this.sponsored);
       });
     }
@@ -3231,7 +3245,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.text-orange[data-v-b52c6432] {\n  color: #eb8f26;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #f3f3f3;\n  box-shadow: 5px 10px 18px #888888;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n  margin-top: 15px;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #1B3952;\n  color: white;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 80%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 60%;\n  width: 100%;\n  overflow: hidden;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}\n.btn-jumbo[data-v-b52c6432] {\n  display: inline-block;\n  border-radius: 10rem;\n  color: #fff;\n  transition: all 0.3s;\n  position: relative;\n  overflow: hidden;\n  z-index: 1;\n}\n.btn-jumbo[data-v-b52c6432]:after {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #0cf;\n  border-radius: 10rem;\n  z-index: -2;\n}\n.btn-jumbo[data-v-b52c6432]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 0%;\n  height: 100%;\n  background-color: #008fb3;\n  transition: all 0.3s;\n  border-radius: 10rem;\n  z-index: -1;\n}\n.btn-jumbo[data-v-b52c6432]:hover {\n  color: #fff;\n}\n.btn-jumbo[data-v-b52c6432]:hover:before {\n  width: 100%;\n}\n.input[data-v-b52c6432] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-b52c6432]:hover {\n  box-shadow: 0px 0px 18px;\n}\n#loading-bar-spinner.spinner[data-v-b52c6432] {\n  left: 50%;\n  margin-left: -20px;\n  top: 50%;\n  margin-top: -20px;\n  position: absolute;\n  z-index: 19 !important;\n  -webkit-animation: loading-bar-spinner-data-v-b52c6432 400ms linear infinite;\n          animation: loading-bar-spinner-data-v-b52c6432 400ms linear infinite;\n}\n#loading-bar-spinner.spinner .spinner-icon[data-v-b52c6432] {\n  width: 40px;\n  height: 40px;\n  border: solid 4px transparent;\n  border-top-color: #00C8B1 !important;\n  border-left-color: #00C8B1 !important;\n  border-radius: 50%;\n}\n@-webkit-keyframes loading-bar-spinner-data-v-b52c6432 {\n0% {\n    transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n    transform: rotate(360deg);\n}\n}\n@keyframes loading-bar-spinner-data-v-b52c6432 {\n0% {\n    transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n    transform: rotate(360deg);\n}\n}", ""]);
+exports.push([module.i, ".global-box-profile[data-v-b52c6432] {\n  border-radius: 20px;\n}\n.text-orange[data-v-b52c6432] {\n  color: #eb8f26;\n}\n.box-profile[data-v-b52c6432] {\n  margin: 10px;\n  width: 330px;\n  height: 400px;\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #f3f3f3;\n  box-shadow: 5px 10px 18px #888888;\n}\n.box-profile .left-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 40%;\n  height: 100%;\n}\n.box-profile .left-box .box-img[data-v-b52c6432] {\n  width: 105px;\n  height: 105px;\n  background-color: white;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.box-profile .left-box .box-img img[data-v-b52c6432] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.box-profile .left-box .box-info[data-v-b52c6432] {\n  width: 100%;\n  height: 50%;\n  margin-top: 15px;\n}\n.box-profile .right-box[data-v-b52c6432] {\n  padding: 10px;\n  width: 60%;\n  height: 100%;\n  background-color: #1B3952;\n  color: white;\n}\n.box-profile .right-box .user-info[data-v-b52c6432] {\n  width: 100%;\n  height: 80%;\n}\n.box-profile .right-box .user-info .box-description[data-v-b52c6432] {\n  font-size: 13px;\n  height: 60%;\n  width: 100%;\n  overflow: hidden;\n}\n.box-profile .right-box .box-buttons[data-v-b52c6432] {\n  padding: 10px;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432] {\n  width: 100px !important;\n  margin: 7px;\n  padding: 7px;\n  background-color: #5165F6;\n  border: none;\n  border-radius: 10px;\n  color: white;\n}\n.box-profile .right-box .box-buttons .btn-profile[data-v-b52c6432]:hover {\n  background-color: #6b7add;\n}\n.btn-jumbo[data-v-b52c6432] {\n  display: inline-block;\n  border-radius: 10rem;\n  color: #fff;\n  transition: all 0.3s;\n  position: relative;\n  overflow: hidden;\n  z-index: 1;\n}\n.btn-jumbo[data-v-b52c6432]:after {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #0cf;\n  border-radius: 10rem;\n  z-index: -2;\n}\n.btn-jumbo[data-v-b52c6432]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 0%;\n  height: 100%;\n  background-color: #008fb3;\n  transition: all 0.3s;\n  border-radius: 10rem;\n  z-index: -1;\n}\n.btn-jumbo[data-v-b52c6432]:hover {\n  color: #fff;\n}\n.btn-jumbo[data-v-b52c6432]:hover:before {\n  width: 100%;\n}\n.input[data-v-b52c6432] {\n  width: 80% !important;\n}\n.input-jumbo[data-v-b52c6432]:hover {\n  box-shadow: 0px 0px 18px;\n}\n#loading-bar-spinner.spinner[data-v-b52c6432] {\n  left: 50%;\n  margin-left: -20px;\n  top: 50%;\n  margin-top: -20px;\n  position: absolute;\n  z-index: 19 !important;\n  -webkit-animation: loading-bar-spinner-data-v-b52c6432 400ms linear infinite;\n          animation: loading-bar-spinner-data-v-b52c6432 400ms linear infinite;\n}\n#loading-bar-spinner.spinner .spinner-icon[data-v-b52c6432] {\n  width: 40px;\n  height: 40px;\n  border: solid 4px transparent;\n  border-top-color: #00C8B1 !important;\n  border-left-color: #00C8B1 !important;\n  border-radius: 50%;\n}\n@-webkit-keyframes loading-bar-spinner-data-v-b52c6432 {\n0% {\n    transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n    transform: rotate(360deg);\n}\n}\n@keyframes loading-bar-spinner-data-v-b52c6432 {\n0% {\n    transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n    transform: rotate(360deg);\n}\n}", ""]);
 
 // exports
 
@@ -6129,6 +6143,27 @@ var render = function () {
                       _vm._v(" " + _vm._s(user.skills[0].name) + " "),
                     ]),
                   ]),
+                  _vm._v(" "),
+                  _c("h6", [_vm._v("Ultima recensione")]),
+                  _vm._v(" "),
+                  user.reviews.length > 0
+                    ? _c(
+                        "p",
+                        { staticClass: "text-info" },
+                        _vm._l(user.reviews[0].vote, function (i, index) {
+                          return _c(
+                            "span",
+                            { key: index, staticClass: "starGraphic" },
+                            [
+                              _vm._v(
+                                "\r\n                    ★\r\n                  "
+                              ),
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    : _vm._e(),
                 ]),
                 _vm._v(" "),
                 _c(
