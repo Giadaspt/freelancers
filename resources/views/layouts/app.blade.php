@@ -36,11 +36,11 @@
                     <a href=" {{route('welcome')}} " class="nav-link logo">
                         <img src="{{ asset('storage/img/logo.png') }}">
                     </a>
-                    <span>
+                    {{-- <span>
                         <a class="nav-link lead {{ (Route::currentRouteName() === '/') ? 'active' : '' }}" href="{{ route('welcome') }}">
                             Torna al sito
                         </a>
-                    </span>
+                    </span> --}}
                     @auth
 
                     @endauth
@@ -62,6 +62,14 @@
                         <a class="nav-link {{ (Route::currentRouteName() === 'admin.index') ? 'active' : '' }}" 
                         href="{{ route('admin.index') }}"> 
                             Dashboard 
+                        </a>
+                        <a class="nav-link {{ (Route::currentRouteName() === 'admin.message') ? 'active' : '' }}" 
+                        href="{{ route('admin.message') }}"> 
+                            Messaggi 
+                        </a>
+                        <a class="nav-link {{ (Route::currentRouteName() === 'admin.reviews') ? 'active' : '' }}" 
+                        href="{{ route('admin.reviews') }}"> 
+                            Recensioni 
                         </a>
 
                         <div class="dropdown show" >

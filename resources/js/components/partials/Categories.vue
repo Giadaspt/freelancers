@@ -81,7 +81,7 @@ export default {
       // color: white;
          &:hover{
             // background-color: #6b7add;
-            box-shadow: 0px 1px 20px rgb(255, 255, 255, 0.5);
+            box-shadow: 0px 1px 20px #1B3952;
             transition: 0.3s;
          }
      }

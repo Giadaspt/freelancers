@@ -1,12 +1,12 @@
 <template>
 
-<div class="box-network  row d-flex align-items-center justify-content-between">
+<div class="box-network row d-flex align-items-center justify-content-center">
 
-   <div class="box-img-network col-12 col-md mr-5">
+   <div data-aos="fade-right" data-aos-duration="3000" class="box-img-network col-12 col-md mr-5">
      <img src="..\img\network.jpg" alt="">
    </div>
 
-   <div class="text-network col-12 col-md ml-2">
+   <div data-aos="fade-left" data-aos-duration="3000" class="text-network col-12 col-md ml-2">
      <h2 class="text-left">Il più grande network di freelancers italiano, con più di 50.000 iscritti attivi</h2>
    </div>
 

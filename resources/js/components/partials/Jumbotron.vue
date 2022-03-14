@@ -3,7 +3,7 @@
  <div class="jumbotron">
   <div class="container d-flex flex-column align-items-center">
      <div class="box-title">
-        <h1> <strong>Assumi i migliori freelancers online</strong>  </h1>
+        <h1 data-aos="fade-down" data-aos-duration="2500" class="text-center"> <strong>Assumi i migliori freelancers online</strong>  </h1>
      </div>
       
       <div class="input-group mb-3 input">
@@ -12,7 +12,7 @@
         type="text" 
         v-model="category"
         class="form-control input-jumbo" 
-        placeholder="Cerca il tuo freelancers"  >
+        placeholder="Cerca per categoria"  >
         <!-- @keypress="searchCat" -->
 
         <div class="input-group-append ">
@@ -119,7 +119,7 @@ export default {
 
  .jumbotron{
 
-  min-height: 55vh;
+  // min-height: 55vh;
   // background-image: url('../img/jumbo.png');
   background-image: url('../img/jumbo4.jpg');
   background-size: cover;
@@ -137,10 +137,6 @@ export default {
        color: #1B3952;
      }
 
-     .box-title{
-     width: 800px;
-    //  height: 300px;
-   }
 }
 
 .btn-jumbo {

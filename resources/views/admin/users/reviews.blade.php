@@ -54,7 +54,7 @@
        @endforeach
 
       @else
-        <p>Non ci sono messaggi</p>
+      <h4 class="text-center mt-5 text-dark">Non ci sono recensioni</h4>
       @endif
       {{ $reviews->links() }}
     </div>

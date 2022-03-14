@@ -53,15 +53,15 @@ export default {
       width: 100%;
       height: 100%;
       padding: 120px 0;
-      background-color: black;
-      opacity: 0.5;
+      background-color: transparent;
+      // opacity: 0.5;
       
     }
      .box-text-register{
        height: 100%;
       //  padding: 80px;
       //  background-color:rgb(137, 189, 167);
-      color: white;
+      color: #1B3952;
          h2{
         font-weight: 700;
         font-size: 40px;

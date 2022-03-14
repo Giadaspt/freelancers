@@ -46,6 +46,7 @@ export default {
 
       category: "",
       categories: [],
+      varCat: '',
 
       name: this.$route.params.name,
     }
