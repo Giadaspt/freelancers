@@ -29,7 +29,9 @@
               </div>
       
               <router-link :to="{ name:'profile/', params:{user: user, slug: user.slug}}">
-                <button class="btn btn-freelance m-4">Vai al profilo</button>
+                 <a class="btn btn-jumbo ml-4 " >
+                    Vai al profilo
+                 </a>
               </router-link>
           </div>
       </div>  
@@ -167,6 +169,58 @@ export default {
          }    
      }
 }
+
+
+.btn-jumbo {
+display: inline-block;
+border-radius: 10rem;
+color: #fff;
+transition: all .3s;
+position: relative;
+overflow: hidden;
+z-index: 1;
+&:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #0cf;
+border-radius: 10rem;
+z-index: -2;
+}
+&:before {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0%;
+height: 100%;
+background-color: darken(#0cf, 15%);
+transition: all .3s;
+border-radius: 10rem;
+z-index: -1;
+}
+&:hover {
+color: #fff;
+&:before {
+width: 100%;
+}
+}
+}
+
+
+.input{
+  width: 80% !important;
+}
+
+.input-jumbo{
+  &:hover{
+    box-shadow: 0px 0px 18px;
+  }
+}
+
 #loading-bar-spinner.spinner {
     left: 50%;
     margin-left: -20px;

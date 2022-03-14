@@ -98,18 +98,19 @@
                     <h2><a href="#" class="card-link text-dark">{{$avgReviews}}</a></h2>
                 </div>
             </div>
+            <div class="card dash-statistiche text-success" style="width: 30%; min-width: 200px; min-height: 200px">
+                <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
+                    <h5>RECENSIONI RICEVUTE:</h5>
+                    <h2><a href="#" class="card-link text-success"> {{$allReviews}} </a></h2>
+                </div>
+            </div>
             <div class="card dash-statistiche text-info" style="width: 30%; min-width: 200px; min-height: 200px">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
                     <h5>MESSAGGI RICEVUTI:</h5>
                     <h2><a href="#" class="card-link text-info">{{$allMessages}}</a></h2>
                 </div>
             </div>
-            <div class="card dash-statistiche text-success" style="width: 30%; min-width: 200px; min-height: 200px">
-                <div class="card-body d-flex justify-content-center align-items-center flex-column text-center" style="height: 100%">
-                    <h5>PROMOZIONI ACQUISTATE:</h5>
-                    <h2><a href="#" class="card-link text-success"> {{mt_rand(0, 4)}} </a></h2>
-                </div>
-            </div>
+          
         
         </div>
     </div>
